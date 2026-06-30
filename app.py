@@ -64,16 +64,45 @@ def image_for(factory_style, color_name, subcategory, size):
     base = clean(factory_style) or " ".join([subcategory, size, color_name])
     return f"{slugify(base)}.jpg" if base else ""
 
+
+def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty):
+    variants = []
+
+    # No assumptions:
+    # A pack variant only exists if it has its own SKU AND at least some real pack data.
+    # Do not copy Mini into Factory or Factory into Mini.
+    if clean(mini_style) and (clean(mini_price) or clean(mini_weight) or clean(mini_qty)):
+        variants.append({
+            "name": "Mini Pack",
+            "option_value": "mini-pack",
+            "sku": clean(mini_style),
+            "price": money(mini_price),
+            "weight_oz": weight_oz(mini_weight),
+            "quantity": clean(mini_qty),
+        })
+
+    if clean(factory_style) and (clean(factory_price) or clean(factory_weight) or clean(factory_qty_desc)):
+        variants.append({
+            "name": "Factory Pack",
+            "option_value": "factory-pack",
+            "sku": clean(factory_style),
+            "price": money(factory_price),
+            "weight_oz": weight_oz(factory_weight),
+            "quantity": clean(factory_qty_desc),
+        })
+
+    return variants
+
 def validate(p):
+    variants = p.get("variants", [])
+
     checks = {
         "Title": bool(p.get("title")),
         "Handle": bool(p.get("handle")),
-        "Mini price": bool(p.get("mini_price")),
-        "Factory price": bool(p.get("factory_price")),
-        "Mini weight": bool(p.get("mini_weight_oz")),
-        "Factory weight": bool(p.get("factory_weight_oz")),
-        "Mini SKU": bool(p.get("mini_style")),
-        "Factory SKU": bool(p.get("factory_style")),
+        "At least one variant": bool(variants),
+        "All variant SKUs": bool(variants) and all(v.get("sku") for v in variants),
+        "All variant prices": bool(variants) and all(v.get("price") for v in variants),
+        "All variant weights": bool(variants) and all(v.get("weight_oz") for v in variants),
         "Collection": bool(p.get("collection")),
         "Subcategory": bool(p.get("subcategory")),
         "Color type": bool(p.get("color_type")),
@@ -81,9 +110,13 @@ def validate(p):
         "Image filename": bool(p.get("image_filename")),
         "Description": bool(p.get("generated_description") or p.get("source_description")),
     }
+
     score = int(round(sum(1 for ok in checks.values() if ok) / len(checks) * 100))
     warnings = [k for k, ok in checks.items() if not ok]
-    if p.get("notes"): warnings.append(p["notes"])
+
+    if p.get("notes"):
+        warnings.append(p["notes"])
+
     return {"checks": checks, "score": score, "warnings": warnings}
 
 def parse_xlsx(path):
@@ -126,6 +159,18 @@ def parse_xlsx(path):
                 "factory_price":money(factory_price), "factory_weight_oz":weight_oz(factory_weight),
                 "mini_style":clean(mini_style), "mini_quantity":clean(mini_qty) or inf["mini_qty_standard"],
                 "mini_price":money(mini_price), "mini_weight_oz":weight_oz(mini_weight),
+
+                "variants": build_variants(
+                    factory_style=factory_style,
+                    factory_price=factory_price,
+                    factory_weight=factory_weight,
+                    factory_qty_desc=clean(factory_qty_desc) or inf["factory_qty_standard"],
+                    mini_style=mini_style,
+                    mini_price=mini_price,
+                    mini_weight=mini_weight,
+                    mini_qty=clean(mini_qty) or inf["mini_qty_standard"],
+                ),
+
                 "source_description":clean(source_description), "generated_description":"", "description_approved":False,
                 "notes":"; ".join(notes),
             }
@@ -133,15 +178,18 @@ def parse_xlsx(path):
     handles, skus = {}, {}
     for p in products:
         handles.setdefault(p["handle"], []).append(p["id"])
-        for sku in [p["factory_style"], p["mini_style"]]:
-            if sku: skus.setdefault(sku, []).append(p["id"])
+        for v in p.get("variants", []):
+            sku = v.get("sku")
+            if sku:
+                skus.setdefault(sku, []).append(p["id"])
     dup_handles = {k for k,v in handles.items() if len(v)>1}
     dup_skus = {k for k,v in skus.items() if len(v)>1}
     for p in products:
         more = []
         if p["handle"] in dup_handles: more.append("Duplicate handle")
-        if p["factory_style"] in dup_skus: more.append("Duplicate factory SKU")
-        if p["mini_style"] in dup_skus: more.append("Duplicate mini SKU")
+        for v in p.get("variants", []):
+            if v.get("sku") in dup_skus:
+                more.append(f"Duplicate variant SKU: {v.get('sku')}")
         if more: p["notes"] = "; ".join([x for x in [p["notes"]] + more if x])
         p["validation"] = validate(p)
         p["status"] = "Needs Review" if p["validation"]["warnings"] else "Ready for Review"
@@ -169,29 +217,76 @@ def review_csv(products):
 
 def shopify_rows(products, approved_only=True, limit=None):
     rows, count = [], 0
+
     for p in products:
-        if approved_only and (not p.get("approved") or p.get("skipped")): continue
-        if limit is not None and count >= limit: break
+        if approved_only and (not p.get("approved") or p.get("skipped")):
+            continue
+
+        variants = p.get("variants", [])
+
+        # Backward compatibility for old imported data without variants yet.
+        if not variants:
+            variants = build_variants(
+                factory_style=p.get("factory_style"),
+                factory_price=p.get("factory_price"),
+                factory_weight=p.get("factory_weight_oz"),
+                factory_qty_desc=p.get("factory_quantity_description"),
+                mini_style=p.get("mini_style"),
+                mini_price=p.get("mini_price"),
+                mini_weight=p.get("mini_weight_oz"),
+                mini_qty=p.get("mini_quantity"),
+            )
+
+        if not variants:
+            continue
+
+        if limit is not None and count >= limit:
+            break
+
         count += 1
         body = p.get("generated_description") or p.get("source_description") or ""
+        option_values = "; ".join(v["option_value"] for v in variants)
+
         common = {
-            "Handle":p["handle"], "Vendor":p.get("vendor") or "Margola",
-            "Product Category":"Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Beads",
-            "Type":p["subcategory"] or "Czech Glass Beads",
-            "Tags":", ".join(x for x in [p["collection"],p["subcategory"],p["color_type"],p["bead_shape"],p["size"]] if x),
-            "Published":"TRUE", "Option1 Name":"Bundle Pack Options", "Option1 Linked To":"product.metafields.custom.bundle_pack_options",
-            "Variant Inventory Tracker":"shopify", "Variant Inventory Qty":"0", "Variant Inventory Policy":"deny", "Variant Fulfillment Service":"manual",
-            "Variant Requires Shipping":"TRUE", "Variant Taxable":"TRUE", "Variant Weight Unit":"oz", "Status":"active",
-            "Style Number (product.metafields.custom.style_number)":p["factory_style"],
-            "Color Type (product.metafields.custom.color_type)":p["color_type"],
-            "Bead shape (product.metafields.custom.bead_shape)":p["bead_shape"],
-            "Color (product.metafields.custom.color)":p["color_name"],
-            "Size (product.metafields.custom.size)":p["size"],
-            "Price Description (product.metafields.custom.price_description)":p["factory_quantity_description"],
+            "Handle": p["handle"],
+            "Vendor": p.get("vendor") or "Margola",
+            "Product Category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Beads",
+            "Type": p["subcategory"] or "Czech Glass Beads",
+            "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
+            "Published": "TRUE",
+            "Option1 Name": "Bundle Pack Options",
+            "Option1 Linked To": "product.metafields.custom.bundle_pack_options",
+            "Variant Inventory Tracker": "shopify",
+            "Variant Inventory Qty": "0",
+            "Variant Inventory Policy": "deny",
+            "Variant Fulfillment Service": "manual",
+            "Variant Requires Shipping": "TRUE",
+            "Variant Taxable": "TRUE",
+            "Variant Weight Unit": "oz",
+            "Status": "active",
+            "Style Number (product.metafields.custom.style_number)": variants[0].get("sku", ""),
+            "Color Type (product.metafields.custom.color_type)": p["color_type"],
+            "Bead shape (product.metafields.custom.bead_shape)": p["bead_shape"],
+            "Color (product.metafields.custom.color)": p["color_name"],
+            "Size (product.metafields.custom.size)": p["size"],
+            "Price Description (product.metafields.custom.price_description)": variants[0].get("quantity", ""),
         }
-        first = dict(common); first.update({"Title":p["title"],"Body (HTML)":body,"Option1 Value":"mini-pack","Variant SKU":p["mini_style"],"Variant Price":p["mini_price"],"Variant Grams":p["mini_weight_oz"],"Image Src":p.get("image_src",""),"Image Alt Text":p.get("image_alt") or p["title"],"Bundle Pack Options (product.metafields.custom.bundle_pack_options)":"mini-pack; factory-pack"})
-        second = dict(common); second.update({"Title":"","Body (HTML)":"","Option1 Value":"factory-pack","Variant SKU":p["factory_style"],"Variant Price":p["factory_price"],"Variant Grams":p["factory_weight_oz"],"Image Src":"","Image Alt Text":"","Bundle Pack Options (product.metafields.custom.bundle_pack_options)":""})
-        rows += [first, second]
+
+        for idx, variant in enumerate(variants):
+            row = dict(common)
+            row.update({
+                "Title": p["title"] if idx == 0 else "",
+                "Body (HTML)": body if idx == 0 else "",
+                "Option1 Value": variant.get("option_value", ""),
+                "Variant SKU": variant.get("sku", ""),
+                "Variant Price": variant.get("price", ""),
+                "Variant Grams": variant.get("weight_oz", ""),
+                "Image Src": p.get("image_src", "") if idx == 0 else "",
+                "Image Alt Text": (p.get("image_alt") or p["title"]) if idx == 0 else "",
+                "Bundle Pack Options (product.metafields.custom.bundle_pack_options)": option_values if idx == 0 else "",
+            })
+            rows.append(row)
+
     return rows
 
 def shopify_csv(products, approved_only=True, limit=None):
