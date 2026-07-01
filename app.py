@@ -215,7 +215,15 @@ def review_csv(products):
         w.writerow(row)
     return out.getvalue()
 
-def shopify_rows(products, approved_only=True, limit=None):
+
+def oz_to_grams(value):
+    try:
+        return str(round(float(value) * 28.3495, 2))
+    except:
+        return ""
+
+def shopify_rows(
+products, approved_only=True, limit=None):
     rows, count = [], 0
 
     for p in products:
@@ -255,21 +263,15 @@ def shopify_rows(products, approved_only=True, limit=None):
             "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
             "Published": "TRUE",
             "Option1 Name": "Bundle Pack Options",
-            "Option1 Linked To": "product.metafields.custom.bundle_pack_options",
-            "Variant Inventory Tracker": "shopify",
-            "Variant Inventory Qty": "0",
+            
+            "Variant Inventory Tracker": "",
+            "Variant Inventory Qty": "",
             "Variant Inventory Policy": "deny",
             "Variant Fulfillment Service": "manual",
             "Variant Requires Shipping": "TRUE",
             "Variant Taxable": "TRUE",
             "Variant Weight Unit": "oz",
-            "Status": "active",
-            "Style Number (product.metafields.custom.style_number)": variants[0].get("sku", ""),
-            "Color Type (product.metafields.custom.color_type)": p["color_type"],
-            "Bead shape (product.metafields.custom.bead_shape)": p["bead_shape"],
-            "Color (product.metafields.custom.color)": p["color_name"],
-            "Size (product.metafields.custom.size)": p["size"],
-            "Price Description (product.metafields.custom.price_description)": variants[0].get("quantity", ""),
+            "Status": "active"
         }
 
         for idx, variant in enumerate(variants):
@@ -280,19 +282,32 @@ def shopify_rows(products, approved_only=True, limit=None):
                 "Option1 Value": variant.get("option_value", ""),
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
-                "Variant Grams": variant.get("weight_oz", ""),
+                "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
                 "Image Src": p.get("image_src", "") if idx == 0 else "",
                 "Image Alt Text": (p.get("image_alt") or p["title"]) if idx == 0 else "",
-                "Bundle Pack Options (product.metafields.custom.bundle_pack_options)": option_values if idx == 0 else "",
+                
             })
             rows.append(row)
 
     return rows
 
 def shopify_csv(products, approved_only=True, limit=None):
-    fields = ["Handle","Title","Body (HTML)","Vendor","Product Category","Type","Tags","Published","Option1 Name","Option1 Value","Option1 Linked To","Variant SKU","Variant Price","Variant Grams","Variant Weight Unit","Variant Inventory Tracker","Variant Inventory Qty","Variant Inventory Policy","Variant Fulfillment Service","Variant Requires Shipping","Variant Taxable","Image Src","Image Alt Text","Status","Bundle Pack Options (product.metafields.custom.bundle_pack_options)","Style Number (product.metafields.custom.style_number)","Color Type (product.metafields.custom.color_type)","Bead shape (product.metafields.custom.bead_shape)","Color (product.metafields.custom.color)","Size (product.metafields.custom.size)","Price Description (product.metafields.custom.price_description)"]
-    out = io.StringIO(); w = csv.DictWriter(out, fieldnames=fields); w.writeheader()
-    for row in shopify_rows(products, approved_only, limit): w.writerow(row)
+    fields = [
+        "Handle","Title","Body (HTML)","Vendor","Product Category","Type","Tags","Published",
+        "Option1 Name","Option1 Value",
+        "Variant SKU","Variant Price","Variant Grams","Variant Weight Unit",
+        "Variant Inventory Tracker","Variant Inventory Qty","Variant Inventory Policy",
+        "Variant Fulfillment Service","Variant Requires Shipping","Variant Taxable",
+        "Image Src","Image Alt Text","Status"
+    ]
+
+    out = io.StringIO()
+    w = csv.DictWriter(out, fieldnames=fields, extrasaction="ignore")
+    w.writeheader()
+
+    for row in shopify_rows(products, approved_only, limit):
+        w.writerow(row)
+
     return out.getvalue()
 
 def parse_descriptions(text):
@@ -376,7 +391,7 @@ def shopify_upload_file(filepath, alt=""):
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
     t=d["stagedTargets"][0]; fields={p["name"]:p["value"] for p in t["parameters"]}; data=open(filepath,"rb").read(); boundary,body=multipart_form_data(fields,{"file":(filename,ctype,data)})
     req=urllib.request.Request(t["url"],data=body,headers={"Content-Type":f"multipart/form-data; boundary={boundary}"},method="POST")
-    urllib.request.urlopen(req,timeout=120).read()
+    urllib.request.urlopen(req, timeout=120, context=ssl.create_default_context(cafile=certifi.where())).read()
     q2="""mutation fileCreate($files:[FileCreateInput!]!){ fileCreate(files:$files){ files{ id alt fileStatus createdAt ... on MediaImage{ image{ url } } ... on GenericFile{ url } } userErrors{ field message } } }"""
     c=shopify_graphql(q2,{"files":[{"alt":alt or filename,"contentType":"IMAGE","originalSource":t["resourceUrl"]}]})["fileCreate"]
     if c.get("userErrors"): raise RuntimeError(json.dumps(c["userErrors"]))
@@ -432,18 +447,68 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/shopify/upload-test-image":
             ctype=self.headers.get("Content-Type",""); m=re.search(r"boundary=(.+)", ctype)
             if not m: return self.send_json({"error":"Missing upload boundary"},400)
-            body=self.read_body(); boundary=("--"+m.group(1)).encode(); file_bytes=None; filename="upload.jpg"
+
+            body=self.read_body()
+            boundary=("--"+m.group(1)).encode()
+            uploaded=[]
+
             for part in body.split(boundary):
-                if b'name="file"' in part:
-                    fm=re.search(rb'filename="([^"]+)"',part)
-                    if fm: filename=fm.group(1).decode("utf-8",errors="replace")
-                    pieces=part.split(b"\r\n\r\n",1)
-                    if len(pieces)==2: file_bytes=pieces[1].rstrip(b"\r\n--"); break
-            if not file_bytes: return self.send_json({"error":"No image uploaded"},400)
-            upload_path=os.path.join(UPLOAD_DIR,"shopify_test_"+os.path.basename(filename)); open(upload_path,"wb").write(file_bytes)
+                if b'name="file"' not in part:
+                    continue
+                fm=re.search(rb'filename="([^"]+)"',part)
+                if not fm:
+                    continue
+                filename=fm.group(1).decode("utf-8",errors="replace")
+                if not filename:
+                    continue
+                pieces=part.split(b"\r\n\r\n",1)
+                if len(pieces)!=2:
+                    continue
+                file_bytes=pieces[1].rstrip(b"\r\n--")
+                if not file_bytes:
+                    continue
+
+                safe_name=os.path.basename(filename)
+                upload_path=os.path.join(UPLOAD_DIR,"shopify_upload_"+safe_name)
+                open(upload_path,"wb").write(file_bytes)
+                uploaded.append((safe_name, upload_path))
+
+            if not uploaded:
+                return self.send_json({"error":"No images uploaded"},400)
+
             try:
-                result=shopify_upload_file(upload_path, alt=os.path.basename(filename)); files=load_file_map(); files.append(result); save_file_map(files); matched,total=apply_file_matches_to_products(); return self.send_json({"ok":True,"file":result,"matched":matched,"total_products":total})
-            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+                files=load_file_map()
+                results=[]
+                errors=[]
+
+                existing_by_filename={f.get("filename"):f for f in files if f.get("filename")}
+
+                for safe_name, upload_path in uploaded:
+                    if safe_name in existing_by_filename:
+                        results.append({"filename": safe_name, "status": "already_known", "url": existing_by_filename[safe_name].get("url","")})
+                        continue
+
+                    try:
+                        result=shopify_upload_file(upload_path, alt=safe_name)
+                        files.append(result)
+                        results.append(result)
+                    except Exception as item_error:
+                        errors.append({"filename": safe_name, "error": str(item_error)})
+
+                save_file_map(files)
+                matched,total=apply_file_matches_to_products()
+
+                return self.send_json({
+                    "ok": len(errors)==0,
+                    "uploaded_count": len(results),
+                    "error_count": len(errors),
+                    "files": results,
+                    "errors": errors,
+                    "matched": matched,
+                    "total_products": total
+                })
+            except Exception as e:
+                return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/import":
             ctype = self.headers.get("Content-Type",""); m = re.search(r"boundary=(.+)", ctype)
             if not m: return self.send_json({"error":"Missing upload boundary"},400)

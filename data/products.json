@@ -1,12 +1,12 @@
 [
   {
-    "id": "fbde3379-0f0f-45a6-b68d-ff668f30d364",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "8fd2684e-f39c-4483-9ac5-14d6e23e6e36",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 4,
-    "approved": false,
+    "approved": true,
     "skipped": false,
-    "status": "Ready for Review",
+    "status": "Approved",
     "title": "Czech Glass Roller Beads 9mm CRYSTAL TRANSPAENT",
     "handle": "czech-glass-roller-beads-9mm-crystal-transpaent",
     "brand": "",
@@ -18,8 +18,8 @@
     "size": "9mm",
     "color_number": "00030  (USE THE 0002 IMAGE)",
     "color_name": "CRYSTAL TRANSPAENT",
-    "image_filename": "roller-9mm-00030.jpg",
-    "image_src": "",
+    "image_filename": "testimage.jpg",
+    "image_src": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/shopify_upload_testimage.jpg?v=1782868113",
     "image_alt": "Czech Glass Roller Beads 9mm CRYSTAL TRANSPAENT",
     "factory_style": "ROLLER-9MM-00030",
     "factory_quantity": "1 MASS",
@@ -30,6 +30,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-00030mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-00030",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -38,12 +56,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -56,8 +72,8 @@
     }
   },
   {
-    "id": "a3b59b2a-b1b1-4816-acd0-f626fb07542a",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "bddb20be-5102-42ef-ba84-64abec5a2026",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 5,
     "approved": false,
@@ -86,6 +102,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-02010mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-02010",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -94,12 +128,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -112,8 +144,8 @@
     }
   },
   {
-    "id": "0882b2f9-4352-4494-9e42-1df42c4e5510",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c24f7c5d-eb48-4b79-af89-3fd7b3db4fd9",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 6,
     "approved": false,
@@ -142,6 +174,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10020mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10020",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -150,12 +200,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -168,8 +216,8 @@
     }
   },
   {
-    "id": "a271d443-01b3-44a8-8c82-c9ce61b94ee0",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "19afa519-676b-4223-95b7-eeba3e75b690",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 7,
     "approved": false,
@@ -198,6 +246,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10060mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10060",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -206,12 +272,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -224,8 +288,8 @@
     }
   },
   {
-    "id": "39ae8ef0-f363-4a14-83d9-3d4143ece870",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c5b3dc8b-8701-4b9f-80f8-d791191b674f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 8,
     "approved": false,
@@ -254,6 +318,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-1006Mmini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-1006M",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -262,12 +344,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -280,8 +360,8 @@
     }
   },
   {
-    "id": "00909635-972b-498a-b947-8bfecdf69a33",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "9db6579f-d5e9-4336-898f-c8fb7731e66d",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 9,
     "approved": false,
@@ -310,6 +390,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10090mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10090",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -318,12 +416,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -336,8 +432,8 @@
     }
   },
   {
-    "id": "258f38f5-83d5-4805-a4b9-69aee5a2ae1c",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "4ee96f52-6f33-4c93-acf4-5eddf2745bd2",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 10,
     "approved": false,
@@ -366,6 +462,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-1011Mmini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-1011M",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -374,12 +488,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -392,8 +504,8 @@
     }
   },
   {
-    "id": "1c0cb001-a805-475c-901f-6de9912cfeb6",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b0a48283-4f8a-4b89-878d-afd1d99dc3bd",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 11,
     "approved": false,
@@ -422,6 +534,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10220mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10220",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -430,12 +560,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -448,8 +576,8 @@
     }
   },
   {
-    "id": "9fa179d8-c02e-4e04-9f96-30a493add9c2",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "7ae7440d-d154-4e64-a1b9-40f596128d63",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 12,
     "approved": false,
@@ -478,6 +606,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10230mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10230",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -486,12 +632,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -504,8 +648,8 @@
     }
   },
   {
-    "id": "5d3819c8-5f4d-4266-9cd1-53f9211ac069",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "4df834c5-8153-40f8-8b3c-247a99e4ad3b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 13,
     "approved": false,
@@ -534,6 +678,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-10250mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-10250",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -542,12 +704,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -560,8 +720,8 @@
     }
   },
   {
-    "id": "f12efe39-bcfa-4ac7-8636-9ff1fa79ffaa",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "ddc25cb6-7eff-4dfe-a643-e2e37bb8adf5",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 14,
     "approved": false,
@@ -590,6 +750,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "17.50",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-18016mini",
+        "price": "17.50",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-18016",
+        "price": "96.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -598,12 +776,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -616,8 +792,8 @@
     }
   },
   {
-    "id": "978d6378-a4d5-4c11-958c-6250087405a5",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "255a5462-1484-4931-9787-23b9f3c5e5f2",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 15,
     "approved": false,
@@ -646,6 +822,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-20030mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-20030",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -654,12 +848,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -672,8 +864,8 @@
     }
   },
   {
-    "id": "b838caca-7330-4927-a934-6232ae3e4000",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b357c9e0-1b71-4d9c-b321-4421aaaaa0e5",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 16,
     "approved": false,
@@ -702,6 +894,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-2003Mmini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-2003M",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -710,12 +920,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -728,8 +936,8 @@
     }
   },
   {
-    "id": "734cc945-56f3-4e59-933e-10eaebd9ec37",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1341ee5a-7477-4e46-9a70-c992294a1d14",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 17,
     "approved": false,
@@ -758,6 +966,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-20060mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-20060",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -766,12 +992,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -784,8 +1008,8 @@
     }
   },
   {
-    "id": "38e87460-ed8c-4af5-b29a-193ede2994e5",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "42fbbf94-8c9f-4edd-9031-525c41cc33ae",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 18,
     "approved": false,
@@ -814,6 +1038,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "/",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-20080mini",
+        "price": "/",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-20080",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -822,12 +1064,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -840,8 +1080,8 @@
     }
   },
   {
-    "id": "7a1d64b9-f8b1-4212-847c-2bbe83a55c35",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "85e6a6b0-7457-4896-aaf8-d4476e870f21",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 19,
     "approved": false,
@@ -870,6 +1110,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-30030mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-30030",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -878,12 +1136,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -896,8 +1152,8 @@
     }
   },
   {
-    "id": "1a7406fd-dbb4-449b-8a3a-10781161ffd4",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "12c9d778-39d6-48df-9199-d203fd7bece4",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 20,
     "approved": false,
@@ -926,6 +1182,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-3004Mmini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-3004M",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -934,12 +1208,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -952,8 +1224,8 @@
     }
   },
   {
-    "id": "c499e058-202f-44c7-a253-41b46d38eaf4",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "2db277fe-5d5a-4e8d-8865-e7e5217e9546",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 21,
     "approved": false,
@@ -982,6 +1254,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-30060mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-30060",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -990,12 +1280,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1008,8 +1296,8 @@
     }
   },
   {
-    "id": "7f8d0abf-da16-408b-b3c5-c60303d713a1",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "6017e4e9-106a-477f-b492-ab39bb092ed9",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 22,
     "approved": false,
@@ -1038,6 +1326,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-30090mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-30090",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1046,12 +1352,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1064,8 +1368,8 @@
     }
   },
   {
-    "id": "3fc3a71e-bad6-452a-9f33-896766968a0f",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c54ce0e8-edd9-4886-a85c-43e133c13b1b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 23,
     "approved": false,
@@ -1094,6 +1398,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-40010mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-40010",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1102,12 +1424,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1120,8 +1440,8 @@
     }
   },
   {
-    "id": "88096fe2-cac5-4851-a465-83142d0d1c4b",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "bacabf2e-ebc9-46e3-a697-15847ca1b3b0",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 24,
     "approved": false,
@@ -1150,6 +1470,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50130mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50130",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1158,12 +1496,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1176,8 +1512,8 @@
     }
   },
   {
-    "id": "c95bd6ae-a67a-4251-9614-68faf943f82e",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "53e50475-fdff-4a7b-96e5-787e96f59325",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 25,
     "approved": false,
@@ -1206,6 +1542,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50150mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50150",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1214,12 +1568,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1232,8 +1584,8 @@
     }
   },
   {
-    "id": "1ef42aa5-5356-4499-b77f-58c52d56026b",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "dce3ef05-7f59-4d5d-8820-6f3435bd24f3",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 26,
     "approved": false,
@@ -1262,6 +1614,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50230mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50230",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1270,12 +1640,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1288,8 +1656,8 @@
     }
   },
   {
-    "id": "abf154ce-4c74-4e03-8ff6-766ac8a9ca13",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "7b7a7703-508b-41fa-b812-280e07c43a86",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 27,
     "approved": false,
@@ -1318,6 +1686,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50250mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50250",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1326,12 +1712,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1344,8 +1728,8 @@
     }
   },
   {
-    "id": "cb3d69f1-aa68-4b84-900a-14df47b1593c",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "a9f18f59-eb48-4280-90ea-15e74d2b3fd9",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 28,
     "approved": false,
@@ -1374,6 +1758,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50710mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50710",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1382,12 +1784,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1400,8 +1800,8 @@
     }
   },
   {
-    "id": "40948df8-c724-4424-80e8-15c0da0a8e57",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "dc402b02-f297-40c6-8a75-aa32dcde2725",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 29,
     "approved": false,
@@ -1430,6 +1830,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-50730mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-50730",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1438,12 +1856,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1456,8 +1872,8 @@
     }
   },
   {
-    "id": "305f891a-a293-4547-9e54-bc818fdcd353",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "db59436b-4ccb-4338-8948-69fb239ee534",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 30,
     "approved": false,
@@ -1486,6 +1902,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-5073Mmini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-5073M",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1494,12 +1928,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1512,8 +1944,8 @@
     }
   },
   {
-    "id": "1637fb69-3bc6-4fd7-b566-dd36c42c8a99",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c82ec6cb-076a-4d00-8aed-d17b87496df7",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 31,
     "approved": false,
@@ -1542,6 +1974,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-60010mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-60010",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1550,12 +2000,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1568,8 +2016,8 @@
     }
   },
   {
-    "id": "6f37d75a-865b-4e34-b914-367b79308375",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "3696b6f5-83b9-403b-a796-b20399bb5ceb",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 32,
     "approved": false,
@@ -1598,6 +2046,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-60040mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-60040",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1606,12 +2072,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1624,8 +2088,8 @@
     }
   },
   {
-    "id": "560a6cfc-eafc-40af-b6a1-bb4a84aeb608",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "871f951d-d77a-4c3f-aca6-372fa4fc7b02",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 33,
     "approved": false,
@@ -1654,6 +2118,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-60080mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-60080",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1662,12 +2144,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1680,8 +2160,8 @@
     }
   },
   {
-    "id": "d09ad6c9-ce68-4ff3-96be-4c661cd4d784",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "5602306a-082b-4f3f-a2e5-3c6957a6c368",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 34,
     "approved": false,
@@ -1710,6 +2190,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "13.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-60150mini",
+        "price": "13.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-60150",
+        "price": "70.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1718,12 +2216,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1736,8 +2232,8 @@
     }
   },
   {
-    "id": "ee87d5f3-db73-4f78-937a-7c7207b59083",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "e71cbd0c-9c0d-4b07-8bb9-3185ee8916bf",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 35,
     "approved": false,
@@ -1766,6 +2262,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-70100mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-70100",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1774,12 +2288,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1792,8 +2304,8 @@
     }
   },
   {
-    "id": "003bbfad-49f2-4640-89de-073c7090201f",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "9b8e13e5-d4f5-4ec4-8ca9-3f08372a7460",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 36,
     "approved": false,
@@ -1822,6 +2334,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-70110mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-70110",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1830,12 +2360,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1848,8 +2376,8 @@
     }
   },
   {
-    "id": "7e20969a-e023-4897-bf4f-ae8c8758f592",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "ad497ef4-2003-4fd3-8b49-842d9bbd8bbd",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 37,
     "approved": false,
@@ -1878,6 +2406,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-90040mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-90040",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1886,12 +2432,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1904,8 +2448,8 @@
     }
   },
   {
-    "id": "6d05a5c3-072c-489d-b9c5-20dfa45a8587",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "e62782e7-ac30-4725-b857-fe88ac6a1e0f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 38,
     "approved": false,
@@ -1934,6 +2478,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-90050mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-90050",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1942,12 +2504,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -1960,8 +2520,8 @@
     }
   },
   {
-    "id": "d90569a4-0e44-40cd-a670-8cb03458df10",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "7b21e5ed-f918-4f83-aa05-9a07a6673a4d",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 39,
     "approved": false,
@@ -1990,6 +2550,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-90070mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-90070",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -1998,12 +2576,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2016,8 +2592,8 @@
     }
   },
   {
-    "id": "bcf64e14-da6e-4ad2-8938-f8111d16bdba",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "af59ffc0-1e19-4ed3-96ce-5e736c0986de",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 40,
     "approved": false,
@@ -2046,6 +2622,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-90090mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-90090",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2054,12 +2648,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2072,8 +2664,8 @@
     }
   },
   {
-    "id": "e02e886e-e35d-4025-9eb9-67811ca51a78",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "3ead07e6-fdf0-4997-9dfb-19639650e6ef",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9mm TRANSPARENT COLORS",
     "source_row": 41,
     "approved": false,
@@ -2102,6 +2694,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-90120mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-90120",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2110,12 +2720,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2128,8 +2736,8 @@
     }
   },
   {
-    "id": "7d71a04f-b42e-40bd-b2dd-98efd5bb098f",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "7e85b93b-932c-46b9-8d75-67910745c224",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 3,
     "approved": false,
@@ -2158,6 +2766,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-00030mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-00030",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2166,12 +2792,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2184,8 +2808,8 @@
     }
   },
   {
-    "id": "ef37cda7-153c-4928-8bb5-7ab488b6b6ba",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "3c26581a-b336-45af-bcf6-36f3f8902245",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 4,
     "approved": false,
@@ -2214,6 +2838,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-10020mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-10020",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2222,12 +2864,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2240,8 +2880,8 @@
     }
   },
   {
-    "id": "7288daed-8ac5-4a03-92b1-2fdb3a2753f3",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "db39c157-242d-4e80-9c98-e803dc61e964",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 5,
     "approved": false,
@@ -2270,6 +2910,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM10060mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM10060",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2278,12 +2936,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2296,8 +2952,8 @@
     }
   },
   {
-    "id": "c1ce95de-5ffc-4b9f-bdb8-e20db5f02999",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "f7211ee3-8c1a-4dae-9a72-ee47c57a16a8",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 6,
     "approved": false,
@@ -2326,6 +2982,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-10090mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-10090",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2334,12 +3008,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2352,8 +3024,8 @@
     }
   },
   {
-    "id": "3b65a98d-2ba5-4b75-8d47-e01739b68d6d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "6cd869cf-f1aa-4d8a-9438-2aac23023a61",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 7,
     "approved": false,
@@ -2382,6 +3054,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-10110mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-10110",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2390,12 +3080,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2408,8 +3096,8 @@
     }
   },
   {
-    "id": "7649981b-e39d-43a1-a73e-22ab8b134fa4",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "65275e8c-9182-42b2-896d-617d081dd3ff",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 8,
     "approved": false,
@@ -2438,6 +3126,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-10230mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-10230",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2446,12 +3152,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2464,8 +3168,8 @@
     }
   },
   {
-    "id": "fe867f12-2023-49d9-a344-3da65c1bd8f8",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "9848d245-e8af-4512-ae0f-627d261eb401",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 9,
     "approved": false,
@@ -2494,6 +3198,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-20030mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-20030",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2502,12 +3224,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2520,8 +3240,8 @@
     }
   },
   {
-    "id": "e15b9489-9828-4797-acc0-246f83620706",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "d38fd288-c7ed-4311-bdb0-e4a67b15029b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 10,
     "approved": false,
@@ -2550,6 +3270,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-20050mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-20050",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2558,12 +3296,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2576,8 +3312,8 @@
     }
   },
   {
-    "id": "cc8b3750-1f52-4904-aef0-f2e24d62acf9",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1408fcc8-e0f8-4c73-9584-9ec0d5f1e934",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 11,
     "approved": false,
@@ -2606,6 +3342,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-30030mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-30030",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2614,12 +3368,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2632,8 +3384,8 @@
     }
   },
   {
-    "id": "2388a707-3c8a-4374-84ae-e08bffe67a11",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "bf662dbc-b36c-4084-bdd5-90190c522c86",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 12,
     "approved": false,
@@ -2662,6 +3414,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-30040mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-30040",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2670,12 +3440,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2688,8 +3456,8 @@
     }
   },
   {
-    "id": "b700da22-d8c2-4453-844e-e9adce16a06d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "3f389c0d-396d-40cb-aedb-0ef480fe361c",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 13,
     "approved": false,
@@ -2718,6 +3486,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-30060mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-30060",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2726,12 +3512,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2744,8 +3528,8 @@
     }
   },
   {
-    "id": "bb657283-07b0-4303-920a-55b100485788",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "45cd2fa9-b28b-4fe1-947a-721cefab989e",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 14,
     "approved": false,
@@ -2774,6 +3558,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-30090mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-30090",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2782,12 +3584,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2800,8 +3600,8 @@
     }
   },
   {
-    "id": "fd8dd05d-392f-49b1-baba-8f9d53e3b972",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "9856bb91-8c2b-4958-8aac-161e6ff4a644",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 15,
     "approved": false,
@@ -2830,6 +3630,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-40020mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-40020",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2838,12 +3656,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2856,8 +3672,8 @@
     }
   },
   {
-    "id": "cc7aa6b8-d72e-4af1-a4b7-221d34446421",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "2f3aac66-a1b3-4d30-b55b-9acec334e270",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 16,
     "approved": false,
@@ -2886,6 +3702,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-50130mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-50130",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2894,12 +3728,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2912,8 +3744,8 @@
     }
   },
   {
-    "id": "4aec09d1-f093-4056-8cb4-5111ce275112",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b6335d76-d2e1-4c2a-b0b6-1105bd8c0d30",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 17,
     "approved": false,
@@ -2942,6 +3774,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-50150mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-50150",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -2950,12 +3800,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -2968,8 +3816,8 @@
     }
   },
   {
-    "id": "c6f61e12-91c8-4751-b582-392c3084ba0e",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "99e3c479-b9ad-4a31-ab8f-9ef85fab01ee",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 18,
     "approved": false,
@@ -2998,6 +3846,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-50250mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-50250",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3006,12 +3872,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3024,8 +3888,8 @@
     }
   },
   {
-    "id": "e9b3b59f-cc9f-4bad-91c5-586fa1082d2d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "42b27336-5dd2-42ef-a06a-c264965d377f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 19,
     "approved": false,
@@ -3054,6 +3918,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.50",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-5043Mmini",
+        "price": "7.50",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-5043M",
+        "price": "38.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3062,12 +3944,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3080,8 +3960,8 @@
     }
   },
   {
-    "id": "ddcd7470-66b8-4544-b2da-22b9ef04a827",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "017e55df-50a2-4836-9771-4ed06d7cefe6",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 20,
     "approved": false,
@@ -3110,6 +3990,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-50710mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-50710",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3118,12 +4016,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3136,8 +4032,8 @@
     }
   },
   {
-    "id": "3376bb65-d6d7-4d44-912e-ffddeca0fce3",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c792e192-b353-4437-a176-be3e6745a315",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 21,
     "approved": false,
@@ -3166,6 +4062,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-50730mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-50730",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3174,12 +4088,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3192,8 +4104,8 @@
     }
   },
   {
-    "id": "5a216d5e-45c3-4cef-b8a1-6b00f04e8866",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "d3385a96-8aad-4bba-a283-a8c46ce8b23f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 22,
     "approved": false,
@@ -3222,6 +4134,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-60010mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-60010",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3230,12 +4160,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3248,8 +4176,8 @@
     }
   },
   {
-    "id": "5e1e2e3d-b95a-4bf6-b6e6-55b2b5237432",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "6ecc9c55-3580-4f66-8ce2-0c594d41e23b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 23,
     "approved": false,
@@ -3278,6 +4206,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-60040mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-60040",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3286,12 +4232,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3304,8 +4248,8 @@
     }
   },
   {
-    "id": "fe6fd7b6-5498-4747-bd5c-83b454c42d1d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "de3c5d45-f9ac-4d44-8963-496a7f6cc621",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 24,
     "approved": false,
@@ -3334,6 +4278,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-60080mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-60080",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3342,12 +4304,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3360,8 +4320,8 @@
     }
   },
   {
-    "id": "7dbfa8a8-8d33-4e41-b6cb-69b9c3a1407e",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "cab722c3-da3e-4276-8bb4-844804a43809",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 25,
     "approved": false,
@@ -3390,6 +4350,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-70100mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-70100",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3398,12 +4376,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3416,8 +4392,8 @@
     }
   },
   {
-    "id": "33555f0d-1ffc-45d2-a2b6-25a665eaa921",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "fb68b7fd-8ab8-450a-8957-44a71963a86a",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 26,
     "approved": false,
@@ -3446,6 +4422,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-80020mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-80020",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3454,12 +4448,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3472,8 +4464,8 @@
     }
   },
   {
-    "id": "b4309e8c-5e30-4e6a-b429-bd1cc5e684c0",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "4e81c0a1-b7f8-41f3-aa5b-68f877e39418",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 27,
     "approved": false,
@@ -3502,6 +4494,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.00",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-90040mini",
+        "price": "7.00",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-90040",
+        "price": "35.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3510,12 +4520,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3528,8 +4536,8 @@
     }
   },
   {
-    "id": "3af193e7-a4cb-4ac1-bddd-ad5864cafe04",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "076d126a-d6fc-42ed-a1f5-696ca730e107",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "Roller 6MM TRANSPARENT COLORS",
     "source_row": 28,
     "approved": false,
@@ -3558,6 +4566,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "7.50",
     "mini_weight_oz": "1.45",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-6MM-9008Mmini",
+        "price": "7.50",
+        "weight_oz": "1.45",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-9008M",
+        "price": "38.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3566,12 +4592,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3584,8 +4608,8 @@
     }
   },
   {
-    "id": "938f38cf-fbd9-44c0-8e0a-34bce3bf17de",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "793698d9-26c4-4dbf-8190-cde2fe1abb54",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 3,
     "approved": false,
@@ -3614,6 +4638,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-03050mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-03050",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3622,12 +4664,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3640,8 +4680,8 @@
     }
   },
   {
-    "id": "ea9260be-9208-4e9f-82c1-50f19ed59732",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "23aca5d9-0633-4780-91df-0208d7c55795",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 4,
     "approved": false,
@@ -3670,6 +4710,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-13600mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-13600",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3678,12 +4736,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3698,8 +4754,8 @@
     }
   },
   {
-    "id": "fd205eee-be26-469f-a4c3-030f6b9be714",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "43af3ef1-2f10-4eeb-acad-0dbf99139510",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 5,
     "approved": false,
@@ -3728,6 +4784,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-13620mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-13620",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3736,12 +4810,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3754,8 +4826,8 @@
     }
   },
   {
-    "id": "421e708e-889d-41df-b139-6914664553d8",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "f198eaad-9120-4d6b-b148-83e2e0c1c3d3",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 6,
     "approved": false,
@@ -3784,6 +4856,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-14400mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-14400",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3792,12 +4882,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3810,8 +4898,8 @@
     }
   },
   {
-    "id": "f0d4ab3b-f344-4874-b62c-1b37ce11a024",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "5544b167-a2ac-4574-b414-687e1fdd894b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 7,
     "approved": false,
@@ -3840,6 +4928,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-21415mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-21415",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3848,12 +4954,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3866,8 +4970,8 @@
     }
   },
   {
-    "id": "b265193a-08c5-4e2b-8d13-217f832e6e6d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "a29c9885-81a7-4a67-a20a-e2e64545e954",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 8,
     "approved": false,
@@ -3896,6 +5000,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-21435mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-21435",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3904,12 +5026,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3922,8 +5042,8 @@
     }
   },
   {
-    "id": "95dfa439-daf8-4688-9ec4-c55ded053e9d",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "d5500d0b-d22e-4323-97b5-1bac475d6bf6",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 9,
     "approved": false,
@@ -3952,6 +5072,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-23030mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-23030",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -3960,12 +5098,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -3978,8 +5114,8 @@
     }
   },
   {
-    "id": "7373605f-1d5a-40a4-92b2-33372478f3ec",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c590c2a7-7dc8-457a-829f-7184e1d3a0ed",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 10,
     "approved": false,
@@ -4008,6 +5144,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "14.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-23980mini",
+        "price": "14.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-23980",
+        "price": "75.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4016,12 +5170,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4034,8 +5186,8 @@
     }
   },
   {
-    "id": "587475ef-4837-4b11-b3d9-903ac1c1f7a9",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1099c23c-aab1-4a80-93ed-566cf1792b26",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 11,
     "approved": false,
@@ -4064,6 +5216,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-31010mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-31010",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4072,12 +5242,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4090,8 +5258,8 @@
     }
   },
   {
-    "id": "949f7c5a-8d9f-4489-920e-02ad75e8c7ce",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1eca4364-3274-4c51-95db-2bd57c158e9b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 12,
     "approved": false,
@@ -4120,6 +5288,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-32010mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-32010",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4128,12 +5314,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4146,8 +5330,8 @@
     }
   },
   {
-    "id": "3c5c123f-242d-4a82-b050-cb1b5f28299e",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "16dbb554-b134-40e0-98c2-7fcf1fa6cf97",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 13,
     "approved": false,
@@ -4176,6 +5360,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-33060mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-33060",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4184,12 +5386,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4202,8 +5402,8 @@
     }
   },
   {
-    "id": "6b4abb31-52da-4f4c-a796-6d6f19e64588",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "e8be959a-d599-4258-9a0f-62debcc188a8",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 14,
     "approved": false,
@@ -4232,6 +5432,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-4302Lmini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-4302L",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4240,12 +5458,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4258,8 +5474,8 @@
     }
   },
   {
-    "id": "12e2985c-32ce-4248-9be9-dea972263b67",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "4c8e1997-bee3-422c-aaad-33e1083d6627",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 15,
     "approved": false,
@@ -4288,6 +5504,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-51010mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-51010",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4296,12 +5530,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4314,8 +5546,8 @@
     }
   },
   {
-    "id": "8b1cd4c3-e547-4ba3-a100-e756df193998",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "dc1b7445-2f5e-41a5-9795-f1a9defc7309",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 16,
     "approved": false,
@@ -4344,6 +5576,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-52120mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-52120",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4352,12 +5602,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4370,8 +5618,8 @@
     }
   },
   {
-    "id": "f8e8e30c-ee02-4530-9e3d-c58462313b84",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "6d23375b-321f-46ee-b4d6-650cfd8e720b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 17,
     "approved": false,
@@ -4400,6 +5648,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-63040mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-63040",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4408,12 +5674,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4426,8 +5690,8 @@
     }
   },
   {
-    "id": "4ac9484d-792a-4182-af8e-8f50d033e9d7",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c95ad9a7-5da6-457d-b986-c6fd42e374a5",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 18,
     "approved": false,
@@ -4456,6 +5720,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-63110mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-63110",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4464,12 +5746,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4482,8 +5762,8 @@
     }
   },
   {
-    "id": "c12b6ef9-b154-4b3e-88ca-ab82bd093383",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "bbeed748-1735-412a-aa3f-43c73ad37c42",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 19,
     "approved": false,
@@ -4512,6 +5792,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-63130mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-63130",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4520,12 +5818,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4538,8 +5834,8 @@
     }
   },
   {
-    "id": "fa9ef27d-3262-4011-b833-9a5920b7f2bb",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "7a62894d-7e13-4abd-8b33-385e7b332567",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 20,
     "approved": false,
@@ -4568,6 +5864,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "17.50",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM71010mini",
+        "price": "17.50",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM71010",
+        "price": "96.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4576,12 +5890,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4594,8 +5906,8 @@
     }
   },
   {
-    "id": "a2c66f56-f59b-4f47-a60c-004908c8c93b",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "8380639b-ad16-45ba-94c0-2e4e1174007c",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 21,
     "approved": false,
@@ -4624,6 +5936,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "34.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM73010mini",
+        "price": "34.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM73010",
+        "price": "189.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4632,12 +5962,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4650,8 +5978,8 @@
     }
   },
   {
-    "id": "4edfab63-654b-4489-8c2d-2b14e3374a21",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "501f3602-a35a-4b83-a82c-607a8a59c912",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 22,
     "approved": false,
@@ -4680,6 +6008,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-81210mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-81210",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4688,12 +6034,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4706,8 +6050,8 @@
     }
   },
   {
-    "id": "ec97d78e-4567-44cd-b095-b37c9079ac65",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "db5143d4-69c3-4283-8a13-3174d26b5924",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 23,
     "approved": false,
@@ -4736,6 +6080,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-83110mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-83110",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4744,12 +6106,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4762,8 +6122,8 @@
     }
   },
   {
-    "id": "5dc2e285-e9c0-46bd-866c-6e368b762d13",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "65051eb8-8ed3-4302-a5ea-7d604c0aef28",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 24,
     "approved": false,
@@ -4792,6 +6152,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-93110mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-93110",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4800,12 +6178,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4818,8 +6194,8 @@
     }
   },
   {
-    "id": "698e016c-e35b-4a15-b7b5-0cc76cc7b072",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "792ab29a-3297-49a0-a991-ffa21827cac5",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 25,
     "approved": false,
@@ -4848,6 +6224,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-93140mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-93140",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4856,12 +6250,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4874,8 +6266,8 @@
     }
   },
   {
-    "id": "55d15cf8-c4b2-42ec-9324-065c7abab7d2",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b7d7d03c-efd2-4e46-a9d1-18b10cdc527a",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 26,
     "approved": false,
@@ -4904,6 +6296,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-93200mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-93200",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4912,12 +6322,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4930,8 +6338,8 @@
     }
   },
   {
-    "id": "7eb99a30-fb43-4ad7-99b2-7473aed18524",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "db8b802f-31ca-4063-8753-04876872a8de",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 27,
     "approved": false,
@@ -4960,6 +6368,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-93210mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-93210",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -4968,12 +6394,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -4986,8 +6410,8 @@
     }
   },
   {
-    "id": "a1044dc1-0223-411e-b1b4-76986f801aea",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "010e782b-01e4-4078-86c9-d321d8baef41",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 28,
     "approved": false,
@@ -5016,6 +6440,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01700mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01700",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5024,12 +6466,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5042,8 +6482,8 @@
     }
   },
   {
-    "id": "89c78e68-65cc-48b1-8f04-fbf262b295d3",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "963cc2d3-b092-43e6-9e99-7e2529579fca",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 29,
     "approved": false,
@@ -5072,6 +6512,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01710mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01710",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5080,12 +6538,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5098,8 +6554,8 @@
     }
   },
   {
-    "id": "761f708c-f48b-4e36-8116-36d4198461fe",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "764e3731-bfad-482b-b2d6-9521884ab326",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 30,
     "approved": false,
@@ -5128,6 +6584,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01730mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01730",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5136,12 +6610,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5154,8 +6626,8 @@
     }
   },
   {
-    "id": "6113ecb7-0853-42ab-8002-b843d7024540",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "884ea831-2276-4d09-a5fd-ea08e4ab9ebd",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 31,
     "approved": false,
@@ -5184,6 +6656,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01750mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01750",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5192,12 +6682,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5210,8 +6698,8 @@
     }
   },
   {
-    "id": "9c6bd85b-5e1f-4bcd-bdb5-eee8464800bb",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "87a464ba-6581-49ab-8ee0-cc6f356ee37c",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 32,
     "approved": false,
@@ -5240,6 +6728,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01790mini",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01790",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5248,12 +6754,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5266,8 +6770,8 @@
     }
   },
   {
-    "id": "8d5c325e-7ca6-4414-88a1-5af218b92bb3",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "871495a4-b193-4e36-9cfc-5ce893357034",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 9MM OPAQUE COLORS",
     "source_row": 33,
     "approved": false,
@@ -5296,6 +6800,24 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "16.00",
     "mini_weight_oz": "4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "ROLLER-9MM-01720mini'",
+        "price": "16.00",
+        "weight_oz": "4",
+        "quantity": "1 GROSS IS 144 BEADS"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-9MM-01720",
+        "price": "89.00",
+        "weight_oz": "32",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5304,12 +6826,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5322,13 +6842,13 @@
     }
   },
   {
-    "id": "19d5ff01-3907-4fb2-af0e-554c099b6026",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "baf0cd4e-b851-4041-a881-1b4fd693e2ff",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 2,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm CHALK WHITE OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-chalk-white-opaque",
     "brand": "",
@@ -5352,6 +6872,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-03050mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5360,12 +6890,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5373,20 +6901,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "89ccc919-934b-4cf3-9dd0-0da9a6447275",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "e8e0cd7d-e6cf-42aa-b2e3-371f19bfc777",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 3,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm GUNMETAL",
     "handle": "czech-glass-roller-beads-6mm-gunmetal",
     "brand": "",
@@ -5410,6 +6936,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-14400mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5418,12 +6954,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5431,20 +6965,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "a10410f8-ac06-41a4-9620-db386e33d550",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "61087487-6998-4412-a20e-297cda1ede72",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 4,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm BROWN IRIS METALLIC",
     "handle": "czech-glass-roller-beads-6mm-brown-iris-metallic",
     "brand": "",
@@ -5468,6 +7000,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-21415mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5476,12 +7018,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5489,20 +7029,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "8f4a6679-dea9-4fe5-84b3-64768b1a2cf0",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b79e5326-2ca5-427d-a1ff-1448369b599a",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 5,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm BLUE IRS METALLIC",
     "handle": "czech-glass-roller-beads-6mm-blue-irs-metallic",
     "brand": "",
@@ -5526,6 +7064,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-21435mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5534,12 +7082,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5547,20 +7093,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "f139d844-3e54-48e3-890d-9785da12e451",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "a4aba96e-5023-4f26-b52d-93b11e7414c0",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 6,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm GREEN IRIS METALLIC",
     "handle": "czech-glass-roller-beads-6mm-green-iris-metallic",
     "brand": "",
@@ -5584,6 +7128,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-21455mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5592,12 +7146,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5605,20 +7157,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "137ed7f5-8486-48de-b343-d2d191494c71",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "ac9f3ac6-ea91-4dbf-aa54-36971178ba99",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 7,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm PURPLE IRIS METALLIC",
     "handle": "czech-glass-roller-beads-6mm-purple-iris-metallic",
     "brand": "",
@@ -5642,6 +7192,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-21495mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5650,12 +7210,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5663,20 +7221,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "d0b0954a-b871-48e3-8ecb-8e737816df30",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "a2691128-ca0f-4a9d-a0a7-f4879407294d",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 8,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm TRANSLUCENT BLUE OPAL GLASS",
     "handle": "czech-glass-roller-beads-6mm-translucent-blue-opal-glass",
     "brand": "",
@@ -5700,6 +7256,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-31010mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5708,12 +7274,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5721,20 +7285,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "25238e9c-5757-463f-998f-84bfb1b7d215",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1ba69347-4f4d-4666-a73a-12d7780817e9",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 9,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm JET BLACK AB OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-jet-black-ab-opaque",
     "brand": "",
@@ -5758,6 +7320,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-2398ABmini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5766,12 +7338,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5779,20 +7349,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "d0b1dd7f-d4e9-4abd-842c-7609419cec3b",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "942c80eb-5f99-44f1-860e-6cc4a6d40e01",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 10,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm BLUE TURQUOISE MATTE OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-blue-turquoise-matte-opaque",
     "brand": "",
@@ -5816,6 +7384,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-6302Mmini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5824,12 +7402,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5837,20 +7413,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "57fdbec9-b8b2-4857-bd71-b2534105a3d5",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "ba34b9ed-7d93-48ce-a0d3-2c7676841e27",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 11,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm YELLOW OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-yellow-opaque",
     "brand": "",
@@ -5874,6 +7448,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-83130mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5882,12 +7466,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5895,20 +7477,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "479902f5-ba74-46ed-9ca4-7f68ed9a5597",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "d3fb8d1a-f92f-455c-9420-22aa710b1c12",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 12,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm ORANGE OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-orange-opaque",
     "brand": "",
@@ -5932,6 +7512,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-93140mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5940,12 +7530,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -5953,20 +7541,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "34f494df-d671-4a8d-a5b0-353aa41d8658",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c5bc2015-c594-4344-9c85-5281d27e3d5f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 13,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm RED OPAQUE",
     "handle": "czech-glass-roller-beads-6mm-red-opaque",
     "brand": "",
@@ -5990,6 +7576,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-93210mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -5998,12 +7594,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6011,20 +7605,18 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "d7014941-4258-49f9-afca-b82570705221",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "68b7eaf8-f482-450d-83d1-b1585808be66",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "ROLLER 6MM OPAQUE  COLORS",
     "source_row": 14,
     "approved": false,
     "skipped": false,
-    "status": "Needs Review",
+    "status": "Ready for Review",
     "title": "Czech Glass Roller Beads 6mm SOFT RED",
     "handle": "czech-glass-roller-beads-6mm-soft-red",
     "brand": "",
@@ -6048,6 +7640,16 @@
     "mini_quantity": "1 GROSS IS 144 BEADS",
     "mini_price": "8.00",
     "mini_weight_oz": "1.2",
+    "variants": [
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "ROLLER-6MM-01790mini",
+        "price": "40.00",
+        "weight_oz": "9.0",
+        "quantity": "1 MASS IS 1200 BEADS"
+      }
+    ],
     "source_description": "CZECH GLASS 6x4mm ROLLER BEAD WITH A 2mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6056,12 +7658,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": false,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6069,15 +7669,13 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 93,
-      "warnings": [
-        "Mini SKU"
-      ]
+      "score": 100,
+      "warnings": []
     }
   },
   {
-    "id": "feb322be-a778-480e-9267-f82e544497e6",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "1f6e2160-2a0c-4256-961c-f132ce3bc04d",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 4,
     "approved": false,
@@ -6106,6 +7704,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-13000mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-13000",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6114,12 +7730,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6132,8 +7746,8 @@
     }
   },
   {
-    "id": "8dd79eb9-66a5-4911-8215-1b7770ae06a4",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "bc215451-7643-476c-b828-4d2488cfd149",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 5,
     "approved": false,
@@ -6162,6 +7776,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-22500mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-22500",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6170,12 +7802,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6188,8 +7818,8 @@
     }
   },
   {
-    "id": "e31044c2-0dbd-490d-a972-faa5300d72c6",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "b96dd03a-cab5-400f-961f-eb0c481be14f",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 6,
     "approved": false,
@@ -6218,6 +7848,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-23000mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-23000",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6226,12 +7874,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6244,8 +7890,8 @@
     }
   },
   {
-    "id": "8034d0a8-7928-4c5b-a740-73715e938b39",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "c80fa591-7aa9-4fa9-888e-6c4ac2ddf04b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 7,
     "approved": false,
@@ -6274,6 +7920,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-30500mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-30500",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6282,12 +7946,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6300,8 +7962,8 @@
     }
   },
   {
-    "id": "cb9ac005-32f0-456f-8776-9827bf06fe23",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "52172bcc-2e89-4ded-8518-3aa9cff31646",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 8,
     "approved": false,
@@ -6330,6 +7992,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-52000mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-52000",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6338,12 +8018,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6356,8 +8034,8 @@
     }
   },
   {
-    "id": "f6af2673-9106-455b-88b5-6772a42b4200",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "47c08ebe-5b69-4c17-a777-0f934c46a50b",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 9,
     "approved": false,
@@ -6386,6 +8064,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-80600mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-80600",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6394,12 +8090,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6412,8 +8106,8 @@
     }
   },
   {
-    "id": "2ab5a33c-2767-4d2d-a44c-a3dfe0ac0e30",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "5c22613f-f3f3-4f13-b072-f2b4485d99fe",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 10,
     "approved": false,
@@ -6442,6 +8136,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-83500mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-83500",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6450,12 +8162,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
@@ -6468,8 +8178,8 @@
     }
   },
   {
-    "id": "a2877be8-90bc-4641-a75e-27436b7afb7a",
-    "source_file": "20260626_195011_czech-glass-beads-1-xlsx.xlsx",
+    "id": "903c68b8-a914-4770-afcc-86f94f925ffe",
+    "source_file": "20260630_210421_czech-glass-beads-1-xlsx.xlsx",
     "source_sheet": "CROW BEADS",
     "source_row": 11,
     "approved": false,
@@ -6498,6 +8208,24 @@
     "mini_quantity": "100 PIECES",
     "mini_price": "13.50",
     "mini_weight_oz": "2.4",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "CROW-9MM-90600mini",
+        "price": "13.50",
+        "weight_oz": "2.4",
+        "quantity": "100 PIECES"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "CROW-9MM-90600",
+        "price": "90.00",
+        "weight_oz": "23.5",
+        "quantity": "1 MILLE IS 1000 PIECES"
+      }
+    ],
     "source_description": "VINTAGE CZECH GLASS  9x6mm CROW BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
@@ -6506,12 +8234,10 @@
       "checks": {
         "Title": true,
         "Handle": true,
-        "Mini price": true,
-        "Factory price": true,
-        "Mini weight": true,
-        "Factory weight": true,
-        "Mini SKU": true,
-        "Factory SKU": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
         "Color type": true,
