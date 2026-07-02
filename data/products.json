@@ -33,7 +33,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-00030mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -41,7 +41,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-00030",
         "price": "70.00",
         "weight_oz": "32",
@@ -105,7 +105,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-02010mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -113,7 +113,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-02010",
         "price": "75.00",
         "weight_oz": "32",
@@ -177,7 +177,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10020mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -185,7 +185,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10020",
         "price": "70.00",
         "weight_oz": "32",
@@ -249,7 +249,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10060mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -257,7 +257,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10060",
         "price": "70.00",
         "weight_oz": "32",
@@ -321,7 +321,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-1006Mmini",
         "price": "14.00",
         "weight_oz": "4",
@@ -329,7 +329,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-1006M",
         "price": "75.00",
         "weight_oz": "32",
@@ -393,7 +393,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10090mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -401,7 +401,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10090",
         "price": "70.00",
         "weight_oz": "32",
@@ -465,7 +465,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-1011Mmini",
         "price": "14.00",
         "weight_oz": "4",
@@ -473,7 +473,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-1011M",
         "price": "75.00",
         "weight_oz": "32",
@@ -537,7 +537,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10220mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -545,7 +545,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10220",
         "price": "70.00",
         "weight_oz": "32",
@@ -609,7 +609,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10230mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -617,7 +617,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10230",
         "price": "70.00",
         "weight_oz": "32",
@@ -681,7 +681,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-10250mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -689,7 +689,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-10250",
         "price": "70.00",
         "weight_oz": "32",
@@ -753,7 +753,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-18016mini",
         "price": "17.50",
         "weight_oz": "4",
@@ -761,7 +761,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-18016",
         "price": "96.00",
         "weight_oz": "32",
@@ -825,7 +825,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-20030mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -833,7 +833,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-20030",
         "price": "70.00",
         "weight_oz": "32",
@@ -897,7 +897,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-2003Mmini",
         "price": "14.00",
         "weight_oz": "4",
@@ -905,7 +905,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-2003M",
         "price": "75.00",
         "weight_oz": "32",
@@ -969,7 +969,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-20060mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -977,7 +977,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-20060",
         "price": "70.00",
         "weight_oz": "32",
@@ -1041,7 +1041,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-20080mini",
         "price": "/",
         "weight_oz": "4",
@@ -1049,7 +1049,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-20080",
         "price": "70.00",
         "weight_oz": "32",
@@ -1113,7 +1113,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-30030mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1121,7 +1121,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-30030",
         "price": "70.00",
         "weight_oz": "32",
@@ -1185,7 +1185,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-3004Mmini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1193,7 +1193,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-3004M",
         "price": "70.00",
         "weight_oz": "32",
@@ -1257,7 +1257,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-30060mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1265,7 +1265,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-30060",
         "price": "70.00",
         "weight_oz": "32",
@@ -1329,7 +1329,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-30090mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1337,7 +1337,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-30090",
         "price": "70.00",
         "weight_oz": "32",
@@ -1401,7 +1401,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-40010mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1409,7 +1409,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-40010",
         "price": "70.00",
         "weight_oz": "32",
@@ -1473,7 +1473,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50130mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1481,7 +1481,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50130",
         "price": "70.00",
         "weight_oz": "32",
@@ -1545,7 +1545,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50150mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1553,7 +1553,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50150",
         "price": "70.00",
         "weight_oz": "32",
@@ -1617,7 +1617,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50230mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1625,7 +1625,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50230",
         "price": "70.00",
         "weight_oz": "32",
@@ -1689,7 +1689,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50250mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1697,7 +1697,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50250",
         "price": "70.00",
         "weight_oz": "32",
@@ -1761,7 +1761,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50710mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1769,7 +1769,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50710",
         "price": "70.00",
         "weight_oz": "32",
@@ -1833,7 +1833,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-50730mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1841,7 +1841,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-50730",
         "price": "70.00",
         "weight_oz": "32",
@@ -1905,7 +1905,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-5073Mmini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1913,7 +1913,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-5073M",
         "price": "70.00",
         "weight_oz": "32",
@@ -1977,7 +1977,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-60010mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -1985,7 +1985,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-60010",
         "price": "70.00",
         "weight_oz": "32",
@@ -2049,7 +2049,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-60040mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -2057,7 +2057,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-60040",
         "price": "70.00",
         "weight_oz": "32",
@@ -2121,7 +2121,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-60080mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -2129,7 +2129,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-60080",
         "price": "70.00",
         "weight_oz": "32",
@@ -2193,7 +2193,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-60150mini",
         "price": "13.00",
         "weight_oz": "4",
@@ -2201,7 +2201,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-60150",
         "price": "70.00",
         "weight_oz": "32",
@@ -2265,7 +2265,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-70100mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2273,7 +2273,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-70100",
         "price": "75.00",
         "weight_oz": "32",
@@ -2337,7 +2337,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-70110mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2345,7 +2345,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-70110",
         "price": "75.00",
         "weight_oz": "32",
@@ -2409,7 +2409,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-90040mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2417,7 +2417,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-90040",
         "price": "75.00",
         "weight_oz": "32",
@@ -2481,7 +2481,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-90050mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2489,7 +2489,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-90050",
         "price": "75.00",
         "weight_oz": "32",
@@ -2553,7 +2553,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-90070mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2561,7 +2561,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-90070",
         "price": "75.00",
         "weight_oz": "32",
@@ -2625,7 +2625,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-90090mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2633,7 +2633,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-90090",
         "price": "75.00",
         "weight_oz": "32",
@@ -2697,7 +2697,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-90120mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -2705,7 +2705,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-90120",
         "price": "75.00",
         "weight_oz": "32",
@@ -2769,7 +2769,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-00030mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -2777,7 +2777,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-00030",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -2841,7 +2841,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-10020mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -2849,7 +2849,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-10020",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -2913,7 +2913,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM10060mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -2921,7 +2921,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM10060",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -2985,7 +2985,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-10090mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -2993,7 +2993,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-10090",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3057,7 +3057,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-10110mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3065,7 +3065,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-10110",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3129,7 +3129,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-10230mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3137,7 +3137,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-10230",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3201,7 +3201,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-20030mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3209,7 +3209,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-20030",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3273,7 +3273,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-20050mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3281,7 +3281,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-20050",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3345,7 +3345,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-30030mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3353,7 +3353,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-30030",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3417,7 +3417,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-30040mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3425,7 +3425,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-30040",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3489,7 +3489,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-30060mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3497,7 +3497,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-30060",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3561,7 +3561,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-30090mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3569,7 +3569,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-30090",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3633,7 +3633,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-40020mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3641,7 +3641,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-40020",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3705,7 +3705,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-50130mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3713,7 +3713,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-50130",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3777,7 +3777,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-50150mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3785,7 +3785,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-50150",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3849,7 +3849,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-50250mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -3857,7 +3857,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-50250",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -3921,7 +3921,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-5043Mmini",
         "price": "7.50",
         "weight_oz": "1.45",
@@ -3929,7 +3929,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-5043M",
         "price": "38.00",
         "weight_oz": "9.0",
@@ -3993,7 +3993,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-50710mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4001,7 +4001,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-50710",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4065,7 +4065,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-50730mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4073,7 +4073,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-50730",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4137,7 +4137,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-60010mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4145,7 +4145,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-60010",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4209,7 +4209,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-60040mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4217,7 +4217,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-60040",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4281,7 +4281,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-60080mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4289,7 +4289,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-60080",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4353,7 +4353,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-70100mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4361,7 +4361,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-70100",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4425,7 +4425,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-80020mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4433,7 +4433,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-80020",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4497,7 +4497,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-90040mini",
         "price": "7.00",
         "weight_oz": "1.45",
@@ -4505,7 +4505,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-90040",
         "price": "35.00",
         "weight_oz": "9.0",
@@ -4569,7 +4569,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-6MM-9008Mmini",
         "price": "7.50",
         "weight_oz": "1.45",
@@ -4577,7 +4577,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-9008M",
         "price": "38.00",
         "weight_oz": "9.0",
@@ -4641,7 +4641,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-03050mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -4649,7 +4649,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-03050",
         "price": "89.00",
         "weight_oz": "32",
@@ -4713,7 +4713,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-13600mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -4721,7 +4721,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-13600",
         "price": "89.00",
         "weight_oz": "32",
@@ -4787,7 +4787,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-13620mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -4795,7 +4795,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-13620",
         "price": "89.00",
         "weight_oz": "32",
@@ -4859,7 +4859,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-14400mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -4867,7 +4867,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-14400",
         "price": "89.00",
         "weight_oz": "32",
@@ -4931,7 +4931,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-21415mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -4939,7 +4939,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-21415",
         "price": "89.00",
         "weight_oz": "32",
@@ -5003,7 +5003,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-21435mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5011,7 +5011,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-21435",
         "price": "89.00",
         "weight_oz": "32",
@@ -5075,7 +5075,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-23030mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5083,7 +5083,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-23030",
         "price": "89.00",
         "weight_oz": "32",
@@ -5147,7 +5147,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-23980mini",
         "price": "14.00",
         "weight_oz": "4",
@@ -5155,7 +5155,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-23980",
         "price": "75.00",
         "weight_oz": "32",
@@ -5219,7 +5219,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-31010mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5227,7 +5227,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-31010",
         "price": "89.00",
         "weight_oz": "32",
@@ -5291,7 +5291,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-32010mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5299,7 +5299,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-32010",
         "price": "89.00",
         "weight_oz": "32",
@@ -5363,7 +5363,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-33060mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5371,7 +5371,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-33060",
         "price": "89.00",
         "weight_oz": "32",
@@ -5435,7 +5435,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-4302Lmini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5443,7 +5443,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-4302L",
         "price": "89.00",
         "weight_oz": "32",
@@ -5507,7 +5507,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-51010mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5515,7 +5515,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-51010",
         "price": "89.00",
         "weight_oz": "32",
@@ -5579,7 +5579,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-52120mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5587,7 +5587,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-52120",
         "price": "89.00",
         "weight_oz": "32",
@@ -5651,7 +5651,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-63040mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5659,7 +5659,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-63040",
         "price": "89.00",
         "weight_oz": "32",
@@ -5723,7 +5723,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-63110mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5731,7 +5731,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-63110",
         "price": "89.00",
         "weight_oz": "32",
@@ -5795,7 +5795,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-63130mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -5803,7 +5803,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-63130",
         "price": "89.00",
         "weight_oz": "32",
@@ -5867,7 +5867,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM71010mini",
         "price": "17.50",
         "weight_oz": "4",
@@ -5875,7 +5875,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM71010",
         "price": "96.00",
         "weight_oz": "32",
@@ -5939,7 +5939,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM73010mini",
         "price": "34.00",
         "weight_oz": "4",
@@ -5947,7 +5947,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM73010",
         "price": "189.00",
         "weight_oz": "32",
@@ -6011,7 +6011,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-81210mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6019,7 +6019,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-81210",
         "price": "89.00",
         "weight_oz": "32",
@@ -6083,7 +6083,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-83110mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6091,7 +6091,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-83110",
         "price": "89.00",
         "weight_oz": "32",
@@ -6155,7 +6155,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-93110mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6163,7 +6163,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-93110",
         "price": "89.00",
         "weight_oz": "32",
@@ -6227,7 +6227,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-93140mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6235,7 +6235,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-93140",
         "price": "89.00",
         "weight_oz": "32",
@@ -6299,7 +6299,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-93200mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6307,7 +6307,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-93200",
         "price": "89.00",
         "weight_oz": "32",
@@ -6371,7 +6371,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-93210mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6379,7 +6379,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-93210",
         "price": "89.00",
         "weight_oz": "32",
@@ -6443,7 +6443,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01700mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6451,7 +6451,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01700",
         "price": "89.00",
         "weight_oz": "32",
@@ -6515,7 +6515,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01710mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6523,7 +6523,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01710",
         "price": "89.00",
         "weight_oz": "32",
@@ -6587,7 +6587,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01730mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6595,7 +6595,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01730",
         "price": "89.00",
         "weight_oz": "32",
@@ -6659,7 +6659,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01750mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6667,7 +6667,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01750",
         "price": "89.00",
         "weight_oz": "32",
@@ -6731,7 +6731,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01790mini",
         "price": "16.00",
         "weight_oz": "4",
@@ -6739,7 +6739,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01790",
         "price": "89.00",
         "weight_oz": "32",
@@ -6803,7 +6803,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-01720mini'",
         "price": "16.00",
         "weight_oz": "4",
@@ -6811,7 +6811,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-9MM-01720",
         "price": "89.00",
         "weight_oz": "32",
@@ -6875,7 +6875,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-03050mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -6939,7 +6939,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-14400mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7003,7 +7003,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-21415mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7067,7 +7067,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-21435mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7131,7 +7131,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-21455mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7195,7 +7195,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-21495mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7259,7 +7259,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-31010mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7323,7 +7323,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-2398ABmini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7387,7 +7387,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-6302Mmini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7451,7 +7451,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-83130mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7515,7 +7515,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-93140mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7579,7 +7579,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-93210mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7643,7 +7643,7 @@
     "variants": [
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "ROLLER-6MM-01790mini",
         "price": "40.00",
         "weight_oz": "9.0",
@@ -7707,7 +7707,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-13000mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -7715,7 +7715,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-13000",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -7779,7 +7779,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-22500mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -7787,7 +7787,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-22500",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -7851,7 +7851,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-23000mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -7859,7 +7859,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-23000",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -7923,7 +7923,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-30500mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -7931,7 +7931,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-30500",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -7995,7 +7995,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-52000mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -8003,7 +8003,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-52000",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -8067,7 +8067,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-80600mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -8075,7 +8075,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-80600",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -8139,7 +8139,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-83500mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -8147,7 +8147,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-83500",
         "price": "90.00",
         "weight_oz": "23.5",
@@ -8211,7 +8211,7 @@
     "variants": [
       {
         "name": "Mini Pack",
-        "option_value": "mini-pack",
+        "option_value": "Mini Pack",
         "sku": "CROW-9MM-90600mini",
         "price": "13.50",
         "weight_oz": "2.4",
@@ -8219,7 +8219,7 @@
       },
       {
         "name": "Factory Pack",
-        "option_value": "factory-pack",
+        "option_value": "Factory Pack",
         "sku": "CROW-9MM-90600",
         "price": "90.00",
         "weight_oz": "23.5",

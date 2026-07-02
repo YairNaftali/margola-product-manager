@@ -74,7 +74,7 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
     if clean(mini_style) and (clean(mini_price) or clean(mini_weight) or clean(mini_qty)):
         variants.append({
             "name": "Mini Pack",
-            "option_value": "mini-pack",
+            "option_value": "Mini Pack",
             "sku": clean(mini_style),
             "price": money(mini_price),
             "weight_oz": weight_oz(mini_weight),
@@ -84,7 +84,7 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
     if clean(factory_style) and (clean(factory_price) or clean(factory_weight) or clean(factory_qty_desc)):
         variants.append({
             "name": "Factory Pack",
-            "option_value": "factory-pack",
+            "option_value": "Factory Pack",
             "sku": clean(factory_style),
             "price": money(factory_price),
             "weight_oz": weight_oz(factory_weight),
@@ -253,12 +253,11 @@ products, approved_only=True, limit=None):
 
         count += 1
         body = p.get("generated_description") or p.get("source_description") or ""
-        option_values = "; ".join(v["option_value"] for v in variants)
 
         common = {
             "Handle": p["handle"],
             "Vendor": p.get("vendor") or "Margola",
-            "Product Category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Beads",
+            "Product Category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
             "Type": p["subcategory"] or "Czech Glass Beads",
             "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
             "Published": "TRUE",
@@ -398,6 +397,53 @@ def shopify_upload_file(filepath, alt=""):
     f=c["files"][0]; url=(f.get("image") or {}).get("url") or f.get("url") or ""
     return {"id":f.get("id",""),"filename":filename,"url":url,"alt":f.get("alt",""),"status":f.get("fileStatus",""),"createdAt":f.get("createdAt","")}
 
+def shopify_find_or_create_collection(title, handle):
+    q="""query($handle:String!){ collectionByIdentifier(identifier:{handle:$handle}){ id title } }"""
+    existing=shopify_graphql(q,{"handle":handle}).get("collectionByIdentifier")
+    if existing: return existing["id"], False
+    m="""mutation($input:CollectionInput!){ collectionCreate(input:$input){ collection{ id } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"input":{"title":title,"handle":handle}})["collectionCreate"]
+    if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+    return d["collection"]["id"], True
+
+def shopify_product_id_by_handle(handle):
+    q="""query($handle:String!){ productByIdentifier(identifier:{handle:$handle}){ id } }"""
+    p=shopify_graphql(q,{"handle":handle}).get("productByIdentifier")
+    return p["id"] if p else None
+
+def shopify_add_product_to_collection(product_id, collection_id):
+    m="""mutation($product:ProductUpdateInput!){ productUpdate(product:$product){ product{ id } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"product":{"id":product_id,"collectionsToJoin":[collection_id]}})["productUpdate"]
+    if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+
+def shopify_sync_collections():
+    products=load_products()
+    results={"created_collections":[],"matched":0,"not_found_in_shopify":[],"errors":[]}
+    collection_cache={}
+    for p in products:
+        if not p.get("approved") or p.get("skipped"): continue
+        subcategory=clean(p.get("subcategory"))
+        if not subcategory: continue
+        handle=slugify(subcategory)
+        if handle not in collection_cache:
+            try:
+                cid, created=shopify_find_or_create_collection(subcategory, handle)
+                collection_cache[handle]=cid
+                if created: results["created_collections"].append(subcategory)
+            except Exception as e:
+                results["errors"].append({"subcategory":subcategory,"error":str(e)})
+                continue
+        collection_id=collection_cache[handle]
+        try:
+            product_id=shopify_product_id_by_handle(p["handle"])
+            if not product_id:
+                results["not_found_in_shopify"].append(p["handle"]); continue
+            shopify_add_product_to_collection(product_id, collection_id)
+            results["matched"]+=1
+        except Exception as e:
+            results["errors"].append({"handle":p["handle"],"error":str(e)})
+    return results
+
 class Handler(BaseHTTPRequestHandler):
     def send_json(self, obj, status=200):
         data = json.dumps(obj).encode("utf-8")
@@ -432,6 +478,9 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(404); self.end_headers()
     def do_POST(self):
         path = urlparse(self.path).path
+        if path == "/api/shopify/sync-collections":
+            try: return self.send_json({"ok":True, **shopify_sync_collections()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/reset":
             save_products([]); return self.send_json({"ok":True,"summary":summary([])})
         if path == "/api/product/update":
