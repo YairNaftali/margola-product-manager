@@ -1036,14 +1036,14 @@
     "factory_weight_oz": "32",
     "mini_style": "ROLLER-9MM-20080mini",
     "mini_quantity": "1 GROSS IS 144 BEADS",
-    "mini_price": "/",
+    "mini_price": "",
     "mini_weight_oz": "4",
     "variants": [
       {
         "name": "Mini Pack",
         "option_value": "Mini Pack",
         "sku": "ROLLER-9MM-20080mini",
-        "price": "/",
+        "price": "",
         "weight_oz": "4",
         "quantity": "1 GROSS IS 144 BEADS"
       },
@@ -1059,14 +1059,14 @@
     "source_description": "CZECH GLASS 9x6mm ROLLER BEAD WITH A 3mm HOLE",
     "generated_description": "",
     "description_approved": false,
-    "notes": "",
+    "notes": "Invalid mini price in source: '/'",
     "validation": {
       "checks": {
         "Title": true,
         "Handle": true,
         "At least one variant": true,
         "All variant SKUs": true,
-        "All variant prices": true,
+        "All variant prices": false,
         "All variant weights": true,
         "Collection": true,
         "Subcategory": true,
@@ -1075,8 +1075,11 @@
         "Image filename": true,
         "Description": true
       },
-      "score": 100,
-      "warnings": []
+      "score": 92,
+      "warnings": [
+        "All variant prices",
+        "Invalid mini price in source: '/'"
+      ]
     }
   },
   {

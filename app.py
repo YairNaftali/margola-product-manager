@@ -27,7 +27,7 @@ def normalize_header(h):
 def money(v):
     if v in (None, ""): return ""
     try: return f"{float(v):.2f}"
-    except Exception: return clean(v)
+    except Exception: return ""
 
 def weight_oz(v):
     text = clean(v).lower().replace("ounces", "oz").replace("ounce", "oz")
@@ -147,6 +147,8 @@ def parse_xlsx(path):
             row_text = " ".join(clean(x) for x in vals).lower()
             notes = []
             if "missing phot" in row_text or "mising phot" in row_text: notes.append("Source note: missing photo")
+            if clean(factory_price) and not money(factory_price): notes.append(f"Invalid factory price in source: {clean(factory_price)!r}")
+            if clean(mini_price) and not money(mini_price): notes.append(f"Invalid mini price in source: {clean(mini_price)!r}")
             p = {
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
                 "approved":False, "skipped":False, "status":"Needs Review",
@@ -444,6 +446,43 @@ def shopify_sync_collections():
             results["errors"].append({"handle":p["handle"],"error":str(e)})
     return results
 
+BEAD_SIZE_NAMESPACE="custom"
+BEAD_SIZE_KEY="bead_size_mm"
+
+def shopify_ensure_bead_size_metafield_definition():
+    q="""query($ns:String,$key:String){ metafieldDefinitions(first:1, ownerType:PRODUCT, namespace:$ns, key:$key){ edges{ node{ id } } } }"""
+    existing=shopify_graphql(q,{"ns":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY})["metafieldDefinitions"]["edges"]
+    if existing: return existing[0]["node"]["id"], False
+    m="""mutation($def:MetafieldDefinitionInput!){ metafieldDefinitionCreate(definition:$def){ createdDefinition{ id } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"def":{"name":"Bead Size","namespace":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY,"ownerType":"PRODUCT","type":"single_line_text_field"}})["metafieldDefinitionCreate"]
+    if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+    return d["createdDefinition"]["id"], True
+
+def shopify_set_bead_size(product_id, size_text):
+    m="""mutation($metafields:[MetafieldsSetInput!]!){ metafieldsSet(metafields:$metafields){ metafields{ id } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"metafields":[{"ownerId":product_id,"namespace":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY,"type":"single_line_text_field","value":size_text}]})["metafieldsSet"]
+    if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+
+def shopify_sync_bead_sizes():
+    products=load_products()
+    results={"definition_created":False,"matched":0,"skipped_no_size":[],"not_found_in_shopify":[],"errors":[]}
+    _, created=shopify_ensure_bead_size_metafield_definition()
+    results["definition_created"]=created
+    for p in products:
+        if not p.get("approved") or p.get("skipped"): continue
+        size=clean(p.get("size"))
+        if not size:
+            results["skipped_no_size"].append(p["handle"]); continue
+        try:
+            product_id=shopify_product_id_by_handle(p["handle"])
+            if not product_id:
+                results["not_found_in_shopify"].append(p["handle"]); continue
+            shopify_set_bead_size(product_id, size)
+            results["matched"]+=1
+        except Exception as e:
+            results["errors"].append({"handle":p["handle"],"error":str(e)})
+    return results
+
 class Handler(BaseHTTPRequestHandler):
     def send_json(self, obj, status=200):
         data = json.dumps(obj).encode("utf-8")
@@ -480,6 +519,9 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/shopify/sync-collections":
             try: return self.send_json({"ok":True, **shopify_sync_collections()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/sync-bead-sizes":
+            try: return self.send_json({"ok":True, **shopify_sync_bead_sizes()})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/reset":
             save_products([]); return self.send_json({"ok":True,"summary":summary([])})
