@@ -74,7 +74,7 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
     if clean(mini_style) and (clean(mini_price) or clean(mini_weight) or clean(mini_qty)):
         variants.append({
             "name": "Mini Pack",
-            "option_value": "Mini Pack",
+            "option_value": "mini-pack",
             "sku": clean(mini_style),
             "price": money(mini_price),
             "weight_oz": weight_oz(mini_weight),
@@ -84,7 +84,7 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
     if clean(factory_style) and (clean(factory_price) or clean(factory_weight) or clean(factory_qty_desc)):
         variants.append({
             "name": "Factory Pack",
-            "option_value": "Factory Pack",
+            "option_value": "factory-pack",
             "sku": clean(factory_style),
             "price": money(factory_price),
             "weight_oz": weight_oz(factory_weight),
@@ -224,8 +224,9 @@ def oz_to_grams(value):
     except:
         return ""
 
-def shopify_rows(
-products, approved_only=True, limit=None):
+def shopify_rows(products, approved_only=True, limit=None, resolver=None):
+    if resolver is None:
+        resolver = MetaobjectResolver()
     rows, count = [], 0
 
     for p in products:
@@ -263,8 +264,6 @@ products, approved_only=True, limit=None):
             "Type": p["subcategory"] or "Czech Glass Beads",
             "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
             "Published": "TRUE",
-            "Option1 Name": "Bundle Pack Options",
-            
             "Variant Inventory Tracker": "",
             "Variant Inventory Qty": "",
             "Variant Inventory Policy": "deny",
@@ -280,13 +279,19 @@ products, approved_only=True, limit=None):
             row.update({
                 "Title": p["title"] if idx == 0 else "",
                 "Body (HTML)": body if idx == 0 else "",
+                "Option1 Name": "Bundle Pack Options" if idx == 0 else "",
                 "Option1 Value": variant.get("option_value", ""),
+                "Option1 Linked To": "product.metafields.custom.bundle_pack_options" if idx == 0 else "",
+                "Bundle Pack Options (product.metafields.custom.bundle_pack_options)": "; ".join(v["option_value"] for v in variants) if idx == 0 else "",
+                "Color (product.metafields.shopify.color-pattern)": resolver.color_handle(p.get("color_name")) if idx == 0 else "",
+                "Bead shape (product.metafields.shopify.bead-shape)": resolver.bead_shape_handle(p.get("bead_shape")) if idx == 0 else "",
+                "Color Type (product.metafields.custom.color_type)": clean(p.get("color_type")) if idx == 0 else "",
+                "Bead Size (product.metafields.custom.bead_size_mm)": clean(p.get("size")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
                 "Image Src": p.get("image_src", "") if idx == 0 else "",
-                "Image Alt Text": (p.get("image_alt") or p["title"]) if idx == 0 else "",
-                
+                "Image Alt Text": (p.get("image_alt") or p["title"]) if idx == 0 and p.get("image_src") else "",
             })
             rows.append(row)
 
@@ -295,18 +300,25 @@ products, approved_only=True, limit=None):
 def shopify_csv(products, approved_only=True, limit=None):
     fields = [
         "Handle","Title","Body (HTML)","Vendor","Product Category","Type","Tags","Published",
-        "Option1 Name","Option1 Value",
+        "Option1 Name","Option1 Value","Option1 Linked To",
         "Variant SKU","Variant Price","Variant Grams","Variant Weight Unit",
         "Variant Inventory Tracker","Variant Inventory Qty","Variant Inventory Policy",
         "Variant Fulfillment Service","Variant Requires Shipping","Variant Taxable",
-        "Image Src","Image Alt Text","Status"
+        "Image Src","Image Alt Text",
+        "Bundle Pack Options (product.metafields.custom.bundle_pack_options)",
+        "Color (product.metafields.shopify.color-pattern)",
+        "Bead shape (product.metafields.shopify.bead-shape)",
+        "Color Type (product.metafields.custom.color_type)",
+        "Bead Size (product.metafields.custom.bead_size_mm)",
+        "Status"
     ]
 
     out = io.StringIO()
     w = csv.DictWriter(out, fieldnames=fields, extrasaction="ignore")
     w.writeheader()
 
-    for row in shopify_rows(products, approved_only, limit):
+    resolver = MetaobjectResolver()
+    for row in shopify_rows(products, approved_only, limit, resolver=resolver):
         w.writerow(row)
 
     return out.getvalue()
@@ -446,42 +458,122 @@ def shopify_sync_collections():
             results["errors"].append({"handle":p["handle"],"error":str(e)})
     return results
 
-BEAD_SIZE_NAMESPACE="custom"
-BEAD_SIZE_KEY="bead_size_mm"
+def taxonomy_map_path(): return os.path.join(DATA_DIR,"shopify_taxonomy_map.json")
+def load_taxonomy_map():
+    return json.load(open(taxonomy_map_path(),encoding="utf-8")) if os.path.exists(taxonomy_map_path()) else {"bead_shape":{},"color":{}}
 
-def shopify_ensure_bead_size_metafield_definition():
-    q="""query($ns:String,$key:String){ metafieldDefinitions(first:1, ownerType:PRODUCT, namespace:$ns, key:$key){ edges{ node{ id } } } }"""
-    existing=shopify_graphql(q,{"ns":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY})["metafieldDefinitions"]["edges"]
-    if existing: return existing[0]["node"]["id"], False
-    m="""mutation($def:MetafieldDefinitionInput!){ metafieldDefinitionCreate(definition:$def){ createdDefinition{ id } userErrors{ field message } } }"""
-    d=shopify_graphql(m,{"def":{"name":"Bead Size","namespace":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY,"ownerType":"PRODUCT","type":"single_line_text_field"}})["metafieldDefinitionCreate"]
+COLOR_BASE_SWATCH_GIDS={
+    "Beige":"gid://shopify/TaxonomyValue/6","Black":"gid://shopify/TaxonomyValue/1","Blue":"gid://shopify/TaxonomyValue/2",
+    "Bronze":"gid://shopify/TaxonomyValue/657","Brown":"gid://shopify/TaxonomyValue/7","Clear":"gid://shopify/TaxonomyValue/17",
+    "Gold":"gid://shopify/TaxonomyValue/4","Gray":"gid://shopify/TaxonomyValue/8","Green":"gid://shopify/TaxonomyValue/9",
+    "Multicolor":"gid://shopify/TaxonomyValue/2865","Navy":"gid://shopify/TaxonomyValue/15","Orange":"gid://shopify/TaxonomyValue/10",
+    "Pink":"gid://shopify/TaxonomyValue/11","Purple":"gid://shopify/TaxonomyValue/12","Red":"gid://shopify/TaxonomyValue/13",
+    "Rose gold":"gid://shopify/TaxonomyValue/16","Silver":"gid://shopify/TaxonomyValue/5","White":"gid://shopify/TaxonomyValue/3",
+    "Yellow":"gid://shopify/TaxonomyValue/14",
+}
+BEAD_SHAPE_BASE_GIDS={
+    "Hair pipe":"gid://shopify/TaxonomyValue/14881","Heart":"gid://shopify/TaxonomyValue/17414","Other":"gid://shopify/TaxonomyValue/27273",
+    "Oval":"gid://shopify/TaxonomyValue/17415","Round":"gid://shopify/TaxonomyValue/17416","Seed":"gid://shopify/TaxonomyValue/14882",
+    "Square":"gid://shopify/TaxonomyValue/17417","Star":"gid://shopify/TaxonomyValue/14638","Tube":"gid://shopify/TaxonomyValue/17418",
+}
+SOLID_PATTERN_GID="gid://shopify/TaxonomyValue/2874"
+COLOR_FINISH_WORDS={"TRANSPARENT","TRANSPAENT","TRANSPAR","TRANS","PARENT","OPAQUE","MATTE"}
+CODE_PREFIX_RE=re.compile(r"^[0-9A-Za-z]{4,6}\s*-\s*")
+
+def normalize_color_key(label):
+    s=CODE_PREFIX_RE.sub("", label or "")
+    s=s.replace("&amp;","&").replace("&nbsp;"," ")
+    s=re.sub(r"[^A-Za-z0-9]+"," ", s).upper().strip()
+    return " ".join(w for w in s.split() if w not in COLOR_FINISH_WORDS)
+
+def shopify_list_metaobjects(mo_type):
+    nodes, cursor = [], None
+    while True:
+        q="""query($type:String!,$after:String){ metaobjects(type:$type, first:100, after:$after){ edges{ cursor node{ id handle displayName } } pageInfo{ hasNextPage } } }"""
+        data=shopify_graphql(q,{"type":mo_type,"after":cursor})
+        edges=data["metaobjects"]["edges"]
+        nodes.extend(e["node"] for e in edges)
+        if not data["metaobjects"]["pageInfo"]["hasNextPage"] or not edges: break
+        cursor=edges[-1]["cursor"]
+    return nodes
+
+def shopify_create_color_pattern_metaobject(label, base_color_name):
+    base_gid=COLOR_BASE_SWATCH_GIDS.get(base_color_name)
+    if not base_gid: raise RuntimeError(f"No base swatch GID for {base_color_name!r}")
+    m="""mutation($obj:MetaobjectCreateInput!){ metaobjectCreate(metaobject:$obj){ metaobject{ handle } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"obj":{"type":"shopify--color-pattern","fields":[
+        {"key":"label","value":label},
+        {"key":"color_taxonomy_reference","value":json.dumps([base_gid])},
+        {"key":"pattern_taxonomy_reference","value":SOLID_PATTERN_GID},
+    ]}})["metaobjectCreate"]
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
-    return d["createdDefinition"]["id"], True
+    return d["metaobject"]["handle"]
 
-def shopify_set_bead_size(product_id, size_text):
-    m="""mutation($metafields:[MetafieldsSetInput!]!){ metafieldsSet(metafields:$metafields){ metafields{ id } userErrors{ field message } } }"""
-    d=shopify_graphql(m,{"metafields":[{"ownerId":product_id,"namespace":BEAD_SIZE_NAMESPACE,"key":BEAD_SIZE_KEY,"type":"single_line_text_field","value":size_text}]})["metafieldsSet"]
+def shopify_create_bead_shape_metaobject(label, base_shape_name):
+    base_gid=BEAD_SHAPE_BASE_GIDS.get(base_shape_name)
+    if not base_gid: raise RuntimeError(f"No base bead shape GID for {base_shape_name!r}")
+    m="""mutation($obj:MetaobjectCreateInput!){ metaobjectCreate(metaobject:$obj){ metaobject{ handle } userErrors{ field message } } }"""
+    d=shopify_graphql(m,{"obj":{"type":"shopify--bead-shape","fields":[
+        {"key":"label","value":label},
+        {"key":"taxonomy_reference","value":base_gid},
+    ]}})["metaobjectCreate"]
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+    return d["metaobject"]["handle"]
 
-def shopify_sync_bead_sizes():
-    products=load_products()
-    results={"definition_created":False,"matched":0,"skipped_no_size":[],"not_found_in_shopify":[],"errors":[]}
-    _, created=shopify_ensure_bead_size_metafield_definition()
-    results["definition_created"]=created
-    for p in products:
-        if not p.get("approved") or p.get("skipped"): continue
-        size=clean(p.get("size"))
-        if not size:
-            results["skipped_no_size"].append(p["handle"]); continue
-        try:
-            product_id=shopify_product_id_by_handle(p["handle"])
-            if not product_id:
-                results["not_found_in_shopify"].append(p["handle"]); continue
-            shopify_set_bead_size(product_id, size)
-            results["matched"]+=1
-        except Exception as e:
-            results["errors"].append({"handle":p["handle"],"error":str(e)})
-    return results
+class MetaobjectResolver:
+    """Resolves Margola color/bead-shape text to Shopify metaobject handles for CSV export, creating new library entries when no match exists. Caches lookups for the lifetime of one export."""
+    def __init__(self):
+        self.taxonomy_map=load_taxonomy_map()
+        self._color_by_key=None
+        self._shape_by_label=None
+        self._created_colors={}
+        self._created_shapes={}
+        self.created_colors=[]
+        self.created_shapes=[]
+        self.unmapped_colors=[]
+
+    def _colors(self):
+        if self._color_by_key is None:
+            self._color_by_key={}
+            for n in shopify_list_metaobjects("shopify--color-pattern"):
+                self._color_by_key.setdefault(normalize_color_key(n["displayName"]), []).append(n)
+        return self._color_by_key
+
+    def _shapes(self):
+        if self._shape_by_label is None:
+            self._shape_by_label={n["displayName"].strip().upper():n for n in shopify_list_metaobjects("shopify--bead-shape")}
+        return self._shape_by_label
+
+    def color_handle(self, color_name):
+        color_name=clean(color_name)
+        if not color_name: return ""
+        key=normalize_color_key(color_name)
+        by_key=self._colors()
+        if key in by_key:
+            candidates=by_key[key]
+            plain=[c for c in candidates if not CODE_PREFIX_RE.match(c["displayName"])]
+            return (plain[0] if plain else candidates[0])["handle"]
+        if key in self._created_colors: return self._created_colors[key]
+        base_color=self.taxonomy_map.get("color",{}).get(color_name)
+        if not base_color:
+            self.unmapped_colors.append(color_name); return ""
+        label=key.title()
+        handle=shopify_create_color_pattern_metaobject(label, base_color)
+        self._created_colors[key]=handle
+        self.created_colors.append(label)
+        return handle
+
+    def bead_shape_handle(self, bead_shape):
+        spec=self.taxonomy_map.get("bead_shape",{}).get(clean(bead_shape))
+        if not spec: return ""
+        label=spec["label"]; key=label.strip().upper()
+        by_label=self._shapes()
+        if key in by_label: return by_label[key]["handle"]
+        if key in self._created_shapes: return self._created_shapes[key]
+        handle=shopify_create_bead_shape_metaobject(label, spec["base"])
+        self._created_shapes[key]=handle
+        self.created_shapes.append(label)
+        return handle
 
 class Handler(BaseHTTPRequestHandler):
     def send_json(self, obj, status=200):
@@ -503,8 +595,12 @@ class Handler(BaseHTTPRequestHandler):
         products = load_products()
         if path == "/api/products": return self.send_json({"summary":summary(products),"products":products})
         if path == "/api/export/review.csv": return self.send_csv(review_csv(products),"margola_review_report.csv")
-        if path == "/api/export/shopify-preview.csv": return self.send_csv(shopify_csv(products, True),"margola_shopify_preview.csv")
-        if path == "/api/export/shopify-test.csv": return self.send_csv(shopify_csv(products, True, 3),"margola_shopify_TEST_3_products.csv")
+        if path == "/api/export/shopify-preview.csv":
+            try: return self.send_csv(shopify_csv(products, True),"margola_shopify_preview.csv")
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/export/shopify-test.csv":
+            try: return self.send_csv(shopify_csv(products, True, 3),"margola_shopify_TEST_3_products.csv")
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/config":
             c=shopify_config(); return self.send_json({"store":c["store"],"has_client_id":bool(c["client_id"]),"has_client_secret":bool(c["client_secret"])})
         if path == "/api/shopify/test":
@@ -519,9 +615,6 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/shopify/sync-collections":
             try: return self.send_json({"ok":True, **shopify_sync_collections()})
-            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
-        if path == "/api/shopify/sync-bead-sizes":
-            try: return self.send_json({"ok":True, **shopify_sync_bead_sizes()})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/reset":
             save_products([]); return self.send_json({"ok":True,"summary":summary([])})
