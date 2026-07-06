@@ -802,6 +802,13 @@ class Handler(BaseHTTPRequestHandler):
             for p in products:
                 if p["id"] == data.get("id"): p.update(data.get("updates",{})); break
             save_products(products); return self.send_json({"ok":True,"summary":summary(products)})
+        if path == "/api/products/approve-with-image":
+            products = load_products(); approved_count = 0
+            for p in products:
+                if p.get("image_src") and not p.get("skipped") and not p.get("approved"):
+                    p["approved"] = True; p["status"] = "Approved"; approved_count += 1
+            save_products(products)
+            return self.send_json({"ok":True,"approved_count":approved_count,"summary":summary(products)})
         if path == "/api/descriptions/import":
             data = json.loads(self.read_body().decode("utf-8")); descs = parse_descriptions(data.get("text","")); products = load_products(); matched = 0
             for p in products:
