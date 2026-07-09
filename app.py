@@ -394,15 +394,23 @@ def shopify_graphql(query, variables=None):
     if payload.get("errors"): raise RuntimeError(json.dumps(payload["errors"]))
     return payload["data"]
 def shopify_test_connection(): return shopify_graphql("{ shop { name myshopifyDomain } }")["shop"]
-def shopify_list_files(first=100):
-    q="""query GetFiles($first:Int!){ files(first:$first){ edges{ node{ id alt createdAt ... on MediaImage{ image{ url } } ... on GenericFile{ url } } } } }"""
-    data=shopify_graphql(q,{"first":first}); out=[]
-    for e in data["files"]["edges"]:
-        n=e["node"]; url=""
-        if n.get("image"): url=n["image"].get("url") or ""
-        if not url: url=n.get("url") or ""
-        fn=urllib.parse.unquote(url.split("?")[0].rstrip("/").split("/")[-1]) if url else ""
-        out.append({"id":n.get("id",""),"url":url,"filename":fn,"alt":n.get("alt",""),"createdAt":n.get("createdAt","")})
+def shopify_list_files():
+    # Paginates through every file in the store (not just the first page) --
+    # this store has thousands of files across other product lines, so a
+    # single first-page fetch missed newly uploaded photos entirely.
+    q="""query GetFiles($after:String){ files(first:250, after:$after, sortKey:CREATED_AT, reverse:true){ edges{ cursor node{ id alt createdAt ... on MediaImage{ image{ url } } ... on GenericFile{ url } } } pageInfo{ hasNextPage } } }"""
+    out, cursor = [], None
+    while True:
+        data=shopify_graphql(q,{"after":cursor})
+        edges=data["files"]["edges"]
+        for e in edges:
+            n=e["node"]; url=""
+            if n.get("image"): url=n["image"].get("url") or ""
+            if not url: url=n.get("url") or ""
+            fn=urllib.parse.unquote(url.split("?")[0].rstrip("/").split("/")[-1]) if url else ""
+            out.append({"id":n.get("id",""),"url":url,"filename":fn,"alt":n.get("alt",""),"createdAt":n.get("createdAt","")})
+        if not data["files"]["pageInfo"]["hasNextPage"] or not edges: break
+        cursor=edges[-1]["cursor"]
     return out
 def file_map_path(): return os.path.join(DATA_DIR,"shopify_files.json")
 def save_file_map(files): open(file_map_path(),"w",encoding="utf-8").write(json.dumps(files,indent=2))
@@ -429,6 +437,50 @@ DRIVE_FILELISTS = [
 ]
 JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd", " - Copy", "---Copy")
 
+GOOD_SUBFOLDER_MARKERS = ("jpeg for web", "jpegs for web", "jpegs", "jpeg")
+TARGET_IMAGE_SIZE = (1000, 1000)
+
+def _image_dimensions(path):
+    # Reads just enough of the file header to get pixel dimensions -- no
+    # Pillow/other dependency needed, and cheap even for a large batch.
+    try:
+        with open(path, "rb") as f:
+            head = f.read(2)
+            if head == b"\xff\xd8":  # JPEG
+                while True:
+                    marker = f.read(2)
+                    if len(marker) < 2 or marker[0] != 0xFF: return None
+                    if marker[1] in (0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF):
+                        f.read(3)
+                        h = int.from_bytes(f.read(2), "big")
+                        w = int.from_bytes(f.read(2), "big")
+                        return (w, h)
+                    seg_len = int.from_bytes(f.read(2), "big")
+                    if seg_len < 2: return None
+                    f.seek(seg_len - 2, 1)
+            elif head == b"\x89P":  # PNG
+                f.seek(16)
+                w = int.from_bytes(f.read(4), "big")
+                h = int.from_bytes(f.read(4), "big")
+                return (w, h)
+    except Exception:
+        return None
+    return None
+
+def _pick_best_candidate(paths):
+    # When the same filename exists in more than one place (e.g. a parent
+    # folder with full-res 2000x2000 originals and a "JPEG for Web"
+    # subfolder with the correct 1000x1000 versions), prefer the one that's
+    # actually the right size, falling back to the "jpeg(s) for web"
+    # subfolder naming convention if the drive isn't mounted to check.
+    if len(paths) == 1: return paths[0]
+    def score(path):
+        dims = _image_dimensions(path) if os.path.exists(path) else None
+        size_ok = dims == TARGET_IMAGE_SIZE
+        folder_ok = any(m in path.lower() for m in GOOD_SUBFOLDER_MARKERS)
+        return (size_ok, folder_ok)
+    return max(paths, key=score)
+
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
@@ -444,11 +496,15 @@ def load_drive_index():
             if any(m in full for m in JUNK_PATH_MARKERS): continue
             base = full.rsplit("/", 1)[-1].lower()
             fl = full.lower()
-            generic.setdefault(base, full)
-            if "/roller beads/9mm/" in fl: roller_9mm.setdefault(base, full)
-            elif "/roller beads/6mm/" in fl: roller_6mm.setdefault(base, full)
-            elif "/crow" in fl: crow.setdefault(base, full)
-            elif "/leather cord/" in fl: leather_cord.setdefault(base, full)
+            generic.setdefault(base, []).append(full)
+            if "/roller beads/9mm/" in fl: roller_9mm.setdefault(base, []).append(full)
+            elif "/roller beads/6mm/" in fl: roller_6mm.setdefault(base, []).append(full)
+            elif "/crow" in fl: crow.setdefault(base, []).append(full)
+            elif "/leather cord/" in fl: leather_cord.setdefault(base, []).append(full)
+    roller_9mm, roller_6mm, crow, leather_cord, generic = (
+        {base: _pick_best_candidate(paths) for base, paths in pool.items()}
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, generic)
+    )
     roller_union = dict(roller_6mm)
     for k, v in roller_9mm.items(): roller_union.setdefault(k, v)
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
@@ -582,16 +638,16 @@ def shopify_sync_collections():
     collection_cache={}
     for p in products:
         if not p.get("approved") or p.get("skipped"): continue
-        subcategory=clean(p.get("subcategory"))
-        if not subcategory: continue
-        handle=slugify(subcategory)
+        collection_name=clean(p.get("collection"))
+        if not collection_name: continue
+        handle=slugify(collection_name)
         if handle not in collection_cache:
             try:
-                cid, created=shopify_find_or_create_collection(subcategory, handle)
+                cid, created=shopify_find_or_create_collection(collection_name, handle)
                 collection_cache[handle]=cid
-                if created: results["created_collections"].append(subcategory)
+                if created: results["created_collections"].append(collection_name)
             except Exception as e:
-                results["errors"].append({"subcategory":subcategory,"error":str(e)})
+                results["errors"].append({"collection":collection_name,"error":str(e)})
                 continue
         collection_id=collection_cache[handle]
         try:
@@ -765,9 +821,12 @@ class Handler(BaseHTTPRequestHandler):
                 if p.get("image_src"): continue
                 found = resolve_photo_from_drive(p, index)
                 if found:
+                    dims = _image_dimensions(found["source_path"]) if os.path.exists(found["source_path"]) else None
                     proposals.append({"id":p["id"],"title":p.get("title"),"factory_style":p.get("factory_style"),
                                        "source_path":found["source_path"],"target_filename":found["target_filename"],
-                                       "reused_other_size":found["reused_other_size"]})
+                                       "reused_other_size":found["reused_other_size"],
+                                       "dimensions": f"{dims[0]}x{dims[1]}" if dims else "unverified (drive not connected)",
+                                       "correct_size": dims == TARGET_IMAGE_SIZE if dims else None})
             return self.send_json({"ok":True,"proposals":proposals,"filelists":DRIVE_FILELISTS})
         self.send_response(404); self.end_headers()
     def do_POST(self):
