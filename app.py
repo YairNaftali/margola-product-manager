@@ -21,6 +21,23 @@ def slugify(v):
     v = re.sub(r"[^a-z0-9]+", "-", v)
     return re.sub(r"-+", "-", v).strip("-")
 
+ALT_TEXT_PROTECTED_TERMS = {"AB": "AB", "DK": "Dark", "2XAB": "2X AB"}
+
+def make_alt_text(title):
+    t = clean(title)
+    t = re.sub(r"\s*[–-]\s*\d+\s*Gross.*$", "", t, flags=re.I)
+    t = re.sub(r"\s*\(\d[\d,]*\s*pcs\)\s*$", "", t, flags=re.I)
+    t = re.sub(r"\s+", " ", t).strip(" -–")
+    if not t.isupper():
+        return t
+    t = re.sub(r"\bLT\.?\s*", "LIGHT ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    def repl(m):
+        w = m.group(0)
+        key = w.rstrip(".").upper()
+        return ALT_TEXT_PROTECTED_TERMS.get(key, w.title())
+    return re.sub(r"[A-Za-z0-9/.'-]+", repl, t)
+
 def normalize_header(h):
     return re.sub(r"[^a-z0-9]+", "_", clean(h).lower()).strip("_")
 
@@ -312,7 +329,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
                 "Image Src": p.get("image_src", "") if idx == 0 else "",
-                "Image Alt Text": (p.get("image_alt") or p["title"]) if idx == 0 and p.get("image_src") else "",
+                "Image Alt Text": (p.get("image_alt") or make_alt_text(p["title"])) if idx == 0 and p.get("image_src") else "",
             })
             rows.append(row)
 
@@ -544,7 +561,7 @@ def _find_suffixed(pool, suffixes):
 
 def _find_roller_photo(pool, cands):
     for c in cands:
-        for key in (f"rb-{c}.jpg", f"rb{c}.jpg", f"rb-{c}.jpeg", f"rb{c}.jpeg"):
+        for key in (f"rb-{c}.jpg", f"rb{c}.jpg", f"rb-{c}.jpeg", f"rb{c}.jpeg", f"{c}.jpg", f"{c}.jpeg"):
             if key in pool: return pool[key]
     for c in cands:
         found = _find_prefixed(pool, (f"rb-{c}-", f"rb-{c} ", f"rb{c}-", f"rb-{c}.", f"rb{c}."))
