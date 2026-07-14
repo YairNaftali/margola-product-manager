@@ -450,7 +450,6 @@ def apply_file_matches_to_products():
 
 DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
-    os.path.join(os.path.expanduser("~"), "Downloads", "jumbo_filelist.txt"),
 ]
 JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd", " - Copy", "---Copy")
 
