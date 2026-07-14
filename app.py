@@ -546,30 +546,33 @@ def _roller_candidates(color_number):
             if is_matte: cands.append(v + "m")
     return [c for c in cands if c]
 
-def _find_prefixed(pool, prefixes):
+def _find_prefixed(pool, prefixes, exclude=None):
     for prefix in prefixes:
         for k, v in pool.items():
-            if k.startswith(prefix): return v
+            if k.startswith(prefix) and v != exclude: return v
     return None
 
-def _find_suffixed(pool, suffixes):
+def _find_suffixed(pool, suffixes, exclude=None):
     for suffix in suffixes:
         for k, v in pool.items():
-            if k.endswith(suffix): return v
+            if k.endswith(suffix) and v != exclude: return v
     return None
 
-def _find_roller_photo(pool, cands):
+def _find_roller_photo(pool, cands, exclude=None):
+    # exclude lets a caller skip a path it already knows about (e.g. a
+    # wrong-sized match) so the search continues on to a prefix/suffix
+    # match instead of stopping on the same exact-filename hit again.
     for c in cands:
         for key in (f"rb-{c}.jpg", f"rb{c}.jpg", f"rb-{c}.jpeg", f"rb{c}.jpeg", f"{c}.jpg", f"{c}.jpeg"):
-            if key in pool: return pool[key]
+            if key in pool and pool[key] != exclude: return pool[key]
     for c in cands:
-        found = _find_prefixed(pool, (f"rb-{c}-", f"rb-{c} ", f"rb{c}-", f"rb-{c}.", f"rb{c}."))
+        found = _find_prefixed(pool, (f"rb-{c}-", f"rb-{c} ", f"rb{c}-", f"rb-{c}.", f"rb{c}."), exclude)
         if found: return found
     # Some files put the color code at the end instead, e.g.
     # "RB-gold-metallic-01710.jpg" for candidate "01710".
     for c in cands:
         if len(c) >= 4 and c.isalnum():
-            found = _find_suffixed(pool, (f"-{c}.jpg", f"-{c}.jpeg"))
+            found = _find_suffixed(pool, (f"-{c}.jpg", f"-{c}.jpeg"), exclude)
             if found: return found
     return None
 
@@ -595,7 +598,18 @@ def resolve_photo_from_drive(product, index):
         own_pool = index["roller_9mm"] if is_9mm else index["roller_6mm"]
         cands = _roller_candidates(product.get("color_number") or "")
         found = _find_roller_photo(own_pool, cands)
-        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+        if found:
+            found_dims = _image_dimensions(found) if os.path.exists(found) else None
+            if found_dims is None or found_dims == TARGET_IMAGE_SIZE:
+                return {"source_path": found, "target_filename": target, "reused_other_size": False}
+            # The own-size match exists but is the wrong dimensions (e.g. a
+            # full-res original rather than the web-ready crop) -- check
+            # whether a correctly-sized copy exists under the other size
+            # before settling for it.
+            alt = _find_roller_photo(index["roller_union"], cands, exclude=found)
+            if alt and os.path.exists(alt) and _image_dimensions(alt) == TARGET_IMAGE_SIZE:
+                return {"source_path": alt, "target_filename": target, "reused_other_size": True}
+            return {"source_path": found, "target_filename": target, "reused_other_size": False}
         found = _find_roller_photo(index["roller_union"], cands)
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
     elif product.get("subcategory") == "Leather Cord":
