@@ -604,6 +604,13 @@ def resolve_photo_from_drive(product, index):
     target = clean(product.get("image_filename"))
     if not target: return None
     key = target.lower()
+    # An exact match on the product's own expected filename (e.g. someone
+    # already renamed/exported "roller-9mm-20060.jpg" to match our output
+    # naming directly) is always correct -- check this before any of the
+    # fuzzier per-category "RB-code" guessing below, since that guessing
+    # can otherwise land on a wrong-sized file first and never get here.
+    if key in index["generic"]:
+        return {"source_path": index["generic"][key], "target_filename": target, "reused_other_size": False}
     if product.get("bead_shape") == "Crow Beads":
         code = re.sub(r"[^0-9]", "", product.get("color_number") or "")
         found = _find_prefixed(index["crow"], (f"crow-9mm-{code}-", f"crow-9mm-{code} "))
@@ -626,8 +633,6 @@ def resolve_photo_from_drive(product, index):
                 kk = k.replace("-", " ")
                 if f"{size}mm" in kk and color in kk:
                     return {"source_path": v, "target_filename": target, "reused_other_size": False}
-    if key in index["generic"]:
-        return {"source_path": index["generic"][key], "target_filename": target, "reused_other_size": False}
     return None
 
 def multipart_form_data(fields, files):
