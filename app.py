@@ -451,7 +451,12 @@ def apply_file_matches_to_products():
 DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
 ]
-JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd", " - Copy", "---Copy")
+JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd")
+# Deprioritized rather than excluded outright -- a couple of the drive's
+# only correctly-sized "JPEG for Web" copies are themselves named with
+# "---Copy" (e.g. RB-8311---Copy.jpg), so treating it as junk discarded
+# the one usable file instead of an actual redundant duplicate.
+COPY_MARKERS = (" - copy", "---copy")
 
 GOOD_SUBFOLDER_MARKERS = ("jpeg for web", "jpegs for web", "jpegs", "jpeg")
 TARGET_IMAGE_SIZE = (1000, 1000)
@@ -494,7 +499,8 @@ def _pick_best_candidate(paths):
         dims = _image_dimensions(path) if os.path.exists(path) else None
         size_ok = dims == TARGET_IMAGE_SIZE
         folder_ok = any(m in path.lower() for m in GOOD_SUBFOLDER_MARKERS)
-        return (size_ok, folder_ok)
+        not_a_copy = not any(m in path.lower() for m in COPY_MARKERS)
+        return (size_ok, folder_ok, not_a_copy)
     return max(paths, key=score)
 
 def load_drive_index():
@@ -554,35 +560,36 @@ def _roller_candidates(color_number):
             if is_matte: cands.append(v + "m")
     return [c for c in cands if c]
 
-def _find_prefixed(pool, prefixes, exclude=None):
+def _find_prefixed(pool, prefixes):
     for prefix in prefixes:
         for k, v in pool.items():
-            if k.startswith(prefix) and v != exclude: return v
+            if k.startswith(prefix): return v
     return None
 
-def _find_suffixed(pool, suffixes, exclude=None):
-    for suffix in suffixes:
-        for k, v in pool.items():
-            if k.endswith(suffix) and v != exclude: return v
-    return None
-
-def _find_roller_photo(pool, cands, exclude=None):
-    # exclude lets a caller skip a path it already knows about (e.g. a
-    # wrong-sized match) so the search continues on to a prefix/suffix
-    # match instead of stopping on the same exact-filename hit again.
+def _find_all_roller_matches(pool, cands):
+    # Collects every match across every candidate rather than stopping at
+    # the first hit -- a spreadsheet's "(USE X)" cross-reference note and
+    # its own raw color code can each independently match a *different*
+    # real file (one a full-res original, one the correctly-sized web
+    # copy), and whichever candidate string happens to be tried first
+    # shouldn't decide the winner. The final size/folder-based scoring in
+    # _pick_best_candidate chooses among all of them.
+    results = []
+    def add(v):
+        if v and v not in results: results.append(v)
     for c in cands:
         for key in (f"rb-{c}.jpg", f"rb{c}.jpg", f"rb-{c}.jpeg", f"rb{c}.jpeg", f"{c}.jpg", f"{c}.jpeg"):
-            if key in pool and pool[key] != exclude: return pool[key]
+            add(pool.get(key))
     for c in cands:
-        found = _find_prefixed(pool, (f"rb-{c}-", f"rb-{c} ", f"rb{c}-", f"rb-{c}.", f"rb{c}."), exclude)
-        if found: return found
-    # Some files put the color code at the end instead, e.g.
-    # "RB-gold-metallic-01710.jpg" for candidate "01710".
+        for prefix in (f"rb-{c}-", f"rb-{c} ", f"rb{c}-", f"rb-{c}.", f"rb{c}."):
+            for k, v in pool.items():
+                if k.startswith(prefix): add(v)
     for c in cands:
         if len(c) >= 4 and c.isalnum():
-            found = _find_suffixed(pool, (f"-{c}.jpg", f"-{c}.jpeg"), exclude)
-            if found: return found
-    return None
+            for suffix in (f"-{c}.jpg", f"-{c}.jpeg"):
+                for k, v in pool.items():
+                    if k.endswith(suffix): add(v)
+    return results
 
 def _leather_cord_candidate(image_filename):
     m = re.match(r"lc-(\d+)-(\d+)mm-(.+)\.jpg$", image_filename or "")
@@ -605,21 +612,12 @@ def resolve_photo_from_drive(product, index):
         is_9mm = "9mm" in key
         own_pool = index["roller_9mm"] if is_9mm else index["roller_6mm"]
         cands = _roller_candidates(product.get("color_number") or "")
-        found = _find_roller_photo(own_pool, cands)
-        if found:
-            found_dims = _image_dimensions(found) if os.path.exists(found) else None
-            if found_dims is None or found_dims == TARGET_IMAGE_SIZE:
-                return {"source_path": found, "target_filename": target, "reused_other_size": False}
-            # The own-size match exists but is the wrong dimensions (e.g. a
-            # full-res original rather than the web-ready crop) -- check
-            # whether a correctly-sized copy exists under the other size
-            # before settling for it.
-            alt = _find_roller_photo(index["roller_union"], cands, exclude=found)
-            if alt and os.path.exists(alt) and _image_dimensions(alt) == TARGET_IMAGE_SIZE:
-                return {"source_path": alt, "target_filename": target, "reused_other_size": True}
-            return {"source_path": found, "target_filename": target, "reused_other_size": False}
-        found = _find_roller_photo(index["roller_union"], cands)
-        if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
+        own_matches = _find_all_roller_matches(own_pool, cands)
+        union_matches = _find_all_roller_matches(index["roller_union"], cands)
+        all_matches = own_matches + [m for m in union_matches if m not in own_matches]
+        if all_matches:
+            best = _pick_best_candidate(all_matches)
+            return {"source_path": best, "target_filename": target, "reused_other_size": best not in own_matches}
     elif product.get("subcategory") == "Leather Cord":
         parsed = _leather_cord_candidate(target)
         if parsed:
