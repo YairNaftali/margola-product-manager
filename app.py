@@ -517,12 +517,20 @@ def load_drive_index():
             elif "/roller beads/6mm/" in fl: roller_6mm.setdefault(base, []).append(full)
             elif "/crow" in fl: crow.setdefault(base, []).append(full)
             elif "/leather cord/" in fl: leather_cord.setdefault(base, []).append(full)
+    roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
     roller_9mm, roller_6mm, crow, leather_cord, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
         for pool in (roller_9mm, roller_6mm, crow, leather_cord, generic)
     )
-    roller_union = dict(roller_6mm)
-    for k, v in roller_9mm.items(): roller_union.setdefault(k, v)
+    # Built from the raw (pre-picked) path lists, not the already-resolved
+    # per-size dicts above -- otherwise a basename shared by both sizes
+    # (e.g. a 6MM full-res original and a 9MM "JPEG for Web" copy that
+    # happen to share the same filename) collapses to whichever size was
+    # merged in first, silently discarding a correctly-sized duplicate.
+    roller_union = {
+        base: _pick_best_candidate((roller_6mm_raw.get(base, []) + roller_9mm_raw.get(base, [])))
+        for base in set(roller_6mm_raw) | set(roller_9mm_raw)
+    }
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
             "crow": crow, "leather_cord": leather_cord, "generic": generic}
