@@ -435,17 +435,25 @@ def load_file_map():
     return json.load(open(file_map_path(),encoding="utf-8")) if os.path.exists(file_map_path()) else []
 def apply_file_matches_to_products():
     products=load_products(); files=load_file_map(); by={f.get("filename","").lower():f.get("url") for f in files if f.get("filename") and f.get("url")}; matched=0
+    valid_urls=set(by.values())
     for p in products:
         key=(p.get("image_filename") or "").lower()
-        if key in by:
-            p["image_src"]=by[key]; matched+=1
-        elif p.get("bead_shape")=="Roller Beads":
+        new_url=by.get(key)
+        if not new_url and p.get("bead_shape")=="Roller Beads":
             # Roller Beads only shoot one photo per color and reuse it for both
             # the 6mm and 9mm listing, so fall back to the other size's filename.
             alt_key=""
             if "roller-6mm-" in key: alt_key=key.replace("roller-6mm-","roller-9mm-")
             elif "roller-9mm-" in key: alt_key=key.replace("roller-9mm-","roller-6mm-")
-            if alt_key and alt_key in by: p["image_src"]=by[alt_key]; matched+=1
+            if alt_key: new_url=by.get(alt_key)
+        if new_url:
+            p["image_src"]=new_url; matched+=1
+        elif p.get("image_src") and p["image_src"] not in valid_urls:
+            # A previously-matched file no longer exists on Shopify (e.g. it
+            # was one of the test uploads deleted earlier) -- clear the
+            # stale link instead of leaving a broken image_src that silently
+            # excludes the product from every future drive scan.
+            p["image_src"]=""
     save_products(products); return matched,len(products)
 
 DRIVE_FILELISTS = [
