@@ -461,12 +461,12 @@ DRIVE_FILELISTS = [
 # code collision between ROLLER-6MM-40010 (SMOKE GREY TRANSPARENT) and
 # ROLLER-9MM-40010 (BLACK DIAMOND TRANSPARENT) turned out to be a
 # spreadsheet error -- the 6mm row's code reverted back to its original
-# 40020, leaving RB-4001.jpg unambiguously the 9mm product's photo. Three
-# products are still deliberately left out, waiting on new photos:
+# 40020, leaving RB-4001.jpg unambiguously the 9mm product's photo, and
+# RB-4002.jpg was added later as the 6mm product's own photo. Two products
+# are still deliberately left out, waiting on new photos:
 #  - ROLLER-9MM-1006M: no matte-specific photo exists in this folder at all.
 #  - ROLLER-6MM-30040: no plain (non-matte) photo exists, only the 3004
 #    matte one.
-#  - ROLLER-6MM-40020 (SMOKE GREY TRANSPARENT): no photo of its own yet.
 JPEG_FOR_WEB_FOLDER = "/Volumes/Hard Drive/Margola Import Corp./Product Images/Roller Beads/9MM/RB-WebImages-1-8-2020 3/JPEG for Web"
 JPEG_FOR_WEB_MAP = {
     "ROLLER-6MM-00030": "RB-0002.jpg",
@@ -488,6 +488,7 @@ JPEG_FOR_WEB_MAP = {
     "ROLLER-6MM-30060": "RB-3006.jpg",
     "ROLLER-6MM-30090": "30090.jpg",
     "ROLLER-6MM-31010": "31010.jpg",
+    "ROLLER-6MM-40020": "RB-4002.jpg",
     "ROLLER-6MM-50130": "RB-5013.jpg",
     "ROLLER-6MM-50150": "RB-5015.jpg",
     "ROLLER-6MM-50250": "RB-5025.jpg",
