@@ -1,7 +1,7 @@
 import csv, io, json, os, re, uuid, time, mimetypes, urllib.parse, urllib.request, ssl, certifi
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 import openpyxl
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -584,6 +584,45 @@ JPEG_FOR_WEB_MAP = {
     "ROLLER-9MM71010": "RB-7101.jpg",
     "ROLLER-9MM73010": "73010.jpg",
 }
+
+# Same approach as JPEG_FOR_WEB_MAP: hand-verified factory_style -> filename,
+# built by cross-referencing PLEXY-LALIQUE FLOWERS AND LEAVES (1).xlsx against
+# every file in the folder. PL1634-27mm-Petals has no photo anywhere on the
+# drive at all and is deliberately left out. PL1646 was 17mm in the
+# spreadsheet but the only photo on the drive was named 27mm -- Yair
+# confirmed the photo was renamed to 17mm to match, so this assumes the
+# renamed file kept the same "PL1646-17mm-DaisyButtons.jpg" pattern as its
+# neighbors (verify this filename is right after pulling the actual drive
+# listing, since it wasn't independently confirmed).
+PLEXI_LALIQUE_FOLDER = "/Volumes/Hard Drive/Margola Import Corp./Product Images/Plexi Lalique Flowers &Leaves/JPEGS"
+PLEXI_LALIQUE_MAP = {
+    "PL1631-20mm-Flower": "PL1631-20mm-Flower.jpg",
+    "PL1632-24mm-Petals": "PL1632-24mm-Petals.jpg",
+    "PL1637-23mm-Daisy": "PL1637-23mm-Daisy.jpg",
+    "PL1638-26mm-Petals": "PL1638-26mm-Petals.jpg",
+    "PL1640-34mm-Petals": "PL1640-34x33mm-Petals.jpg",
+    "PL1645-23mm-Daisy button": "PL1645-23mm-DaisyButtons.jpg",
+    "PL1646-17mm-Daisy button": "PL1646-17mm-DaisyButtons.jpg",
+    "PL1647-17mm-Petals": "PL1647-17mm-Petals.jpg",
+    "PL1648-25x15mm-Leaf": "PL1648-25x15mm-Leaf.jpg",
+    "PL1649-18x24mm-Leaf": "PL1649-18x24mm-Leaf.jpg",
+    "PL1650-27x26mm-Leaf": "PL1650-27x26mm-Leaf.jpg",
+    "PL1651-21x20mm-Leaf": "PL1651-21x20mm-Leaf.jpg",
+    "PL1653-34x32mm-Leaves": "PL1653-34x32mm-Leaves.jpg",
+    "PL1654-52.5x15mm-Leaf": "PL1654--52.5x15mm-Leaf.jpg",
+    "PL1655-41x15mm-Leaf": "PL1655-41x15mm-Leaf.jpg",
+    "PL1656-30x17mm-Petals": "PL1656-30x17mm-Petals.jpg",
+    "PL1657-27X10mm-Leaf": "PL1657-27x10mm-Leaf.jpg",
+}
+
+# Registry of every hand-verified "one folder, one map" photo source, so the
+# scan endpoint/button can be reused for each new category instead of
+# duplicating an endpoint per folder.
+PHOTO_MAPS = {
+    "roller_crow_jpeg_for_web": {"label": "Roller/Crow JPEGs for Web", "folder": JPEG_FOR_WEB_FOLDER, "map": JPEG_FOR_WEB_MAP},
+    "plexi_lalique": {"label": "Plexi-Lalique Flowers & Leaves", "folder": PLEXI_LALIQUE_FOLDER, "map": PLEXI_LALIQUE_MAP},
+}
+
 JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd")
 # Deprioritized rather than excluded outright -- a couple of the drive's
 # only correctly-sized "JPEG for Web" copies are themselves named with
@@ -970,7 +1009,9 @@ class Handler(BaseHTTPRequestHandler):
         data = open(full,"rb").read()
         self.send_response(200); self.send_header("Content-Type",guess(path)); self.send_header("Content-Length",str(len(data))); self.end_headers(); self.wfile.write(data)
     def do_GET(self):
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
+        query = parse_qs(parsed.query)
         if path == "/": return self.serve_static("/static/index.html")
         if path.startswith("/static/"): return self.serve_static(path)
         products = load_products()
@@ -1007,20 +1048,24 @@ class Handler(BaseHTTPRequestHandler):
                                        "dimensions": f"{dims[0]}x{dims[1]}" if dims else "unverified (drive not connected)",
                                        "correct_size": dims == TARGET_IMAGE_SIZE if dims else None})
             return self.send_json({"ok":True,"proposals":proposals,"filelists":DRIVE_FILELISTS})
-        if path == "/api/photos/scan-jpeg-for-web":
+        if path == "/api/photos/scan-mapped-folder":
+            category = query.get("category", [""])[0]
+            entry = PHOTO_MAPS.get(category)
+            if not entry:
+                return self.send_json({"ok":False,"error":f"Unknown category {category!r}. Known: {list(PHOTO_MAPS)}"},400)
             proposals=[]
             for p in products:
                 if p.get("image_src"): continue
-                filename = JPEG_FOR_WEB_MAP.get(p.get("factory_style"))
+                filename = entry["map"].get(p.get("factory_style"))
                 if not filename: continue
-                source_path = f"{JPEG_FOR_WEB_FOLDER}/{filename}"
+                source_path = f"{entry['folder']}/{filename}"
                 dims = _image_dimensions(source_path) if os.path.exists(source_path) else None
                 proposals.append({"id":p["id"],"title":p.get("title"),"factory_style":p.get("factory_style"),
                                    "source_path":source_path,"target_filename":clean(p.get("image_filename")),
                                    "reused_other_size":False,
                                    "dimensions": f"{dims[0]}x{dims[1]}" if dims else "unverified (drive not connected)",
                                    "correct_size": dims == TARGET_IMAGE_SIZE if dims else None})
-            return self.send_json({"ok":True,"proposals":proposals,"folder":JPEG_FOR_WEB_FOLDER})
+            return self.send_json({"ok":True,"proposals":proposals,"folder":entry["folder"],"label":entry["label"]})
         self.send_response(404); self.end_headers()
     def do_POST(self):
         path = urlparse(self.path).path
