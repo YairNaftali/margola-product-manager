@@ -457,15 +457,16 @@ DRIVE_FILELISTS = [
 # manually cross-referencing every file in the folder against every product's
 # color number/name -- not the fuzzy RB-code guessing used elsewhere, since
 # that guessing has repeatedly picked wrong-sized or wrong-variant (matte vs
-# not) photos when this folder alone was already unambiguous. Four products
-# are deliberately left out:
+# not) photos when this folder alone was already unambiguous. The color
+# code collision between ROLLER-6MM-40010 (SMOKE GREY TRANSPARENT) and
+# ROLLER-9MM-40010 (BLACK DIAMOND TRANSPARENT) turned out to be a
+# spreadsheet error -- the 6mm row's code reverted back to its original
+# 40020, leaving RB-4001.jpg unambiguously the 9mm product's photo. Three
+# products are still deliberately left out, waiting on new photos:
 #  - ROLLER-9MM-1006M: no matte-specific photo exists in this folder at all.
 #  - ROLLER-6MM-30040: no plain (non-matte) photo exists, only the 3004
 #    matte one.
-#  - ROLLER-6MM-40010 / ROLLER-9MM-40010: same code "40010" is used for two
-#    different color names (SMOKE GREY TRANSPARENT vs BLACK DIAMOND
-#    TRANSPARENT) with only one candidate photo (RB-4001.jpg) -- Yair asked
-#    to skip both rather than guess which one is mislabeled.
+#  - ROLLER-6MM-40020 (SMOKE GREY TRANSPARENT): no photo of its own yet.
 JPEG_FOR_WEB_FOLDER = "/Volumes/Hard Drive/Margola Import Corp./Product Images/Roller Beads/9MM/RB-WebImages-1-8-2020 3/JPEG for Web"
 JPEG_FOR_WEB_MAP = {
     "ROLLER-6MM-00030": "RB-0002.jpg",
@@ -540,6 +541,7 @@ JPEG_FOR_WEB_MAP = {
     "ROLLER-9MM-31010": "31010.jpg",
     "ROLLER-9MM-32010": "32010.jpg",
     "ROLLER-9MM-33060": "RB-3306.jpg",
+    "ROLLER-9MM-40010": "RB-4001.jpg",
     "ROLLER-9MM-4302L": "RB-14069.jpg",
     "ROLLER-9MM-50130": "RB-5013.jpg",
     "ROLLER-9MM-50150": "RB-5015.jpg",
