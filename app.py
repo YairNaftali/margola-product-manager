@@ -451,6 +451,128 @@ def apply_file_matches_to_products():
 DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
 ]
+
+# Hand-verified factory_style -> filename mapping for the one folder that
+# holds (almost) every correctly-sized Roller Beads web photo, built by
+# manually cross-referencing every file in the folder against every product's
+# color number/name -- not the fuzzy RB-code guessing used elsewhere, since
+# that guessing has repeatedly picked wrong-sized or wrong-variant (matte vs
+# not) photos when this folder alone was already unambiguous. Four products
+# are deliberately left out:
+#  - ROLLER-9MM-1006M: no matte-specific photo exists in this folder at all.
+#  - ROLLER-6MM-30040: no plain (non-matte) photo exists, only the 3004
+#    matte one.
+#  - ROLLER-6MM-40010 / ROLLER-9MM-40010: same code "40010" is used for two
+#    different color names (SMOKE GREY TRANSPARENT vs BLACK DIAMOND
+#    TRANSPARENT) with only one candidate photo (RB-4001.jpg) -- Yair asked
+#    to skip both rather than guess which one is mislabeled.
+JPEG_FOR_WEB_FOLDER = "/Volumes/Hard Drive/Margola Import Corp./Product Images/Roller Beads/9MM/RB-WebImages-1-8-2020 3/JPEG for Web"
+JPEG_FOR_WEB_MAP = {
+    "ROLLER-6MM-00030": "RB-0002.jpg",
+    "ROLLER-6MM-01790": "RB-red-metallic-01790.jpg",
+    "ROLLER-6MM-03050": "RB-0300.jpg",
+    "ROLLER-6MM-10020": "RB-1002.jpg",
+    "ROLLER-6MM-10090": "10090.jpg",
+    "ROLLER-6MM-10220": "10220.jpg",
+    "ROLLER-6MM-10230": "RB-1023.jpg",
+    "ROLLER-6MM-14400": "RB-14400.jpg",
+    "ROLLER-6MM-20030": "RB-2003.jpg",
+    "ROLLER-6MM-20050": "20050.jpg",
+    "ROLLER-6MM-21415": "RB21415.jpg",
+    "ROLLER-6MM-21435": "RB21435.jpg",
+    "ROLLER-6MM-21455": "RB21455.jpg",
+    "ROLLER-6MM-21495": "RB21495.jpg",
+    "ROLLER-6MM-2398AB": "RB-2398.jpg",
+    "ROLLER-6MM-30030": "RB-3003.jpg",
+    "ROLLER-6MM-30060": "RB-3006.jpg",
+    "ROLLER-6MM-30090": "30090.jpg",
+    "ROLLER-6MM-31010": "31010.jpg",
+    "ROLLER-6MM-50130": "RB-5013.jpg",
+    "ROLLER-6MM-50150": "RB-5015.jpg",
+    "ROLLER-6MM-50250": "RB-5025.jpg",
+    "ROLLER-6MM-5043M": "5043M.jpg",
+    "ROLLER-6MM-50710": "50710.jpg",
+    "ROLLER-6MM-50730": "RB-5073.jpg",
+    "ROLLER-6MM-60010": "RB-6001.jpg",
+    "ROLLER-6MM-60040": "RB-6004.jpg",
+    "ROLLER-6MM-60080": "60080.jpg",
+    "ROLLER-6MM-6302M": "6302M.jpg",
+    "ROLLER-6MM-70100": "RB-7010.jpg",
+    "ROLLER-6MM-80020": "RB-8002.jpg",
+    "ROLLER-6MM-83110": "RB-8311---Copy.jpg",
+    "ROLLER-6MM-90040": "RB-9004.jpg",
+    "ROLLER-6MM-9008M": "9008M.jpg",
+    "ROLLER-6MM-93140": "93140.jpg",
+    "ROLLER-6MM-93210": "RB-9321.jpg",
+    "ROLLER-6MM10060": "RB-1006.jpg",
+    "ROLLER-9MM-00030": "RB-0002.jpg",
+    "ROLLER-9MM-01700": "RB-01700-silver-metallic.jpg",
+    "ROLLER-9MM-01710": "RB-gold-metallic-01710.jpg",
+    "ROLLER-9MM-01720": "RB-DK-brown-metallic-01720.jpg",
+    "ROLLER-9MM-01730": "RB-blue-metallic-01730.jpg",
+    "ROLLER-9MM-01750": "RB-DK-green-metallic-01750.jpg",
+    "ROLLER-9MM-01790": "RB-red-metallic-01790.jpg",
+    "ROLLER-9MM-02010": "RB-02010.jpg",
+    "ROLLER-9MM-03050": "RB-0300.jpg",
+    "ROLLER-9MM-10020": "RB-1002.jpg",
+    "ROLLER-9MM-10060": "RB-1006.jpg",
+    "ROLLER-9MM-10090": "10090.jpg",
+    "ROLLER-9MM-1011M": "RB-1011m.jpg",
+    "ROLLER-9MM-10220": "10220.jpg",
+    "ROLLER-9MM-10230": "RB-1023.jpg",
+    "ROLLER-9MM-10250": "RB-1025.jpg",
+    "ROLLER-9MM-13600": "RB-13600.jpg",
+    "ROLLER-9MM-13620": "RB-13620.jpg",
+    "ROLLER-9MM-14400": "RB-14400.jpg",
+    "ROLLER-9MM-18016": "RB-18016.jpg",
+    "ROLLER-9MM-20030": "RB-2003.jpg",
+    "ROLLER-9MM-2003M": "RB-2003m.jpg",
+    "ROLLER-9MM-20060": "roller-9mm-20060.jpg",
+    "ROLLER-9MM-20080": "RB-2008.jpg",
+    "ROLLER-9MM-21415": "RB21415.jpg",
+    "ROLLER-9MM-21435": "RB21435.jpg",
+    "ROLLER-9MM-23030": "RB-2303.jpg",
+    "ROLLER-9MM-23980": "RB-2398.jpg",
+    "ROLLER-9MM-30030": "RB-3003.jpg",
+    "ROLLER-9MM-3004M": "RB-30040-matte.jpg",
+    "ROLLER-9MM-30060": "RB-3006.jpg",
+    "ROLLER-9MM-30090": "30090.jpg",
+    "ROLLER-9MM-31010": "31010.jpg",
+    "ROLLER-9MM-32010": "32010.jpg",
+    "ROLLER-9MM-33060": "RB-3306.jpg",
+    "ROLLER-9MM-4302L": "RB-14069.jpg",
+    "ROLLER-9MM-50130": "RB-5013.jpg",
+    "ROLLER-9MM-50150": "RB-5015.jpg",
+    "ROLLER-9MM-50230": "RB-5023.jpg",
+    "ROLLER-9MM-50250": "RB-5025.jpg",
+    "ROLLER-9MM-50710": "50710.jpg",
+    "ROLLER-9MM-50730": "RB-5073.jpg",
+    "ROLLER-9MM-5073M": "RB-5073-matte.jpg",
+    "ROLLER-9MM-51010": "51010.jpg",
+    "ROLLER-9MM-52120": "52120.jpg",
+    "ROLLER-9MM-60010": "RB-6001.jpg",
+    "ROLLER-9MM-60040": "RB-6004.jpg",
+    "ROLLER-9MM-60080": "60080.jpg",
+    "ROLLER-9MM-60150": "RB-6015.jpg",
+    "ROLLER-9MM-63040": "63040.jpg",
+    "ROLLER-9MM-63110": "RB-6311.jpg",
+    "ROLLER-9MM-63130": "RB-6313.jpg",
+    "ROLLER-9MM-70100": "RB-7010.jpg",
+    "ROLLER-9MM-70110": "RB-7011.jpg",
+    "ROLLER-9MM-81210": "81210.jpg",
+    "ROLLER-9MM-83110": "RB-8311---Copy.jpg",
+    "ROLLER-9MM-90040": "RB-9004.jpg",
+    "ROLLER-9MM-90050": "RB-9005.jpg",
+    "ROLLER-9MM-90070": "RB-9007.jpg",
+    "ROLLER-9MM-90090": "RB-9009.jpg",
+    "ROLLER-9MM-90120": "RB-9012.jpg",
+    "ROLLER-9MM-93110": "93110.jpg",
+    "ROLLER-9MM-93140": "93140.jpg",
+    "ROLLER-9MM-93200": "RB-9320---Copy.jpg",
+    "ROLLER-9MM-93210": "RB-9321.jpg",
+    "ROLLER-9MM71010": "RB-7101.jpg",
+    "ROLLER-9MM73010": "73010.jpg",
+}
 JUNK_PATH_MARKERS = ("._", ".DS_Store", ".psd")
 # Deprioritized rather than excluded outright -- a couple of the drive's
 # only correctly-sized "JPEG for Web" copies are themselves named with
@@ -556,8 +678,13 @@ def _roller_candidates(color_number):
         variants = [digits]
         if len(digits) == 5 and digits.endswith("0"): variants.append(digits[:-1])
         for v in list(variants):
-            cands.append(v)
+            # For a matte color, try the matte-suffixed filename before the
+            # plain one -- otherwise, when a folder has both a matte and a
+            # non-matte photo for the same base code, _find_all_roller_matches
+            # adds the non-matte exact match first and _pick_best_candidate's
+            # tie-break (same size/folder) silently keeps the wrong photo.
             if is_matte: cands.append(v + "m")
+            cands.append(v)
     return [c for c in cands if c]
 
 def _find_prefixed(pool, prefixes):
@@ -869,6 +996,20 @@ class Handler(BaseHTTPRequestHandler):
                                        "dimensions": f"{dims[0]}x{dims[1]}" if dims else "unverified (drive not connected)",
                                        "correct_size": dims == TARGET_IMAGE_SIZE if dims else None})
             return self.send_json({"ok":True,"proposals":proposals,"filelists":DRIVE_FILELISTS})
+        if path == "/api/photos/scan-jpeg-for-web":
+            proposals=[]
+            for p in products:
+                if p.get("image_src"): continue
+                filename = JPEG_FOR_WEB_MAP.get(p.get("factory_style"))
+                if not filename: continue
+                source_path = f"{JPEG_FOR_WEB_FOLDER}/{filename}"
+                dims = _image_dimensions(source_path) if os.path.exists(source_path) else None
+                proposals.append({"id":p["id"],"title":p.get("title"),"factory_style":p.get("factory_style"),
+                                   "source_path":source_path,"target_filename":clean(p.get("image_filename")),
+                                   "reused_other_size":False,
+                                   "dimensions": f"{dims[0]}x{dims[1]}" if dims else "unverified (drive not connected)",
+                                   "correct_size": dims == TARGET_IMAGE_SIZE if dims else None})
+            return self.send_json({"ok":True,"proposals":proposals,"folder":JPEG_FOR_WEB_FOLDER})
         self.send_response(404); self.end_headers()
     def do_POST(self):
         path = urlparse(self.path).path
