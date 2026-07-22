@@ -83,10 +83,16 @@ app.save_products(products)
 ```
 
 ## 6. Color Family metafield + Color Number tag (Neil's scheme)
-Not part of the CSV export pipeline -- these were applied to Roller/Crow live via
-one-off GraphQL scripts (see `margola_color_family_taxonomy` memory for the full
-digit-family scheme and exceptions). Still needs to be done manually per-category
-after the products are live in Shopify.
+Once products are live in Shopify (approved + imported), use the **"Compute Color
+Family Proposals"** button on the Shopify tab -- it runs `classify_color_family()`
+(Neil's digit map + the metallic/forced-exception/composite-lining/017xx rules, see
+`margola_color_family_taxonomy` memory for the full writeup) against every approved
+product, shows a review table, and only writes `custom.color_family` + the Color
+Number tag for rows you confirm. Anything the classifier can't confidently place
+comes back flagged "needs review" with a blank family for you to fill in by hand.
+If a new category surfaces a color-number pattern the classifier doesn't recognize,
+add it to `COLOR_FAMILY_KEYWORDS`/`COLOR_FAMILY_FORCED` in app.py rather than
+guessing in the UI every time.
 
 ## 7. Before the real Shopify export
 - Re-run the color-taxonomy check in step 3.
