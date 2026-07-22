@@ -927,6 +927,102 @@ def shopify_sync_collections():
             results["errors"].append({"handle":p["handle"],"error":str(e)})
     return results
 
+# --- Neil's Color Family classification (see margola_color_family_taxonomy memory) ---
+# Digit -> family map: this is Preciosa Ornela's own color-number convention
+# (shared across all their bead lines), confirmed by Neil to be authoritative
+# unless a listed exception below applies.
+COLOR_FAMILY_DIGIT_MAP = {
+    "0": "Crystal/White", "1": "Amber/Brown", "2": "Amethyst/Purple", "3": "Sapphire/Blue",
+    "4": "Smoke Gray/Black Diamond", "5": "Green", "6": "Aqua/Turquoise", "7": "Pink",
+    "8": "Yellow", "9": "Orange/Red",
+}
+# Individually confirmed overrides discovered auditing the Roller/Crow catalog --
+# trusted to generalize to other categories since Preciosa's numbering is shared,
+# but re-verify against a real product if a new category surfaces one of these
+# codes with a name that doesn't match.
+COLOR_FAMILY_FORCED = {
+    "78102": "Crystal/White", "48102": "Crystal/White", "00050": "Crystal/White",
+    "49102": "Smoke Gray/Black Diamond",  # "metallic" in the name, but confirmed to beat the metallic rule
+    "23980": "Black",
+    "14400": "Smoke Gray/Black Diamond",  # "GUNMETAL" -- not caught by the metallic-word rule below
+}
+# Only used as a fallback for names that don't follow the plain digit rule
+# (composite crystal-lined codes, the 017xx series) -- NOT used to override or
+# second-guess the digit rule for an ordinary code, since Neil confirmed the
+# digit is authoritative even when it looks like it disagrees with the name
+# (e.g. Teal correctly lands in Green, not Aqua/Turquoise, by digit).
+COLOR_FAMILY_KEYWORDS = [
+    ("TEAL", "Green"), ("PEACH", "Pink"), ("MAUVE", "Amethyst/Purple"), ("IVORY", "Crystal/White"),
+    ("BLACK DIAMOND", "Smoke Gray/Black Diamond"), ("GRAY", "Smoke Gray/Black Diamond"), ("GREY", "Smoke Gray/Black Diamond"),
+    ("SMOKE", "Smoke Gray/Black Diamond"), ("SAPPHIRE", "Sapphire/Blue"), ("BLUE", "Sapphire/Blue"),
+    ("TURQUOISE", "Aqua/Turquoise"), ("AQUA", "Aqua/Turquoise"), ("EMERALD", "Green"), ("OLIVINE", "Green"),
+    ("GREEN", "Green"), ("AMETHYST", "Amethyst/Purple"), ("VIOLET", "Amethyst/Purple"), ("PURPLE", "Amethyst/Purple"),
+    ("FUCHSIA", "Pink"), ("ROSE", "Pink"), ("PINK", "Pink"), ("SIAM", "Orange/Red"), ("RUBY", "Orange/Red"),
+    ("ORANGE", "Orange/Red"), ("RED", "Orange/Red"), ("CITRINE", "Yellow"), ("YELLOW", "Yellow"),
+    ("ROOT BEER", "Amber/Brown"), ("BRONZE", "Amber/Brown"), ("AMBER", "Amber/Brown"), ("BROWN", "Amber/Brown"),
+    ("BLACK", "Black"), ("WHITE", "Crystal/White"),
+]
+HORN_AGATE_CODE_RE = re.compile(r"^26[1-9]")
+COLOR_FAMILY_CHOICES = ["Sapphire/Blue","Orange/Red","Green","Amber/Brown","Amethyst/Purple","Smoke Gray/Black Diamond","Aqua/Turquoise","Metallic","Black","Yellow","Crystal/White","Pink"]
+
+def classify_color_family(color_number, color_name, description=""):
+    # Returns (family_or_None, reason). family is None when no rule confidently
+    # applies -- caller should flag it for a manual call rather than guess.
+    code = re.sub(r"[^0-9]", "", clean(color_number))
+    name = clean(color_name).upper()
+    blob = f"{name} {re.sub('<[^>]+>',' ',clean(description)).upper()}"
+    if code in COLOR_FAMILY_FORCED:
+        return COLOR_FAMILY_FORCED[code], "forced exception"
+    if "METALLIC" in blob:
+        return "Metallic", "metallic in name/description"
+    if HORN_AGATE_CODE_RE.match(code):
+        return None, "Horn/Agate/Stone line uses a different numbering system"
+    if code[:2] in ("37", "38"):
+        lining = name.replace("CRYSTAL", "").replace("LUSTER", "")
+        for kw, fam in COLOR_FAMILY_KEYWORDS:
+            if kw in lining: return fam, f"crystal-lined composite, lining color matched '{kw}'"
+        return None, "crystal-lined composite (37xxx/38xxx) -- lining color not recognized"
+    if "IVORY" in blob:
+        return "Crystal/White", "ivory"
+    if code[:3] == "017":
+        for kw, fam in COLOR_FAMILY_KEYWORDS:
+            if kw in name: return fam, f"017xx excluded from digit rule, name matched '{kw}'"
+        return None, "017xx series -- name not recognized"
+    if code and code[0] in COLOR_FAMILY_DIGIT_MAP:
+        return COLOR_FAMILY_DIGIT_MAP[code[0]], "leading digit"
+    return None, "no recognizable color number"
+
+def shopify_apply_color_family(items):
+    # items: [{"handle":..., "family":...}, ...] -- confirmed by the user in the
+    # review table, not computed fresh here, so an inline override in the UI is
+    # respected exactly as typed.
+    products_by_handle = {p["handle"]: p for p in load_products()}
+    applied, errors = [], []
+    for item in items:
+        handle = clean(item.get("handle")); family = clean(item.get("family"))
+        if not handle or not family:
+            errors.append({"handle":handle,"error":"Missing handle or family"}); continue
+        if family not in COLOR_FAMILY_CHOICES:
+            errors.append({"handle":handle,"error":f"{family!r} is not one of the 12 approved families"}); continue
+        p = products_by_handle.get(handle)
+        try:
+            product_id = shopify_product_id_by_handle(handle)
+            if not product_id:
+                errors.append({"handle":handle,"error":"Product not found on Shopify -- export/import it first"}); continue
+            m="""mutation($metafields:[MetafieldsSetInput!]!){ metafieldsSet(metafields:$metafields){ metafields{id} userErrors{field message} } }"""
+            mf=[{"ownerId":product_id,"namespace":"custom","key":"color_family","type":"single_line_text_field","value":family}]
+            d=shopify_graphql(m,{"metafields":mf})["metafieldsSet"]
+            if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+            color_number = clean(p.get("color_number")) if p else ""
+            if color_number:
+                tm="""mutation($id:ID!,$tags:[String!]!){ tagsAdd(id:$id, tags:$tags){ userErrors{field message} } }"""
+                td=shopify_graphql(tm,{"id":product_id,"tags":[color_number]})["tagsAdd"]
+                if td.get("userErrors"): raise RuntimeError(json.dumps(td["userErrors"]))
+            applied.append({"handle":handle,"family":family,"color_number":color_number})
+        except Exception as e:
+            errors.append({"handle":handle,"error":str(e)})
+    return {"applied":applied,"errors":errors}
+
 def taxonomy_map_path(): return os.path.join(DATA_DIR,"shopify_taxonomy_map.json")
 def load_taxonomy_map():
     return json.load(open(taxonomy_map_path(),encoding="utf-8")) if os.path.exists(taxonomy_map_path()) else {"bead_shape":{},"color":{}}
@@ -1081,6 +1177,14 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 files=shopify_list_files(); save_file_map(files); matched,total=apply_file_matches_to_products(); return self.send_json({"ok":True,"files":files,"matched":matched,"total_products":total})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/color-family-proposals":
+            proposals=[]
+            for p in products:
+                if not p.get("approved") or p.get("skipped"): continue
+                family, reason = classify_color_family(p.get("color_number"), p.get("color_name"), p.get("generated_description") or p.get("source_description"))
+                proposals.append({"handle":p["handle"],"title":p.get("title"),"color_number":p.get("color_number"),
+                                   "color_name":p.get("color_name"),"family":family,"reason":reason,"needs_review":family is None})
+            return self.send_json({"ok":True,"proposals":proposals,"choices":COLOR_FAMILY_CHOICES})
         if path == "/api/photos/resolve-from-drive":
             index = load_drive_index()
             if not index["found_any"]:
@@ -1120,6 +1224,10 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/shopify/sync-collections":
             try: return self.send_json({"ok":True, **shopify_sync_collections()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/apply-color-family":
+            data = json.loads(self.read_body().decode("utf-8")); items = data.get("items",[])
+            try: return self.send_json({"ok":True, **shopify_apply_color_family(items)})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/photos/apply-drive-matches":
             data = json.loads(self.read_body().decode("utf-8")); matches = data.get("matches",[])
