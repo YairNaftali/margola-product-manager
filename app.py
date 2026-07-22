@@ -63,9 +63,12 @@ def row_dict(headers, values):
 
 def infer(sheet_name, color_name, source_filename=""):
     s = sheet_name.lower()
+    s_compact = re.sub(r"[^a-z0-9]", "", s)
     fn = source_filename.lower()
     c = clean(color_name).lower()
     BEADS_CATEGORY = "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads"
+    if "2cut" in s_compact:
+        return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"2 Cut Beads","bead_shape":"2 Cut Beads","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
     if "crow" in s:
         return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"Crow Beads","bead_shape":"Crow Beads","color_type":"Opaque","factory_qty_standard":"1000 pieces","mini_qty_standard":"100 pieces","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
     if "roller" in s:
@@ -146,26 +149,45 @@ def parse_xlsx(path):
     wb = openpyxl.load_workbook(path, data_only=True)
     products = []
     for ws in wb.worksheets:
-        headers = [c.value for c in ws[1]]
-        if not any(headers): continue
-        for row_num, vals in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
+        row1 = [c.value for c in ws[1]]
+        if not any(row1): continue
+        row2 = [c.value for c in ws[2]] if ws.max_row >= 2 else []
+        # Some sheets (e.g. 2 Cut / seed / bugle bead templates) use a merged two-row
+        # header: row 1 has group labels (e.g. "Factory Pack Style Number"), row 2 has
+        # the specific field name for grouped columns (e.g. "Color Number"). Detect that
+        # by row 2 containing recognizable field-name text, since a genuine first data
+        # row would never literally contain the words "Color Number"/"Color Name".
+        row2_norm = {normalize_header(v) for v in row2 if v}
+        two_row_header = "color_number" in row2_norm or "color_name" in row2_norm
+        if two_row_header:
+            width = max(len(row1), len(row2))
+            row1 += [None] * (width - len(row1))
+            row2 += [None] * (width - len(row2))
+            headers = [row2[i] if row2[i] not in (None, "") else row1[i] for i in range(width)]
+            data_start = 3
+        else:
+            headers = row1
+            data_start = 2
+        for row_num, vals in enumerate(ws.iter_rows(min_row=data_start, values_only=True), start=data_start):
             if not any(vals): continue
             row = row_dict(headers, vals)
-            factory_style = get_first(row, ["FACTORY PACK STYLE #","FACTORY PACK       STYLE #","FACTORY PACK STYLE"])
+            factory_style = get_first(row, ["FACTORY PACK STYLE #","FACTORY PACK       STYLE #","FACTORY PACK STYLE","FACTORY PACK STYLE NUMBER"])
             if not clean(factory_style): continue
-            size = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE","SIZE","Milimeter size"])
+            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","BEAD SIZE DIAMETER  MM","BEAD SIZE","SIZE","Milimeter size"])
+            size_mm = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE DIAMETER MM"])
             color_number = get_first(row, ["COLOR NUMBER"])
             color_name = get_first(row, ["COLOR NAME"])
+            color_type_explicit = get_first(row, ["COLOR TYPE (IS A FILTER ON THE WEBITE)","COLOR TYPE (IS A FILTER ON THE WEBSITE)","COLOR TYPE"])
             shape = get_first(row, ["SHAPE"])
             source_description = get_first(row, ["DESCRIPTION"])
             factory_qty = get_first(row, ["FACTORY PACK UNIT QUANTITY"])
             factory_qty_desc = get_first(row, ["UNIT QUANTITY DESCRIPTION","UNIT QUANTITY DESCRIPTION FACTORY PACK"])
-            factory_price = get_first(row, ["UNIT PRICE PER FACTORY PACK","UNIT PRICE PER BAG"])
-            factory_weight = get_first(row, ["WEIGHT PER FACTORY PACK"])
-            mini_style = get_first(row, ["MINI PACK STYLE #","MINI PACK       STYLE #"])
-            mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION"])
-            mini_price = get_first(row, ["UNIT PRICE PER MINI PACK"])
-            mini_weight = get_first(row, ["WEIGHT PER MINI PACK"])
+            factory_price = get_first(row, ["UNIT PRICE PER FACTORY PACK","UNIT PRICE PER BAG","FACTORY PACK PRICE"])
+            factory_weight = get_first(row, ["WEIGHT PER FACTORY PACK","FACTORY PACK WEIGHT OZ"])
+            mini_style = get_first(row, ["MINI PACK STYLE #","MINI PACK       STYLE #","MINI PACK STYLE NUMBER"])
+            mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
+            mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
+            mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
             inf = infer(ws.title, color_name, os.path.basename(path))
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -183,12 +205,12 @@ def parse_xlsx(path):
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
                 "approved":False, "skipped":False, "status":"Needs Review",
                 "title":title, "handle":slugify(title), "brand":"", "vendor":"Margola",
-                "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":inf["color_type"], "bead_shape":bead_shape_value,
+                "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value,
                 "shopify_category":inf["shopify_category"],
-                "size":clean(size), "color_number":clean(color_number), "color_name":clean(color_name),
+                "size":clean(size), "size_mm":clean(size_mm), "color_number":clean(color_number), "color_name":clean(color_name),
                 "image_filename":image_for(factory_style,color_name,title_descriptor,size), "image_src":"", "image_alt":title,
                 "factory_style":clean(factory_style), "factory_quantity":clean(factory_qty),
-                "factory_quantity_description":clean(factory_qty_desc) or inf["factory_qty_standard"],
+                "factory_quantity_description":clean(factory_qty_desc) or clean(factory_qty) or inf["factory_qty_standard"],
                 "factory_price":money(factory_price), "factory_weight_oz":weight_oz(factory_weight),
                 "mini_style":clean(mini_style), "mini_quantity":clean(mini_qty) or inf["mini_qty_standard"],
                 "mini_price":money(mini_price), "mini_weight_oz":weight_oz(mini_weight),
@@ -458,6 +480,7 @@ def apply_file_matches_to_products():
 
 DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "2cut_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -678,7 +701,7 @@ def _pick_best_candidate(paths):
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
-    roller_9mm, roller_6mm, crow, leather_cord, generic = {}, {}, {}, {}, {}
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic = {}, {}, {}, {}, {}, {}
     found_any = False
     for list_path in DRIVE_FILELISTS:
         if not os.path.exists(list_path): continue
@@ -695,10 +718,11 @@ def load_drive_index():
             elif "/roller beads/6mm/" in fl: roller_6mm.setdefault(base, []).append(full)
             elif "/crow" in fl: crow.setdefault(base, []).append(full)
             elif "/leather cord/" in fl: leather_cord.setdefault(base, []).append(full)
+            elif "/2 cuts/" in fl: two_cut.setdefault(base, []).append(full)
     roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
-    roller_9mm, roller_6mm, crow, leather_cord, generic = (
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
-        for pool in (roller_9mm, roller_6mm, crow, leather_cord, generic)
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic)
     )
     # Built from the raw (pre-picked) path lists, not the already-resolved
     # per-size dicts above -- otherwise a basename shared by both sizes
@@ -711,7 +735,7 @@ def load_drive_index():
     }
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
-            "crow": crow, "leather_cord": leather_cord, "generic": generic}
+            "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "generic": generic}
 
 def _roller_candidates(color_number):
     cn = clean(color_number)
@@ -768,6 +792,18 @@ def _find_all_roller_matches(pool, cands):
                     if k.endswith(suffix): add(v)
     return results
 
+def _find_2cut_photo(pool, color_number):
+    # Filenames are the color number plus the size marker, e.g. "35061-11_0.jpg"
+    # (dash or underscore, both seen in practice). One product (48102) is
+    # labeled "10_0" instead of "11_0" on the actual file -- matches the
+    # Image File Name typo already present in Neil's own spreadsheet for that
+    # row, so it's trusted as the real filename rather than treated as junk.
+    code = clean(color_number)
+    for suffix in ("_11_0.jpg", "-11_0.jpg", "_11_0.jpeg", "-11_0.jpeg", "_10_0.jpg", "-10_0.jpg", "_10_0.jpeg", "-10_0.jpeg"):
+        v = pool.get(f"{code}{suffix}")
+        if v: return v
+    return None
+
 def _leather_cord_candidate(image_filename):
     m = re.match(r"lc-(\d+)-(\d+)mm-(.+)\.jpg$", image_filename or "")
     if not m: return None
@@ -810,6 +846,9 @@ def resolve_photo_from_drive(product, index):
                 kk = k.replace("-", " ")
                 if f"{size}mm" in kk and color in kk:
                     return {"source_path": v, "target_filename": target, "reused_other_size": False}
+    elif product.get("bead_shape") == "2 Cut Beads":
+        found = _find_2cut_photo(index["two_cut"], product.get("color_number"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
 def multipart_form_data(fields, files):

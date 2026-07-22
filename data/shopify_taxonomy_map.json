@@ -3,6 +3,7 @@
   "bead_shape": {
     "Roller Beads": {"label": "Barrel", "base": "Tube"},
     "Crow Beads": {"label": "Barrel", "base": "Tube"},
+    "2 Cut Beads": {"label": "2 Cut", "base": "Seed"},
     "Daisy": {"label": "Daisy", "base": "Other"},
     "Daisy button": {"label": "Daisy Button", "base": "Other"},
     "Flower": {"label": "Flower", "base": "Other"},
