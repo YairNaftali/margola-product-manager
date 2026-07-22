@@ -356,7 +356,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Color (product.metafields.shopify.color-pattern)": resolver.color_handle(p.get("color_name")) if idx == 0 else "",
                 "Bead shape (product.metafields.shopify.bead-shape)": resolver.bead_shape_handle(p.get("bead_shape")) if idx == 0 else "",
                 "Color Type (product.metafields.custom.color_type)": clean(p.get("color_type")) if idx == 0 else "",
-                "Bead Size (product.metafields.custom.bead_size_mm)": clean(p.get("size")) if idx == 0 else "",
+                "Bead Size (product.metafields.custom.bead_size_mm)": (clean(p.get("size_mm")) or clean(p.get("size"))) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
