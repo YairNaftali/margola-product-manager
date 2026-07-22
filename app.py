@@ -68,7 +68,7 @@ def infer(sheet_name, color_name, source_filename=""):
     c = clean(color_name).lower()
     BEADS_CATEGORY = "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads"
     if "2cut" in s_compact:
-        return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"2 Cut Beads","bead_shape":"2 Cut Beads","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
+        return {"collection":"Czech Glass Beads","title_prefix":"2 CUT","title_suffix":"PRECIOSA ORNELA BEADS","subcategory":"2 Cut Beads","bead_shape":"2 Cut Beads","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
     if "crow" in s:
         return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"Crow Beads","bead_shape":"Crow Beads","color_type":"Opaque","factory_qty_standard":"1000 pieces","mini_qty_standard":"100 pieces","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
     if "roller" in s:
@@ -192,7 +192,17 @@ def parse_xlsx(path):
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
             title_descriptor = clean(shape) or inf["subcategory"]
-            title = title_for(inf["title_prefix"], title_descriptor, size, color_name)
+            if inf.get("title_suffix"):
+                # Collapse stray double-spacing typos from the source sheet, and
+                # drop a redundant trailing "BEADS" from the color name itself
+                # (e.g. "... LOOSE BEADS") when the suffix already ends in
+                # "BEADS" -- avoids "LOOSE BEADS PRECIOSA ORNELA BEADS".
+                color_display = re.sub(r"\s+", " ", clean(color_name)).strip()
+                if inf["title_suffix"].split()[-1].upper() == "BEADS" and re.search(r"\bBEADS$", color_display, re.I):
+                    color_display = re.sub(r"\s*\bBEADS$", "", color_display, flags=re.I).strip()
+                title = " ".join(x for x in [inf["title_prefix"], clean(size), color_display, inf["title_suffix"]] if x)
+            else:
+                title = title_for(inf["title_prefix"], title_descriptor, size, color_name)
             bead_shape_value = clean(shape) if inf["populate_bead_shape_from_shape"] and clean(shape) else inf["bead_shape"]
             row_text = " ".join(clean(x) for x in vals).lower()
             notes = []
