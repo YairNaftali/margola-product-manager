@@ -76,7 +76,7 @@ def spreadsheet_type_by_id(type_id):
 
 def _infer_fields(t):
     # Strips the matching/sync keys, leaving just what infer() has always returned.
-    return {k: t[k] for k in ("collection","title_prefix","title_suffix","subcategory","bead_shape","color_type","factory_qty_standard","mini_qty_standard","populate_bead_shape_from_shape","shopify_category")}
+    return {k: t[k] for k in ("collection","title_prefix","title_suffix","subcategory","bead_shape","color_type","factory_qty_standard","mini_qty_standard","populate_bead_shape_from_shape","shopify_category","vendor")}
 
 def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
     s = sheet_name.lower()
@@ -96,7 +96,7 @@ def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
                 t = cand; break
 
     if not t:
-        return {"type_id":"","collection":"","title_prefix":"","title_suffix":"","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":""}
+        return {"type_id":"","collection":"","title_prefix":"","title_suffix":"","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":"","vendor":""}
 
     fields = _infer_fields(t)
     if t["id"] == "roller-beads":
@@ -240,7 +240,7 @@ def parse_xlsx(path, forced_type_id=None):
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
                 "spreadsheet_type_id":inf.get("type_id",""),
                 "approved":False, "skipped":False, "status":"Needs Review",
-                "title":title, "handle":slugify(title), "brand":"", "vendor":"Margola",
+                "title":title, "handle":slugify(title), "brand":"", "vendor":inf.get("vendor") or "Margola",
                 "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value,
                 "shopify_category":inf["shopify_category"],
                 "size":clean(size), "size_mm":clean(size_mm), "color_number":clean(color_number), "color_name":clean(color_name),
@@ -975,19 +975,19 @@ def shopify_sync_collections():
 # (shared across all their bead lines), confirmed by Neil to be authoritative
 # unless a listed exception below applies.
 COLOR_FAMILY_DIGIT_MAP = {
-    "0": "Crystal/White", "1": "Amber/Brown", "2": "Amethyst/Purple", "3": "Sapphire/Blue",
-    "4": "Smoke Gray/Black Diamond", "5": "Green", "6": "Aqua/Turquoise", "7": "Pink",
-    "8": "Yellow", "9": "Orange/Red",
+    "0": "Crystal / White", "1": "Amber / Brown", "2": "Amethyst / Purple", "3": "Sapphire / Blue",
+    "4": "Smoke Gray / Black Diamond", "5": "Green", "6": "Aqua / Turquoise", "7": "Pink",
+    "8": "Yellow", "9": "Orange / Red",
 }
 # Individually confirmed overrides discovered auditing the Roller/Crow catalog --
 # trusted to generalize to other categories since Preciosa's numbering is shared,
 # but re-verify against a real product if a new category surfaces one of these
 # codes with a name that doesn't match.
 COLOR_FAMILY_FORCED = {
-    "78102": "Crystal/White", "48102": "Crystal/White", "00050": "Crystal/White",
-    "49102": "Smoke Gray/Black Diamond",  # "metallic" in the name, but confirmed to beat the metallic rule
+    "78102": "Crystal / White", "48102": "Crystal / White", "00050": "Crystal / White",
+    "49102": "Smoke Gray / Black Diamond",  # "metallic" in the name, but confirmed to beat the metallic rule
     "23980": "Black",
-    "14400": "Smoke Gray/Black Diamond",  # "GUNMETAL" -- not caught by the metallic-word rule below
+    "14400": "Smoke Gray / Black Diamond",  # "GUNMETAL" -- not caught by the metallic-word rule below
 }
 # Only used as a fallback for names that don't follow the plain digit rule
 # (composite crystal-lined codes, the 017xx series) -- NOT used to override or
@@ -995,18 +995,18 @@ COLOR_FAMILY_FORCED = {
 # digit is authoritative even when it looks like it disagrees with the name
 # (e.g. Teal correctly lands in Green, not Aqua/Turquoise, by digit).
 COLOR_FAMILY_KEYWORDS = [
-    ("TEAL", "Green"), ("PEACH", "Pink"), ("MAUVE", "Amethyst/Purple"), ("IVORY", "Crystal/White"),
-    ("BLACK DIAMOND", "Smoke Gray/Black Diamond"), ("GRAY", "Smoke Gray/Black Diamond"), ("GREY", "Smoke Gray/Black Diamond"),
-    ("SMOKE", "Smoke Gray/Black Diamond"), ("SAPPHIRE", "Sapphire/Blue"), ("BLUE", "Sapphire/Blue"),
-    ("TURQUOISE", "Aqua/Turquoise"), ("AQUA", "Aqua/Turquoise"), ("EMERALD", "Green"), ("OLIVINE", "Green"),
-    ("GREEN", "Green"), ("AMETHYST", "Amethyst/Purple"), ("VIOLET", "Amethyst/Purple"), ("PURPLE", "Amethyst/Purple"),
-    ("FUCHSIA", "Pink"), ("ROSE", "Pink"), ("PINK", "Pink"), ("SIAM", "Orange/Red"), ("RUBY", "Orange/Red"),
-    ("ORANGE", "Orange/Red"), ("RED", "Orange/Red"), ("CITRINE", "Yellow"), ("YELLOW", "Yellow"),
-    ("ROOT BEER", "Amber/Brown"), ("BRONZE", "Amber/Brown"), ("AMBER", "Amber/Brown"), ("BROWN", "Amber/Brown"),
-    ("BLACK", "Black"), ("WHITE", "Crystal/White"),
+    ("TEAL", "Green"), ("PEACH", "Pink"), ("MAUVE", "Amethyst / Purple"), ("IVORY", "Crystal / White"),
+    ("BLACK DIAMOND", "Smoke Gray / Black Diamond"), ("GRAY", "Smoke Gray / Black Diamond"), ("GREY", "Smoke Gray / Black Diamond"),
+    ("SMOKE", "Smoke Gray / Black Diamond"), ("SAPPHIRE", "Sapphire / Blue"), ("BLUE", "Sapphire / Blue"),
+    ("TURQUOISE", "Aqua / Turquoise"), ("AQUA", "Aqua / Turquoise"), ("EMERALD", "Green"), ("OLIVINE", "Green"),
+    ("GREEN", "Green"), ("AMETHYST", "Amethyst / Purple"), ("VIOLET", "Amethyst / Purple"), ("PURPLE", "Amethyst / Purple"),
+    ("FUCHSIA", "Pink"), ("ROSE", "Pink"), ("PINK", "Pink"), ("SIAM", "Orange / Red"), ("RUBY", "Orange / Red"),
+    ("ORANGE", "Orange / Red"), ("RED", "Orange / Red"), ("CITRINE", "Yellow"), ("YELLOW", "Yellow"),
+    ("ROOT BEER", "Amber / Brown"), ("BRONZE", "Amber / Brown"), ("AMBER", "Amber / Brown"), ("BROWN", "Amber / Brown"),
+    ("BLACK", "Black"), ("WHITE", "Crystal / White"),
 ]
 HORN_AGATE_CODE_RE = re.compile(r"^26[1-9]")
-COLOR_FAMILY_CHOICES = ["Sapphire/Blue","Orange/Red","Green","Amber/Brown","Amethyst/Purple","Smoke Gray/Black Diamond","Aqua/Turquoise","Metallic","Black","Yellow","Crystal/White","Pink"]
+COLOR_FAMILY_CHOICES = ["Sapphire / Blue","Orange / Red","Green","Amber / Brown","Amethyst / Purple","Smoke Gray / Black Diamond","Aqua / Turquoise","Metallic","Black","Yellow","Crystal / White","Pink"]
 
 def classify_color_family(color_number, color_name, description=""):
     # Returns (family_or_None, reason). family is None when no rule confidently
