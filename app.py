@@ -839,9 +839,11 @@ def _find_2cut_photo(pool, color_number):
     # so the code must be too -- matte-suffix codes like "1107M" are the
     # first color numbers with letters in them, exposing this.
     code = clean(color_number).lower()
-    for suffix in ("_11_0.jpg", "-11_0.jpg", "_11_0.jpeg", "-11_0.jpeg", "_10_0.jpg", "-10_0.jpg", "_10_0.jpeg", "-10_0.jpeg", "-10.jpg", "_10.jpg", "-11.jpg", "_11.jpg"):
-        v = pool.get(f"{code}{suffix}")
-        if v: return v
+    for size in ("11_0", "10_0", "11", "10"):
+        for sep in ("_", "-"):
+            for ext in (".jpg", ".jpeg", ".png"):
+                v = pool.get(f"{code}{sep}{size}{ext}")
+                if v: return v
     return None
 
 def _leather_cord_candidate(image_filename):
