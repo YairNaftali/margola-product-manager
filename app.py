@@ -835,8 +835,11 @@ def _find_2cut_photo(pool, color_number):
     # labeled "10_0" instead of "11_0" on the actual file -- matches the
     # Image File Name typo already present in Neil's own spreadsheet for that
     # row, so it's trusted as the real filename rather than treated as junk.
-    code = clean(color_number)
-    for suffix in ("_11_0.jpg", "-11_0.jpg", "_11_0.jpeg", "-11_0.jpeg", "_10_0.jpg", "-10_0.jpg", "_10_0.jpeg", "-10_0.jpeg"):
+    # Pool keys are lowercased (load_drive_index lowercases every basename),
+    # so the code must be too -- matte-suffix codes like "1107M" are the
+    # first color numbers with letters in them, exposing this.
+    code = clean(color_number).lower()
+    for suffix in ("_11_0.jpg", "-11_0.jpg", "_11_0.jpeg", "-11_0.jpeg", "_10_0.jpg", "-10_0.jpg", "_10_0.jpeg", "-10_0.jpeg", "-10.jpg", "_10.jpg", "-11.jpg", "_11.jpg"):
         v = pool.get(f"{code}{suffix}")
         if v: return v
     return None
