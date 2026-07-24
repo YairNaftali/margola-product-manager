@@ -1,9 +1,10 @@
 [
   {
-    "id": "e26a5599-7816-462c-91b7-84f0e5a76c83",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "a04a797e-3752-4fb3-9ca8-2855b7461630",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 3,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -71,14 +72,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "6a5927e6-f7cd-461f-98a7-ddd1ce6bedfa",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "f5146f67-e040-4d78-b280-81b1b09494b9",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 4,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -146,14 +147,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "23a7adb0-3b5b-4d29-ad4f-8799a7f1afa6",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "1cb8549a-2176-4bd9-9e01-3dc6385a4c12",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 5,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -221,14 +222,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "5319eccf-6374-4bc2-932c-12eee9b4658c",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "caa3bad3-8145-472b-a3a1-afc0027cf618",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 6,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -296,14 +297,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "9c7bf1be-5a95-4079-9a4f-a6ff9636265b",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "b8d74854-cb12-4a59-bf1f-f21d2200521a",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 7,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -371,14 +372,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "51a5f031-5f98-4d2c-9806-6f5239824481",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "c1c80c43-b6e9-4c9a-b30c-335a1cba5337",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 8,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -446,14 +447,89 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "f0272d56-b10e-4f30-9f7c-78534ddf3c66",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "50be2e55-56d4-40fa-8884-950c8e33d3a4",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
     "source_row": 9,
+    "spreadsheet_type_id": "2cut-beads",
+    "approved": false,
+    "skipped": false,
+    "status": "Ready for Review",
+    "title": "2 CUT 11/0 WHITE SATIN PRECIOSA ORNELA BEADS",
+    "handle": "2-cut-11-0-white-satin-preciosa-ornela-beads",
+    "brand": "",
+    "vendor": "Margola",
+    "collection": "Czech Glass Beads",
+    "subcategory": "2 Cut Beads",
+    "color_type": "SATIN COLORS",
+    "bead_shape": "2 Cut Beads",
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "size": "11/0",
+    "size_mm": "1.9mm +/- 0.1mm",
+    "color_number": "05051",
+    "color_name": "WHITE SATIN",
+    "image_filename": "2cut-11-0-05051.jpg",
+    "image_src": "",
+    "image_alt": "2 CUT 11/0 WHITE SATIN PRECIOSA ORNELA BEADS",
+    "factory_style": "2CUT-11/0-05051",
+    "factory_quantity": "1/2 Kilo = 500 grams",
+    "factory_quantity_description": "1/2 Kilo = 500 grams",
+    "factory_price": "25.00",
+    "factory_weight_oz": "17.7",
+    "mini_style": "2CUT-11/0-05051-mini",
+    "mini_quantity": "35 grams",
+    "mini_price": "4.00",
+    "mini_weight_oz": "1.25",
+    "variants": [
+      {
+        "name": "Mini Pack",
+        "option_value": "mini-pack",
+        "sku": "2CUT-11/0-05051-mini",
+        "price": "4.00",
+        "weight_oz": "1.25",
+        "quantity": "35 grams"
+      },
+      {
+        "name": "Factory Pack",
+        "option_value": "factory-pack",
+        "sku": "2CUT-11/0-05051",
+        "price": "25.00",
+        "weight_oz": "17.7",
+        "quantity": ""
+      }
+    ],
+    "source_description": "2 CUT BEADS BY PRECIOSA ORNELA",
+    "generated_description": "",
+    "description_approved": false,
+    "notes": "",
+    "validation": {
+      "checks": {
+        "Title": true,
+        "Handle": true,
+        "At least one variant": true,
+        "All variant SKUs": true,
+        "All variant prices": true,
+        "All variant weights": true,
+        "Collection": true,
+        "Subcategory": true,
+        "Color type": true,
+        "Bead shape": true,
+        "Image filename": true,
+        "Description": true
+      },
+      "score": 100,
+      "warnings": []
+    }
+  },
+  {
+    "id": "edc01f0e-05ae-4b33-95e8-8559742228e9",
+    "source_file": "2 Cut Beads 11_0.xlsx",
+    "source_sheet": "2CUT 110",
+    "source_row": 10,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -521,14 +597,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "0e2c25a6-7843-42a6-8fd6-9b49cb1ca41d",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "1698193e-54e6-49a6-8cc0-d28ed8e0ba70",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 10,
+    "source_row": 11,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -596,14 +672,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "ce56a188-2fd8-4dbb-9bad-62019e6ee68c",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "0c695919-8939-4fa5-9b3e-9dfd45cef7ee",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 12,
+    "source_row": 13,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -671,14 +747,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "e2ff0fcb-56c6-445b-94be-f1ce5d24a5d5",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "38231032-d124-4bdf-81c4-b107bc417234",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 13,
+    "source_row": 14,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -746,14 +822,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "3192afb0-ef78-4136-8193-ebfeda2baaac",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "7d600fde-5b78-468b-8bdc-e930c66f5103",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 14,
+    "source_row": 15,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -821,14 +897,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "6cc13fc8-b857-41e3-916e-65577124d0c1",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "587bccae-3694-4a0c-89d3-64eecbba2eec",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 16,
+    "source_row": 17,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -896,14 +972,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "78076df0-7c9a-4668-a48e-98341e8e60ff",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "e6346b80-4557-4a8a-b76c-5ca4a716f9e5",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 17,
+    "source_row": 18,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -971,14 +1047,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "1863cb1c-5382-4907-a5a4-19573e228158",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "51f9e3f6-ad60-4bcc-adbc-2a0e803de7c0",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 18,
+    "source_row": 19,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1046,14 +1122,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "14da0b28-3e90-4bbb-b72b-c1550568e3f5",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "a49b81e7-4c1b-44a0-99e3-3b17b0c5ac9c",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 19,
+    "source_row": 20,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1121,14 +1197,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "eece0038-bfe1-418b-8c71-cdadc7ec5447",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "c0dbc6aa-53d9-4178-9a90-71bed1d79b25",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 20,
+    "source_row": 21,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1196,14 +1272,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "3808684e-1387-4935-9e64-e2a1855ab621",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "a0924297-fd7f-4461-b152-759bc062b9d7",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 21,
+    "source_row": 22,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1271,14 +1347,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "d7028fce-a1ac-4ca8-a909-74c53cbb7597",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "3fad6be9-ebe1-4f3c-b84b-1491d3f20ad8",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 22,
+    "source_row": 23,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1346,14 +1422,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "80424188-7c59-4c13-9d4a-fd441114e510",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "40e7b5fc-ee29-4af9-856a-a79c976109d8",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 23,
+    "source_row": 24,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1421,14 +1497,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "b740aab9-f464-4080-9ce5-4d6304f59f41",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "ff52e1af-8edf-4ed7-b8c4-33478a293426",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 24,
+    "source_row": 25,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1496,14 +1572,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "51677683-9012-4723-b4a4-d16d20aa130f",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "cca3bae1-b4ab-4f8a-bb99-b85fd5e5a4d8",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 25,
+    "source_row": 26,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1571,14 +1647,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "c6fb9ce2-f3ac-4eb4-b408-189e00dd3afd",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "b05cf097-1ec4-49c8-b79d-b901d926889b",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 26,
+    "source_row": 27,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1646,14 +1722,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "ad4798df-aeab-4b20-8f78-e4b9ebc1142f",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "b49f1886-00f2-4005-8018-7fade5e5c766",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 27,
+    "source_row": 28,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1721,14 +1797,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "e5d67dc2-535c-4a40-9280-f2dbdf65f19c",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "bcfedcfb-eec2-4913-86ac-d8a982966923",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 29,
+    "source_row": 30,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Needs Review",
@@ -1796,14 +1872,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "cf71c2ea-9233-48f2-9510-5f8a8d16562e",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "be7cac4d-e3a1-4bf3-b1c0-17957d10f9b7",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 31,
+    "source_row": 32,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1871,14 +1947,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "365493af-60ce-4ebc-819d-384fcf9b1b2f",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "dab2613a-d57a-4bfb-b618-3e02fd0caa91",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 32,
+    "source_row": 33,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -1946,14 +2022,14 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   },
   {
-    "id": "3fe49281-447b-48d2-86ce-8cb000c0cba4",
-    "source_file": "2 Cut Beads 11_0 (1).xlsx",
+    "id": "8dc6383a-941e-490b-9cd5-442d4cf21bff",
+    "source_file": "2 Cut Beads 11_0.xlsx",
     "source_sheet": "2CUT 110",
-    "source_row": 33,
+    "source_row": 34,
+    "spreadsheet_type_id": "2cut-beads",
     "approved": false,
     "skipped": false,
     "status": "Ready for Review",
@@ -2021,7 +2097,6 @@
       },
       "score": 100,
       "warnings": []
-    },
-    "spreadsheet_type_id": "2cut-beads"
+    }
   }
 ]
