@@ -1,0 +1,93 @@
+[
+  {
+    "id": "2cut-beads",
+    "label": "2 Cut Beads",
+    "sheet_match": ["2cut"],
+    "filename_match": [],
+    "collection": "Czech Glass Beads",
+    "title_prefix": "2 CUT",
+    "title_suffix": "PRECIOSA ORNELA BEADS",
+    "subcategory": "2 Cut Beads",
+    "bead_shape": "2 Cut Beads",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {"title": "2 Cut Preciosa Ornela Beads", "handle": "2-cut-beads"}
+    ]
+  },
+  {
+    "id": "crow-beads",
+    "label": "Crow Beads",
+    "sheet_match": ["crow"],
+    "filename_match": [],
+    "collection": "Czech Glass Beads",
+    "title_prefix": "Czech Glass",
+    "title_suffix": "",
+    "subcategory": "Crow Beads",
+    "bead_shape": "Crow Beads",
+    "color_type": "Opaque",
+    "factory_qty_standard": "1000 pieces",
+    "mini_qty_standard": "100 pieces",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {"title": "Czech Glass Beads", "handle": "czech-glass-beads"}
+    ]
+  },
+  {
+    "id": "roller-beads",
+    "label": "Roller Beads",
+    "sheet_match": ["roller"],
+    "filename_match": [],
+    "collection": "Czech Glass Beads",
+    "title_prefix": "Czech Glass",
+    "title_suffix": "",
+    "subcategory": "Roller Beads",
+    "bead_shape": "Roller Beads",
+    "color_type": "",
+    "factory_qty_standard": "1200 beads",
+    "mini_qty_standard": "144 beads",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {"title": "Czech Glass Beads", "handle": "czech-glass-beads"}
+    ]
+  },
+  {
+    "id": "leather-cord",
+    "label": "Leather Cord / Stringing Materials",
+    "sheet_match": ["leathercord"],
+    "filename_match": ["stringing"],
+    "collection": "Tools & Stringing Materials",
+    "title_prefix": "",
+    "title_suffix": "",
+    "subcategory": "Leather Cord",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Crafting Fibers > Jewelry & Beading Cord",
+    "sync": []
+  },
+  {
+    "id": "plexi-lalique",
+    "label": "Plexi-Lalique Flowers & Leaves",
+    "sheet_match": [],
+    "filename_match": ["lalique", "plexy"],
+    "collection": "Plexi-Lalique Flowers & Leaves",
+    "title_prefix": "Plexi-Lalique",
+    "title_suffix": "",
+    "subcategory": "",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": []
+  }
+]

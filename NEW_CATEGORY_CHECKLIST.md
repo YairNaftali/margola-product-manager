@@ -9,16 +9,30 @@ Steps to onboard a new spreadsheet/category (seed beads, bugle beads, fire polis
   template), `parse_xlsx` already auto-detects that. If a column doesn't map, check
   `get_first(row, [...])` candidate lists in `parse_xlsx` (app.py) -- add the exact
   header text as another candidate rather than renaming the spreadsheet.
-- If `infer()` doesn't recognize the sheet/category yet, add a branch (match on
-  `s_compact`, the sheet title with punctuation/spaces stripped). Set `collection`,
-  `subcategory`, `bead_shape`, `color_type` (leave `""` if the sheet has its own
-  explicit Color Type column -- it gets picked up automatically), and
-  `shopify_category`.
+- If the category isn't in `data/spreadsheet_types.json` yet, add a new entry
+  (matches on `sheet_match`/`filename_match` -- substrings checked against the
+  compacted sheet tab name / lowercased filename, same semantics as the old
+  hardcoded `infer()` branches). Set `collection`, `subcategory`, `bead_shape`,
+  `color_type` (leave `""` if the sheet has its own explicit Color Type column --
+  it gets picked up automatically), `shopify_category`, and **`sync`** -- the real
+  Shopify collection(s) this category's approved products should be added to when
+  "Sync Collections" runs. Ask Yair for the target collection when he sends the
+  filelist for this category (this is what replaced the old blanket-`collection`
+  sync behavior that caused the 2026-07-24 incident) -- leave `sync: []` until he
+  confirms it, which makes Sync Collections a safe no-op for this type in the
+  meantime.
+  - Once added, the new type shows up automatically in the import page's
+    "Spreadsheet type" dropdown -- pick it explicitly instead of relying on
+    auto-detect if you want to be sure which recipe applies.
 - If the desired product Title doesn't fit the default
-  `{prefix} {descriptor} {size} {color}` pattern, give `infer()` a `title_suffix` key
-  -- see the 2 Cut Beads branch for the alternate `{prefix} {size} {color} {suffix}`
-  construction, including the "drop a redundant trailing BEADS" and whitespace-typo
-  cleanup logic next to it in `parse_xlsx`.
+  `{prefix} {descriptor} {size} {color}` pattern, give the type a `title_suffix`
+  field -- see the `2cut-beads` entry for the alternate `{prefix} {size} {color}
+  {suffix}` construction, including the "drop a redundant trailing BEADS" and
+  whitespace-typo cleanup logic next to it in `parse_xlsx` (app.py).
+- One piece of matching logic that couldn't move into the JSON: Roller Beads'
+  transparent/opaque `color_type` detection (scans both sheet name and color name
+  together) stays as a small special case in `infer()`, gated on `type_id ==
+  "roller-beads"`.
 
 ## 2. Bead shape taxonomy
 - `data/shopify_taxonomy_map.json` -> `"bead_shape"` needs an entry for the new

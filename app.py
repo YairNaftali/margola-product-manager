@@ -61,26 +61,51 @@ def get_first(row, names):
 def row_dict(headers, values):
     return {normalize_header(headers[i]): values[i] if i < len(values) else None for i in range(len(headers))}
 
-def infer(sheet_name, color_name, source_filename=""):
+def spreadsheet_types_path(): return os.path.join(DATA_DIR, "spreadsheet_types.json")
+
+_SPREADSHEET_TYPES_CACHE = None
+def load_spreadsheet_types(force=False):
+    global _SPREADSHEET_TYPES_CACHE
+    if force or _SPREADSHEET_TYPES_CACHE is None:
+        path = spreadsheet_types_path()
+        _SPREADSHEET_TYPES_CACHE = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else []
+    return _SPREADSHEET_TYPES_CACHE
+
+def spreadsheet_type_by_id(type_id):
+    return next((t for t in load_spreadsheet_types() if t["id"] == type_id), None)
+
+def _infer_fields(t):
+    # Strips the matching/sync keys, leaving just what infer() has always returned.
+    return {k: t[k] for k in ("collection","title_prefix","title_suffix","subcategory","bead_shape","color_type","factory_qty_standard","mini_qty_standard","populate_bead_shape_from_shape","shopify_category")}
+
+def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
     s = sheet_name.lower()
     s_compact = re.sub(r"[^a-z0-9]", "", s)
     fn = source_filename.lower()
     c = clean(color_name).lower()
-    BEADS_CATEGORY = "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads"
-    if "2cut" in s_compact:
-        return {"collection":"Czech Glass Beads","title_prefix":"2 CUT","title_suffix":"PRECIOSA ORNELA BEADS","subcategory":"2 Cut Beads","bead_shape":"2 Cut Beads","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
-    if "crow" in s:
-        return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"Crow Beads","bead_shape":"Crow Beads","color_type":"Opaque","factory_qty_standard":"1000 pieces","mini_qty_standard":"100 pieces","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
-    if "roller" in s:
-        if "transparent" in s or "transparent" in c or "transpaent" in c: ct = "Transparent"
-        elif "opaque" in s or "opaque" in c: ct = "Opaque"
-        else: ct = ""
-        return {"collection":"Czech Glass Beads","title_prefix":"Czech Glass","subcategory":"Roller Beads","bead_shape":"Roller Beads","color_type":ct,"factory_qty_standard":"1200 beads","mini_qty_standard":"144 beads","populate_bead_shape_from_shape":False,"shopify_category":BEADS_CATEGORY}
-    if "stringing" in fn or "leather cord" in s:
-        return {"collection":"Tools & Stringing Materials","title_prefix":"","subcategory":"Leather Cord","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":"Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Crafting Fibers > Jewelry & Beading Cord"}
-    if "lalique" in fn or "plexy" in fn:
-        return {"collection":"Plexi-Lalique Flowers & Leaves","title_prefix":"Plexi-Lalique","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":True,"shopify_category":BEADS_CATEGORY}
-    return {"collection":"","title_prefix":"","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":""}
+    types = load_spreadsheet_types()
+
+    if forced_type_id:
+        t = spreadsheet_type_by_id(forced_type_id)
+        if not t:
+            raise ValueError(f"Unknown spreadsheet type id {forced_type_id!r}. Known: {[x['id'] for x in types]}")
+    else:
+        t = None
+        for cand in types:
+            if any(m in s_compact for m in cand.get("sheet_match", [])) or any(m in fn for m in cand.get("filename_match", [])):
+                t = cand; break
+
+    if not t:
+        return {"type_id":"","collection":"","title_prefix":"","title_suffix":"","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":""}
+
+    fields = _infer_fields(t)
+    if t["id"] == "roller-beads":
+        # Depends on scanning both sheet name and color name together -- not a
+        # fit for a static JSON field, kept as the one piece of special-cased logic.
+        if "transparent" in s or "transparent" in c or "transpaent" in c: fields["color_type"] = "Transparent"
+        elif "opaque" in s or "opaque" in c: fields["color_type"] = "Opaque"
+    fields["type_id"] = t["id"]
+    return fields
 
 def title_for(prefix, descriptor, size, color_name):
     # No assumptions: do not invent manufacturer/brand.
@@ -145,7 +170,7 @@ def validate(p):
 
     return {"checks": checks, "score": score, "warnings": warnings}
 
-def parse_xlsx(path):
+def parse_xlsx(path, forced_type_id=None):
     wb = openpyxl.load_workbook(path, data_only=True)
     products = []
     for ws in wb.worksheets:
@@ -188,7 +213,7 @@ def parse_xlsx(path):
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
             mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
             mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
-            inf = infer(ws.title, color_name, os.path.basename(path))
+            inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
             title_descriptor = clean(shape) or inf["subcategory"]
@@ -213,6 +238,7 @@ def parse_xlsx(path):
                 notes.append(f"Mini pack style # may not match this row's size ({clean(size)!r}): {clean(mini_style)!r}")
             p = {
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
+                "spreadsheet_type_id":inf.get("type_id",""),
                 "approved":False, "skipped":False, "status":"Needs Review",
                 "title":title, "handle":slugify(title), "brand":"", "vendor":"Margola",
                 "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value,
@@ -334,8 +360,8 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
             "Type": p["subcategory"] or p.get("collection", ""),
             "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
             "Published": "TRUE",
-            "Variant Inventory Tracker": "",
-            "Variant Inventory Qty": "",
+            "Variant Inventory Tracker": "shopify",
+            "Variant Inventory Qty": 15,
             "Variant Inventory Policy": "deny",
             "Variant Fulfillment Service": "manual",
             "Variant Requires Shipping": "TRUE",
@@ -900,31 +926,47 @@ def shopify_add_product_to_collection(product_id, collection_id):
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
 
 def shopify_sync_collections():
+    # Groups approved products by their own stored spreadsheet_type_id and syncs
+    # each group to that type's configured `sync` collection list -- NOT the
+    # generic `collection` field (used only for CSV Tags/Type). This is what
+    # prevents the 2026-07-24 incident (2 Cut Beads getting blanket-synced into
+    # "Czech Glass Beads" just because that was the category's tag value) from
+    # happening again: a type with no `sync` entries is a safe no-op, reported
+    # explicitly rather than silently doing nothing.
     products=load_products()
-    results={"created_collections":[],"matched":0,"not_found_in_shopify":[],"errors":[]}
+    results={"created_collections":[],"matched":0,"not_found_in_shopify":[],"skipped_no_target":[],"errors":[]}
     collection_cache={}
+    by_type={}
     for p in products:
         if not p.get("approved") or p.get("skipped"): continue
-        collection_name=clean(p.get("collection"))
-        if not collection_name: continue
-        handle=slugify(collection_name)
-        if handle not in collection_cache:
+        by_type.setdefault(p.get("spreadsheet_type_id") or "", []).append(p)
+    for type_id, group in by_type.items():
+        t = spreadsheet_type_by_id(type_id) if type_id else None
+        sync_targets = (t or {}).get("sync", [])
+        if not sync_targets:
+            results["skipped_no_target"].extend({"handle":p["handle"],"type_id":type_id or "(none)"} for p in group)
+            continue
+        target_ids=[]
+        for target in sync_targets:
+            handle=target["handle"]
+            if handle not in collection_cache:
+                try:
+                    cid, created=shopify_find_or_create_collection(target["title"], handle)
+                    collection_cache[handle]=cid
+                    if created: results["created_collections"].append(target["title"])
+                except Exception as e:
+                    results["errors"].append({"collection":target["title"],"error":str(e)}); continue
+            target_ids.append(collection_cache[handle])
+        for p in group:
             try:
-                cid, created=shopify_find_or_create_collection(collection_name, handle)
-                collection_cache[handle]=cid
-                if created: results["created_collections"].append(collection_name)
+                product_id=shopify_product_id_by_handle(p["handle"])
+                if not product_id:
+                    results["not_found_in_shopify"].append(p["handle"]); continue
+                for cid in target_ids:
+                    shopify_add_product_to_collection(product_id, cid)
+                results["matched"]+=1
             except Exception as e:
-                results["errors"].append({"collection":collection_name,"error":str(e)})
-                continue
-        collection_id=collection_cache[handle]
-        try:
-            product_id=shopify_product_id_by_handle(p["handle"])
-            if not product_id:
-                results["not_found_in_shopify"].append(p["handle"]); continue
-            shopify_add_product_to_collection(product_id, collection_id)
-            results["matched"]+=1
-        except Exception as e:
-            results["errors"].append({"handle":p["handle"],"error":str(e)})
+                results["errors"].append({"handle":p["handle"],"error":str(e)})
     return results
 
 # --- Neil's Color Family classification (see margola_color_family_taxonomy memory) ---
@@ -1177,6 +1219,9 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 files=shopify_list_files(); save_file_map(files); matched,total=apply_file_matches_to_products(); return self.send_json({"ok":True,"files":files,"matched":matched,"total_products":total})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/spreadsheet-types":
+            types=[{"id":t["id"],"label":t["label"],"sync":t.get("sync",[])} for t in load_spreadsheet_types()]
+            return self.send_json({"ok":True,"types":types})
         if path == "/api/shopify/color-family-proposals":
             proposals=[]
             for p in products:
@@ -1336,18 +1381,21 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/import":
             ctype = self.headers.get("Content-Type",""); m = re.search(r"boundary=(.+)", ctype)
             if not m: return self.send_json({"error":"Missing upload boundary"},400)
-            body = self.read_body(); boundary = ("--"+m.group(1)).encode(); file_bytes = None; filename = "upload.xlsx"
+            body = self.read_body(); boundary = ("--"+m.group(1)).encode(); file_bytes = None; filename = "upload.xlsx"; type_id = None
             for part in body.split(boundary):
                 if b'name="file"' in part:
                     fm = re.search(rb'filename="([^"]+)"', part)
                     if fm: filename = fm.group(1).decode("utf-8", errors="replace")
                     pieces = part.split(b"\r\n\r\n",1)
-                    if len(pieces)==2: file_bytes = pieces[1].rstrip(b"\r\n--"); break
+                    if len(pieces)==2: file_bytes = pieces[1].rstrip(b"\r\n--")
+                elif b'name="type_id"' in part:
+                    pieces = part.split(b"\r\n\r\n",1)
+                    if len(pieces)==2: type_id = pieces[1].rstrip(b"\r\n--").decode("utf-8", errors="replace").strip()
             if not file_bytes: return self.send_json({"error":"No file uploaded"},400)
             upload_path = os.path.join(UPLOAD_DIR, f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{slugify(filename)}.xlsx")
             open(upload_path,"wb").write(file_bytes)
             try:
-                products = parse_xlsx(upload_path); save_products(products); return self.send_json({"summary":summary(products),"detected":detected_categories(products),"products":products})
+                products = parse_xlsx(upload_path, forced_type_id=(type_id or None)); save_products(products); return self.send_json({"summary":summary(products),"detected":detected_categories(products),"products":products})
             except Exception as e: return self.send_json({"error":str(e)},500)
         self.send_response(404); self.end_headers()
 
