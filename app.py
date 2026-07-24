@@ -517,6 +517,7 @@ def apply_file_matches_to_products():
 DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "2cut_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "2cut_10_0_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
