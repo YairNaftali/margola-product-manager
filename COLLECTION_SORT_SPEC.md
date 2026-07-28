@@ -117,3 +117,28 @@ trying to trigger it automatically at the end of an import.
 If a category ever gets more than one size that needs grouping, expose the
 group-vs-interleave choice as a prompt/setting rather than hardcoding it —
 see the note under Step 1.
+
+## Implementation status (2026-07-25)
+
+Built as specified: `sort_key`/`COLLECTION_SIZE_ORDER` and the collection
+lookup/reorder/verify functions in `app.py`, exposed as
+`GET /api/shopify/collection-sort-proposal?handle=...&group_by_size=0|1` +
+`POST /api/shopify/apply-collection-sort`, with a review table on the Shopify
+tab (collection handle input, group-vs-interleave radio toggle shown only
+when `multi_size` is true, current-position vs new-position columns so it's
+visible what would actually move).
+
+**One live-verified correction to the spec's example:** `MoveInput.newPosition`
+is `UnsignedInt64!` on the current schema, not a string — confirmed via
+`__type` introspection. Sending `str(i)` as the spec's snippet shows would be
+a type mismatch; the implementation passes a plain int.
+
+Tested read-only against the real `2-cut-beads` collection (90 live
+products, both 10/0 and 11/0 mixed in) — grouped mode correctly grouped by
+size then sorted numerically by color code within each group (including the
+letter-suffixed codes like `1105M`); interleave mode correctly dropped the
+size component. The no-numeric-code alphabetical fallback was unit-tested
+directly (no products in the current catalog exercise it live yet — Chunky
+Mix/Leather Cord per the spec's own note). **Never called the apply
+endpoint/mutation** — that pushes a real live reorder, left for a human to
+trigger via the button.

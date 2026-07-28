@@ -90,48 +90,76 @@ Description text here...</pre>
 </main>
 
 <main id="shopifyTab" class="tab-page">
-  <section class="export-panel">
-    <h2>Shopify connection</h2>
-    <p>Uses your local <code>.env</code> file. Do not paste secrets into chat.</p>
-    <div class="option-box">
-      <strong>.env format</strong>
-      <pre>SHOPIFY_STORE=ksbb0i-kh.myshopify.com
+  <div class="workbench">
+    <nav class="tool-rail">
+      <button class="tool-rail-item active" data-tool="connection">Connection</button>
+      <button class="tool-rail-item" data-tool="images">Upload Images</button>
+      <button class="tool-rail-item" data-tool="photos">Photos from Drive</button>
+      <button class="tool-rail-item" data-tool="colorfamily">Color Family</button>
+      <button class="tool-rail-item" data-tool="sort">Collection Sort</button>
+      <button class="tool-rail-item" data-tool="seo">SEO Title + Description</button>
+    </nav>
+    <div class="tool-panels">
+      <section class="tool-panel active" data-tool-panel="connection">
+        <h2>Shopify connection</h2>
+        <p>Uses your local <code>.env</code> file. Do not paste secrets into chat.</p>
+        <div class="option-box">
+          <strong>.env format</strong>
+          <pre>SHOPIFY_STORE=ksbb0i-kh.myshopify.com
 SHOPIFY_CLIENT_ID=your_client_id
 SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
-    </div>
-    <div class="card-actions">
-      <button id="shopifyConfigBtn" class="btn">Check Local Config</button>
-      <button id="shopifyTestBtn" class="btn primary">Test Shopify Connection</button>
-      <button id="shopifyFilesBtn" class="btn">Sync Shopify Files</button>
-      <button id="shopifySyncCollectionsBtn" class="btn primary">Sync Collections (Approved Products)</button>
-    </div>
-    <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
+        </div>
+        <div class="card-actions">
+          <button id="shopifyConfigBtn" class="btn">Check Local Config</button>
+          <button id="shopifyTestBtn" class="btn primary">Test Shopify Connection</button>
+          <button id="shopifyFilesBtn" class="btn">Sync Shopify Files</button>
+          <button id="shopifySyncCollectionsBtn" class="btn primary">Sync Collections (Approved Products)</button>
+        </div>
+        <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
+      </section>
 
-    <div class="option-box">
-      <strong>Upload images to Shopify Files</strong>
-      <form id="shopifyUploadForm">
-        <input type="file" name="file" accept="image/*" multiple webkitdirectory directory required>
-        <button class="btn primary" type="submit">Upload Images</button>
-      </form>
-    </div>
+      <section class="tool-panel" data-tool-panel="images">
+        <h2>Upload images to Shopify Files</h2>
+        <form id="shopifyUploadForm">
+          <input type="file" name="file" accept="image/*" multiple webkitdirectory directory required>
+          <button class="btn primary" type="submit">Upload Images</button>
+        </form>
+      </section>
 
-    <div class="option-box">
-      <strong>Resolve photos from Hard Drive</strong>
-      <p class="hint">Looks up real photos on the drive using the filelist dumps in your Downloads folder (harddrive_filelist.txt, 2cut_filelist.txt, etc. — see DRIVE_FILELISTS in app.py). No renaming needed. Review the proposed matches below, then upload the ones you want. Requires the drive to be connected for the files it finds.</p>
-      <button id="resolveDriveBtn" class="btn primary">Scan Drives for Matches</button>
-      <button id="approveWithImageBtn" class="btn">Approve All Products With a Photo</button>
-      <div id="driveMatches"></div>
-    </div>
+      <section class="tool-panel" data-tool-panel="photos">
+        <h2>Resolve photos from Hard Drive</h2>
+        <p class="hint">Looks up real photos on the drive using the filelist dumps in your Downloads folder (harddrive_filelist.txt, 2cut_filelist.txt, etc. — see DRIVE_FILELISTS in app.py). No renaming needed. Review the proposed matches below, then upload the ones you want. Requires the drive to be connected for the files it finds.</p>
+        <button id="resolveDriveBtn" class="btn primary">Scan Drives for Matches</button>
+        <button id="approveWithImageBtn" class="btn">Approve All Products With a Photo</button>
+        <div id="driveMatches"></div>
+      </section>
 
-    <div class="option-box">
-      <strong>Color Family + Color Number Tag (Neil's Scheme)</strong>
-      <p class="hint">Classifies each approved product's Color Family from its color number/name per Neil's leading-digit scheme, and proposes the Color Number as a plain tag. Review every row before applying — anything the classifier can't confidently place is flagged "needs review" with a blank family for you to fill in or skip.</p>
-      <button id="colorFamilyProposalsBtn" class="btn primary">Compute Color Family Proposals</button>
-      <div id="colorFamilyMatches"></div>
-    </div>
+      <section class="tool-panel" data-tool-panel="colorfamily">
+        <h2>Color Family + Color Number Tag (Neil's Scheme)</h2>
+        <p class="hint">Classifies each approved product's Color Family from its color number/name per Neil's leading-digit scheme, and proposes the Color Number as a plain tag. Review every row before applying — anything the classifier can't confidently place is flagged "needs review" with a blank family for you to fill in or skip.</p>
+        <button id="colorFamilyProposalsBtn" class="btn primary">Compute Color Family Proposals</button>
+        <div id="colorFamilyMatches"></div>
+      </section>
 
-    <pre id="shopifyResult">No Shopify action run yet.</pre>
-  </section>
+      <section class="tool-panel" data-tool-panel="sort">
+        <h2>Collection Sort Order</h2>
+        <p class="hint">Derives a sort order from each product's SKU (color code, and size if the collection spans more than one) and pushes it live. A manual sort is a one-time snapshot, not a live rule — new products just append at the end, so re-run this any time a category gets new colors/sizes. Safe and idempotent.</p>
+        <input type="text" id="collectionSortHandle" placeholder="Collection handle, e.g. 2-cut-beads" list="knownCollectionHandles">
+        <datalist id="knownCollectionHandles"></datalist>
+        <button id="collectionSortProposalBtn" class="btn primary">Compute Sort Order</button>
+        <div id="collectionSortMatches"></div>
+      </section>
+
+      <section class="tool-panel" data-tool-panel="seo">
+        <h2>SEO Title + Description</h2>
+        <p class="hint">Regenerates SEO title/description for the whole live catalog straight from Shopify (not just the currently loaded batch) — safe to re-run any time, since a product already having a value isn't proof it's still correct.</p>
+        <button id="seoProposalsBtn" class="btn primary">Compute SEO Proposals (Whole Catalog)</button>
+        <div id="seoMatches"></div>
+      </section>
+
+      <pre id="shopifyResult">No Shopify action run yet.</pre>
+    </div>
+  </div>
 </main>
 
 <main id="exportTab" class="tab-page">

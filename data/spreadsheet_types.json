@@ -20,6 +20,26 @@
     ]
   },
   {
+    "id": "bugle-beads",
+    "label": "Bugle Beads",
+    "sheet_match": ["bugle"],
+    "filename_match": ["bugle"],
+    "vendor": "Preciosa Ornela",
+    "collection": "Czech Glass Beads",
+    "title_prefix": "BUGLE",
+    "title_suffix": "PRECIOSA ORNELA BEADS",
+    "subcategory": "Bugle Beads",
+    "bead_shape": "Bugle Beads",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {"title": "Bugle Beads", "handle": "bugle-beads"}
+    ]
+  },
+  {
     "id": "crow-beads",
     "label": "Crow Beads",
     "sheet_match": ["crow"],
@@ -94,5 +114,25 @@
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": []
+  },
+  {
+    "id": "glass-jewels",
+    "label": "Glass Jewels & Cabochons",
+    "sheet_match": [],
+    "filename_match": ["glass jewels"],
+    "vendor": "Margola",
+    "collection": "Glass Jewels & Cabochons",
+    "title_prefix": "Glass Jewel",
+    "title_suffix": "",
+    "subcategory": "Glass Jewels & Cabochons",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks",
+    "sync": [
+      {"title": "Glass Jewels & Cabochons", "handle": "glass-jewels-cabochons"}
+    ]
   }
 ]

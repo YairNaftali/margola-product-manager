@@ -151,3 +151,67 @@ Whatever this becomes (button, CLI script, pipeline step), it should be
 **safe and normal to re-run against the entire catalog**, not just products
 created since the last run — per the 7/9 incident above, "already has a
 value" is not proof the value is currently correct.
+
+## Implementation status (2026-07-25)
+
+Built as specified: `strip_html`/`fix_shouty_caps`/`truncate_words`/
+`gen_seo_title`/`gen_description` in `app.py`, reading the whole live catalog
+via `shopify_list_products_for_seo()` (not local `products.json`), exposed as
+`GET /api/shopify/seo-proposals` + `POST /api/shopify/apply-seo`, with a
+review table on the Shopify tab mirroring the Color Family button pattern.
+One deliberate deviation from a literal reading: flagged rows (any of the 4
+conditions above) default to **unchecked** in the review table rather than
+checked, since the spec says to flag for review rather than auto-apply blind.
+
+**The "Second Shopify quirk" read-after-write verify step was deliberately
+NOT built** (the spec marks it optional). `productUpdate`'s own `userErrors`
+already tells you definitively whether a write was accepted, and that's
+already surfaced in `shopify_apply_seo()`'s `errors` list — a delayed
+re-query mainly protects against silent no-ops, and the specific silent-no-op
+failure mode this spec describes (`seo.title == title`) is already prevented
+structurally by the `| Margola` fallback + the `seo_title_still_matches_title`
+flag, not something a 30-60s-later re-check would catch better.
+
+**Update 2026-07-25, two follow-up fixes after first live use:**
+1. **`strip_html()` bug:** replacing every HTML tag with a literal space put a
+   stray space before punctuation whenever a closing inline tag (e.g. `</span>`
+   from Google-Sheets-pasted descriptions) sat directly against it —
+   `COATING</span>. Each` became `COATING . Each`. This was never a live data
+   typo, purely a generator artifact (caught before ever calling `apply-seo`,
+   so nothing live was wrong). Fixed by collapsing whitespace immediately
+   before `.,;:!?` as a final step in `strip_html()`.
+2. **Review-table checkbox defaults recalibrated:** a live full-catalog run
+   showed `shouty_caps_fixed` firing on 375/458 products (82%) — every
+   category using an ALL-CAPS `<h2>` template (2 Cut, 3 Cut, Roller, Fire
+   Polished), while the only unflagged category (Rhinestone Flatback) already
+   uses title-case. Spot-checked several categories and the transformation is
+   correct everywhere, so continuing to require a manual checkbox click on
+   82% of the catalog was pure busywork, not real safety. Rows whose *only*
+   flag is `shouty_caps_fixed` are now pre-checked too (see
+   `seoNeedsManualReview()` in `app.js`) — the other 3 flags (missing
+   description, awkward truncation, anomalous title match) still default to
+   unchecked, since those are genuinely rarer and worth a human glance.
+
+**Update 2026-07-25, further UX pass (Yair: "so I don't have to check off as
+many boxes"):** discovered `shouty_caps_fixed` fires on both changed *and*
+already-correct rows (it only measures whether the raw HTML had caps to fix,
+not whether the live value already reflects that fix from an older script
+run) — of 375 flagged rows, 179 were already correct. Reworked the review
+table: already-correct (`changed: false`) rows are now hidden by default
+behind a "show N already-correct row(s) too" toggle, and the badge column
+shows a plain green "unchanged" for those instead of the (misleadingly
+alarming) shouty warning badge. The visible table is now just the rows that
+actually need something written, all pre-checked unless genuinely flagged —
+so the normal flow is Compute → Apply with no per-row clicking needed, unless
+a rarer flag (missing description, awkward truncation, anomalous title) is
+present.
+
+**If asked to add it later** (e.g. "add an audit button for the SEO push"):
+build it as a separate, standalone action — not wired into `apply-seo` itself
+(a mandatory 30-60s wait after every apply click would make the button feel
+hung). Concretely: a new `GET /api/shopify/seo-audit` endpoint that re-queries
+`shopify_list_products_for_seo()` and reports any product whose live
+`seo.title`/`seo.description` doesn't match what `gen_seo_title`/
+`gen_description` would currently generate for it — meant to be run some time
+*after* an apply pass, as a separate button/step, not chained automatically
+after it.

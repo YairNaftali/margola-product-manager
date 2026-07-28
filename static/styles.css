@@ -294,7 +294,7 @@ header .actions{display:flex;gap:10px;flex-wrap:wrap}
   max-width:900px;margin:24px auto 60px;padding:26px;
   border:1px solid var(--line);border-radius:18px;background:var(--paper);
 }
-.description-import h2,.export-panel h2{font-family:var(--font-display);font-weight:600;font-size:22px;margin:0 0 6px}
+.description-import h2,.export-panel h2,.tool-panel h2{font-family:var(--font-display);font-weight:600;font-size:22px;margin:0 0 6px}
 .description-import textarea{
   width:100%;height:260px;border:1px solid var(--line-2);border-radius:var(--radius);
   padding:12px;font-size:13.5px;font-family:var(--font-mono);margin:12px 0;background:#fff;color:var(--text);
@@ -304,9 +304,61 @@ header .actions{display:flex;gap:10px;flex-wrap:wrap}
 .export-panel ol{line-height:1.9;color:var(--text)}
 .export-panel a.btn{margin-right:10px;margin-top:6px}
 
-.export-panel .option-box{background:var(--paper)}
-.export-panel .card-actions{padding:0;border:0;gap:10px;flex-wrap:wrap}
-.export-panel .card-actions button{flex:none}
+.export-panel .option-box,.tool-panel .option-box{background:var(--paper)}
+.export-panel .card-actions,.tool-panel .card-actions{padding:0;border:0;gap:10px;flex-wrap:wrap}
+.export-panel .card-actions button,.tool-panel .card-actions button{flex:none}
+
+/* ---------- shopify tab: tool workbench ---------- */
+
+.workbench{
+  display:grid;grid-template-columns:200px 1fr;gap:20px;
+  height:min(700px,calc(100vh - 300px));min-height:440px;
+  margin:24px 32px 60px;
+}
+.tool-rail{
+  display:flex;flex-direction:column;gap:2px;
+  background:var(--paper-well);border:1px solid var(--line);border-radius:var(--radius);
+  padding:10px;align-self:start;height:100%;overflow-y:auto;box-sizing:border-box;
+}
+.tool-rail-item{
+  all:unset;box-sizing:border-box;text-align:left;font-family:var(--font-body);font-size:13.5px;
+  padding:10px 12px;border-radius:var(--radius-sm);color:var(--text);cursor:pointer;
+}
+.tool-rail-item:hover{background:var(--paper-well-2)}
+.tool-rail-item.active{background:var(--ink);color:var(--ink-text)}
+.tool-rail-item:focus-visible{outline:2px solid var(--sapphire);outline-offset:2px}
+.tool-panels{
+  display:flex;flex-direction:column;height:100%;overflow-y:auto;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);
+}
+.tool-panel{display:none;flex-direction:column;gap:12px;padding:24px}
+.tool-panel.active{display:flex}
+#shopifyResult{
+  position:sticky;bottom:0;margin:0;border-radius:0;
+  border-top:1px solid var(--line);background:var(--paper-well);
+  max-height:180px;overflow-y:auto;flex-shrink:0;
+}
+
+/* ---------- shopify tab: seo review rows ---------- */
+
+.seo-rows{display:flex;flex-direction:column;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin:8px 0}
+.seo-row{background:var(--paper)}
+.seo-row.flagged{background:var(--amber-bg)}
+.seo-row-summary{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;padding:10px 12px}
+.seo-row-toggle{all:unset;box-sizing:border-box;display:block;width:100%;min-width:0;cursor:pointer}
+.seo-row-toggle:focus-visible{outline:2px solid var(--sapphire);outline-offset:2px;border-radius:4px}
+.seo-row-toggle strong{display:block;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seo-row-toggle small{display:block;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seo-row-flags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.seo-row-detail{display:none;flex-direction:column;gap:10px;padding:0 12px 16px 46px}
+.seo-row.expanded .seo-row-detail{display:flex}
+.seo-row-detail label{display:flex;flex-direction:column;gap:4px;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.seo-row-detail input,.seo-row-detail textarea{
+  font:13.5px/1.5 var(--font-mono);padding:8px 10px;border:1px solid var(--line-2);
+  border-radius:var(--radius-sm);background:#fff;color:var(--text);width:100%;box-sizing:border-box;
+}
+.seo-row-detail textarea{resize:vertical;min-height:80px}
 
 /* ---------- drive match / color family tables ---------- */
 

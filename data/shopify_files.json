@@ -1,5 +1,1489 @@
 [
   {
+    "id": "gid://shopify/MediaImage/32303406153797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-95081.jpg?v=1785036847",
+    "filename": "bugle-2-95081.jpg",
+    "alt": "bugle-2-95081.jpg",
+    "createdAt": "2026-07-26T03:34:06Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303406121029",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-85091.jpg?v=1785036847",
+    "filename": "bugle-2-85091.jpg",
+    "alt": "bugle-2-85091.jpg",
+    "createdAt": "2026-07-26T03:34:05Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303406055493",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-85011.jpg?v=1785036846",
+    "filename": "bugle-2-85011.jpg",
+    "alt": "bugle-2-85011.jpg",
+    "createdAt": "2026-07-26T03:34:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303406022725",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-65021.jpg?v=1785036845",
+    "filename": "bugle-2-65021.jpg",
+    "alt": "bugle-2-65021.jpg",
+    "createdAt": "2026-07-26T03:34:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303405989957",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-35061.jpg?v=1785036844",
+    "filename": "bugle-2-35061.jpg",
+    "alt": "bugle-2-35061.jpg",
+    "createdAt": "2026-07-26T03:34:03Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303405924421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-15041.jpg?v=1785036844",
+    "filename": "bugle-2-15041.jpg",
+    "alt": "bugle-2-15041.jpg",
+    "createdAt": "2026-07-26T03:34:02Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32303405891653",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-05051.jpg?v=1785036843",
+    "filename": "bugle-2-05051.jpg",
+    "alt": "bugle-2-05051.jpg",
+    "createdAt": "2026-07-26T03:34:01Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299160731717",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Preciosa_SmallSymbol_5b06979e-01df-4320-ab2c-d93a9156f1e9.jpg?v=1784957269",
+    "filename": "Preciosa_SmallSymbol_5b06979e-01df-4320-ab2c-d93a9156f1e9.jpg",
+    "alt": "",
+    "createdAt": "2026-07-25T05:27:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299155685445",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2CUT-LINE-DRAWINGS-cropped.jpg?v=1784957091",
+    "filename": "2CUT-LINE-DRAWINGS-cropped.jpg",
+    "alt": "",
+    "createdAt": "2026-07-25T05:24:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075272773",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-93210.jpg?v=1784953736",
+    "filename": "2cut-10-0-93210.jpg",
+    "alt": "2 CUT 10/0 DK. RED OPAQUE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075240005",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-63130.jpg?v=1784953735",
+    "filename": "2cut-10-0-63130.jpg",
+    "alt": "2 CUT 10/0 GREEN TURQUOISE OPAQUE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075141701",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-63050.jpg?v=1784953731",
+    "filename": "2cut-10-0-63050.jpg",
+    "alt": "2 CUT 10/0 BLUE TURQUOISE OPAQUE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075076165",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-63020.jpg?v=1784953730",
+    "filename": "2cut-10-0-63020.jpg",
+    "alt": "2 CUT 10/0 LT. BLUE TURQUOISE OPAQUE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075043397",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-13600.jpg?v=1784953730",
+    "filename": "2cut-10-0-13600.jpg",
+    "alt": "2 CUT 10/0 BROWN OPAQUE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299075010629",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-96090.jpg?v=1784953729",
+    "filename": "2cut-10-0-96090.jpg",
+    "alt": "2 CUT 10/0 SIAM RUBY TRANSPARENT LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:47Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074945093",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-96070.jpg?v=1784953728",
+    "filename": "2cut-10-0-96070.jpg",
+    "alt": "2 CUT 10/0 LIGHT SIAM RUBY TRANSPARENT LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:46Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074912325",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-66100.jpg?v=1784953727",
+    "filename": "2cut-10-0-66100.jpg",
+    "alt": "2 CUT 10/0 MONTANA SAPPHIRE TRANSPARENT LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:46Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074846789",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-46010.jpg?v=1784953726",
+    "filename": "2cut-10-0-46010.jpg",
+    "alt": "2 CUT 10/0 SMOKE GREY TRANSPARENT LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:45Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074814021",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-5920m.jpg?v=1784953725",
+    "filename": "2cut-10-0-5920m.jpg",
+    "alt": "2 CUT 10/0 JET BLACK OPAQUE MATTE RAINBOW PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:44Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074781253",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-1107m.jpg?v=1784953725",
+    "filename": "2cut-10-0-1107m.jpg",
+    "alt": "2 CUT 10/0 TOPAZ TRANSPARENT MATTE RAINBOW PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:43Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074715717",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-1105m.jpg?v=1784953724",
+    "filename": "2cut-10-0-1105m.jpg",
+    "alt": "2 CUT 10/0 LT. TOPAZ TRANSPARENT MATTE RAINBOW PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:42Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074682949",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-68105.jpg?v=1784953723",
+    "filename": "2cut-10-0-68105.jpg",
+    "alt": "2 CUT 10/0 CRYSTAL COPPER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:42Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074617413",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-38128.jpg?v=1784953722",
+    "filename": "2cut-10-0-38128.jpg",
+    "alt": "2 CUT 10/0 CRYSTAL LUSTER VIOLET LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:41Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074584645",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59205.jpg?v=1784953721",
+    "filename": "2cut-10-0-59205.jpg",
+    "alt": "2 CUT 10/0 JET BLACK IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:40Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074519109",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59195.jpg?v=1784953721",
+    "filename": "2cut-10-0-59195.jpg",
+    "alt": "2 CUT 10/0 PURPLE IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:39Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074486341",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59155.jpg?v=1784953720",
+    "filename": "2cut-10-0-59155.jpg",
+    "alt": "2 CUT 10/0 GREEN IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:38Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074388037",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59135.jpg?v=1784953716",
+    "filename": "2cut-10-0-59135.jpg",
+    "alt": "2 CUT 10/0 BLUE IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074355269",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59115.jpg?v=1784953715",
+    "filename": "2cut-10-0-59115.jpg",
+    "alt": "2 CUT 10/0 BROWN IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:34Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074289733",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-59148.jpg?v=1784953714",
+    "filename": "2cut-10-0-59148.jpg",
+    "alt": "2 CUT 10/0 GOLD METALLIC IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:33Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074256965",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-58148.jpg?v=1784953714",
+    "filename": "2cut-10-0-58148.jpg",
+    "alt": "2 CUT 10/0 COPPER METALLIC IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074224197",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-49102.jpg?v=1784953713",
+    "filename": "2cut-10-0-49102.jpg",
+    "alt": "2 CUT 10/0 SPHINX (GUNMETAL) PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074158661",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-01620.jpg?v=1784953712",
+    "filename": "2cut-10-0-01620.jpg",
+    "alt": "2 CUT 10/0 DARK GOLD SOFT METALLIC IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074125893",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-01610.jpg?v=1784953711",
+    "filename": "2cut-10-0-01610.jpg",
+    "alt": "2 CUT 10/0 LIGHT GOLD SOFT METALLIC IRIS PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:30Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299074060357",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-91120.jpg?v=1784953711",
+    "filename": "2cut-10-0-91120.jpg",
+    "alt": "2 CUT 10/0 GARNET TRANSPARENT RAINBOW PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:29Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073994821",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-98210.jpg?v=1784953710",
+    "filename": "2cut-10-0-98210.jpg",
+    "alt": "2 CUT 10/0 DK. RED OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073962053",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-98190.jpg?v=1784953709",
+    "filename": "2cut-10-0-98190.jpg",
+    "alt": "2 CUT 10/0 RED OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073896517",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-68130.jpg?v=1784953708",
+    "filename": "2cut-10-0-68130.jpg",
+    "alt": "2 CUT 10/0 GREEN TURQUOISE OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073863749",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-58250.jpg?v=1784953708",
+    "filename": "2cut-10-0-58250.jpg",
+    "alt": "2 CUT 10/0 DK. GREEN OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:26Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073830981",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-48020.jpg?v=1784953707",
+    "filename": "2cut-10-0-48020.jpg",
+    "alt": "2 CUT 10/0 GREY OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:25Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073568837",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-38220.jpg?v=1784953706",
+    "filename": "2cut-10-0-38220.jpg",
+    "alt": "2 CUT 10/0 SLATE BLUE OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:24Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073536069",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-18600.jpg?v=1784953705",
+    "filename": "2cut-10-0-18600.jpg",
+    "alt": "2 CUT 10/0 BROWN OPAQUE LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:24Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073437765",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-85011.jpg?v=1784953701",
+    "filename": "2cut-10-0-85011.jpg",
+    "alt": "2 CUT 10/0 YELLOW SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:19Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073372229",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-55041.jpg?v=1784953700",
+    "filename": "2cut-10-0-55041.jpg",
+    "alt": "2 CUT 10/0 GREEN SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:18Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073339461",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-15041.jpg?v=1784953699",
+    "filename": "2cut-10-0-15041.jpg",
+    "alt": "2 CUT 10/0 AMBER SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:18Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073273925",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-05051.jpg?v=1784953698",
+    "filename": "2cut-10-0-05051.jpg",
+    "alt": "2 CUT 10/0 WHITE SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:17Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073241157",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-97120.jpg?v=1784953697",
+    "filename": "2cut-10-0-97120.jpg",
+    "alt": "2 CUT 10/0 GARNET TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:16Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073208389",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-97090.jpg?v=1784953697",
+    "filename": "2cut-10-0-97090.jpg",
+    "alt": "2 CUT 10/0 SIAM RUBY TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:15Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073142853",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-97030.jpg?v=1784953696",
+    "filename": "2cut-10-0-97030.jpg",
+    "alt": "2 CUT 10/0 HYACINTH TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:14Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073110085",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-87060.jpg?v=1784953695",
+    "filename": "2cut-10-0-87060.jpg",
+    "alt": "2 CUT 10/0 MANGO TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:14Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073044549",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-87010.jpg?v=1784953694",
+    "filename": "2cut-10-0-87010.jpg",
+    "alt": "2 CUT 10/0 CITRINE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:13Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299073011781",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-78102.jpg?v=1784953694",
+    "filename": "2cut-10-0-78102.jpg",
+    "alt": "2 CUT 10/0 CRYSTAL TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:12Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072979013",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-77220.jpg?v=1784953693",
+    "filename": "2cut-10-0-77220.jpg",
+    "alt": "2 CUT 10/0 DK. ROSE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:11Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072913477",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-77120.jpg?v=1784953692",
+    "filename": "2cut-10-0-77120.jpg",
+    "alt": "2 CUT 10/0 PALE PINK TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:10Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072880709",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-67300.jpg?v=1784953691",
+    "filename": "2cut-10-0-67300.jpg",
+    "alt": "2 CUT 10/0 CAPRI BLUE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:10Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072815173",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-67210.jpg?v=1784953690",
+    "filename": "2cut-10-0-67210.jpg",
+    "alt": "2 CUT 10/0 ZIRCON TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:09Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072782405",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-67150.jpg?v=1784953690",
+    "filename": "2cut-10-0-67150.jpg",
+    "alt": "2 CUT 10/0 DK. AQUAMARINE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:08Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072684101",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-67100.jpg?v=1784953686",
+    "filename": "2cut-10-0-67100.jpg",
+    "alt": "2 CUT 10/0 MONTANA SAPPHIRE SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072651333",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-57710.jpg?v=1784953685",
+    "filename": "2cut-10-0-57710.jpg",
+    "alt": "2 CUT 10/0 TEAL TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:03Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072585797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-57430.jpg?v=1784953684",
+    "filename": "2cut-10-0-57430.jpg",
+    "alt": "2 CUT 10/0 PERIDOT TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:03Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072553029",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-57060.jpg?v=1784953683",
+    "filename": "2cut-10-0-57060.jpg",
+    "alt": "2 CUT 10/0 CHRISTMAS GREEN TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:02Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072487493",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-47010.jpg?v=1784953682",
+    "filename": "2cut-10-0-47010.jpg",
+    "alt": "2 CUT 10/0 SMOKE GREY TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:01Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072454725",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-37080.jpg?v=1784953682",
+    "filename": "2cut-10-0-37080.jpg",
+    "alt": "2 CUT 10/0 DK. SAPPHIRE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:28:00Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072421957",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-37050.jpg?v=1784953681",
+    "filename": "2cut-10-0-37050.jpg",
+    "alt": "2 CUT 10/0 SAPPHIRE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:59Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072356421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-37039.jpg?v=1784953680",
+    "filename": "2cut-10-0-37039.jpg",
+    "alt": "2 CUT 10/0 LIGHT SAPPHIRE TRANSPARENT SILVER LINED RAINBOW PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:59Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072323653",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-37030.jpg?v=1784953679",
+    "filename": "2cut-10-0-37030.jpg",
+    "alt": "2 CUT 10/0 LIGHT SAPPHIRE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072290885",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-27010.jpg?v=1784953679",
+    "filename": "2cut-10-0-27010.jpg",
+    "alt": "2 CUT 10/0 LIGHT AMETHYST TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:57Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072225349",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-17140loose.jpg?v=1784953678",
+    "filename": "2cut-10-0-17140loose.jpg",
+    "alt": "2 CUT 10/0 ROOT BEER TRANSPARENT SILVER LINED LOOSE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:56Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072192581",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-17110.jpg?v=1784953677",
+    "filename": "2cut-10-0-17110.jpg",
+    "alt": "2 CUT 10/0 DARK TOPAZ TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:56Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072127045",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-90120loose.jpg?v=1784953676",
+    "filename": "2cut-10-0-90120loose.jpg",
+    "alt": "2 CUT 10/0 GARNET TRANSPARENT LOOSE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072094277",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-10140.jpg?v=1784953676",
+    "filename": "2cut-10-0-10140.jpg",
+    "alt": "2 CUT 10/0 ROOT BEER TRANSPARENT PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32299072061509",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-10-0-00050.jpg?v=1784953675",
+    "filename": "2cut-10-0-00050.jpg",
+    "alt": "2 CUT 10/0 CRYSTAL TRANSPARENT PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-25T04:27:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32298086629445",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-05051.jpg?v=1784932219",
+    "filename": "2cut-11-0-05051.jpg",
+    "alt": "2 CUT 11/0 WHITE SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-24T22:30:18Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32290090221637",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Margola_Assets_a844565b-b219-4e6a-90b6-73f7ce7db320.png?v=1784826629",
+    "filename": "Margola_Assets_a844565b-b219-4e6a-90b6-73f7ce7db320.png",
+    "alt": "",
+    "createdAt": "2026-07-23T17:10:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32290078425157",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Margola_Assets.png?v=1784826284",
+    "filename": "Margola_Assets.png",
+    "alt": "",
+    "createdAt": "2026-07-23T17:04:41Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32290063188037",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Margola-logo.jpg?v=1784825842",
+    "filename": "Margola-logo.jpg",
+    "alt": "",
+    "createdAt": "2026-07-23T16:57:20Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016267333",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-97070.jpg?v=1784686619",
+    "filename": "2cut-11-0-97070.jpg",
+    "alt": "2 CUT 11/0 LIGHT SIAM RUBY TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016234565",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-67020.jpg?v=1784686618",
+    "filename": "2cut-11-0-67020.jpg",
+    "alt": "2 CUT 11/0 AQUAMARINE TRANSPARENT SILVER LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:57Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016201797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-17140-loose.jpg?v=1784686617",
+    "filename": "2cut-11-0-17140-loose.jpg",
+    "alt": "2 CUT 11/0 ROOT BEER TRANSPARENT SILVER LINED LOOSE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:56Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016169029",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-48102.jpg?v=1784686616",
+    "filename": "2cut-11-0-48102.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL TRANSPARENT LUSTER PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016136261",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38198.jpg?v=1784686615",
+    "filename": "2cut-11-0-38198.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER STRAWBERRY LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016103493",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38187.jpg?v=1784686614",
+    "filename": "2cut-11-0-38187.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT. PEACH LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016070725",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38182.jpg?v=1784686614",
+    "filename": "2cut-11-0-38182.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER YELLOW LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:52Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276016005189",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38173.jpg?v=1784686613",
+    "filename": "2cut-11-0-38173.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT. PINK LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015972421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38163.jpg?v=1784686612",
+    "filename": "2cut-11-0-38163.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT. AQUA LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015939653",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38154.jpg?v=1784686611",
+    "filename": "2cut-11-0-38154.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT. GREEN LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015906885",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38136.jpg?v=1784686611",
+    "filename": "2cut-11-0-38136.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER SEA BLUE LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015874117",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38132.jpg?v=1784686610",
+    "filename": "2cut-11-0-38132.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT. BLUE LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015382597",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38124.jpg?v=1784686606",
+    "filename": "2cut-11-0-38124.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER LT.FUCHSIA LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:44Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015349829",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38117.jpg?v=1784686605",
+    "filename": "2cut-11-0-38117.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER GREY LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:44Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015317061",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38115.jpg?v=1784686604",
+    "filename": "2cut-11-0-38115.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER BEIGE LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:43Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015284293",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-38049.jpg?v=1784686603",
+    "filename": "2cut-11-0-38049.jpg",
+    "alt": "2 CUT 11/0 CRYSTAL LUSTER BLACK LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:42Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015251525",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-95081.jpg?v=1784686603",
+    "filename": "2cut-11-0-95081.jpg",
+    "alt": "2 CUT 11/0 RED SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:41Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015185989",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-85011.jpg?v=1784686602",
+    "filename": "2cut-11-0-85011.jpg",
+    "alt": "2 CUT 11/0 YELLOW SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:40Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015153221",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-65021.jpg?v=1784686601",
+    "filename": "2cut-11-0-65021.jpg",
+    "alt": "2 CUT 11/0 AQUA SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:39Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276015120453",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-35061.jpg?v=1784686600",
+    "filename": "2cut-11-0-35061.jpg",
+    "alt": "2 CUT 11/0 BLUE SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:39Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014596165",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-15041.jpg?v=1784686599",
+    "filename": "2cut-11-0-15041.jpg",
+    "alt": "2 CUT 11/0 AMBER SATIN PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:38Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014563397",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-81012.jpg?v=1784686599",
+    "filename": "2cut-11-0-81012.jpg",
+    "alt": "2 CUT 11/0 CITRINE LUSTER LT. GREEN LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:37Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014530629",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-61018.jpg?v=1784686598",
+    "filename": "2cut-11-0-61018.jpg",
+    "alt": "2 CUT 11/0 AQUA LUSTER RED LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:36Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014497861",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-61017.jpg?v=1784686597",
+    "filename": "2cut-11-0-61017.jpg",
+    "alt": "2 CUT 11/0 AQUA LUSTER BEIGE LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014465093",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-11022.jpg?v=1784686596",
+    "filename": "2cut-11-0-11022.jpg",
+    "alt": "2 CUT 11/0 CREAM LUSTER BLUE LINED PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014432325",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-10140.jpg?v=1784686595",
+    "filename": "2cut-11-0-10140.jpg",
+    "alt": "2 CUT 11/0 ROOT BEER TRANSPARENT PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:34Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32276014399557",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2cut-11-0-10050-loose.jpg?v=1784686595",
+    "filename": "2cut-11-0-10050-loose.jpg",
+    "alt": "2 CUT 11/0 TOPAZ TRANSPARENT LOOSE PRECIOSA ORNELA BEADS",
+    "createdAt": "2026-07-22T02:16:33Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241119625285",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/shopify_upload_PL1634_27mm_Petals.jpg?v=1784236110",
+    "filename": "shopify_upload_PL1634_27mm_Petals.jpg",
+    "alt": "Plexi-Lalique Petals 27mm Frosted Crystal",
+    "createdAt": "2026-07-16T21:08:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241032855621",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/shopify_upload_1006M.jpg?v=1784234261",
+    "filename": "shopify_upload_1006M.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TOPAZ TRANSPARENT MATTE",
+    "createdAt": "2026-07-16T20:37:40Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241020600389",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/shopify_upload_30040.jpg?v=1784233997",
+    "filename": "shopify_upload_30040.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT SAPPHIRE TRANSPARENT",
+    "createdAt": "2026-07-16T20:33:16Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241009360965",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-83110.jpg?v=1784233653",
+    "filename": "roller-9mm-83110.jpg",
+    "alt": "roller-9mm-83110.jpg",
+    "createdAt": "2026-07-16T20:27:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241008443461",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10220.jpg?v=1784233637",
+    "filename": "roller-9mm-10220.jpg",
+    "alt": "roller-9mm-10220.jpg",
+    "createdAt": "2026-07-16T20:27:15Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32241008410693",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-00030.jpg?v=1784233636",
+    "filename": "roller-9mm-00030.jpg",
+    "alt": "roller-9mm-00030.jpg",
+    "createdAt": "2026-07-16T20:27:14Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32217271435333",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/8039SRIMCHATONMONTEE.jpg?v=1784126075",
+    "filename": "8039SRIMCHATONMONTEE.jpg",
+    "alt": "Rim Chatonmontee Set with Preciosa MC Crystal Optima Chatons 13ss - Crystal/Silver",
+    "createdAt": "2026-07-15T14:34:34Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213368668229",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/IMG_5538.jpg?v=1784085175",
+    "filename": "IMG_5538.jpg",
+    "alt": "",
+    "createdAt": "2026-07-15T03:12:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213363949637",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/IMG_3051.jpg?v=1784084936",
+    "filename": "IMG_3051.jpg",
+    "alt": "",
+    "createdAt": "2026-07-15T03:08:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330788421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1657-27x10mm-leaf.jpg?v=1784083692",
+    "filename": "pl1657-27x10mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 27x10mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:10Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330722885",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1656-30x17mm-petals.jpg?v=1784083690",
+    "filename": "pl1656-30x17mm-petals.jpg",
+    "alt": "Plexi-Lalique Petals 30x17mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:09Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330591813",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1655-41x15mm-leaf.jpg?v=1784083686",
+    "filename": "pl1655-41x15mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 41x15mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:05Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330526277",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1654-52-5x15mm-leaf.jpg?v=1784083685",
+    "filename": "pl1654-52-5x15mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 52.5x15mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330460741",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1653-34x32mm-leaves.jpg?v=1784083684",
+    "filename": "pl1653-34x32mm-leaves.jpg",
+    "alt": "Plexi-Lalique Leaves 34x32mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:03Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330362437",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1651-21x20mm-leaf.jpg?v=1784083683",
+    "filename": "pl1651-21x20mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 21x20mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:01Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330264133",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1650-27x26mm-leaf.jpg?v=1784083682",
+    "filename": "pl1650-27x26mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 27x26mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:48:00Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330165829",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1649-18x24mm-leaf.jpg?v=1784083681",
+    "filename": "pl1649-18x24mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 18x24mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:59Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213330067525",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1648-25x15mm-leaf.jpg?v=1784083680",
+    "filename": "pl1648-25x15mm-leaf.jpg",
+    "alt": "Plexi-Lalique Leaf 25x15mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329969221",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1647-17mm-petals.jpg?v=1784083679",
+    "filename": "pl1647-17mm-petals.jpg",
+    "alt": "Plexi-Lalique Petals 17mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:57Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329936453",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1646-17mm-daisy-button.jpg?v=1784083678",
+    "filename": "pl1646-17mm-daisy-button.jpg",
+    "alt": "Plexi-Lalique Daisy button 17mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:56Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329870917",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1645-23mm-daisy-button.jpg?v=1784083677",
+    "filename": "pl1645-23mm-daisy-button.jpg",
+    "alt": "Plexi-Lalique Daisy button 23mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329772613",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1640-34mm-petals.jpg?v=1784083675",
+    "filename": "pl1640-34mm-petals.jpg",
+    "alt": "Plexi-Lalique Petals 34mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329707077",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1638-26mm-petals.jpg?v=1784083674",
+    "filename": "pl1638-26mm-petals.jpg",
+    "alt": "Plexi-Lalique Petals 26mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329510469",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1637-23mm-daisy.jpg?v=1784083673",
+    "filename": "pl1637-23mm-daisy.jpg",
+    "alt": "Plexi-Lalique Daisy 23mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329444933",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1632-24mm-petals.jpg?v=1784083671",
+    "filename": "pl1632-24mm-petals.jpg",
+    "alt": "Plexi-Lalique Petals 24mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213329412165",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/pl1631-20mm-flower.jpg?v=1784083670",
+    "filename": "pl1631-20mm-flower.jpg",
+    "alt": "Plexi-Lalique Flower 20mm Frosted Crystal",
+    "createdAt": "2026-07-15T02:47:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136506949",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-90600.jpg?v=1784079055",
+    "filename": "crow-9mm-90600.jpg",
+    "alt": "Czech Glass Crow Beads 9mm DARK ORANGE",
+    "createdAt": "2026-07-15T01:30:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136474181",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-83500.jpg?v=1784079053",
+    "filename": "crow-9mm-83500.jpg",
+    "alt": "Czech Glass Crow Beads 9mm ORANGE",
+    "createdAt": "2026-07-15T01:30:52Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136441413",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-80600.jpg?v=1784079053",
+    "filename": "crow-9mm-80600.jpg",
+    "alt": "Czech Glass Crow Beads 9mm YELLOW",
+    "createdAt": "2026-07-15T01:30:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136408645",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-52000.jpg?v=1784079052",
+    "filename": "crow-9mm-52000.jpg",
+    "alt": "Czech Glass Crow Beads 9mm GREEN",
+    "createdAt": "2026-07-15T01:30:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136375877",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-30500.jpg?v=1784079051",
+    "filename": "crow-9mm-30500.jpg",
+    "alt": "Czech Glass Crow Beads 9mm BLUE",
+    "createdAt": "2026-07-15T01:30:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136343109",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-23000.jpg?v=1784079050",
+    "filename": "crow-9mm-23000.jpg",
+    "alt": "Czech Glass Crow Beads 9mm PURPLE",
+    "createdAt": "2026-07-15T01:30:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136310341",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-22500.jpg?v=1784079049",
+    "filename": "crow-9mm-22500.jpg",
+    "alt": "Czech Glass Crow Beads 9mm MAUVE",
+    "createdAt": "2026-07-15T01:30:47Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136277573",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/crow-9mm-13000.jpg?v=1784079048",
+    "filename": "crow-9mm-13000.jpg",
+    "alt": "Czech Glass Crow Beads 9mm BROWN",
+    "createdAt": "2026-07-15T01:30:47Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136244805",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-01790.jpg?v=1784079047",
+    "filename": "roller-6mm-01790.jpg",
+    "alt": "Czech Glass Roller Beads 6mm SOFT RED",
+    "createdAt": "2026-07-15T01:30:46Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136212037",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-93210.jpg?v=1784079044",
+    "filename": "roller-6mm-93210.jpg",
+    "alt": "Czech Glass Roller Beads 6mm RED OPAQUE",
+    "createdAt": "2026-07-15T01:30:42Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136179269",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-2398ab.jpg?v=1784079042",
+    "filename": "roller-6mm-2398ab.jpg",
+    "alt": "Czech Glass Roller Beads 6mm JET BLACK AB OPAQUE",
+    "createdAt": "2026-07-15T01:30:41Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136146501",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-21495.jpg?v=1784079042",
+    "filename": "roller-6mm-21495.jpg",
+    "alt": "Czech Glass Roller Beads 6mm PURPLE IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:40Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136113733",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-21455.jpg?v=1784079041",
+    "filename": "roller-6mm-21455.jpg",
+    "alt": "Czech Glass Roller Beads 6mm GREEN IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:39Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136080965",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-21435.jpg?v=1784079040",
+    "filename": "roller-6mm-21435.jpg",
+    "alt": "Czech Glass Roller Beads 6mm BLUE IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:38Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136048197",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-21415.jpg?v=1784079039",
+    "filename": "roller-6mm-21415.jpg",
+    "alt": "Czech Glass Roller Beads 6mm BROWN IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:38Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213136015429",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-14400.jpg?v=1784079039",
+    "filename": "roller-6mm-14400.jpg",
+    "alt": "Czech Glass Roller Beads 6mm GUNMETAL",
+    "createdAt": "2026-07-15T01:30:37Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135949893",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-03050.jpg?v=1784079037",
+    "filename": "roller-6mm-03050.jpg",
+    "alt": "Czech Glass Roller Beads 6mm CHALK WHITE OPAQUE",
+    "createdAt": "2026-07-15T01:30:36Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135753285",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01720.jpg?v=1784079037",
+    "filename": "roller-9mm-01720.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT DARK PURPLE",
+    "createdAt": "2026-07-15T01:30:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135720517",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01790.jpg?v=1784079036",
+    "filename": "roller-9mm-01790.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT RED",
+    "createdAt": "2026-07-15T01:30:34Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135687749",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01750.jpg?v=1784079035",
+    "filename": "roller-9mm-01750.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT GREEN",
+    "createdAt": "2026-07-15T01:30:33Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135654981",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01730.jpg?v=1784079034",
+    "filename": "roller-9mm-01730.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT SLATE BLUE",
+    "createdAt": "2026-07-15T01:30:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135622213",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01710.jpg?v=1784079033",
+    "filename": "roller-9mm-01710.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT BRONZE OPAQUE",
+    "createdAt": "2026-07-15T01:30:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135589445",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-01700.jpg?v=1784079032",
+    "filename": "roller-9mm-01700.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SOFT SILVER OPAQUE",
+    "createdAt": "2026-07-15T01:30:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135556677",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-93210.jpg?v=1784079031",
+    "filename": "roller-9mm-93210.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BURGUNDY  OPAQUE",
+    "createdAt": "2026-07-15T01:30:30Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135523909",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-93200.jpg?v=1784079028",
+    "filename": "roller-9mm-93200.jpg",
+    "alt": "Czech Glass Roller Beads 9mm RED OPAQUE",
+    "createdAt": "2026-07-15T01:30:26Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135491141",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm71010.jpg?v=1784079027",
+    "filename": "roller-9mm71010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT PINK",
+    "createdAt": "2026-07-15T01:30:25Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135458373",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-63130.jpg?v=1784079026",
+    "filename": "roller-9mm-63130.jpg",
+    "alt": "Czech Glass Roller Beads 9mm GREEN TURQUOISE OPAQUE",
+    "createdAt": "2026-07-15T01:30:24Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135327301",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-63110.jpg?v=1784079025",
+    "filename": "roller-9mm-63110.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT TURQUOISE OPAQUE",
+    "createdAt": "2026-07-15T01:30:23Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135294533",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-4302l.jpg?v=1784079024",
+    "filename": "roller-9mm-4302l.jpg",
+    "alt": "Czech Glass Roller Beads 9mm GREY OPAQUE LUSTER",
+    "createdAt": "2026-07-15T01:30:23Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135261765",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-33060.jpg?v=1784079023",
+    "filename": "roller-9mm-33060.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BLUE OPAQUE",
+    "createdAt": "2026-07-15T01:30:22Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135228997",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-23980.jpg?v=1784079022",
+    "filename": "roller-9mm-23980.jpg",
+    "alt": "Czech Glass Roller Beads 9mm JET BLACK",
+    "createdAt": "2026-07-15T01:30:21Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135196229",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-23030.jpg?v=1784079021",
+    "filename": "roller-9mm-23030.jpg",
+    "alt": "Czech Glass Roller Beads 9mm AMETHYST OPAQUE",
+    "createdAt": "2026-07-15T01:30:20Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135163461",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-21435.jpg?v=1784079021",
+    "filename": "roller-9mm-21435.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BLUE IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:19Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135130693",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-21415.jpg?v=1784079020",
+    "filename": "roller-9mm-21415.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BROWN IRIS METALLIC",
+    "createdAt": "2026-07-15T01:30:18Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135097925",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-14400.jpg?v=1784079019",
+    "filename": "roller-9mm-14400.jpg",
+    "alt": "Czech Glass Roller Beads 9mm GUNMETAL METALLIC",
+    "createdAt": "2026-07-15T01:30:17Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135065157",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-13620.jpg?v=1784079018",
+    "filename": "roller-9mm-13620.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK BROWN OPAQUE",
+    "createdAt": "2026-07-15T01:30:17Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213135032389",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-13600.jpg?v=1784079017",
+    "filename": "roller-9mm-13600.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BROWN OPAQUE",
+    "createdAt": "2026-07-15T01:30:16Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134999621",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-03050.jpg?v=1784079016",
+    "filename": "roller-9mm-03050.jpg",
+    "alt": "Czech Glass Roller Beads 9mm CHALK WHITE OPAQUE",
+    "createdAt": "2026-07-15T01:30:15Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134770245",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-90040.jpg?v=1784079015",
+    "filename": "roller-6mm-90040.jpg",
+    "alt": "Czech Glass Roller Beads 6mm HYACINTH TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:14Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134737477",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-80020.jpg?v=1784079012",
+    "filename": "roller-6mm-80020.jpg",
+    "alt": "Czech Glass Roller Beads 6mm CITRINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:10Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134704709",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-70100.jpg?v=1784079011",
+    "filename": "roller-6mm-70100.jpg",
+    "alt": "Czech Glass Roller Beads 6mm PINK PEACH TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:09Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134671941",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-60040.jpg?v=1784079010",
+    "filename": "roller-6mm-60040.jpg",
+    "alt": "Czech Glass Roller Beads 6mm AQUAMARINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:08Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134639173",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-60010.jpg?v=1784079009",
+    "filename": "roller-6mm-60010.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT AQUAMARINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:07Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134606405",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-50730.jpg?v=1784079008",
+    "filename": "roller-6mm-50730.jpg",
+    "alt": "Czech Glass Roller Beads 6mm TEAL TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:06Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134573637",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-50250.jpg?v=1784079007",
+    "filename": "roller-6mm-50250.jpg",
+    "alt": "Czech Glass Roller Beads 6mm DARK OLIVINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:05Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134540869",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-50150.jpg?v=1784079006",
+    "filename": "roller-6mm-50150.jpg",
+    "alt": "Czech Glass Roller Beads 6mm DARK EMERALD TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134508101",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-50130.jpg?v=1784079005",
+    "filename": "roller-6mm-50130.jpg",
+    "alt": "Czech Glass Roller Beads 6mm EMERALD TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:04Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134475333",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-30060.jpg?v=1784079004",
+    "filename": "roller-6mm-30060.jpg",
+    "alt": "Czech Glass Roller Beads 6mm SAPPHIRE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:03Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134442565",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-30030.jpg?v=1784079003",
+    "filename": "roller-6mm-30030.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHTER SAPPHIRE TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:02Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134409797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-20030.jpg?v=1784079002",
+    "filename": "roller-6mm-20030.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT AMETHYST TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:01Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134377029",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-10230.jpg?v=1784079002",
+    "filename": "roller-6mm-10230.jpg",
+    "alt": "Czech Glass Roller Beads 6mm SMOKE TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:30:00Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134344261",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm10060.jpg?v=1784079001",
+    "filename": "roller-6mm10060.jpg",
+    "alt": "Czech Glass Roller Beads 6mm TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:59Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134311493",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-10020.jpg?v=1784079001",
+    "filename": "roller-6mm-10020.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134278725",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-90120.jpg?v=1784078999",
+    "filename": "roller-9mm-90120.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK GARNET TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134213189",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-90090.jpg?v=1784078995",
+    "filename": "roller-9mm-90090.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SIAM RUBY TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134180421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-90070.jpg?v=1784078994",
+    "filename": "roller-9mm-90070.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT SIAM RUBY TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134147653",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-90050.jpg?v=1784078993",
+    "filename": "roller-9mm-90050.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK ORANGE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:52Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134114885",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-90040.jpg?v=1784078993",
+    "filename": "roller-9mm-90040.jpg",
+    "alt": "Czech Glass Roller Beads 9mm HYACINTH TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134082117",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-70110.jpg?v=1784078992",
+    "filename": "roller-9mm-70110.jpg",
+    "alt": "Czech Glass Roller Beads 9mm PEACH TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134049349",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-70100.jpg?v=1784078991",
+    "filename": "roller-9mm-70100.jpg",
+    "alt": "Czech Glass Roller Beads 9mm PINK PEACH TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213134016581",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-60150.jpg?v=1784078990",
+    "filename": "roller-9mm-60150.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK INDICOLITE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133983813",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-60040.jpg?v=1784078989",
+    "filename": "roller-9mm-60040.jpg",
+    "alt": "Czech Glass Roller Beads 9mm AQUAMARINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133951045",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-60010.jpg?v=1784078988",
+    "filename": "roller-9mm-60010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT AQUAMARINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:47Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133918277",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-5073m.jpg?v=1784078987",
+    "filename": "roller-9mm-5073m.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TEAL TRANSPARENT MATTE",
+    "createdAt": "2026-07-15T01:29:46Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133852741",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50730.jpg?v=1784078986",
+    "filename": "roller-9mm-50730.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TEAL TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:45Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133819973",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50250.jpg?v=1784078986",
+    "filename": "roller-9mm-50250.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK OLIVINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:44Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133754437",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50230.jpg?v=1784078985",
+    "filename": "roller-9mm-50230.jpg",
+    "alt": "Czech Glass Roller Beads 9mm OLIVINE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:43Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133721669",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50150.jpg?v=1784078984",
+    "filename": "roller-9mm-50150.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK EMERALD TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:43Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133688901",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50130.jpg?v=1784078983",
+    "filename": "roller-9mm-50130.jpg",
+    "alt": "Czech Glass Roller Beads 9mm EMERALD TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:42Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133656133",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-40010.jpg?v=1784078980",
+    "filename": "roller-9mm-40010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BLACK DIAMOND TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:38Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133623365",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-30060.jpg?v=1784078979",
+    "filename": "roller-9mm-30060.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SAPPHIRE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:37Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133590597",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-30030.jpg?v=1784078978",
+    "filename": "roller-9mm-30030.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT SAPPHIRE TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:36Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133557829",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-20080.jpg?v=1784078977",
+    "filename": "roller-9mm-20080.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARKAMETHYST TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133525061",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-20060.jpg?v=1784078976",
+    "filename": "roller-9mm-20060.jpg",
+    "alt": "Czech Glass Roller Beads 9mm AMETHYST TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133492293",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-2003m.jpg?v=1784078975",
+    "filename": "roller-9mm-2003m.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT AMETHYST TRANSPARENT MATTE",
+    "createdAt": "2026-07-15T01:29:33Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133459525",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-20030.jpg?v=1784078974",
+    "filename": "roller-9mm-20030.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT AMETHYST TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133426757",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-18016.jpg?v=1784078973",
+    "filename": "roller-9mm-18016.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TORTOISE SHELL",
+    "createdAt": "2026-07-15T01:29:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133393989",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10250.jpg?v=1784078972",
+    "filename": "roller-9mm-10250.jpg",
+    "alt": "Czech Glass Roller Beads 9mm ROOT BEER TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133361221",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10230.jpg?v=1784078971",
+    "filename": "roller-9mm-10230.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SMOKE TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:30Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133328453",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-1011m.jpg?v=1784078971",
+    "filename": "roller-9mm-1011m.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK TOPAZ TRANSPARENT MATTE",
+    "createdAt": "2026-07-15T01:29:29Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133295685",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-1006m.jpg?v=1784078970",
+    "filename": "roller-9mm-1006m.jpg",
+    "alt": "roller-9mm-1006m.jpg",
+    "createdAt": "2026-07-15T01:29:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133262917",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10060.jpg?v=1784078969",
+    "filename": "roller-9mm-10060.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213133000773",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10020.jpg?v=1784078968",
+    "filename": "roller-9mm-10020.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT TOPAZ TRANSPARENT",
+    "createdAt": "2026-07-15T01:29:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32213132968005",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-02010.jpg?v=1784078967",
+    "filename": "roller-9mm-02010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm CRYSTAL TRANSPARENT MATTE",
+    "createdAt": "2026-07-15T01:29:26Z"
+  },
+  {
     "id": "gid://shopify/MediaImage/32213120516165",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-30040.jpg?v=1784078308",
     "filename": "roller-6mm-30040.jpg",
@@ -10,196 +1494,196 @@
     "id": "gid://shopify/MediaImage/32213108621381",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-93140.jpg?v=1784077897",
     "filename": "roller-6mm-93140.jpg",
-    "alt": "roller-6mm-93140.jpg",
+    "alt": "Czech Glass Roller Beads 6mm ORANGE OPAQUE",
     "createdAt": "2026-07-15T01:11:35Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108588613",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-83110.jpg?v=1784077896",
     "filename": "roller-6mm-83110.jpg",
-    "alt": "roller-6mm-83110.jpg",
+    "alt": "Czech Glass Roller Beads 6mm YELLOW OPAQUE",
     "createdAt": "2026-07-15T01:11:34Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108555845",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-6302m.jpg?v=1784077894",
     "filename": "roller-6mm-6302m.jpg",
-    "alt": "roller-6mm-6302m.jpg",
+    "alt": "Czech Glass Roller Beads 6mm BLUE TURQUOISE MATTE OPAQUE",
     "createdAt": "2026-07-15T01:11:33Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108523077",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-31010.jpg?v=1784077894",
     "filename": "roller-6mm-31010.jpg",
-    "alt": "roller-6mm-31010.jpg",
+    "alt": "Czech Glass Roller Beads 6mm TRANSLUCENT BLUE OPAL GLASS",
     "createdAt": "2026-07-15T01:11:32Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108490309",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-93140.jpg?v=1784077890",
     "filename": "roller-9mm-93140.jpg",
-    "alt": "roller-9mm-93140.jpg",
+    "alt": "Czech Glass Roller Beads 9mm ORANGE OPAQUE",
     "createdAt": "2026-07-15T01:11:28Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108457541",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-93110.jpg?v=1784077889",
     "filename": "roller-9mm-93110.jpg",
-    "alt": "roller-9mm-93110.jpg",
+    "alt": "Czech Glass Roller Beads 9mm MANGO OPAQUE",
     "createdAt": "2026-07-15T01:11:27Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108424773",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-81210.jpg?v=1784077888",
     "filename": "roller-9mm-81210.jpg",
-    "alt": "roller-9mm-81210.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT CITRINE OPAL GLASS",
     "createdAt": "2026-07-15T01:11:27Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108392005",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm73010.jpg?v=1784077887",
     "filename": "roller-9mm73010.jpg",
-    "alt": "roller-9mm73010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm PINK OPAQUE",
     "createdAt": "2026-07-15T01:11:26Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108359237",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-63040.jpg?v=1784077886",
     "filename": "roller-9mm-63040.jpg",
-    "alt": "roller-9mm-63040.jpg",
+    "alt": "Czech Glass Roller Beads 9mm BLUE TURQUOISE OPAQUE",
     "createdAt": "2026-07-15T01:11:25Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108326469",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-52120.jpg?v=1784077885",
     "filename": "roller-9mm-52120.jpg",
-    "alt": "roller-9mm-52120.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT GREEN ALABASTER GLASS",
     "createdAt": "2026-07-15T01:11:24Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108129861",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-51010.jpg?v=1784077881",
     "filename": "roller-9mm-51010.jpg",
-    "alt": "roller-9mm-51010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT GREEN OPAL GLASS",
     "createdAt": "2026-07-15T01:11:20Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108097093",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-32010.jpg?v=1784077880",
     "filename": "roller-9mm-32010.jpg",
-    "alt": "roller-9mm-32010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT BLUE ALABASTER GLASS",
     "createdAt": "2026-07-15T01:11:19Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108064325",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-31010.jpg?v=1784077880",
     "filename": "roller-9mm-31010.jpg",
-    "alt": "roller-9mm-31010.jpg",
+    "alt": "Czech Glass Roller Beads 9mm TRANSLUCENT BLUE OPAL GLASS",
     "createdAt": "2026-07-15T01:11:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213108031557",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-9008m.jpg?v=1784077879",
     "filename": "roller-6mm-9008m.jpg",
-    "alt": "roller-6mm-9008m.jpg",
+    "alt": "Czech Glass Roller Beads 6mm SIAM RUBY TRANSPARENT MATTE",
     "createdAt": "2026-07-15T01:11:17Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107998789",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-60080.jpg?v=1784077875",
     "filename": "roller-6mm-60080.jpg",
-    "alt": "roller-6mm-60080.jpg",
+    "alt": "Czech Glass Roller Beads 6mm DARK AQUAMARINE TRANSPARENT",
     "createdAt": "2026-07-15T01:11:13Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107966021",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-50710.jpg?v=1784077874",
     "filename": "roller-6mm-50710.jpg",
-    "alt": "roller-6mm-50710.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT TEAL TRANSPARENT",
     "createdAt": "2026-07-15T01:11:12Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107900485",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-5043m.jpg?v=1784077873",
     "filename": "roller-6mm-5043m.jpg",
-    "alt": "roller-6mm-5043m.jpg",
+    "alt": "Czech Glass Roller Beads 6mm PERIDOT TRANSPARENT MATTE",
     "createdAt": "2026-07-15T01:11:12Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107867717",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-40020.jpg?v=1784077872",
     "filename": "roller-6mm-40020.jpg",
-    "alt": "roller-6mm-40020.jpg",
+    "alt": "Czech Glass Roller Beads 6mm SMOKE GREY TRANSPARENT",
     "createdAt": "2026-07-15T01:11:11Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107834949",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-30090.jpg?v=1784077871",
     "filename": "roller-6mm-30090.jpg",
-    "alt": "roller-6mm-30090.jpg",
+    "alt": "Czech Glass Roller Beads 6mm COBALT TRANSPARENT",
     "createdAt": "2026-07-15T01:11:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107802181",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-20050.jpg?v=1784077868",
     "filename": "roller-6mm-20050.jpg",
-    "alt": "roller-6mm-20050.jpg",
+    "alt": "Czech Glass Roller Beads 6mm AMETHYST TRANSPARENT",
     "createdAt": "2026-07-15T01:11:06Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107769413",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-10220.jpg?v=1784077867",
     "filename": "roller-6mm-10220.jpg",
-    "alt": "roller-6mm-10220.jpg",
+    "alt": "Czech Glass Roller Beads 6mm LIGHT SMOKE TOPAZ TRANSPARENT",
     "createdAt": "2026-07-15T01:11:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107736645",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-10090.jpg?v=1784077866",
     "filename": "roller-6mm-10090.jpg",
-    "alt": "roller-6mm-10090.jpg",
+    "alt": "Czech Glass Roller Beads 6mm DARK TOPAZ TRANSPARENT",
     "createdAt": "2026-07-15T01:11:04Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107703877",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-6mm-00030.jpg?v=1784077865",
     "filename": "roller-6mm-00030.jpg",
-    "alt": "roller-6mm-00030.jpg",
+    "alt": "Czech Glass Roller Beads 6mm CRYSTAL TRANSPARENT",
     "createdAt": "2026-07-15T01:11:03Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107671109",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-60080.jpg?v=1784077861",
     "filename": "roller-9mm-60080.jpg",
-    "alt": "roller-9mm-60080.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK AQUAMARINE TRANSPARENT",
     "createdAt": "2026-07-15T01:10:59Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107638341",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-50710.jpg?v=1784077860",
     "filename": "roller-9mm-50710.jpg",
-    "alt": "roller-9mm-50710.jpg",
+    "alt": "Czech Glass Roller Beads 9mm LIGHT TEAL TRANSPARENT",
     "createdAt": "2026-07-15T01:10:59Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107605573",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-30090.jpg?v=1784077859",
     "filename": "roller-9mm-30090.jpg",
-    "alt": "roller-9mm-30090.jpg",
+    "alt": "Czech Glass Roller Beads 9mm COBALT TRANSPARENT",
     "createdAt": "2026-07-15T01:10:58Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107572805",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-3004m.jpg?v=1784077858",
     "filename": "roller-9mm-3004m.jpg",
-    "alt": "roller-9mm-3004m.jpg",
+    "alt": "Czech Glass Roller Beads 9mm SAPPHIRE TRANSPARENT MATTE",
     "createdAt": "2026-07-15T01:10:57Z"
   },
   {
     "id": "gid://shopify/MediaImage/32213107441733",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/roller-9mm-10090.jpg?v=1784077855",
     "filename": "roller-9mm-10090.jpg",
-    "alt": "roller-9mm-10090.jpg",
+    "alt": "Czech Glass Roller Beads 9mm DARK TOPAZ TRANSPARENT",
     "createdAt": "2026-07-15T01:10:53Z"
   },
   {
@@ -248,7 +1732,7 @@
     "id": "gid://shopify/MediaImage/32090271023173",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rhinestone-Chain-29SS-Crystal-Silver.jpg?v=1782944298",
     "filename": "Rhinestone-Chain-29SS-Crystal-Silver.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 29ss",
     "createdAt": "2026-07-01T22:18:17Z"
   },
   {
@@ -262,7 +1746,7 @@
     "id": "gid://shopify/MediaImage/32090235928645",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rhinestone-Chain-18SS-Crystal-Silver.jpg?v=1782944009",
     "filename": "Rhinestone-Chain-18SS-Crystal-Silver.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 18ss",
     "createdAt": "2026-07-01T22:13:28Z"
   },
   {
@@ -283,14 +1767,14 @@
     "id": "gid://shopify/MediaImage/32090206994501",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Crystal-Gold-16SS.jpg?v=1782943731",
     "filename": "Crystal-Gold-16SS.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 16ss",
     "createdAt": "2026-07-01T22:08:47Z"
   },
   {
     "id": "gid://shopify/MediaImage/32090182647877",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rhinestone-Chain-14_5-SS-Crystal-Silver.jpg?v=1782943262",
     "filename": "Rhinestone-Chain-14_5-SS-Crystal-Silver.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 14.5ss",
     "createdAt": "2026-07-01T22:01:00Z"
   },
   {
@@ -304,7 +1788,7 @@
     "id": "gid://shopify/MediaImage/32090150076485",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rhinestone-Chain-8.5SS-Crystal-Silver.jpg?v=1782942918",
     "filename": "Rhinestone-Chain-8.5SS-Crystal-Silver.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 8.5ss",
     "createdAt": "2026-07-01T21:55:17Z"
   },
   {
@@ -325,7 +1809,7 @@
     "id": "gid://shopify/MediaImage/32090124288069",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Crystal-Gold-12SS.jpg?v=1782942515",
     "filename": "Crystal-Gold-12SS.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 12ss",
     "createdAt": "2026-07-01T21:48:34Z"
   },
   {
@@ -339,21 +1823,21 @@
     "id": "gid://shopify/MediaImage/32088946606149",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Crystal-Silver-a.jpg?v=1782926947",
     "filename": "Crystal-Silver-a.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 29ss",
     "createdAt": "2026-07-01T17:29:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/32088946573381",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Crystal-Gold-b.jpg?v=1782926947",
     "filename": "Crystal-Gold-b.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 29ss",
     "createdAt": "2026-07-01T17:29:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/32088944115781",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rhinestone-Chain-6.5SS-Crystal-SIlver.jpg?v=1782926935",
     "filename": "Rhinestone-Chain-6.5SS-Crystal-SIlver.jpg",
-    "alt": "",
+    "alt": "CZECH RHINESTONE CHAIN MACHINE CUT CRYSTAL - 6.5ss",
     "createdAt": "2026-07-01T17:28:53Z"
   },
   {
@@ -1018,7 +2502,7 @@
     "id": "gid://shopify/MediaImage/31954445500485",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010_Crystal_AB_Gold_8MM.jpg?v=1781548029",
     "filename": "9010_Crystal_AB_Gold_8MM.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Squaredelles - Crystal AB / Gold",
     "createdAt": "2026-06-15T18:27:07Z"
   },
   {
@@ -1032,7 +2516,7 @@
     "id": "gid://shopify/MediaImage/31954424332357",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010_Crystal_AB_Silver_8MM.jpg?v=1781547830",
     "filename": "9010_Crystal_AB_Silver_8MM.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Squaredelles - Crystal AB / Silver",
     "createdAt": "2026-06-15T18:23:49Z"
   },
   {
@@ -1046,7 +2530,7 @@
     "id": "gid://shopify/MediaImage/31954409685061",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010_Crystal_Gold_8MM.jpg?v=1781547596",
     "filename": "9010_Crystal_Gold_8MM.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Squaredelles - Crystal/Gold",
     "createdAt": "2026-06-15T18:19:55Z"
   },
   {
@@ -1060,7 +2544,7 @@
     "id": "gid://shopify/MediaImage/31954359746629",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010_Crystal_Silver_8MM.jpg?v=1781546677",
     "filename": "9010_Crystal_Silver_8MM.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Squaredelles - Crystal/Silver",
     "createdAt": "2026-06-15T18:04:35Z"
   },
   {
@@ -1102,7 +2586,7 @@
     "id": "gid://shopify/MediaImage/31919687860293",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/69301V_CrystalAb_120PCString.jpg?v=1781280756",
     "filename": "69301V_CrystalAb_120PCString.jpg",
-    "alt": "",
+    "alt": "Vintage Preciosa Crystal 16 Faceted Bicone Beads - Crystal AB",
     "createdAt": "2026-06-12T16:12:34Z"
   },
   {
@@ -1123,14 +2607,14 @@
     "id": "gid://shopify/MediaImage/31919565275205",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19602V-Crystal-120pcString.jpg?v=1781280054",
     "filename": "19602V-Crystal-120pcString.jpg",
-    "alt": "",
+    "alt": "Vintage Preciosa Crystal 64 Faceted Round Beads - Crystal",
     "createdAt": "2026-06-12T16:00:52Z"
   },
   {
     "id": "gid://shopify/MediaImage/31918578008133",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19602V-CrystalAB-120pcString.jpg?v=1781274448",
     "filename": "19602V-CrystalAB-120pcString.jpg",
-    "alt": "",
+    "alt": "Vintage Preciosa Crystal 64 Faceted Round Beads - Crystal AB",
     "createdAt": "2026-06-12T14:27:26Z"
   },
   {
@@ -1151,7 +2635,7 @@
     "id": "gid://shopify/MediaImage/31912179433541",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010-CRYSTAL-AB-GOLD-RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg?v=1781209281",
     "filename": "9010-CRYSTAL-AB-GOLD-RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Rondelles - Crystal AB / Gold",
     "createdAt": "2026-06-11T20:21:20Z"
   },
   {
@@ -1165,7 +2649,7 @@
     "id": "gid://shopify/MediaImage/31912012513349",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010-CRYSTAL-CRYSTAL-AB-SILVER--RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg?v=1781208293",
     "filename": "9010-CRYSTAL-CRYSTAL-AB-SILVER--RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Rondelles - Crystal AB / Silver",
     "createdAt": "2026-06-11T20:04:52Z"
   },
   {
@@ -1179,7 +2663,7 @@
     "id": "gid://shopify/MediaImage/31911911227461",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010-CRYSTAL-GOLD-RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg?v=1781207717",
     "filename": "9010-CRYSTAL-GOLD-RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Rondelles - Crystal/Gold",
     "createdAt": "2026-06-11T19:55:15Z"
   },
   {
@@ -1228,7 +2712,7 @@
     "id": "gid://shopify/MediaImage/31909933842501",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/332618mmSmokeTopazAB.jpg?v=1781197891",
     "filename": "332618mmSmokeTopazAB.jpg",
-    "alt": "",
+    "alt": "Vintage Western German Plexy Faceted Beads - SMOKE TOPAZ AB",
     "createdAt": "2026-06-11T17:11:30Z"
   },
   {
@@ -1242,7 +2726,7 @@
     "id": "gid://shopify/MediaImage/31909801459781",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/332618mmRoyalBlueAB.jpg?v=1781196824",
     "filename": "332618mmRoyalBlueAB.jpg",
-    "alt": "",
+    "alt": "Vintage Western German Plexy Faceted Beads - ROYAL BLUE AB",
     "createdAt": "2026-06-11T16:53:43Z"
   },
   {
@@ -1263,7 +2747,7 @@
     "id": "gid://shopify/MediaImage/31909768167493",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/332618mmPlumAB-1.jpg?v=1781196389",
     "filename": "332618mmPlumAB-1.jpg",
-    "alt": "",
+    "alt": "Vintage Western German Plexy Faceted Beads - PLUM AB",
     "createdAt": "2026-06-11T16:46:28Z"
   },
   {
@@ -1382,7 +2866,7 @@
     "id": "gid://shopify/MediaImage/31885827539013",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010-CRYSTAL-CRYSTAL-SILVER--RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg?v=1780951073",
     "filename": "9010-CRYSTAL-CRYSTAL-SILVER--RHINESTONE-RONDELLE-INDIVIDUAL-IMAGE.jpg",
-    "alt": "",
+    "alt": "Czech Rhinestone Rondelles - Crystal/Silver",
     "createdAt": "2026-06-08T20:37:52Z"
   },
   {
@@ -1396,7 +2880,7 @@
     "id": "gid://shopify/MediaImage/31885749583941",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/332618mmFuchsiaAB.jpg?v=1780949272",
     "filename": "332618mmFuchsiaAB.jpg",
-    "alt": "",
+    "alt": "Vintage Western German Plexy Faceted Beads - FUCHSIA AB",
     "createdAt": "2026-06-08T20:07:51Z"
   },
   {
@@ -1788,14 +3272,14 @@
     "id": "gid://shopify/MediaImage/31509148565573",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010S-3.jpg?v=1777928624",
     "filename": "9010S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Siam Ruby With Half Silver Coating",
     "createdAt": "2026-05-04T21:03:42Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509148532805",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9010S-2.jpg?v=1777928624",
     "filename": "9010S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Siam Ruby With Half Silver Coating",
     "createdAt": "2026-05-04T21:03:42Z"
   },
   {
@@ -1809,14 +3293,14 @@
     "id": "gid://shopify/MediaImage/31509142995013",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9008S-3.jpg?v=1777928462",
     "filename": "9008S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Light Siam Ruby With Half Silver Coating",
     "createdAt": "2026-05-04T21:01:00Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509142962245",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9008S-2.jpg?v=1777928462",
     "filename": "9008S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Light Siam Ruby With Half Silver Coating",
     "createdAt": "2026-05-04T21:01:00Z"
   },
   {
@@ -1830,14 +3314,14 @@
     "id": "gid://shopify/MediaImage/31509140602949",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/6022S-3.jpg?v=1777928321",
     "filename": "6022S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Blue Zircon With Half Silver Coating",
     "createdAt": "2026-05-04T20:58:39Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509140570181",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/6022S-2.jpg?v=1777928321",
     "filename": "6022S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Blue Zircon With Half Silver Coating",
     "createdAt": "2026-05-04T20:58:39Z"
   },
   {
@@ -1851,21 +3335,21 @@
     "id": "gid://shopify/MediaImage/31509124481093",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/6008S-4.jpg?v=1777928170",
     "filename": "6008S-4.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Dark Aqua With Half Silver Coating",
     "createdAt": "2026-05-04T20:56:08Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509124448325",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/6008S-3.jpg?v=1777928170",
     "filename": "6008S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Dark Aqua With Half Silver Coating",
     "createdAt": "2026-05-04T20:56:08Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509124415557",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/6008S-2.jpg?v=1777928170",
     "filename": "6008S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Dark Aqua With Half Silver Coating",
     "createdAt": "2026-05-04T20:56:08Z"
   },
   {
@@ -1879,14 +3363,14 @@
     "id": "gid://shopify/MediaImage/31509106524229",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/5024S-3.jpg?v=1777927997",
     "filename": "5024S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Olivine With Half Silver Coating",
     "createdAt": "2026-05-04T20:53:16Z"
   },
   {
     "id": "gid://shopify/MediaImage/31509106491461",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/5024S-2.jpg?v=1777927997",
     "filename": "5024S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Olivine With Half Silver Coating",
     "createdAt": "2026-05-04T20:53:16Z"
   },
   {
@@ -1900,14 +3384,14 @@
     "id": "gid://shopify/MediaImage/31508981940293",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3009S-3.jpg?v=1777927222",
     "filename": "3009S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Cobalt With Half Silver Coating",
     "createdAt": "2026-05-04T20:40:21Z"
   },
   {
     "id": "gid://shopify/MediaImage/31508981907525",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3009S-2.jpg?v=1777927222",
     "filename": "3009S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Cobalt With Half Silver Coating",
     "createdAt": "2026-05-04T20:40:21Z"
   },
   {
@@ -1928,14 +3412,14 @@
     "id": "gid://shopify/MediaImage/31508886814789",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2006S-3.jpg?v=1777926356",
     "filename": "2006S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Amethyst With Half Silver Coating",
     "createdAt": "2026-05-04T20:25:54Z"
   },
   {
     "id": "gid://shopify/MediaImage/31508886782021",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/2006S-2.jpg?v=1777926356",
     "filename": "2006S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Amethyst With Half Silver Coating",
     "createdAt": "2026-05-04T20:25:54Z"
   },
   {
@@ -1949,14 +3433,14 @@
     "id": "gid://shopify/MediaImage/31504677044293",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/1011S-3.jpg?v=1777916433",
     "filename": "1011S-3.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Dark Topaz With Half Silver Coating",
     "createdAt": "2026-05-04T17:40:31Z"
   },
   {
     "id": "gid://shopify/MediaImage/31504677011525",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/1011S-2.jpg?v=1777916433",
     "filename": "1011S-2.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Beads - Dark Topaz With Half Silver Coating",
     "createdAt": "2026-05-04T17:40:31Z"
   },
   {
@@ -1984,7 +3468,7 @@
     "id": "gid://shopify/MediaImage/31463066271813",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/26507-4MM.jpg?v=1777575888",
     "filename": "26507-4MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Agate Color Beads - Green Agate - Malachite",
     "createdAt": "2026-04-30T19:04:47Z"
   },
   {
@@ -2005,7 +3489,7 @@
     "id": "gid://shopify/MediaImage/31462915604549",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/26307-4MM.jpg?v=1777574452",
     "filename": "26307-4MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Agate Color Beads - Blue Agate - Sodalite",
     "createdAt": "2026-04-30T18:40:51Z"
   },
   {
@@ -2040,14 +3524,14 @@
     "id": "gid://shopify/MediaImage/31451212152901",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/18016_8MM.jpg?v=1777493840",
     "filename": "18016_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Tortoise Shell Glass)",
     "createdAt": "2026-04-29T20:17:19Z"
   },
   {
     "id": "gid://shopify/MediaImage/31451212120133",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/18016_6MM.jpg?v=1777493840",
     "filename": "18016_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Tortoise Shell Glass)",
     "createdAt": "2026-04-29T20:17:19Z"
   },
   {
@@ -2061,7 +3545,7 @@
     "id": "gid://shopify/MediaImage/31451186102341",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/08006_8MM.jpg?v=1777493621",
     "filename": "08006_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Art Glass Crystal Swirl)",
     "createdAt": "2026-04-29T20:13:39Z"
   },
   {
@@ -2075,7 +3559,7 @@
     "id": "gid://shopify/MediaImage/31451109195845",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48022_8MM.jpg?v=1777492996",
     "filename": "48022_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Light Amethyst & Grape)",
     "createdAt": "2026-04-29T20:03:14Z"
   },
   {
@@ -2089,21 +3573,21 @@
     "id": "gid://shopify/MediaImage/31451109130309",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48022_6MM.jpg?v=1777492996",
     "filename": "48022_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Light Amethyst & Grape)",
     "createdAt": "2026-04-29T20:03:14Z"
   },
   {
     "id": "gid://shopify/MediaImage/31451109097541",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48022_10MM.jpg?v=1777492996",
     "filename": "48022_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Light Amethyst & Grape)",
     "createdAt": "2026-04-29T20:03:14Z"
   },
   {
     "id": "gid://shopify/MediaImage/31451059388485",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/FP-08MM-48021.jpg?v=1777492727",
     "filename": "FP-08MM-48021.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Padparadscha & Light Amethyst)",
     "createdAt": "2026-04-29T19:58:45Z"
   },
   {
@@ -2117,14 +3601,14 @@
     "id": "gid://shopify/MediaImage/31451059322949",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/FP-06MM-48021.jpg?v=1777492727",
     "filename": "FP-06MM-48021.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Padparadscha & Light Amethyst)",
     "createdAt": "2026-04-29T19:58:45Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450946568261",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/FP-08MM-48020.jpg?v=1777492315",
     "filename": "FP-08MM-48020.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Pink & Fuchsia)",
     "createdAt": "2026-04-29T19:51:53Z"
   },
   {
@@ -2138,14 +3622,14 @@
     "id": "gid://shopify/MediaImage/31450946502725",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/FP-06MM-48020.jpg?v=1777492315",
     "filename": "FP-06MM-48020.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Pink & Fuchsia)",
     "createdAt": "2026-04-29T19:51:53Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450799210565",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48016_8MM.jpg?v=1777491739",
     "filename": "48016_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber & Pink)",
     "createdAt": "2026-04-29T19:42:17Z"
   },
   {
@@ -2159,28 +3643,28 @@
     "id": "gid://shopify/MediaImage/31450799145029",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48016_6MM.jpg?v=1777491739",
     "filename": "48016_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber & Pink)",
     "createdAt": "2026-04-29T19:42:17Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450799112261",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48016_10MM.jpg?v=1777491739",
     "filename": "48016_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber & Pink)",
     "createdAt": "2026-04-29T19:42:17Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450731544645",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48013_6MM.jpg?v=1777491504",
     "filename": "48013_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Fuchsia & Aqua)",
     "createdAt": "2026-04-29T19:38:23Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450731511877",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48013_8MM.jpg?v=1777491504",
     "filename": "48013_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Fuchsia & Aqua)",
     "createdAt": "2026-04-29T19:38:23Z"
   },
   {
@@ -2194,7 +3678,7 @@
     "id": "gid://shopify/MediaImage/31450731446341",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48013_10MM.jpg?v=1777491504",
     "filename": "48013_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Fuchsia & Aqua)",
     "createdAt": "2026-04-29T19:38:23Z"
   },
   {
@@ -2208,28 +3692,28 @@
     "id": "gid://shopify/MediaImage/31450006093893",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48012_6MM.jpg?v=1777488919",
     "filename": "48012_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Aqua)",
     "createdAt": "2026-04-29T18:55:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450006061125",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48012_10MM.jpg?v=1777488919",
     "filename": "48012_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Aqua)",
     "createdAt": "2026-04-29T18:55:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/31450006028357",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48012_8MM.jpg?v=1777488919",
     "filename": "48012_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Aqua)",
     "createdAt": "2026-04-29T18:55:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449731760197",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48010_6MM.jpg?v=1777487216",
     "filename": "48010_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Spearmint)",
     "createdAt": "2026-04-29T18:26:54Z"
   },
   {
@@ -2243,14 +3727,14 @@
     "id": "gid://shopify/MediaImage/31449731694661",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48010_10MM.jpg?v=1777487216",
     "filename": "48010_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Spearmint)",
     "createdAt": "2026-04-29T18:26:54Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449731661893",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48010_8MM.jpg?v=1777487216",
     "filename": "48010_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Spearmint)",
     "createdAt": "2026-04-29T18:26:54Z"
   },
   {
@@ -2264,28 +3748,28 @@
     "id": "gid://shopify/MediaImage/31449596428357",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48009_6MM.jpg?v=1777486438",
     "filename": "48009_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber, Ruby)",
     "createdAt": "2026-04-29T18:13:56Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449596395589",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48009_8MM.jpg?v=1777486438",
     "filename": "48009_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber, Ruby)",
     "createdAt": "2026-04-29T18:13:56Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449596362821",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48009_10MM.jpg?v=1777486438",
     "filename": "48009_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Amber, Ruby)",
     "createdAt": "2026-04-29T18:13:56Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449369542725",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48006_8MM.jpg?v=1777484406",
     "filename": "48006_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Emerald & Grape)",
     "createdAt": "2026-04-29T17:40:05Z"
   },
   {
@@ -2299,21 +3783,21 @@
     "id": "gid://shopify/MediaImage/31449369477189",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48006_6MM.jpg?v=1777484406",
     "filename": "48006_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Emerald & Grape)",
     "createdAt": "2026-04-29T17:40:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449369444421",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48006_10MM.jpg?v=1777484406",
     "filename": "48006_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Emerald & Grape)",
     "createdAt": "2026-04-29T17:40:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449307381829",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48004_8MM.jpg?v=1777484104",
     "filename": "48004_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Amber)",
     "createdAt": "2026-04-29T17:35:02Z"
   },
   {
@@ -2327,21 +3811,21 @@
     "id": "gid://shopify/MediaImage/31449307316293",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48004_6MM.jpg?v=1777484104",
     "filename": "48004_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Amber)",
     "createdAt": "2026-04-29T17:35:02Z"
   },
   {
     "id": "gid://shopify/MediaImage/31449307283525",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48004_10MM.jpg?v=1777484104",
     "filename": "48004_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Amber)",
     "createdAt": "2026-04-29T17:35:02Z"
   },
   {
     "id": "gid://shopify/MediaImage/31447759585349",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48002_8MM.jpg?v=1777480738",
     "filename": "48002_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Light Amethyst)",
     "createdAt": "2026-04-29T16:38:56Z"
   },
   {
@@ -2355,14 +3839,14 @@
     "id": "gid://shopify/MediaImage/31447759519813",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48002_6MM.jpg?v=1777480738",
     "filename": "48002_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Light Amethyst)",
     "createdAt": "2026-04-29T16:38:56Z"
   },
   {
     "id": "gid://shopify/MediaImage/31447759257669",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48002_10MM.jpg?v=1777480738",
     "filename": "48002_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Light Amethyst)",
     "createdAt": "2026-04-29T16:38:56Z"
   },
   {
@@ -2376,21 +3860,21 @@
     "id": "gid://shopify/MediaImage/31446654976069",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48001_6MM.jpg?v=1777476411",
     "filename": "48001_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Citrine & Rose)",
     "createdAt": "2026-04-29T15:26:50Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446654943301",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48001_10MM.jpg?v=1777476411",
     "filename": "48001_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Citrine & Rose)",
     "createdAt": "2026-04-29T15:26:50Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446654910533",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/48001_8MM.jpg?v=1777476412",
     "filename": "48001_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Citrine & Rose)",
     "createdAt": "2026-04-29T15:26:50Z"
   },
   {
@@ -2404,28 +3888,28 @@
     "id": "gid://shopify/MediaImage/31446607265861",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29017_5MM.jpg?v=1777476073",
     "filename": "29017_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Garnet)",
     "createdAt": "2026-04-29T15:21:12Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446607233093",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29017_6MM.jpg?v=1777476074",
     "filename": "29017_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Garnet)",
     "createdAt": "2026-04-29T15:21:12Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446607200325",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29017_8MM.jpg?v=1777476074",
     "filename": "29017_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Garnet)",
     "createdAt": "2026-04-29T15:21:12Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446399221829",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29016_5MM.jpg?v=1777474984",
     "filename": "29016_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Siam Ruby)",
     "createdAt": "2026-04-29T15:03:02Z"
   },
   {
@@ -2439,28 +3923,28 @@
     "id": "gid://shopify/MediaImage/31446399156293",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29016_6MM.jpg?v=1777474984",
     "filename": "29016_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Siam Ruby)",
     "createdAt": "2026-04-29T15:03:02Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446399123525",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29016_8MM.jpg?v=1777474984",
     "filename": "29016_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Siam Ruby)",
     "createdAt": "2026-04-29T15:03:02Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446325559365",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29015_5MM.jpg?v=1777474496",
     "filename": "29015_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Erinite & Light Siam)",
     "createdAt": "2026-04-29T14:54:55Z"
   },
   {
     "id": "gid://shopify/MediaImage/31446325526597",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29015_6MM.jpg?v=1777474496",
     "filename": "29015_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Erinite & Light Siam)",
     "createdAt": "2026-04-29T14:54:55Z"
   },
   {
@@ -2474,21 +3958,21 @@
     "id": "gid://shopify/MediaImage/31446325461061",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29015_8MM.jpg?v=1777474496",
     "filename": "29015_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Erinite & Light Siam)",
     "createdAt": "2026-04-29T14:54:55Z"
   },
   {
     "id": "gid://shopify/MediaImage/31433702015045",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29014_6MM.jpg?v=1777406465",
     "filename": "29014_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Topaz)",
     "createdAt": "2026-04-28T20:01:03Z"
   },
   {
     "id": "gid://shopify/MediaImage/31433701982277",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29014_5MM.jpg?v=1777406465",
     "filename": "29014_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Topaz)",
     "createdAt": "2026-04-28T20:01:03Z"
   },
   {
@@ -2502,14 +3986,14 @@
     "id": "gid://shopify/MediaImage/31433701818437",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29014_8MM.jpg?v=1777406465",
     "filename": "29014_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Aqua & Topaz)",
     "createdAt": "2026-04-28T20:01:03Z"
   },
   {
     "id": "gid://shopify/MediaImage/31433012609093",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29013_8MM.jpg?v=1777405099",
     "filename": "29013_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Smoke Topaz)",
     "createdAt": "2026-04-28T19:38:18Z"
   },
   {
@@ -2523,28 +4007,28 @@
     "id": "gid://shopify/MediaImage/31433012543557",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29013_5MM.jpg?v=1777405099",
     "filename": "29013_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Smoke Topaz)",
     "createdAt": "2026-04-28T19:38:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/31433012510789",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29013_6MM.jpg?v=1777405099",
     "filename": "29013_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Topaz & Smoke Topaz)",
     "createdAt": "2026-04-28T19:38:18Z"
   },
   {
     "id": "gid://shopify/MediaImage/31432725758021",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29011_6MM.jpg?v=1777404344",
     "filename": "29011_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal & Aquamarine)",
     "createdAt": "2026-04-28T19:25:42Z"
   },
   {
     "id": "gid://shopify/MediaImage/31432725725253",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29011_8MM.jpg?v=1777404344",
     "filename": "29011_8MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal & Aquamarine)",
     "createdAt": "2026-04-28T19:25:42Z"
   },
   {
@@ -2558,28 +4042,28 @@
     "id": "gid://shopify/MediaImage/31432725659717",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29011_5MM.jpg?v=1777404344",
     "filename": "29011_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal & Aquamarine)",
     "createdAt": "2026-04-28T19:25:42Z"
   },
   {
     "id": "gid://shopify/MediaImage/31429822054469",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29012_10MM.jpg?v=1777394518",
     "filename": "29012_10MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Erinite)",
     "createdAt": "2026-04-28T16:41:57Z"
   },
   {
     "id": "gid://shopify/MediaImage/31429822021701",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29012_6MM.jpg?v=1777394518",
     "filename": "29012_6MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Erinite)",
     "createdAt": "2026-04-28T16:41:57Z"
   },
   {
     "id": "gid://shopify/MediaImage/31429821988933",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/29012_5MM.jpg?v=1777394518",
     "filename": "29012_5MM.jpg",
-    "alt": "",
+    "alt": "Faceted Czech Glass Fire Polished Multi Color Beads (Crystal, Sapphire & Erinite)",
     "createdAt": "2026-04-28T16:41:57Z"
   },
   {
@@ -2600,21 +4084,21 @@
     "id": "gid://shopify/MediaImage/31375277129797",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Dark_Sapphire-30080.jpg?v=1776953999",
     "filename": "Dark_Sapphire-30080.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-23T14:19:57Z"
   },
   {
     "id": "gid://shopify/MediaImage/31375270379589",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Smaragd-50120.jpg?v=1776953971",
     "filename": "Smaragd-50120.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-23T14:19:29Z"
   },
   {
     "id": "gid://shopify/MediaImage/31375263006789",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rosaline-70100.jpg?v=1776953931",
     "filename": "Rosaline-70100.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-23T14:18:49Z"
   },
   {
@@ -2628,14 +4112,14 @@
     "id": "gid://shopify/MediaImage/31358647992389",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Rose_70010.jpg?v=1776867792",
     "filename": "Rose_70010.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/31358647959621",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Peridot_50520.jpg?v=1776867791",
     "filename": "Peridot_50520.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
@@ -2649,28 +4133,28 @@
     "id": "gid://shopify/MediaImage/31358647894085",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Light_Siam.jpg?v=1776867792",
     "filename": "Light_Siam.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/31358647861317",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Montana_30340.jpg?v=1776867792",
     "filename": "Montana_30340.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/31358647828549",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Jet_23980.jpg?v=1776867791",
     "filename": "Jet_23980.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/31358647795781",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Light_Amethyst_20020.jpg?v=1776867791",
     "filename": "Light_Amethyst_20020.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
@@ -2698,14 +4182,14 @@
     "id": "gid://shopify/MediaImage/31358647664709",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Aquamarine_60000.jpg?v=1776867791",
     "filename": "Aquamarine_60000.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
     "id": "gid://shopify/MediaImage/31358647631941",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Black_Diamon_40010.jpg?v=1776867791",
     "filename": "Black_Diamon_40010.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:23:10Z"
   },
   {
@@ -2719,7 +4203,7 @@
     "id": "gid://shopify/MediaImage/31358645567557",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Smoked_Topaz_10220.jpg?v=1776867739",
     "filename": "Smoked_Topaz_10220.jpg",
-    "alt": "",
+    "alt": "Preciosa & Jablonex Hot Fix Extra 2-Cut Glass Chaton Rose Flatback Rhinestones 40ss",
     "createdAt": "2026-04-22T14:22:18Z"
   },
   {

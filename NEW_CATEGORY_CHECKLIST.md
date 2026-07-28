@@ -36,12 +36,38 @@ Steps to onboard a new spreadsheet/category (seed beads, bugle beads, fire polis
 
 ## 2. Bead shape taxonomy
 - `data/shopify_taxonomy_map.json` -> `"bead_shape"` needs an entry for the new
-  category: `{"label": "...", "base": "<one of BEAD_SHAPE_BASE_GIDS>"}`.
-- Before guessing a base taxonomy value, check whether Shopify already has a live
-  metaobject for this shape (another dev may have added it by hand):
-  `python3 -c "import app; [print(n['displayName'], n['handle']) for n in app.shopify_list_metaobjects('shopify--bead-shape')]"`
-  -- if it exists, match its `taxonomy_reference` GID exactly (this is how "2 Cut
-  Beads" was matched to the same base as the site's existing live "3 Cut").
+  category: `{"label": "..."}` -- this is the literal text `resolver.bead_shape_label()`
+  writes into the CSV's `custom.bead_shape` column, which is the field that
+  actually powers the storefront Bead Shape filter (see
+  `margola_shopify_filter_architecture` memory). The old `shopify.bead-shape`
+  metaobject-reference field/CSV column was removed 2026-07-25 -- it never
+  showed custom labels on the storefront and wasn't feeding anything else
+  useful, so don't reintroduce it.
+- **The CSV cell must contain the plain label text only (e.g. `Bugle`), never
+  `json.dumps([label])`.** `custom.bead_shape` is a `list.single_line_text_field`,
+  and its *final live stored value* does look like `["Bugle"]` -- but that's
+  Shopify's CSV importer wrapping your plain cell text into a list itself.
+  Pre-encoding it yourself double-wraps it into `["[\"Bugle\"]"]` (a real bug,
+  shipped and caught 2026-07-25 onboarding Bugle Beads -- see
+  `margola_shopify_filter_architecture` Fact 6). Only a direct GraphQL
+  `metafieldsSet`/`metaobjectCreate` call wants the JSON-encoded array string;
+  CSV import never does.
+
+## 2b. Bead size taxonomy
+- `data/shopify_taxonomy_map.json` -> `"size"` needs an entry per distinct size this
+  category uses: `{"label": "...", "base_gid": "gid://shopify/TaxonomyValue/..."}`.
+  `resolver.size_handle()` resolves/creates the `shopify--size` metaobject and
+  writes its handle into `shopify.size` (this one *is* a working metaobject-reference
+  filter, unlike bead shape/color -- Shopify's Size category apparently doesn't
+  collapse custom labels the same way).
+- Check for an existing live metaobject before adding a new `base_gid` -- reuse it
+  exactly if the size already exists:
+  `python3 -c "import app; [print(n['displayName'], n['handle']) for n in app.shopify_list_metaobjects('shopify--size')]"`
+  then fetch its `taxonomy_reference` field via a `metaobjectByHandle` query. Bead
+  sizes in the `X/0 - Y.Ymm` format (10/0, 11/0, 9/0, 12/0, etc.) all share
+  `gid://shopify/TaxonomyValue/2878` -- confirmed live 2026-07-25 across four
+  existing entries. Only look up a different GID for a genuinely different size
+  format (mm-only beads, stone sizes in ss, etc. use different base values).
 
 ## 3. Color taxonomy (swatch metafield)
 - `data/shopify_taxonomy_map.json` -> `"color"` maps each raw color name to one of
@@ -111,3 +137,25 @@ guessing in the UI every time.
 ## 7. Before the real Shopify export
 - Re-run the color-taxonomy check in step 3.
 - Spot check `/api/export/shopify-test.csv` with 2-3 approved products first.
+
+## 8. Collection Sort Order
+Once the category's products are live in their target collection(s), use the
+**"Collection Sort Order"** box on the Shopify tab (enter the collection
+handle, e.g. `2-cut-beads`) -- computes a proposed order from each product's
+SKU (color code, numeric-first with alphabetical fallback for lines that only
+have color names, e.g. Chunky Mix/Leather Cord) and shows a before/after
+review table before pushing. Only needed once per collection whenever new
+products get added to it -- a manual sort is a one-time snapshot, not a live
+rule, so new products just append at the end until this is re-run. If the
+category shares a collection with another size (like 2 Cut Beads' 10/0 +
+11/0), add an entry to `COLLECTION_SIZE_ORDER` in app.py and the UI will
+surface a group-by-size vs. interleave-by-color choice automatically -- see
+`COLLECTION_SORT_SPEC.md` for the full build spec.
+
+## 9. SEO Title/Description
+Nothing category-specific to configure here -- the **"SEO Title + Description"**
+box on the Shopify tab audits the *entire* live catalog every time (not just
+this category), deriving from each product's own title/description, so a new
+category's products just get picked up automatically the next time it's run.
+See `SEO_TITLE_DESCRIPTION_SPEC.md` for the full build spec and its
+"Implementation status" section for known quirks/decisions.

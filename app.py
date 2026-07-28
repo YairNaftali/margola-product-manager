@@ -1,4 +1,4 @@
-import csv, io, json, os, re, uuid, time, mimetypes, urllib.parse, urllib.request, ssl, certifi
+import csv, html, io, json, os, re, uuid, time, mimetypes, urllib.parse, urllib.request, ssl, certifi
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
@@ -37,6 +37,123 @@ def make_alt_text(title):
         key = w.rstrip(".").upper()
         return ALT_TEXT_PROTECTED_TERMS.get(key, w.title())
     return re.sub(r"[A-Za-z0-9/.'-]+", repl, t)
+
+def strip_html(raw):
+    txt = re.sub(r"<[^>]+>", " ", raw or "")
+    txt = html.unescape(txt)
+    txt = re.sub(r"\s+", " ", txt).strip()
+    return re.sub(r"\s+([.,;:!?])", r"\1", txt)
+
+def fix_shouty_caps(text):
+    """Title-cases any run of 3+ consecutive ALL-CAPS words (several
+    description templates -- Roller Beads, 2/3 Cut -- have ALL-CAPS headings
+    baked into the stored HTML itself, not just CSS text-transform)."""
+    def repl(m):
+        words = m.group(0).split()
+        out = []
+        for w in words:
+            key = w.rstrip(".,").upper()
+            out.append(ALT_TEXT_PROTECTED_TERMS.get(key, w.title()))
+        return " ".join(out)
+    return re.sub(r"\b(?:[A-Z][A-Z'/-]*\s+){2,}[A-Z][A-Z'/-]*\b", repl, text)
+
+def truncate_words(txt, limit=160):
+    """Cut at the last full sentence inside the limit if there is one far
+    enough in to be worthwhile; otherwise cut at the last full word. Never
+    cut mid-word -- this was wrong in an early version of this script and
+    produced descriptions ending on a dangling half-word."""
+    if len(txt) <= limit:
+        return txt
+    window = txt[:limit]
+    last_period = window.rfind(". ")
+    if last_period > 80:
+        return window[:last_period + 1]
+    return window.rsplit(" ", 1)[0].rstrip(",.;:- ")
+
+def gen_seo_title(title):
+    seo_title = make_alt_text(title)
+    if seo_title == title:
+        # Shopify silently stores null if seo.title is byte-identical to the
+        # product's own title (userErrors: [] but the write no-ops) -- confirmed
+        # live 2026-07-23, hit 204/393 products in one run. See SEO_TITLE_DESCRIPTION_SPEC.md.
+        seo_title = f"{title} | Margola"
+    return seo_title
+
+def _build_seo_description(title, description_html):
+    ct = make_alt_text(title)
+    raw_plain = strip_html(description_html)
+    if not raw_plain:
+        text = f"Shop {ct} from Margola — quality Czech glass beads & findings for jewelry, costume, and craft projects."
+        return text, {"used_fallback": True, "shouty_caps_fixed": False, "awkward_truncation": False}
+    fixed = fix_shouty_caps(raw_plain)
+    shouty_changed = fixed != raw_plain
+    if fixed.lower().startswith(ct.lower()):
+        fixed = fixed[len(ct):].strip(" -–")
+    truncated = truncate_words(fixed, 160)
+    awkward = len(truncated) == 160 and truncated[-1:] not in (".", "!", "?")
+    return truncated, {"used_fallback": False, "shouty_caps_fixed": shouty_changed, "awkward_truncation": awkward}
+
+def gen_description(title, description_html):
+    return _build_seo_description(title, description_html)[0]
+
+def shopify_list_products_for_seo():
+    nodes, cursor = [], None
+    while True:
+        q = """query($after:String){ products(first:100, after:$after){ edges{ cursor node{ id handle title descriptionHtml seo{title description} } } pageInfo{ hasNextPage } } }"""
+        data = shopify_graphql(q, {"after": cursor})
+        edges = data["products"]["edges"]
+        nodes.extend(e["node"] for e in edges)
+        if not data["products"]["pageInfo"]["hasNextPage"] or not edges: break
+        cursor = edges[-1]["cursor"]
+    return nodes
+
+def shopify_seo_proposals():
+    # Reads the whole live catalog directly from Shopify (not local products.json,
+    # which only holds the currently-loaded review batch) -- per the spec, "already
+    # has a value" isn't proof it's still correct (see the 7/9 Rhinestone incident),
+    # so this needs to be safe and normal to re-run against every product, not just
+    # newly imported ones.
+    proposals = []
+    for node in shopify_list_products_for_seo():
+        title = node.get("title") or ""
+        description_html = node.get("descriptionHtml") or ""
+        current = node.get("seo") or {}
+        seo_title = gen_seo_title(title)
+        seo_description, desc_flags = _build_seo_description(title, description_html)
+        flags = []
+        if seo_title == title:
+            flags.append("seo_title_still_matches_title")
+        if desc_flags["awkward_truncation"]:
+            flags.append("awkward_truncation")
+        if desc_flags["shouty_caps_fixed"]:
+            flags.append("shouty_caps_fixed")
+        if desc_flags["used_fallback"]:
+            flags.append("no_description_used_fallback")
+        current_title, current_description = current.get("title") or "", current.get("description") or ""
+        changed = seo_title != current_title or seo_description != current_description
+        proposals.append({
+            "id": node["id"], "handle": node["handle"], "title": title,
+            "current_seo_title": current_title, "current_seo_description": current_description,
+            "seo_title": seo_title, "seo_description": seo_description,
+            "flags": flags, "changed": changed,
+        })
+    return proposals
+
+def shopify_apply_seo(items):
+    applied, errors = [], []
+    for item in items:
+        handle = clean(item.get("handle")); product_id = clean(item.get("id"))
+        seo_title, seo_description = item.get("seo_title", ""), item.get("seo_description", "")
+        if not product_id:
+            errors.append({"handle": handle, "error": "Missing product id"}); continue
+        try:
+            m = """mutation($product:ProductUpdateInput!){ productUpdate(product:$product){ product{ id } userErrors{ field message } } }"""
+            d = shopify_graphql(m, {"product": {"id": product_id, "seo": {"title": seo_title, "description": seo_description}}})["productUpdate"]
+            if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+            applied.append({"handle": handle, "seo_title": seo_title, "seo_description": seo_description})
+        except Exception as e:
+            errors.append({"handle": handle, "error": str(e)})
+    return {"applied": applied, "errors": errors}
 
 def normalize_header(h):
     return re.sub(r"[^a-z0-9]+", "_", clean(h).lower()).strip("_")
@@ -234,7 +351,11 @@ def parse_xlsx(path, forced_type_id=None):
             if "missing phot" in row_text or "mising phot" in row_text: notes.append("Source note: missing photo")
             if clean(factory_price) and not money(factory_price): notes.append(f"Invalid factory price in source: {clean(factory_price)!r}")
             if clean(mini_price) and not money(mini_price): notes.append(f"Invalid mini price in source: {clean(mini_price)!r}")
-            if clean(mini_style) and clean(size) and clean(size).lower() not in clean(mini_style).lower():
+            # Compare only the size's leading token (e.g. "#2" out of "#2 (4.5mm)") against the
+            # SKU -- some categories' SKUs only embed the short size class, not the full
+            # parenthetical detail, so checking the whole string produced false positives.
+            size_token = clean(size).split("(")[0].strip()
+            if clean(mini_style) and size_token and size_token.lower() not in clean(mini_style).lower():
                 notes.append(f"Mini pack style # may not match this row's size ({clean(size)!r}): {clean(mini_style)!r}")
             p = {
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
@@ -380,9 +501,10 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Option1 Linked To": "product.metafields.custom.bundle_pack_options" if idx == 0 else "",
                 "Bundle Pack Options (product.metafields.custom.bundle_pack_options)": "; ".join(v["option_value"] for v in variants) if idx == 0 else "",
                 "Color (product.metafields.shopify.color-pattern)": resolver.color_handle(p.get("color_name")) if idx == 0 else "",
-                "Bead shape (product.metafields.shopify.bead-shape)": resolver.bead_shape_handle(p.get("bead_shape")) if idx == 0 else "",
                 "Color Type (product.metafields.custom.color_type)": clean(p.get("color_type")) if idx == 0 else "",
                 "Bead Size (product.metafields.custom.bead_size_mm)": (clean(p.get("size_mm")) or clean(p.get("size"))) if idx == 0 else "",
+                "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size")) if idx == 0 else "",
+                "Bead Shape (product.metafields.custom.bead_shape)": resolver.bead_shape_label(p.get("bead_shape")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
@@ -403,9 +525,10 @@ def shopify_csv(products, approved_only=True, limit=None):
         "Image Src","Image Alt Text",
         "Bundle Pack Options (product.metafields.custom.bundle_pack_options)",
         "Color (product.metafields.shopify.color-pattern)",
-        "Bead shape (product.metafields.shopify.bead-shape)",
         "Color Type (product.metafields.custom.color_type)",
         "Bead Size (product.metafields.custom.bead_size_mm)",
+        "Size (product.metafields.shopify.size)",
+        "Bead Shape (product.metafields.custom.bead_shape)",
         "Status"
     ]
 
@@ -518,6 +641,8 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "harddrive_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "2cut_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "2cut_10_0_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "bugle_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "glass-jewels_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -738,7 +863,7 @@ def _pick_best_candidate(paths):
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic = {}, {}, {}, {}, {}, {}
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic = {}, {}, {}, {}, {}, {}, {}
     found_any = False
     for list_path in DRIVE_FILELISTS:
         if not os.path.exists(list_path): continue
@@ -756,10 +881,11 @@ def load_drive_index():
             elif "/crow" in fl: crow.setdefault(base, []).append(full)
             elif "/leather cord/" in fl: leather_cord.setdefault(base, []).append(full)
             elif "/2 cuts/" in fl: two_cut.setdefault(base, []).append(full)
+            elif "/bugle beads/" in fl: bugle.setdefault(base, []).append(full)
     roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic = (
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
-        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, generic)
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic)
     )
     # Built from the raw (pre-picked) path lists, not the already-resolved
     # per-size dicts above -- otherwise a basename shared by both sizes
@@ -772,7 +898,7 @@ def load_drive_index():
     }
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
-            "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "generic": generic}
+            "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "bugle": bugle, "generic": generic}
 
 def _roller_candidates(color_number):
     cn = clean(color_number)
@@ -846,6 +972,24 @@ def _find_2cut_photo(pool, color_number):
                 if v: return v
     return None
 
+def _find_bugle_photo(pool, color_number, size_class):
+    # Filenames are the color number plus the bugle size CLASS digit (e.g.
+    # "05051_2.jpg" for the "#2" bugle line), not the mm diameter -- confirmed
+    # against the real bugle_filelist.txt dump 2026-07-25 (every color in the
+    # #2 batch has exactly one "{code}_2.jpg", plus macOS "._" shadow copies
+    # already filtered out by JUNK_PATH_MARKERS).
+    code = clean(color_number).lower()
+    # size_class is the raw "size" field, e.g. "#2 (4.5mm)" -- only the leading
+    # class number (before the parenthetical mm detail) appears in filenames.
+    leading = clean(size_class).split()[0] if clean(size_class) else ""
+    size = re.sub(r"[^0-9]", "", leading)
+    if not size: return None
+    for sep in ("_", "-"):
+        for ext in (".jpg", ".jpeg", ".png"):
+            v = pool.get(f"{code}{sep}{size}{ext}")
+            if v: return v
+    return None
+
 def _leather_cord_candidate(image_filename):
     m = re.match(r"lc-(\d+)-(\d+)mm-(.+)\.jpg$", image_filename or "")
     if not m: return None
@@ -891,6 +1035,9 @@ def resolve_photo_from_drive(product, index):
     elif product.get("bead_shape") == "2 Cut Beads":
         found = _find_2cut_photo(index["two_cut"], product.get("color_number"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("bead_shape") == "Bugle Beads":
+        found = _find_bugle_photo(index["bugle"], product.get("color_number"), product.get("size"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
 def multipart_form_data(fields, files):
@@ -930,6 +1077,100 @@ def shopify_add_product_to_collection(product_id, collection_id):
     m="""mutation($product:ProductUpdateInput!){ productUpdate(product:$product){ product{ id } userErrors{ field message } } }"""
     d=shopify_graphql(m,{"product":{"id":product_id,"collectionsToJoin":[collection_id]}})["productUpdate"]
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
+
+# Only needed for collections that span more than one size (e.g. 2 Cut Beads'
+# 10/0 + 11/0). Explicit map, not inferred -- extend per category as needed.
+COLLECTION_SIZE_ORDER = {
+    "2-cut-beads": {"10/0": 0, "11/0": 1},
+}
+
+def sort_key(sku, size_order=None, color_name_fallback="", group_by_size=True):
+    parts = sku.split("-")
+    size = parts[1] if len(parts) > 1 else ""
+    color_raw = parts[2] if len(parts) > 2 else ""
+    m = re.match(r"(\d+)", color_raw)
+    if m:
+        color_num = int(m.group(1))
+        color_sort = (0, color_num, color_raw)          # numeric codes sort first, by number
+    else:
+        color_sort = (1, 0, color_name_fallback.upper()) # no numeric code -> alphabetical fallback
+    if not group_by_size:
+        return color_sort
+    return ((size_order or {}).get(size, 99), *color_sort)
+
+def shopify_collection_by_handle(handle):
+    q="""query($handle:String!){ collectionByIdentifier(identifier:{handle:$handle}){ id title } }"""
+    return shopify_graphql(q,{"handle":handle}).get("collectionByIdentifier")
+
+def shopify_collection_products(collection_id):
+    # Fetched with sortKey:COLLECTION_DEFAULT so the first page reflects the
+    # *current* live manual order, for before/after comparison in the review UI.
+    nodes, cursor = [], None
+    while True:
+        q="""query($id:ID!,$after:String){ collection(id:$id){ products(first:100, after:$after, sortKey:COLLECTION_DEFAULT){ edges{ cursor node{ id title handle variants(first:1){ edges{ node{ sku } } } } } pageInfo{ hasNextPage } } } }"""
+        data=shopify_graphql(q,{"id":collection_id,"after":cursor})["collection"]["products"]
+        edges=data["edges"]
+        nodes.extend(e["node"] for e in edges)
+        if not data["pageInfo"]["hasNextPage"] or not edges: break
+        cursor=edges[-1]["cursor"]
+    return nodes
+
+def shopify_collection_sort_proposal(handle, group_by_size=True):
+    collection = shopify_collection_by_handle(handle)
+    if not collection:
+        raise RuntimeError(f"Collection not found for handle {handle!r}")
+    products = shopify_collection_products(collection["id"])
+    size_order = COLLECTION_SIZE_ORDER.get(handle, {})
+    current_order, enriched, sizes_present = [], [], set()
+    for p in products:
+        variant_edges = (p.get("variants") or {}).get("edges", [])
+        sku = variant_edges[0]["node"]["sku"] if variant_edges else ""
+        parts = sku.split("-")
+        size = parts[1] if len(parts) > 1 else ""
+        if size: sizes_present.add(size)
+        current_order.append(p["title"])
+        key = sort_key(sku, size_order, color_name_fallback=p.get("title",""), group_by_size=group_by_size)
+        enriched.append({"id":p["id"], "title":p["title"], "sku":sku, "sort_key":key})
+    enriched.sort(key=lambda e: e["sort_key"])
+    return {
+        "collection_id": collection["id"], "collection_title": collection["title"], "handle": handle,
+        "multi_size": len(sizes_present) > 1, "sizes_present": sorted(sizes_present),
+        "group_by_size": group_by_size,
+        "current_order_titles": current_order,
+        "products": [{"id":e["id"], "title":e["title"], "sku":e["sku"]} for e in enriched],
+    }
+
+def shopify_apply_collection_sort(collection_id, ordered_product_ids):
+    set_manual_m = """mutation SetManual($input: CollectionInput!) { collectionUpdate(input: $input) { userErrors { field message } } }"""
+    d1 = shopify_graphql(set_manual_m, {"input": {"id": collection_id, "sortOrder": "MANUAL"}})["collectionUpdate"]
+    if d1.get("userErrors"): raise RuntimeError(json.dumps(d1["userErrors"]))
+
+    reorder_m = """mutation Reorder($id: ID!, $moves: [MoveInput!]!) { collectionReorderProducts(id: $id, moves: $moves) { job { id done } userErrors { field message } } }"""
+    moves = [{"id": pid, "newPosition": i} for i, pid in enumerate(ordered_product_ids)]
+    d2 = shopify_graphql(reorder_m, {"id": collection_id, "moves": moves})["collectionReorderProducts"]
+    if d2.get("userErrors"): raise RuntimeError(json.dumps(d2["userErrors"]))
+
+    job = d2.get("job") or {}
+    job_id, done = job.get("id"), job.get("done", False)
+    if job_id and not done:
+        for _ in range(30):
+            time.sleep(1)
+            jd = shopify_graphql('{ job(id: "%s") { done } }' % job_id).get("job") or {}
+            if jd.get("done"):
+                done = True; break
+
+    # Step 3: verify against live data -- don't just trust a clean userErrors.
+    verify_q = """query($id:ID!){ collection(id:$id){ sortOrder products(first:10, sortKey:COLLECTION_DEFAULT){ edges{ node{ id title } } } } }"""
+    vd = shopify_graphql(verify_q, {"id": collection_id})["collection"]
+    live_first_ids = [e["node"]["id"] for e in vd["products"]["edges"]]
+    expected_first_ids = ordered_product_ids[:10]
+    verified = live_first_ids == expected_first_ids
+
+    return {
+        "job_id": job_id, "job_done": done, "verified": verified,
+        "live_sort_order": vd.get("sortOrder"),
+        "live_first_titles": [e["node"]["title"] for e in vd["products"]["edges"]],
+    }
 
 def shopify_sync_collections():
     # Groups approved products by their own stored spreadsheet_type_id and syncs
@@ -993,6 +1234,8 @@ COLOR_FAMILY_FORCED = {
     "49102": "Smoke Gray / Black Diamond",  # "metallic" in the name, but confirmed to beat the metallic rule
     "23980": "Black",
     "14400": "Smoke Gray / Black Diamond",  # "GUNMETAL" -- not caught by the metallic-word rule below
+    "59205": "Black",  # "JET BLACK IRIS" -- leading digit '5' says Green, Neil confirmed Black instead
+    "5920": "Black",  # "JET BLACK ... MATTE" (code 5920M, strips to 5920) -- same override as 59205
 }
 # Only used as a fallback for names that don't follow the plain digit rule
 # (composite crystal-lined codes, the 017xx series) -- NOT used to override or
@@ -1084,11 +1327,6 @@ COLOR_BASE_SWATCH_GIDS={
     "Rose gold":"gid://shopify/TaxonomyValue/16","Silver":"gid://shopify/TaxonomyValue/5","White":"gid://shopify/TaxonomyValue/3",
     "Yellow":"gid://shopify/TaxonomyValue/14",
 }
-BEAD_SHAPE_BASE_GIDS={
-    "Hair pipe":"gid://shopify/TaxonomyValue/14881","Heart":"gid://shopify/TaxonomyValue/17414","Other":"gid://shopify/TaxonomyValue/27273",
-    "Oval":"gid://shopify/TaxonomyValue/17415","Round":"gid://shopify/TaxonomyValue/17416","Seed":"gid://shopify/TaxonomyValue/14882",
-    "Square":"gid://shopify/TaxonomyValue/17417","Star":"gid://shopify/TaxonomyValue/14638","Tube":"gid://shopify/TaxonomyValue/17418",
-}
 SOLID_PATTERN_GID="gid://shopify/TaxonomyValue/2874"
 COLOR_FINISH_WORDS={"TRANSPARENT","TRANSPAENT","TRANSPAR","TRANS","PARENT","OPAQUE","MATTE"}
 CODE_PREFIX_RE=re.compile(r"^[0-9A-Za-z]{4,6}\s*-\s*")
@@ -1122,11 +1360,9 @@ def shopify_create_color_pattern_metaobject(label, base_color_name):
     if d.get("userErrors"): raise RuntimeError(json.dumps(d["userErrors"]))
     return d["metaobject"]["handle"]
 
-def shopify_create_bead_shape_metaobject(label, base_shape_name):
-    base_gid=BEAD_SHAPE_BASE_GIDS.get(base_shape_name)
-    if not base_gid: raise RuntimeError(f"No base bead shape GID for {base_shape_name!r}")
+def shopify_create_size_metaobject(label, base_gid):
     m="""mutation($obj:MetaobjectCreateInput!){ metaobjectCreate(metaobject:$obj){ metaobject{ handle } userErrors{ field message } } }"""
-    d=shopify_graphql(m,{"obj":{"type":"shopify--bead-shape","fields":[
+    d=shopify_graphql(m,{"obj":{"type":"shopify--size","fields":[
         {"key":"label","value":label},
         {"key":"taxonomy_reference","value":base_gid},
     ]}})["metaobjectCreate"]
@@ -1138,12 +1374,13 @@ class MetaobjectResolver:
     def __init__(self):
         self.taxonomy_map=load_taxonomy_map()
         self._color_by_key=None
-        self._shape_by_label=None
+        self._size_by_label=None
         self._created_colors={}
-        self._created_shapes={}
+        self._created_sizes={}
         self.created_colors=[]
-        self.created_shapes=[]
+        self.created_sizes=[]
         self.unmapped_colors=[]
+        self.unmapped_sizes=[]
 
     def _colors(self):
         if self._color_by_key is None:
@@ -1152,10 +1389,10 @@ class MetaobjectResolver:
                 self._color_by_key.setdefault(normalize_color_key(n["displayName"]), []).append(n)
         return self._color_by_key
 
-    def _shapes(self):
-        if self._shape_by_label is None:
-            self._shape_by_label={n["displayName"].strip().upper():n for n in shopify_list_metaobjects("shopify--bead-shape")}
-        return self._shape_by_label
+    def _sizes(self):
+        if self._size_by_label is None:
+            self._size_by_label={n["displayName"].strip().upper():n for n in shopify_list_metaobjects("shopify--size")}
+        return self._size_by_label
 
     def color_handle(self, color_name):
         color_name=clean(color_name)
@@ -1176,16 +1413,30 @@ class MetaobjectResolver:
         self.created_colors.append(label)
         return handle
 
-    def bead_shape_handle(self, bead_shape):
+    def bead_shape_label(self, bead_shape):
+        # Plain text, NOT json.dumps([...]) -- this feeds a CSV cell, and Shopify's
+        # product CSV importer wraps a list.single_line_text_field cell's raw text
+        # into a single-item list itself. Pre-JSON-encoding it here double-wraps
+        # the value (confirmed live 2026-07-25: produced ["[\"Bugle\"]"] instead of
+        # ["Bugle"]). json.dumps(...) is only correct for a direct GraphQL
+        # metafieldsSet call (a different channel with different expectations),
+        # not for a CSV import column -- don't copy formatting between the two
+        # without verifying against that specific channel's actual behavior.
         spec=self.taxonomy_map.get("bead_shape",{}).get(clean(bead_shape))
-        if not spec: return ""
+        return spec["label"] if spec else ""
+
+    def size_handle(self, size):
+        spec=self.taxonomy_map.get("size",{}).get(clean(size))
+        if not spec:
+            if clean(size): self.unmapped_sizes.append(size)
+            return ""
         label=spec["label"]; key=label.strip().upper()
-        by_label=self._shapes()
+        by_label=self._sizes()
         if key in by_label: return by_label[key]["handle"]
-        if key in self._created_shapes: return self._created_shapes[key]
-        handle=shopify_create_bead_shape_metaobject(label, spec["base"])
-        self._created_shapes[key]=handle
-        self.created_shapes.append(label)
+        if key in self._created_sizes: return self._created_sizes[key]
+        handle=shopify_create_size_metaobject(label, spec["base_gid"])
+        self._created_sizes[key]=handle
+        self.created_sizes.append(label)
         return handle
 
 class Handler(BaseHTTPRequestHandler):
@@ -1236,6 +1487,15 @@ class Handler(BaseHTTPRequestHandler):
                 proposals.append({"handle":p["handle"],"title":p.get("title"),"color_number":p.get("color_number"),
                                    "color_name":p.get("color_name"),"family":family,"reason":reason,"needs_review":family is None})
             return self.send_json({"ok":True,"proposals":proposals,"choices":COLOR_FAMILY_CHOICES})
+        if path == "/api/shopify/seo-proposals":
+            try: return self.send_json({"ok":True,"proposals":shopify_seo_proposals()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/collection-sort-proposal":
+            handle = query.get("handle", [""])[0].strip()
+            group_by_size = query.get("group_by_size", ["1"])[0] != "0"
+            if not handle: return self.send_json({"ok":False,"error":"Missing handle"},400)
+            try: return self.send_json({"ok":True, **shopify_collection_sort_proposal(handle, group_by_size)})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/photos/resolve-from-drive":
             index = load_drive_index()
             if not index["found_any"]:
@@ -1279,6 +1539,17 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/shopify/apply-color-family":
             data = json.loads(self.read_body().decode("utf-8")); items = data.get("items",[])
             try: return self.send_json({"ok":True, **shopify_apply_color_family(items)})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/apply-seo":
+            data = json.loads(self.read_body().decode("utf-8")); items = data.get("items",[])
+            try: return self.send_json({"ok":True, **shopify_apply_seo(items)})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/apply-collection-sort":
+            data = json.loads(self.read_body().decode("utf-8"))
+            collection_id, product_ids = data.get("collection_id",""), data.get("product_ids",[])
+            if not collection_id or not product_ids:
+                return self.send_json({"ok":False,"error":"Missing collection_id or product_ids"},400)
+            try: return self.send_json({"ok":True, **shopify_apply_collection_sort(collection_id, product_ids)})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/photos/apply-drive-matches":
             data = json.loads(self.read_body().decode("utf-8")); matches = data.get("matches",[])
