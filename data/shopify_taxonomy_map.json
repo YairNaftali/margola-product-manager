@@ -11,7 +11,10 @@
     "Leaf": {"label": "Leaf", "base": "Other"},
     "Leaves": {"label": "Leaves", "base": "Other"},
     "Petals": {"label": "Petals", "base": "Other"},
-    "Round": {"label": "Round"}
+    "Round": {"label": "Round"},
+    "Star": {"label": "Star"},
+    "Shell": {"label": "Shell", "base": "Other"},
+    "Square": {"label": "Square"}
   },
   "size": {
     "10/0": {"label": "10/0 - 2.1mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},

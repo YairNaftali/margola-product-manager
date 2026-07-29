@@ -643,6 +643,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "2cut_10_0_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "bugle_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "glass-jewels_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "sew-on-glass-jewels_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -997,6 +998,21 @@ def _leather_cord_candidate(image_filename):
     size = whole if frac == "0" else f"{whole}.{frac}"
     return size, color.replace("-", " ")
 
+def _find_sew_on_glass_jewel_photo(pool, factory_style):
+    # Generic exact-match already covers most of this category. Two known
+    # gaps in the real photo folder: (1) a couple of photos were shot before
+    # their SKU's "V" (Vintage) prefix got corrected in the sheet, so the
+    # filename is missing it; (2) one filename has an extra alternate German
+    # style number suffix baked in (e.g. "...--(04327-german-style-no.).jpg").
+    code = clean(factory_style).lower()
+    no_v = re.sub(r"^(\d+)v(-)", r"\1\2", code)
+    v = pool.get(f"{no_v}.jpg")
+    if v: return v
+    for k, val in pool.items():
+        if k.startswith(code + "--") or k.startswith(code + "-("):
+            return val
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1037,6 +1053,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("bead_shape") == "Bugle Beads":
         found = _find_bugle_photo(index["bugle"], product.get("color_number"), product.get("size"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "sew-on-glass-jewels":
+        found = _find_sew_on_glass_jewel_photo(index["generic"], product.get("factory_style"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 

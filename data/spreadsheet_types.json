@@ -116,6 +116,26 @@
     "sync": []
   },
   {
+    "id": "sew-on-glass-jewels",
+    "label": "Sew On Glass Jewels",
+    "sheet_match": [],
+    "filename_match": ["sew on glass jewels"],
+    "vendor": "Margola",
+    "collection": "Sew On Glass Jewels",
+    "title_prefix": "Sew On Glass Jewel",
+    "title_suffix": "",
+    "subcategory": "Sew On Glass Jewels",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks > Sew-On Rhinestones",
+    "sync": [
+      {"title": "Sew On Glass Jewels", "handle": "sew-on-glass-jewels"}
+    ]
+  },
+  {
     "id": "glass-jewels",
     "label": "Glass Jewels & Cabochons",
     "sheet_match": [],
