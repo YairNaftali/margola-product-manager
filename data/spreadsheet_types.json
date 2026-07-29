@@ -154,5 +154,25 @@
     "sync": [
       {"title": "Glass Jewels & Cabochons", "handle": "glass-jewels-cabochons"}
     ]
+  },
+  {
+    "id": "cameos-intaglios",
+    "label": "Cameos and Intaglios",
+    "sheet_match": [],
+    "filename_match": ["cameos and intaglios"],
+    "vendor": "Margola",
+    "collection": "Cameos & Intaglios",
+    "title_prefix": "Vintage Glass",
+    "title_suffix": "",
+    "subcategory": "Cameos and Intaglios",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Loose Stones > Cabochons",
+    "sync": [
+      {"title": "Cameos & Intaglios", "handle": "cameos-intaglios"}
+    ]
   }
 ]

@@ -14,7 +14,9 @@
     "Round": {"label": "Round"},
     "Star": {"label": "Star"},
     "Shell": {"label": "Shell", "base": "Other"},
-    "Square": {"label": "Square"}
+    "Square": {"label": "Square"},
+    "Oval": {"label": "Oval"},
+    "Heart": {"label": "Heart"}
   },
   "size": {
     "10/0": {"label": "10/0 - 2.1mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
@@ -129,6 +131,14 @@
     "Emerald": "Green",
     "Dark Aqua": "Blue",
     "Light Siam Ruby": "Red",
-    "Siam Ruby": "Red"
+    "Siam Ruby": "Red",
+    "Brown": "Brown",
+    "White On Black": "Black",
+    "White On Blue": "Blue",
+    "White On Green": "Green",
+    "Colorful Bouquet On Red": "Red",
+    "Colorful Bouquet On White": "White",
+    "Colorful Bouquet On Blue": "Blue",
+    "Crystal Double Rose": "Clear"
   }
 }

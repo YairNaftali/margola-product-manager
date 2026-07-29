@@ -644,6 +644,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "bugle_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "glass-jewels_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "sew-on-glass-jewels_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "cameos_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1013,6 +1014,24 @@ def _find_sew_on_glass_jewel_photo(pool, factory_style):
             return val
     return None
 
+def _find_cameos_photo(pool, factory_style):
+    # Most of this category's real photo filenames were named directly from
+    # the raw SKU text (spaces kept as spaces within multi-word color names,
+    # not converted to dashes the way slugify() does), so try that literal
+    # form before falling back further. A handful of files on disk also
+    # predate later spreadsheet fixes: WHTE->WHITE / BOUIQUET->BOUQUET typos,
+    # and one missing "V" (confirmed 2026-07-28 against cameos_filelist.txt).
+    raw = clean(factory_style).lower()
+    candidates = [raw]
+    candidates.append(re.sub(r"^(\d+)v(-)", r"\1\2", raw))
+    old_spelling = raw.replace("white", "whte").replace("bouquet", "bouiquet")
+    candidates.append(old_spelling)
+    candidates.append(re.sub(r"^(\d+)v(-)", r"\1\2", old_spelling))
+    for c in candidates:
+        v = pool.get(f"{c}.jpg") or pool.get(f"{c} .jpg")
+        if v: return v
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1056,6 +1075,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "sew-on-glass-jewels":
         found = _find_sew_on_glass_jewel_photo(index["generic"], product.get("factory_style"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "cameos-intaglios":
+        found = _find_cameos_photo(index["generic"], product.get("factory_style"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
