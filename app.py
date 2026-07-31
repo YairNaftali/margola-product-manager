@@ -315,7 +315,7 @@ def parse_xlsx(path, forced_type_id=None):
             row = row_dict(headers, vals)
             factory_style = get_first(row, ["FACTORY PACK STYLE #","FACTORY PACK       STYLE #","FACTORY PACK STYLE","FACTORY PACK STYLE NUMBER"])
             if not clean(factory_style): continue
-            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","BEAD SIZE DIAMETER  MM","BEAD SIZE","SIZE","Milimeter size"])
+            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","BEAD SIZE DIAMETER  MM","STONE SIZE DIAMETER MM","BEAD SIZE","SIZE","Milimeter size"])
             size_mm = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE DIAMETER MM"])
             color_number = get_first(row, ["COLOR NUMBER"])
             color_name = get_first(row, ["COLOR NAME"])
@@ -645,6 +645,8 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "glass-jewels_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "sew-on-glass-jewels_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "cameos_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "lochrosens_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "rhinestone balls_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1032,6 +1034,16 @@ def _find_cameos_photo(pool, factory_style):
         if v: return v
     return None
 
+def _find_rhinestone_balls_photo(pool, color_number):
+    # Real photos exist only per plating (Crystal/Gold or Crystal/Silver), not per
+    # size -- confirmed 2026-07-31 against the real filelist: only two usable files,
+    # "9000-0002G.jpg" and "9000-0002S.jpg", meant to be reused across all three
+    # sizes (6mm/8mm/10mm) of that plating. Two other files in the same folder
+    # (Crystal-AB-6MM.jpg, Crystal-Gold-6MM.jpg) don't match any product in this
+    # sheet (no AB variant exists here) and were explicitly not the ones to use.
+    code = clean(color_number).lower()
+    return pool.get(f"9000-{code}.jpg")
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1079,6 +1091,9 @@ def resolve_photo_from_drive(product, index):
     elif product.get("spreadsheet_type_id") == "cameos-intaglios":
         found = _find_cameos_photo(index["generic"], product.get("factory_style"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "rhinestone-balls":
+        found = _find_rhinestone_balls_photo(index["generic"], product.get("color_number"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
     return None
 
 def multipart_form_data(fields, files):

@@ -16,14 +16,24 @@
     "Shell": {"label": "Shell", "base": "Other"},
     "Square": {"label": "Square"},
     "Oval": {"label": "Oval"},
-    "Heart": {"label": "Heart"}
+    "Heart": {"label": "Heart"},
+    "Lochrosen": {"label": "Lochrosen"},
+    "Rhinestone Balls": {"label": "Rhinestone Ball"}
   },
   "size": {
     "10/0": {"label": "10/0 - 2.1mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
     "11/0": {"label": "11/0 - 1.9mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
-    "#2 (4.5mm)": {"label": "#2 (4.5mm)", "base_gid": "gid://shopify/TaxonomyValue/2885"}
+    "#2 (4.5mm)": {"label": "#2 (4.5mm)", "base_gid": "gid://shopify/TaxonomyValue/2885"},
+    "9mm": {"label": "9mm", "base_gid": "gid://shopify/TaxonomyValue/2909"},
+    "10mm": {"label": "10mm", "base_gid": "gid://shopify/TaxonomyValue/2880"},
+    "6mm": {"label": "6mm", "base_gid": "gid://shopify/TaxonomyValue/2907"},
+    "8mm": {"label": "8mm", "base_gid": "gid://shopify/TaxonomyValue/2909"}
   },
   "color": {
+    "CRYSTAL": "Clear",
+    "CRYSTAL AURORE BOREALE": "Clear",
+    "Crystal / Silver": "Silver",
+    "Crystal / Gold": "Gold",
     "Frosted Crystal": "Clear",
     "Natural": "Beige",
     "Black": "Black",

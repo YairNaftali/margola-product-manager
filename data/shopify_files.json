@@ -1,51 +1,373 @@
 [
   {
+    "id": "gid://shopify/MediaImage/32338144952389",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-10mm-0002s.jpg?v=1785472559",
+    "filename": "9000-10mm-0002s.jpg",
+    "alt": "9000-10mm-0002s.jpg",
+    "createdAt": "2026-07-31T04:35:58Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32338144919621",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-10mm-0002g.jpg?v=1785472558",
+    "filename": "9000-10mm-0002g.jpg",
+    "alt": "9000-10mm-0002g.jpg",
+    "createdAt": "2026-07-31T04:35:57Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32338144788549",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-8mm-0002g.jpg?v=1785472557",
+    "filename": "9000-8mm-0002g.jpg",
+    "alt": "9000-8mm-0002g.jpg",
+    "createdAt": "2026-07-31T04:35:56Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32338144624709",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-8mm-0002s.jpg?v=1785472556",
+    "filename": "9000-8mm-0002s.jpg",
+    "alt": "9000-8mm-0002s.jpg",
+    "createdAt": "2026-07-31T04:35:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32338144460869",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-6mm-0002g.jpg?v=1785472555",
+    "filename": "9000-6mm-0002g.jpg",
+    "alt": "9000-6mm-0002g.jpg",
+    "createdAt": "2026-07-31T04:35:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32338144329797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-6mm-0002s.jpg?v=1785472554",
+    "filename": "9000-6mm-0002s.jpg",
+    "alt": "9000-6mm-0002s.jpg",
+    "createdAt": "2026-07-31T04:35:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32337995497541",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3000-10mm-001ab.jpg?v=1785468596",
+    "filename": "3000-10mm-001ab.jpg",
+    "alt": "LOCHROSEN ROUND 10mm CRYSTAL AURORE BOREALE",
+    "createdAt": "2026-07-31T03:29:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32337995464773",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3000-10mm-001.jpg?v=1785468595",
+    "filename": "3000-10mm-001.jpg",
+    "alt": "LOCHROSEN ROUND 10mm CRYSTAL",
+    "createdAt": "2026-07-31T03:29:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32337995235397",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3000-9mm-001ab.jpg?v=1785468594",
+    "filename": "3000-9mm-001ab.jpg",
+    "alt": "LOCHROSEN ROUND 9mm CRYSTAL AURORE BOREALE",
+    "createdAt": "2026-07-31T03:29:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32337995202629",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/3000-9mm-001.jpg?v=1785468594",
+    "filename": "3000-9mm-001.jpg",
+    "alt": "LOCHROSEN ROUND 9mm CRYSTAL",
+    "createdAt": "2026-07-31T03:29:52Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321518141509",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/200333v-4030-crystal.jpg?v=1785290012",
+    "filename": "200333v-4030-crystal.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Crystal",
+    "createdAt": "2026-07-29T01:53:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321518043205",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/200558v-25mm-crystal.jpg?v=1785290011",
+    "filename": "200558v-25mm-crystal.jpg",
+    "alt": "Vintage Glass Round 25mm Crystal Double Rose",
+    "createdAt": "2026-07-29T01:53:30Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321518010437",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/200554v-25mm-crystal.jpg?v=1785290010",
+    "filename": "200554v-25mm-crystal.jpg",
+    "alt": "Vintage Glass Round 25mm Crystal",
+    "createdAt": "2026-07-29T01:53:29Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517977669",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/200553v-2523-crystal.jpg?v=1785290009",
+    "filename": "200553v-2523-crystal.jpg",
+    "alt": "Vintage Glass Heart 25x23mm Crystal",
+    "createdAt": "2026-07-29T01:53:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517944901",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19957v-4030-bouquet-on-blue.jpg?v=1785290008",
+    "filename": "19957v-4030-bouquet-on-blue.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Colorful Bouquet On Blue",
+    "createdAt": "2026-07-29T01:53:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517912133",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19957v-4030-bouquet-on-white.jpg?v=1785290007",
+    "filename": "19957v-4030-bouquet-on-white.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Colorful Bouquet On White",
+    "createdAt": "2026-07-29T01:53:25Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517879365",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19957v-4030-bouquet-on-red.jpg?v=1785290006",
+    "filename": "19957v-4030-bouquet-on-red.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Colorful Bouquet On Red",
+    "createdAt": "2026-07-29T01:53:24Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517387845",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19953v-4030-white-on-green.jpg?v=1785290005",
+    "filename": "19953v-4030-white-on-green.jpg",
+    "alt": "Vintage Glass Oval 40x30mm White On Green",
+    "createdAt": "2026-07-29T01:53:23Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517355077",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19953v-4030-white-on-blue.jpg?v=1785290004",
+    "filename": "19953v-4030-white-on-blue.jpg",
+    "alt": "Vintage Glass Oval 40x30mm White On Blue",
+    "createdAt": "2026-07-29T01:53:22Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517322309",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19953v-4030-white-on-black.jpg?v=1785290003",
+    "filename": "19953v-4030-white-on-black.jpg",
+    "alt": "Vintage Glass Oval 40x30mm White On Black",
+    "createdAt": "2026-07-29T01:53:21Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517060165",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19853v-4030-brown.jpg?v=1785290002",
+    "filename": "19853v-4030-brown.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Brown",
+    "createdAt": "2026-07-29T01:53:20Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321517027397",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/19853v-4030-black.jpg?v=1785290000",
+    "filename": "19853v-4030-black.jpg",
+    "alt": "Vintage Glass Oval 40x30mm Black",
+    "createdAt": "2026-07-29T01:53:18Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321137016901",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/73210v-2323-00030.jpg?v=1785283736",
+    "filename": "73210v-2323-00030.jpg",
+    "alt": "Sew On Glass Jewel Square 23x23mm Crystal",
+    "createdAt": "2026-07-29T00:08:55Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136984133",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/61303v-25mm-00030.jpg?v=1785283736",
+    "filename": "61303v-25mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Round 25mm Crystal",
+    "createdAt": "2026-07-29T00:08:54Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136951365",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/61303v-22mm-00030.jpg?v=1785283735",
+    "filename": "61303v-22mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Round 22mm Crystal",
+    "createdAt": "2026-07-29T00:08:53Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136918597",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/61303v-18mm-00030.jpg?v=1785283734",
+    "filename": "61303v-18mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Round 18mm Crystal",
+    "createdAt": "2026-07-29T00:08:52Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136885829",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/61303v-13mm-00030.jpg?v=1785283733",
+    "filename": "61303v-13mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Round 13mm Crystal",
+    "createdAt": "2026-07-29T00:08:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136853061",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/61302v-7mm-00030.jpg?v=1785283732",
+    "filename": "61302v-7mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Round 7mm Crystal",
+    "createdAt": "2026-07-29T00:08:51Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136820293",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/51382v-24mm-00030.jpg?v=1785283731",
+    "filename": "51382v-24mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Leaf 24mm Crystal",
+    "createdAt": "2026-07-29T00:08:50Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136787525",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/51381v-14mm-00030.jpg?v=1785283731",
+    "filename": "51381v-14mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Leaf 14mm Crystal",
+    "createdAt": "2026-07-29T00:08:49Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136754757",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/12709v-18mm-00030.jpg?v=1785283730",
+    "filename": "12709v-18mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Shell 18mm Crystal",
+    "createdAt": "2026-07-29T00:08:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32321136721989",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/04410v-18mm-00030.jpg?v=1785283729",
+    "filename": "04410v-18mm-00030.jpg",
+    "alt": "Sew On Glass Jewel Star 18mm Crystal",
+    "createdAt": "2026-07-29T00:08:48Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32320932053061",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/PL1634-27mm-Petals-2.jpg?v=1785282096",
+    "filename": "PL1634-27mm-Petals-2.jpg",
+    "alt": "",
+    "createdAt": "2026-07-28T23:41:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908972101",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-90090.jpg?v=1785202596",
+    "filename": "11303v-13mm-90090.jpg",
+    "alt": "Glass Jewel Round 13mm Siam Ruby",
+    "createdAt": "2026-07-28T01:36:35Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908939333",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-90070.jpg?v=1785202595",
+    "filename": "11303v-13mm-90070.jpg",
+    "alt": "Glass Jewel Round 13mm Light Siam Ruby",
+    "createdAt": "2026-07-28T01:36:34Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908906565",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-60080.jpg?v=1785202594",
+    "filename": "11303v-13mm-60080.jpg",
+    "alt": "Glass Jewel Round 13mm Dark Aqua",
+    "createdAt": "2026-07-28T01:36:33Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908873797",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-50730.jpg?v=1785202594",
+    "filename": "11303v-13mm-50730.jpg",
+    "alt": "Glass Jewel Round 13mm Emerald",
+    "createdAt": "2026-07-28T01:36:32Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908841029",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-50520.jpg?v=1785202593",
+    "filename": "11303v-13mm-50520.jpg",
+    "alt": "Glass Jewel Round 13mm Peridot",
+    "createdAt": "2026-07-28T01:36:31Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908808261",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-50130.jpg?v=1785202592",
+    "filename": "11303v-13mm-50130.jpg",
+    "alt": "Glass Jewel Round 13mm Smaragd",
+    "createdAt": "2026-07-28T01:36:30Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908742725",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-30050.jpg?v=1785202591",
+    "filename": "11303v-13mm-30050.jpg",
+    "alt": "Glass Jewel Round 13mm Sapphire",
+    "createdAt": "2026-07-28T01:36:29Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908709957",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-20050.jpg?v=1785202590",
+    "filename": "11303v-13mm-20050.jpg",
+    "alt": "Glass Jewel Round 13mm Amethyst",
+    "createdAt": "2026-07-28T01:36:28Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908677189",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-10070.jpg?v=1785202589",
+    "filename": "11303v-13mm-10070.jpg",
+    "alt": "Glass Jewel Round 13mm Topaz",
+    "createdAt": "2026-07-28T01:36:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908644421",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-0003ab.jpg?v=1785202588",
+    "filename": "11303v-13mm-0003ab.jpg",
+    "alt": "Glass Jewel Round 13mm Crystal AB",
+    "createdAt": "2026-07-28T01:36:27Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312908546117",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11303v-13mm-00030.jpg?v=1785202587",
+    "filename": "11303v-13mm-00030.jpg",
+    "alt": "Glass Jewel Round 13mm Crystal",
+    "createdAt": "2026-07-28T01:36:26Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32312840355909",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/Margola_logo_df29e6b3-1033-4e6e-9dd9-a7f6756cd801.png?v=1785200480",
+    "filename": "Margola_logo_df29e6b3-1033-4e6e-9dd9-a7f6756cd801.png",
+    "alt": "",
+    "createdAt": "2026-07-28T01:01:18Z"
+  },
+  {
+    "id": "gid://shopify/GenericFile/32303802417221",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/BeVietnamPro-Bold.woff2?v=1785048474",
+    "filename": "BeVietnamPro-Bold.woff2",
+    "alt": "Be Vietnam Pro Bold font file",
+    "createdAt": "2026-07-26T06:47:52Z"
+  },
+  {
     "id": "gid://shopify/MediaImage/32303406153797",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-95081.jpg?v=1785036847",
     "filename": "bugle-2-95081.jpg",
-    "alt": "bugle-2-95081.jpg",
+    "alt": "BUGLE #2 (4.5mm) RED SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:06Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303406121029",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-85091.jpg?v=1785036847",
     "filename": "bugle-2-85091.jpg",
-    "alt": "bugle-2-85091.jpg",
+    "alt": "BUGLE #2 (4.5mm) ORANGE SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:05Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303406055493",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-85011.jpg?v=1785036846",
     "filename": "bugle-2-85011.jpg",
-    "alt": "bugle-2-85011.jpg",
+    "alt": "BUGLE #2 (4.5mm) YELLOW SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:04Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303406022725",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-65021.jpg?v=1785036845",
     "filename": "bugle-2-65021.jpg",
-    "alt": "bugle-2-65021.jpg",
+    "alt": "BUGLE #2 (4.5mm) AQUA SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:04Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303405989957",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-35061.jpg?v=1785036844",
     "filename": "bugle-2-35061.jpg",
-    "alt": "bugle-2-35061.jpg",
+    "alt": "BUGLE #2 (4.5mm) BLUE SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:03Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303405924421",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-15041.jpg?v=1785036844",
     "filename": "bugle-2-15041.jpg",
-    "alt": "bugle-2-15041.jpg",
+    "alt": "BUGLE #2 (4.5mm) AMBER SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:02Z"
   },
   {
     "id": "gid://shopify/MediaImage/32303405891653",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/bugle-2-05051.jpg?v=1785036843",
     "filename": "bugle-2-05051.jpg",
-    "alt": "bugle-2-05051.jpg",
+    "alt": "BUGLE #2 (4.5mm) WHITE SATIN PRECIOSA ORNELA BEADS",
     "createdAt": "2026-07-26T03:34:01Z"
   },
   {

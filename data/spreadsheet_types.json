@@ -156,6 +156,46 @@
     ]
   },
   {
+    "id": "rhinestone-balls",
+    "label": "Rhinestone Balls",
+    "sheet_match": [],
+    "filename_match": ["rhinestone balls"],
+    "vendor": "Margola",
+    "collection": "Rhinestone Balls",
+    "title_prefix": "Czech",
+    "title_suffix": "",
+    "subcategory": "Rhinestone Balls",
+    "bead_shape": "Rhinestone Balls",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {"title": "Rhinestone Balls", "handle": "rhinestone-balls"}
+    ]
+  },
+  {
+    "id": "lochrosens",
+    "label": "Lochrosens",
+    "sheet_match": ["lochrosen"],
+    "filename_match": ["lochrosen"],
+    "vendor": "Margola",
+    "collection": "Lochrosens",
+    "title_prefix": "LOCHROSEN",
+    "title_suffix": "",
+    "subcategory": "Lochrosens",
+    "bead_shape": "Lochrosen",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks > Sew-On Rhinestones",
+    "sync": [
+      {"title": "Lochrosens", "handle": "lochrosens"}
+    ]
+  },
+  {
     "id": "cameos-intaglios",
     "label": "Cameos and Intaglios",
     "sheet_match": [],
