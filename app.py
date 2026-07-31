@@ -315,8 +315,8 @@ def parse_xlsx(path, forced_type_id=None):
             row = row_dict(headers, vals)
             factory_style = get_first(row, ["FACTORY PACK STYLE #","FACTORY PACK       STYLE #","FACTORY PACK STYLE","FACTORY PACK STYLE NUMBER"])
             if not clean(factory_style): continue
-            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","BEAD SIZE DIAMETER  MM","STONE SIZE DIAMETER MM","BEAD SIZE","SIZE","Milimeter size"])
-            size_mm = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE DIAMETER MM"])
+            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","STONE SIZE","BEAD SIZE DIAMETER  MM","STONE SIZE DIAMETER MM","BEAD SIZE","SIZE","Milimeter size"])
+            size_mm = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE DIAMETER MM","STONE SIZE DIAMETER MM"])
             color_number = get_first(row, ["COLOR NUMBER"])
             color_name = get_first(row, ["COLOR NAME"])
             color_type_explicit = get_first(row, ["COLOR TYPE (IS A FILTER ON THE WEBITE)","COLOR TYPE (IS A FILTER ON THE WEBSITE)","COLOR TYPE"])
@@ -324,7 +324,14 @@ def parse_xlsx(path, forced_type_id=None):
             source_description = get_first(row, ["DESCRIPTION"])
             factory_qty = get_first(row, ["FACTORY PACK UNIT QUANTITY"])
             factory_qty_desc = get_first(row, ["UNIT QUANTITY DESCRIPTION","UNIT QUANTITY DESCRIPTION FACTORY PACK"])
-            factory_price = get_first(row, ["UNIT PRICE PER FACTORY PACK","UNIT PRICE PER BAG","FACTORY PACK PRICE"])
+            factory_price = get_first(row, ["UNIT PRICE PER FACTORY PACK","UNIT PRICE PER BAG","FACTORY PACK PRICE","FACTORY PACK PRICE / FACTORY YARD PRICE"])
+            # Rhinestone Banding's price column is a combined text cell, e.g.
+            # "$80.88 = $6.74/YARD" -- the actual variant price is just the first
+            # figure; the second (per-yard) is used in description bullets, read
+            # directly from the sheet when writing those, not stored as its own field.
+            if clean(factory_price) and "=" in clean(factory_price):
+                m = re.findall(r"[\d,]+\.?\d*", clean(factory_price))
+                if m: factory_price = m[0].replace(",", "")
             factory_weight = get_first(row, ["WEIGHT PER FACTORY PACK","FACTORY PACK WEIGHT OZ"])
             mini_style = get_first(row, ["MINI PACK STYLE #","MINI PACK       STYLE #","MINI PACK STYLE NUMBER"])
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
@@ -647,6 +654,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "cameos_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "lochrosens_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestone balls_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "rhinestonebanding_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1044,6 +1052,15 @@ def _find_rhinestone_balls_photo(pool, color_number):
     code = clean(color_number).lower()
     return pool.get(f"9000-{code}.jpg")
 
+def _find_metal_set_banding_photo(pool, factory_style):
+    # Generic exact-match already covers every row except one: SKU 31501B has no
+    # photo of its own on the drive -- Neil confirmed (2026-07-31) it should reuse
+    # 31901B's photo (same one-row/black-net construction, different stone size).
+    code = clean(factory_style).lower()
+    if code.startswith("31501b"):
+        return pool.get("31901b-19ss-0002s.jpg")
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1093,6 +1110,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "rhinestone-balls":
         found = _find_rhinestone_balls_photo(index["generic"], product.get("color_number"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
+    elif product.get("spreadsheet_type_id") == "metal-set-rhinestone-banding":
+        found = _find_metal_set_banding_photo(index["generic"], product.get("factory_style"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
     return None
 

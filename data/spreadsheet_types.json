@@ -214,5 +214,25 @@
     "sync": [
       {"title": "Cameos & Intaglios", "handle": "cameos-intaglios"}
     ]
+  },
+  {
+    "id": "metal-set-rhinestone-banding",
+    "label": "Metal Set Rhinestone Banding",
+    "sheet_match": [],
+    "filename_match": ["metal set rhinestone banding"],
+    "vendor": "Margola",
+    "collection": "Metal Set Rhinestone Banding",
+    "title_prefix": "Czech Metal Set Rhinestone Banding",
+    "title_suffix": "",
+    "subcategory": "",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks",
+    "sync": [
+      {"title": "Rhinestone Banding", "handle": "rhinestone-banding"}
+    ]
   }
 ]
