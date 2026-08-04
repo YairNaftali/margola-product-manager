@@ -343,6 +343,14 @@ def parse_xlsx(path, forced_type_id=None):
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
             mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
             mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
+            # Neil's package-dimensions column, added 2026-08-04: a single free-text
+            # cell like "10 x 5 x 3 in" rather than 3 separate Length/Width/Height
+            # columns (unlike the earlier one-off Calcurates dimensions spreadsheet).
+            # Kept as raw text, not split into numeric fields -- no assumptions about
+            # which pack (Factory vs Mini) this describes until confirmed against a
+            # real sheet; candidate list here is a starting guess, adjust once the
+            # actual header text is seen.
+            dimensions = get_first(row, ["DIMENSIONS","DIMENSIONS (L X W X H)","DIMENSIONS L X W X H","PACKAGE DIMENSIONS","BOX DIMENSIONS","PRODUCT DIMENSIONS"])
             inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -385,6 +393,7 @@ def parse_xlsx(path, forced_type_id=None):
                 "factory_price":money(factory_price), "factory_weight_oz":weight_oz(factory_weight),
                 "mini_style":clean(mini_style), "mini_quantity":clean(mini_qty) or inf["mini_qty_standard"],
                 "mini_price":money(mini_price), "mini_weight_oz":weight_oz(mini_weight),
+                "dimensions":clean(dimensions),
 
                 "variants": build_variants(
                     factory_style=factory_style,
@@ -440,7 +449,7 @@ def detected_categories(products):
     return [{"collection":k[0],"subcategory":k[1],"count":v} for k,v in sorted(counts.items())]
 
 def review_csv(products):
-    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","type","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","source_sheet","source_row"]
+    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","type","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","dimensions","source_sheet","source_row"]
     out = io.StringIO(); w = csv.DictWriter(out, fieldnames=fields); w.writeheader()
     for p in products:
         v = p.get("validation",{})
@@ -520,6 +529,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size")) if idx == 0 else "",
                 "Bead Shape (product.metafields.custom.bead_shape)": resolver.bead_shape_label(p.get("bead_shape")) if idx == 0 else "",
                 "Type (product.metafields.custom.type)": resolver.type_label(p.get("type")) if idx == 0 else "",
+                "Dimensions (product.metafields.custom.dimensions)": clean(p.get("dimensions","")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
