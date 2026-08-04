@@ -2,7 +2,9 @@
   {
     "id": "2cut-beads",
     "label": "2 Cut Beads",
-    "sheet_match": ["2cut"],
+    "sheet_match": [
+      "2cut"
+    ],
     "filename_match": [],
     "vendor": "Preciosa Ornela",
     "collection": "Czech Glass Beads",
@@ -16,14 +18,22 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": [
-      {"title": "2 Cut Preciosa Ornela Beads", "handle": "2-cut-beads"}
-    ]
+      {
+        "title": "2 Cut Preciosa Ornela Beads",
+        "handle": "2-cut-beads"
+      }
+    ],
+    "type": "2 Cut"
   },
   {
     "id": "bugle-beads",
     "label": "Bugle Beads",
-    "sheet_match": ["bugle"],
-    "filename_match": ["bugle"],
+    "sheet_match": [
+      "bugle"
+    ],
+    "filename_match": [
+      "bugle"
+    ],
     "vendor": "Preciosa Ornela",
     "collection": "Czech Glass Beads",
     "title_prefix": "BUGLE",
@@ -36,13 +46,19 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": [
-      {"title": "Bugle Beads", "handle": "bugle-beads"}
-    ]
+      {
+        "title": "Bugle Beads",
+        "handle": "bugle-beads"
+      }
+    ],
+    "type": "Bugle"
   },
   {
     "id": "crow-beads",
     "label": "Crow Beads",
-    "sheet_match": ["crow"],
+    "sheet_match": [
+      "crow"
+    ],
     "filename_match": [],
     "vendor": "Margola",
     "collection": "Czech Glass Beads",
@@ -56,13 +72,19 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": [
-      {"title": "Czech Glass Beads", "handle": "czech-glass-beads"}
-    ]
+      {
+        "title": "Czech Glass Beads",
+        "handle": "czech-glass-beads"
+      }
+    ],
+    "type": "Crow"
   },
   {
     "id": "roller-beads",
     "label": "Roller Beads",
-    "sheet_match": ["roller"],
+    "sheet_match": [
+      "roller"
+    ],
     "filename_match": [],
     "vendor": "Margola",
     "collection": "Czech Glass Beads",
@@ -76,14 +98,22 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": [
-      {"title": "Czech Glass Beads", "handle": "czech-glass-beads"}
-    ]
+      {
+        "title": "Czech Glass Beads",
+        "handle": "czech-glass-beads"
+      }
+    ],
+    "type": "Roller"
   },
   {
     "id": "leather-cord",
     "label": "Leather Cord / Stringing Materials",
-    "sheet_match": ["leathercord"],
-    "filename_match": ["stringing"],
+    "sheet_match": [
+      "leathercord"
+    ],
+    "filename_match": [
+      "stringing"
+    ],
     "vendor": "Margola",
     "collection": "Tools & Stringing Materials",
     "title_prefix": "",
@@ -95,13 +125,17 @@
     "mini_qty_standard": "",
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Crafting Fibers > Jewelry & Beading Cord",
-    "sync": []
+    "sync": [],
+    "type": "Leather Cord"
   },
   {
     "id": "plexi-lalique",
     "label": "Plexi-Lalique Flowers & Leaves",
     "sheet_match": [],
-    "filename_match": ["lalique", "plexy"],
+    "filename_match": [
+      "lalique",
+      "plexy"
+    ],
     "vendor": "Margola",
     "collection": "Plexi-Lalique Flowers & Leaves",
     "title_prefix": "Plexi-Lalique",
@@ -113,13 +147,16 @@
     "mini_qty_standard": "",
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
-    "sync": []
+    "sync": [],
+    "type": "Plexi-Lalique"
   },
   {
     "id": "sew-on-glass-jewels",
     "label": "Sew On Glass Jewels",
     "sheet_match": [],
-    "filename_match": ["sew on glass jewels"],
+    "filename_match": [
+      "sew on glass jewels"
+    ],
     "vendor": "Margola",
     "collection": "Sew On Glass Jewels",
     "title_prefix": "Sew On Glass Jewel",
@@ -132,14 +169,20 @@
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks > Sew-On Rhinestones",
     "sync": [
-      {"title": "Sew On Glass Jewels", "handle": "sew-on-glass-jewels"}
-    ]
+      {
+        "title": "Sew On Glass Jewels",
+        "handle": "sew-on-glass-jewels"
+      }
+    ],
+    "type": "Sew On Glass Jewels"
   },
   {
     "id": "glass-jewels",
     "label": "Glass Jewels & Cabochons",
     "sheet_match": [],
-    "filename_match": ["glass jewels"],
+    "filename_match": [
+      "glass jewels"
+    ],
     "vendor": "Margola",
     "collection": "Glass Jewels & Cabochons",
     "title_prefix": "Glass Jewel",
@@ -152,14 +195,20 @@
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks",
     "sync": [
-      {"title": "Glass Jewels & Cabochons", "handle": "glass-jewels-cabochons"}
-    ]
+      {
+        "title": "Glass Jewels & Cabochons",
+        "handle": "glass-jewels-cabochons"
+      }
+    ],
+    "type": "Glass Jewel"
   },
   {
     "id": "rhinestone-balls",
     "label": "Rhinestone Balls",
     "sheet_match": [],
-    "filename_match": ["rhinestone balls"],
+    "filename_match": [
+      "rhinestone balls"
+    ],
     "vendor": "Margola",
     "collection": "Rhinestone Balls",
     "title_prefix": "Czech",
@@ -172,14 +221,22 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
     "sync": [
-      {"title": "Rhinestone Balls", "handle": "rhinestone-balls"}
-    ]
+      {
+        "title": "Rhinestone Balls",
+        "handle": "rhinestone-balls"
+      }
+    ],
+    "type": "Rhinestone Ball"
   },
   {
     "id": "lochrosens",
     "label": "Lochrosens",
-    "sheet_match": ["lochrosen"],
-    "filename_match": ["lochrosen"],
+    "sheet_match": [
+      "lochrosen"
+    ],
+    "filename_match": [
+      "lochrosen"
+    ],
     "vendor": "Margola",
     "collection": "Lochrosens",
     "title_prefix": "LOCHROSEN",
@@ -192,14 +249,20 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks > Sew-On Rhinestones",
     "sync": [
-      {"title": "Lochrosens", "handle": "lochrosens"}
-    ]
+      {
+        "title": "Lochrosens",
+        "handle": "lochrosens"
+      }
+    ],
+    "type": "Lochrosen"
   },
   {
     "id": "cameos-intaglios",
     "label": "Cameos and Intaglios",
     "sheet_match": [],
-    "filename_match": ["cameos and intaglios"],
+    "filename_match": [
+      "cameos and intaglios"
+    ],
     "vendor": "Margola",
     "collection": "Cameos & Intaglios",
     "title_prefix": "Vintage Glass",
@@ -212,14 +275,20 @@
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Loose Stones > Cabochons",
     "sync": [
-      {"title": "Cameos & Intaglios", "handle": "cameos-intaglios"}
-    ]
+      {
+        "title": "Cameos & Intaglios",
+        "handle": "cameos-intaglios"
+      }
+    ],
+    "type": "Cameo"
   },
   {
     "id": "metal-set-rhinestone-banding",
     "label": "Metal Set Rhinestone Banding",
     "sheet_match": [],
-    "filename_match": ["metal set rhinestone banding"],
+    "filename_match": [
+      "metal set rhinestone banding"
+    ],
     "vendor": "Margola",
     "collection": "Metal Set Rhinestone Banding",
     "title_prefix": "Czech Metal Set Rhinestone Banding",
@@ -232,7 +301,11 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks",
     "sync": [
-      {"title": "Rhinestone Banding", "handle": "rhinestone-banding"}
-    ]
+      {
+        "title": "Rhinestone Banding",
+        "handle": "rhinestone-banding"
+      }
+    ],
+    "type": "Metal Set"
   }
 ]

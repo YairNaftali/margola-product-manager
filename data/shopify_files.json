@@ -1,44 +1,93 @@
 [
   {
+    "id": "gid://shopify/MediaImage/32341824176197",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/31501b-15ss-0002s.jpg?v=1785537020",
+    "filename": "31501b-15ss-0002s.jpg",
+    "alt": "31501b-15ss-0002s.jpg",
+    "createdAt": "2026-07-31T22:30:19Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341824143429",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/31901b-19ss-0002s.jpg?v=1785537019",
+    "filename": "31901b-19ss-0002s.jpg",
+    "alt": "31901b-19ss-0002s.jpg",
+    "createdAt": "2026-07-31T22:30:17Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341824077893",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/31901w-19ss-0002s.jpg?v=1785537018",
+    "filename": "31901w-19ss-0002s.jpg",
+    "alt": "31901w-19ss-0002s.jpg",
+    "createdAt": "2026-07-31T22:30:16Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341824045125",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/21902w-19ss-002as.jpg?v=1785537017",
+    "filename": "21902w-19ss-002as.jpg",
+    "alt": "21902w-19ss-002as.jpg",
+    "createdAt": "2026-07-31T22:30:16Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341824012357",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/21902w-19ss-0002s.jpg?v=1785537016",
+    "filename": "21902w-19ss-0002s.jpg",
+    "alt": "21902w-19ss-0002s.jpg",
+    "createdAt": "2026-07-31T22:30:15Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341823979589",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11901w-19ss-002as.jpg?v=1785537015",
+    "filename": "11901w-19ss-002as.jpg",
+    "alt": "11901w-19ss-002as.jpg",
+    "createdAt": "2026-07-31T22:30:14Z"
+  },
+  {
+    "id": "gid://shopify/MediaImage/32341823946821",
+    "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/11901w-19ss-0002s.jpg?v=1785537014",
+    "filename": "11901w-19ss-0002s.jpg",
+    "alt": "11901w-19ss-0002s.jpg",
+    "createdAt": "2026-07-31T22:30:13Z"
+  },
+  {
     "id": "gid://shopify/MediaImage/32338144952389",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-10mm-0002s.jpg?v=1785472559",
     "filename": "9000-10mm-0002s.jpg",
-    "alt": "9000-10mm-0002s.jpg",
+    "alt": "Czech Rhinestone Balls 10mm Crystal / Silver",
     "createdAt": "2026-07-31T04:35:58Z"
   },
   {
     "id": "gid://shopify/MediaImage/32338144919621",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-10mm-0002g.jpg?v=1785472558",
     "filename": "9000-10mm-0002g.jpg",
-    "alt": "9000-10mm-0002g.jpg",
+    "alt": "Czech Rhinestone Balls 10mm Crystal / Gold",
     "createdAt": "2026-07-31T04:35:57Z"
   },
   {
     "id": "gid://shopify/MediaImage/32338144788549",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-8mm-0002g.jpg?v=1785472557",
     "filename": "9000-8mm-0002g.jpg",
-    "alt": "9000-8mm-0002g.jpg",
+    "alt": "Czech Rhinestone Balls 8mm Crystal / Gold",
     "createdAt": "2026-07-31T04:35:56Z"
   },
   {
     "id": "gid://shopify/MediaImage/32338144624709",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-8mm-0002s.jpg?v=1785472556",
     "filename": "9000-8mm-0002s.jpg",
-    "alt": "9000-8mm-0002s.jpg",
+    "alt": "Czech Rhinestone Balls 8mm Crystal / Silver",
     "createdAt": "2026-07-31T04:35:55Z"
   },
   {
     "id": "gid://shopify/MediaImage/32338144460869",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-6mm-0002g.jpg?v=1785472555",
     "filename": "9000-6mm-0002g.jpg",
-    "alt": "9000-6mm-0002g.jpg",
+    "alt": "Czech Rhinestone Balls 6mm Crystal / Gold",
     "createdAt": "2026-07-31T04:35:54Z"
   },
   {
     "id": "gid://shopify/MediaImage/32338144329797",
     "url": "https://cdn.shopify.com/s/files/1/0725/0732/6533/files/9000-6mm-0002s.jpg?v=1785472554",
     "filename": "9000-6mm-0002s.jpg",
-    "alt": "9000-6mm-0002s.jpg",
+    "alt": "Czech Rhinestone Balls 6mm Crystal / Silver",
     "createdAt": "2026-07-31T04:35:53Z"
   },
   {

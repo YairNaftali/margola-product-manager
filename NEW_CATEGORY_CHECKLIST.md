@@ -14,7 +14,8 @@ Steps to onboard a new spreadsheet/category (seed beads, bugle beads, fire polis
   compacted sheet tab name / lowercased filename, same semantics as the old
   hardcoded `infer()` branches). Set `collection`, `subcategory`, `bead_shape`,
   `color_type` (leave `""` if the sheet has its own explicit Color Type column --
-  it gets picked up automatically), `shopify_category`, and **`sync`** -- the real
+  it gets picked up automatically), `type` (see step 1b below), `shopify_category`,
+  and **`sync`** -- the real
   Shopify collection(s) this category's approved products should be added to when
   "Sync Collections" runs. Ask Yair for the target collection when he sends the
   filelist for this category (this is what replaced the old blanket-`collection`
@@ -33,6 +34,30 @@ Steps to onboard a new spreadsheet/category (seed beads, bugle beads, fire polis
   transparent/opaque `color_type` detection (scans both sheet name and color name
   together) stays as a small special case in `infer()`, gated on `type_id ==
   "roller-beads"`.
+
+## 1b. Type (the "Type" storefront filter)
+- `data/spreadsheet_types.json` -> `"type"` needs a short, clean value for the new
+  category -- this feeds `custom.type` (a `list.single_line_text_field`, same
+  serialization rules as `bead_shape` in step 2 below), which is what lets a broad
+  collection containing multiple sub-lines show a "Type" filter (e.g. Czech Glass
+  Beads splits into Roller/Crow via this field; Rhinestone Banding is tagged "Metal
+  Set" even as the sole occupant of its collection, so a future sibling line drops
+  in cleanly). Style: drop words the parent collection/category name already implies
+  (`Metal Set`, not `Metal Set Rhinestone Banding`; `Roller`, not `Roller Beads`).
+- If a single category actually contains two distinct sub-types by nature (not just
+  shape) -- e.g. Cameos and Intaglios, which is one `spreadsheet_type` but two real
+  product lines -- the JSON's `type` value is just the default; add a small
+  per-row override in `infer()` next to the Roller Beads special case above (see
+  the `cameos-intaglios` block: overrides to `"Intaglio"` when the raw Color Name
+  contains that word, defaulting to `"Cameo"` otherwise). Don't confuse this with
+  `bead_shape`'s `populate_bead_shape_from_shape` mechanism -- that pulls the row's
+  own Shape column value directly, which doesn't apply here since Cameo/Intaglio
+  isn't its own column.
+- Backfilled live 2026-08-03 across the entire catalog (515 products, all
+  categories including several with no `spreadsheet_types.json` entry at all --
+  those were tagged directly via `metafieldsSet`, not through this pipeline, since
+  they were never imported through this tool to begin with). See
+  `margola_product_manager` memory for the full label table.
 
 ## 2. Bead shape taxonomy
 - `data/shopify_taxonomy_map.json` -> `"bead_shape"` needs an entry for the new

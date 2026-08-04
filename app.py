@@ -193,7 +193,7 @@ def spreadsheet_type_by_id(type_id):
 
 def _infer_fields(t):
     # Strips the matching/sync keys, leaving just what infer() has always returned.
-    return {k: t[k] for k in ("collection","title_prefix","title_suffix","subcategory","bead_shape","color_type","factory_qty_standard","mini_qty_standard","populate_bead_shape_from_shape","shopify_category","vendor")}
+    return {k: t[k] for k in ("collection","title_prefix","title_suffix","subcategory","bead_shape","type","color_type","factory_qty_standard","mini_qty_standard","populate_bead_shape_from_shape","shopify_category","vendor")}
 
 def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
     s = sheet_name.lower()
@@ -213,7 +213,7 @@ def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
                 t = cand; break
 
     if not t:
-        return {"type_id":"","collection":"","title_prefix":"","title_suffix":"","subcategory":"","bead_shape":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":"","vendor":""}
+        return {"type_id":"","collection":"","title_prefix":"","title_suffix":"","subcategory":"","bead_shape":"","type":"","color_type":"","factory_qty_standard":"","mini_qty_standard":"","populate_bead_shape_from_shape":False,"shopify_category":"","vendor":""}
 
     fields = _infer_fields(t)
     if t["id"] == "roller-beads":
@@ -221,6 +221,12 @@ def infer(sheet_name, color_name, source_filename="", forced_type_id=None):
         # fit for a static JSON field, kept as the one piece of special-cased logic.
         if "transparent" in s or "transparent" in c or "transpaent" in c: fields["color_type"] = "Transparent"
         elif "opaque" in s or "opaque" in c: fields["color_type"] = "Opaque"
+    elif t["id"] == "cameos-intaglios":
+        # Cameo vs Intaglio isn't its own sheet column -- it's a word embedded in
+        # the raw Color Name text (e.g. "Intaglio Crystal Single Rose" vs "Cameo
+        # Black"), confirmed 2026-08-03 against every live product's title. Default
+        # from the JSON is "Cameo"; override to "Intaglio" when the color name says so.
+        if "intaglio" in c: fields["type"] = "Intaglio"
     fields["type_id"] = t["id"]
     return fields
 
@@ -353,6 +359,7 @@ def parse_xlsx(path, forced_type_id=None):
             else:
                 title = title_for(inf["title_prefix"], title_descriptor, size, color_name)
             bead_shape_value = clean(shape) if inf["populate_bead_shape_from_shape"] and clean(shape) else inf["bead_shape"]
+            type_value = inf.get("type", "")
             row_text = " ".join(clean(x) for x in vals).lower()
             notes = []
             if "missing phot" in row_text or "mising phot" in row_text: notes.append("Source note: missing photo")
@@ -369,7 +376,7 @@ def parse_xlsx(path, forced_type_id=None):
                 "spreadsheet_type_id":inf.get("type_id",""),
                 "approved":False, "skipped":False, "status":"Needs Review",
                 "title":title, "handle":slugify(title), "brand":"", "vendor":inf.get("vendor") or "Margola",
-                "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value,
+                "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value, "type":type_value,
                 "shopify_category":inf["shopify_category"],
                 "size":clean(size), "size_mm":clean(size_mm), "color_number":clean(color_number), "color_name":clean(color_name),
                 "image_filename":image_for(factory_style,color_name,title_descriptor,size), "image_src":"", "image_alt":title,
@@ -433,7 +440,7 @@ def detected_categories(products):
     return [{"collection":k[0],"subcategory":k[1],"count":v} for k,v in sorted(counts.items())]
 
 def review_csv(products):
-    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","source_sheet","source_row"]
+    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","type","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","source_sheet","source_row"]
     out = io.StringIO(); w = csv.DictWriter(out, fieldnames=fields); w.writeheader()
     for p in products:
         v = p.get("validation",{})
@@ -512,6 +519,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Bead Size (product.metafields.custom.bead_size_mm)": (clean(p.get("size_mm")) or clean(p.get("size"))) if idx == 0 else "",
                 "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size")) if idx == 0 else "",
                 "Bead Shape (product.metafields.custom.bead_shape)": resolver.bead_shape_label(p.get("bead_shape")) if idx == 0 else "",
+                "Type (product.metafields.custom.type)": resolver.type_label(p.get("type")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
@@ -536,6 +544,7 @@ def shopify_csv(products, approved_only=True, limit=None):
         "Bead Size (product.metafields.custom.bead_size_mm)",
         "Size (product.metafields.shopify.size)",
         "Bead Shape (product.metafields.custom.bead_shape)",
+        "Type (product.metafields.custom.type)",
         "Status"
     ]
 
@@ -1500,6 +1509,12 @@ class MetaobjectResolver:
         # without verifying against that specific channel's actual behavior.
         spec=self.taxonomy_map.get("bead_shape",{}).get(clean(bead_shape))
         return spec["label"] if spec else ""
+
+    def type_label(self, type_value):
+        # Same plain-text-not-json.dumps rule as bead_shape_label() -- this feeds
+        # the custom.type CSV column, and Shopify's CSV importer wraps the raw
+        # cell text into a list itself for a list.single_line_text_field.
+        return clean(type_value)
 
     def size_handle(self, size):
         spec=self.taxonomy_map.get("size",{}).get(clean(size))
