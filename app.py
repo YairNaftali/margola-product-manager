@@ -390,7 +390,7 @@ def parse_xlsx(path, forced_type_id=None):
                     factory_style=factory_style,
                     factory_price=factory_price,
                     factory_weight=factory_weight,
-                    factory_qty_desc=clean(factory_qty_desc) or inf["factory_qty_standard"],
+                    factory_qty_desc=clean(factory_qty_desc) or clean(factory_qty) or inf["factory_qty_standard"],
                     mini_style=mini_style,
                     mini_price=mini_price,
                     mini_weight=mini_weight,
@@ -664,6 +664,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "lochrosens_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestone balls_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestonebanding_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "pearls-on-eye-pins_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1070,6 +1071,24 @@ def _find_metal_set_banding_photo(pool, factory_style):
         return pool.get("31901b-19ss-0002s.jpg")
     return None
 
+def _find_pearls_photo(pool, color_number, size):
+    # Real photos are named "{color number}-{SIZE}.jpg", SIZE in uppercase mm
+    # with an underscore standing in for the "x" in compound dimensions (e.g.
+    # "70402-10_6MM.jpg" for the 10x6mm pear). One known drive-naming quirk:
+    # the 18x6mm row's only real photo is filed as "16_8MM" -- Yair confirmed
+    # 2026-08-04 the sheet's 18x6mm is the correct product size, so this is a
+    # one-off filename reuse, not a size to fix in the sheet.
+    code = clean(color_number).lower()
+    s = clean(size).lower()
+    if s == "18x6mm":
+        v = pool.get(f"{code}-16_8mm.jpg")
+        if v: return v
+    size_key = s.replace("x", "_")
+    for ext in (".jpg", ".jpeg", ".png"):
+        v = pool.get(f"{code}-{size_key}{ext}")
+        if v: return v
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1123,6 +1142,9 @@ def resolve_photo_from_drive(product, index):
     elif product.get("spreadsheet_type_id") == "metal-set-rhinestone-banding":
         found = _find_metal_set_banding_photo(index["generic"], product.get("factory_style"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": True}
+    elif product.get("spreadsheet_type_id") == "pearls-on-eye-pins":
+        found = _find_pearls_photo(index["generic"], product.get("color_number"), product.get("size"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": clean(product.get("size")).lower() == "18x6mm"}
     return None
 
 def multipart_form_data(fields, files):

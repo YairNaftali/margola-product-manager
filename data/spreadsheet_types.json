@@ -283,6 +283,27 @@
     "type": "Cameo"
   },
   {
+    "id": "pearls-on-eye-pins",
+    "label": "Pearls on Eye Pins",
+    "sheet_match": [],
+    "filename_match": ["pearls on eye pins"],
+    "vendor": "Margola",
+    "collection": "Czech Glass Pearls",
+    "title_prefix": "Urea Resin Pearl on Gold Brass Eye Pin",
+    "title_suffix": "",
+    "subcategory": "Pearls on Eye Pins",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Loose Stones > Pearls",
+    "sync": [
+      {"title": "Czech Glass Pearls", "handle": "czech-glass-pearls"}
+    ],
+    "type": "Pearls on Eye Pins"
+  },
+  {
     "id": "metal-set-rhinestone-banding",
     "label": "Metal Set Rhinestone Banding",
     "sheet_match": [],
