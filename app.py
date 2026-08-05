@@ -676,7 +676,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestonebanding_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "pearls-on-eye-pins_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "leaf-bail_filelist.txt"),
-    os.path.join(os.path.expanduser("~"), "Downloads", "Margola Descriptions", "buttons_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "buttons_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
