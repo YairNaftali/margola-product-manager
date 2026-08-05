@@ -112,7 +112,6 @@ SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
         <div class="card-actions">
           <button id="shopifyConfigBtn" class="btn">Check Local Config</button>
           <button id="shopifyTestBtn" class="btn primary">Test Shopify Connection</button>
-          <button id="shopifyFilesBtn" class="btn">Sync Shopify Files</button>
           <button id="shopifySyncCollectionsBtn" class="btn primary">Sync Collections (Approved Products)</button>
         </div>
         <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
@@ -130,6 +129,7 @@ SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
         <h2>Resolve photos from Hard Drive</h2>
         <p class="hint">Looks up real photos on the drive using the filelist dumps in your Downloads folder (harddrive_filelist.txt, 2cut_filelist.txt, etc. — see DRIVE_FILELISTS in app.py). No renaming needed. Review the proposed matches below, then upload the ones you want. Requires the drive to be connected for the files it finds.</p>
         <button id="resolveDriveBtn" class="btn primary">Scan Drives for Matches</button>
+        <button id="shopifyFilesBtn" class="btn">Sync Shopify Files</button>
         <button id="approveWithImageBtn" class="btn">Approve All Products With a Photo</button>
         <div id="driveMatches"></div>
       </section>
