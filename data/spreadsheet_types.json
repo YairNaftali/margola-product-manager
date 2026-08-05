@@ -283,6 +283,27 @@
     "type": "Cameo"
   },
   {
+    "id": "metal-button-mix",
+    "label": "Metal Button Mix",
+    "sheet_match": [],
+    "filename_match": ["metal button mix"],
+    "vendor": "Margola",
+    "collection": "Buttons",
+    "title_prefix": "",
+    "title_suffix": "",
+    "subcategory": "Metal Button Mix",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Fasteners & Closures > Buttons & Snaps > Buttons",
+    "sync": [
+      {"title": "Buttons", "handle": "buttons"}
+    ],
+    "type": "Metal Button Mix"
+  },
+  {
     "id": "leaf-bail",
     "label": "Leaf Bail",
     "sheet_match": [],
