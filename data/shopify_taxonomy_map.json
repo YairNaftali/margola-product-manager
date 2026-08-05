@@ -1,40 +1,131 @@
 {
   "_comment": "Maps Margola's raw bead_shape/color_name text to Shopify's fixed standard taxonomy values (Bead shape: Hair pipe/Heart/Other/Oval/Round/Seed/Square/Star/Tube; Color: 19 basic colors). Keys are matched case-insensitively with whitespace collapsed. Edit freely -- values not found here are reported as unmapped instead of guessed.",
   "bead_shape": {
-    "Roller Beads": {"label": "Barrel", "base": "Tube"},
-    "Crow Beads": {"label": "Barrel", "base": "Tube"},
-    "2 Cut Beads": {"label": "2 Cut", "base": "Seed"},
-    "Bugle Beads": {"label": "Bugle"},
-    "Daisy": {"label": "Daisy", "base": "Other"},
-    "Daisy button": {"label": "Daisy Button", "base": "Other"},
-    "Flower": {"label": "Flower", "base": "Other"},
-    "Leaf": {"label": "Leaf", "base": "Other"},
-    "Leaves": {"label": "Leaves", "base": "Other"},
-    "Petals": {"label": "Petals", "base": "Other"},
-    "Round": {"label": "Round"},
-    "Star": {"label": "Star"},
-    "Shell": {"label": "Shell", "base": "Other"},
-    "Square": {"label": "Square"},
-    "Oval": {"label": "Oval"},
-    "Heart": {"label": "Heart"},
-    "Lochrosen": {"label": "Lochrosen"},
-    "Rhinestone Balls": {"label": "Rhinestone Ball"},
-    "Pear Shape": {"label": "Pear Shape", "base": "Other"},
-    "Leaf Bail": {"label": "Leaf Bail", "base": "Other"}
+    "Roller Beads": {
+      "label": "Barrel",
+      "base": "Tube"
+    },
+    "Crow Beads": {
+      "label": "Barrel",
+      "base": "Tube"
+    },
+    "2 Cut Beads": {
+      "label": "2 Cut",
+      "base": "Seed"
+    },
+    "Bugle Beads": {
+      "label": "Bugle"
+    },
+    "Daisy": {
+      "label": "Daisy",
+      "base": "Other"
+    },
+    "Daisy button": {
+      "label": "Daisy Button",
+      "base": "Other"
+    },
+    "Flower": {
+      "label": "Flower",
+      "base": "Other"
+    },
+    "Leaf": {
+      "label": "Leaf",
+      "base": "Other"
+    },
+    "Leaves": {
+      "label": "Leaves",
+      "base": "Other"
+    },
+    "Petals": {
+      "label": "Petals",
+      "base": "Other"
+    },
+    "Round": {
+      "label": "Round"
+    },
+    "Star": {
+      "label": "Star"
+    },
+    "Shell": {
+      "label": "Shell",
+      "base": "Other"
+    },
+    "Square": {
+      "label": "Square"
+    },
+    "Oval": {
+      "label": "Oval"
+    },
+    "Heart": {
+      "label": "Heart"
+    },
+    "Lochrosen": {
+      "label": "Lochrosen"
+    },
+    "Rhinestone Balls": {
+      "label": "Rhinestone Ball"
+    },
+    "Pear Shape": {
+      "label": "Pear Shape",
+      "base": "Other"
+    },
+    "Leaf Bail": {
+      "label": "Leaf Bail",
+      "base": "Other"
+    },
+    "Seed Beads": {
+      "label": "Seed"
+    }
   },
   "size": {
-    "10/0": {"label": "10/0 - 2.1mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
-    "11/0": {"label": "11/0 - 1.9mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
-    "#2 (4.5mm)": {"label": "#2 (4.5mm)", "base_gid": "gid://shopify/TaxonomyValue/2885"},
-    "9mm": {"label": "9mm", "base_gid": "gid://shopify/TaxonomyValue/2909"},
-    "10mm": {"label": "10mm", "base_gid": "gid://shopify/TaxonomyValue/2880"},
-    "6mm": {"label": "6mm", "base_gid": "gid://shopify/TaxonomyValue/2907"},
-    "8mm": {"label": "8mm", "base_gid": "gid://shopify/TaxonomyValue/2909"},
-    "14mm": {"label": "14mm", "base_gid": "gid://shopify/TaxonomyValue/2882"},
-    "10x6mm": {"label": "10x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
-    "13x7mm": {"label": "13x7mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
-    "18x6mm": {"label": "18x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
-    "22x6mm": {"label": "22x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"}
+    "10/0": {
+      "label": "10/0 - 2.1mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2878"
+    },
+    "11/0": {
+      "label": "11/0 - 1.9mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2878"
+    },
+    "#2 (4.5mm)": {
+      "label": "#2 (4.5mm)",
+      "base_gid": "gid://shopify/TaxonomyValue/2885"
+    },
+    "9mm": {
+      "label": "9mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2909"
+    },
+    "10mm": {
+      "label": "10mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2880"
+    },
+    "6mm": {
+      "label": "6mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2907"
+    },
+    "8mm": {
+      "label": "8mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2909"
+    },
+    "14mm": {
+      "label": "14mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2882"
+    },
+    "10x6mm": {
+      "label": "10x6mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2879"
+    },
+    "13x7mm": {
+      "label": "13x7mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2879"
+    },
+    "18x6mm": {
+      "label": "18x6mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2879"
+    },
+    "22x6mm": {
+      "label": "22x6mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2879"
+    }
   },
   "color": {
     "CRYSTAL": "Clear",
@@ -165,6 +256,20 @@
     "CRYSTAL / SILVER SETTING / BLACK NET": "Black",
     "White Pearl Luster": "White",
     "Imitation Rhodium (IR)": "Silver",
-    "Imitation Gold (GL)": "Gold"
+    "Imitation Gold (GL)": "Gold",
+    "Crystal Luster Black Lined": "Black",
+    "Crystal Luster White Lined": "White",
+    "Crystal Luster Beige Lined": "Beige",
+    "Crystal Luster Pink Lined": "Pink",
+    "Crystal Luster Violet Lined": "Purple",
+    "Crystal Luster Plum Lined": "Purple",
+    "Crystal Luster Light Blue Lined": "Blue",
+    "Crystal Luster Blue Lined": "Blue",
+    "Crystal Luster Gunmetal Lined": "Gray",
+    "Crystal Luster Light Green Lined": "Green",
+    "Crystal Luster Aqua Lined": "Blue",
+    "Crystal Luster Yellow Lined": "Yellow",
+    "Crystal Luster Peach Lined": "Orange",
+    "Crystal Luster Red Lined": "Red"
   }
 }

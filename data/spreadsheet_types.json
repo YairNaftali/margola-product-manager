@@ -1,5 +1,33 @@
 [
   {
+    "id": "seed-beads",
+    "label": "Seed Beads",
+    "sheet_match": [
+      "seedbead"
+    ],
+    "filename_match": [
+      "seed bead"
+    ],
+    "vendor": "Preciosa Ornela",
+    "collection": "Seed Beads",
+    "title_prefix": "SEED",
+    "title_suffix": "PRECIOSA ORNELA BEADS",
+    "subcategory": "Seed Beads",
+    "bead_shape": "Seed Beads",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {
+        "title": "Seed Beads",
+        "handle": "seed-beads"
+      }
+    ],
+    "type": "Seed"
+  },
+  {
     "id": "2cut-beads",
     "label": "2 Cut Beads",
     "sheet_match": [
@@ -286,7 +314,9 @@
     "id": "metal-button-mix",
     "label": "Metal Button Mix",
     "sheet_match": [],
-    "filename_match": ["metal button mix"],
+    "filename_match": [
+      "metal button mix"
+    ],
     "vendor": "Margola",
     "collection": "Buttons",
     "title_prefix": "",
@@ -299,7 +329,10 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Fasteners & Closures > Buttons & Snaps > Buttons",
     "sync": [
-      {"title": "Buttons", "handle": "buttons"}
+      {
+        "title": "Buttons",
+        "handle": "buttons"
+      }
     ],
     "type": "Metal Button Mix"
   },
@@ -307,7 +340,9 @@
     "id": "leaf-bail",
     "label": "Leaf Bail",
     "sheet_match": [],
-    "filename_match": ["leaf bail"],
+    "filename_match": [
+      "leaf bail"
+    ],
     "vendor": "Margola",
     "collection": "Findings",
     "title_prefix": "Zinc Glue-On",
@@ -320,7 +355,10 @@
     "populate_bead_shape_from_shape": false,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Jewelry Findings",
     "sync": [
-      {"title": "Findings", "handle": "findings"}
+      {
+        "title": "Findings",
+        "handle": "findings"
+      }
     ],
     "type": "Leaf Bail"
   },
@@ -328,7 +366,9 @@
     "id": "pearls-on-eye-pins",
     "label": "Pearls on Eye Pins",
     "sheet_match": [],
-    "filename_match": ["pearls on eye pins"],
+    "filename_match": [
+      "pearls on eye pins"
+    ],
     "vendor": "Margola",
     "collection": "Czech Glass Pearls",
     "title_prefix": "Urea Resin Pearl on Gold Brass Eye Pin",
@@ -341,7 +381,10 @@
     "populate_bead_shape_from_shape": true,
     "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Loose Stones > Pearls",
     "sync": [
-      {"title": "Czech Glass Pearls", "handle": "czech-glass-pearls"}
+      {
+        "title": "Czech Glass Pearls",
+        "handle": "czech-glass-pearls"
+      }
     ],
     "type": "Pearls on Eye Pins"
   },

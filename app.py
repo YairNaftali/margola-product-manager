@@ -421,7 +421,20 @@ def parse_xlsx(path, forced_type_id=None):
     dup_skus = {k for k,v in skus.items() if len(v)>1}
     for p in products:
         more = []
-        if p["handle"] in dup_handles: more.append("Duplicate handle")
+        if p["handle"] in dup_handles:
+            # Two products can legitimately share a display Title (e.g. two
+            # distinct color codes both genuinely called "Pink Lined" by the
+            # supplier) even though Shopify requires every product's handle to
+            # be unique. Disambiguate the handle only -- using color_number
+            # first since it's the most stable per-product identifier, falling
+            # back to the factory SKU -- and leave the Title untouched.
+            suffix = clean(p.get("color_number")) or clean(p.get("factory_style"))
+            if suffix:
+                original_handle = p["handle"]
+                p["handle"] = f"{original_handle}-{slugify(suffix)}"
+                more.append(f"Handle disambiguated from {original_handle!r} (shared Title with another product, color number appended to keep the handle unique)")
+            else:
+                more.append("Duplicate handle")
         for v in p.get("variants", []):
             if v.get("sku") in dup_skus:
                 more.append(f"Duplicate variant SKU: {v.get('sku')}")
@@ -677,6 +690,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "pearls-on-eye-pins_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "leaf-bail_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "buttons_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "10-0-seed-beads_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1118,6 +1132,19 @@ def _find_metal_button_mix_photo(pool):
     # tool has no multi-image support -- added manually via Shopify after import.
     return pool.get("img_4929.jpg")
 
+def _find_seed_bead_photo(pool, color_number):
+    # Photos are named "{color number}-10-0.jpg" -- Yair confirmed 2026-08-05 these
+    # get reused across size variations (a future 11/0, 12/0, etc. sheet will point
+    # back to these same "-10-0" files rather than getting its own per-size photos),
+    # so this matcher only keys off color_number, not the product's actual size.
+    # One filename has a trailing-dash quirk ("38173-10-0-.jpg").
+    code = clean(color_number).lower()
+    if not code: return None
+    for suffix in ("-10-0.jpg", "-10-0-.jpg"):
+        v = pool.get(f"{code}{suffix}")
+        if v: return v
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1179,6 +1206,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "metal-button-mix":
         found = _find_metal_button_mix_photo(index["generic"])
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "seed-beads":
+        found = _find_seed_bead_photo(index["generic"], product.get("color_number"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
