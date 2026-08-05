@@ -675,6 +675,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestone balls_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "rhinestonebanding_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "pearls-on-eye-pins_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "leaf-bail_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -1099,6 +1100,15 @@ def _find_pearls_photo(pool, color_number, size):
         if v: return v
     return None
 
+def _find_leaf_bail_photo(pool, factory_style):
+    # Only two real photos exist, named by finish rather than SKU/color-code:
+    # "GoldLeafBail.jpg" (GL) and "SilverLeafBail.jpg" (IR = Imitation Rhodium,
+    # a silver-tone finish) -- confirmed against leaf-bail_filelist.txt 2026-08-04.
+    code = clean(factory_style).lower()
+    if code.endswith("-gl"): return pool.get("goldleafbail.jpg")
+    if code.endswith("-ir"): return pool.get("silverleafbail.jpg")
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1155,6 +1165,9 @@ def resolve_photo_from_drive(product, index):
     elif product.get("spreadsheet_type_id") == "pearls-on-eye-pins":
         found = _find_pearls_photo(index["generic"], product.get("color_number"), product.get("size"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": clean(product.get("size")).lower() == "18x6mm"}
+    elif product.get("spreadsheet_type_id") == "leaf-bail":
+        found = _find_leaf_bail_photo(index["generic"], product.get("factory_style"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
 def multipart_form_data(fields, files):

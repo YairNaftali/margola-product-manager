@@ -19,7 +19,8 @@
     "Heart": {"label": "Heart"},
     "Lochrosen": {"label": "Lochrosen"},
     "Rhinestone Balls": {"label": "Rhinestone Ball"},
-    "Pear Shape": {"label": "Pear Shape", "base": "Other"}
+    "Pear Shape": {"label": "Pear Shape", "base": "Other"},
+    "Leaf Bail": {"label": "Leaf Bail", "base": "Other"}
   },
   "size": {
     "10/0": {"label": "10/0 - 2.1mm", "base_gid": "gid://shopify/TaxonomyValue/2878"},
@@ -32,7 +33,8 @@
     "14mm": {"label": "14mm", "base_gid": "gid://shopify/TaxonomyValue/2882"},
     "10x6mm": {"label": "10x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
     "13x7mm": {"label": "13x7mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
-    "18x6mm": {"label": "18x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"}
+    "18x6mm": {"label": "18x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"},
+    "22x6mm": {"label": "22x6mm", "base_gid": "gid://shopify/TaxonomyValue/2879"}
   },
   "color": {
     "CRYSTAL": "Clear",
@@ -161,6 +163,8 @@
     "CRYSTAL AB CHATON / SILVER SETTING / WHITE NET (Two Row)": "White",
     "CRYSTAL / SILVER SETTING / WHITE NET": "White",
     "CRYSTAL / SILVER SETTING / BLACK NET": "Black",
-    "White Pearl Luster": "White"
+    "White Pearl Luster": "White",
+    "Imitation Rhodium (IR)": "Silver",
+    "Imitation Gold (GL)": "Gold"
   }
 }

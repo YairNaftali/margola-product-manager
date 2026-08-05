@@ -283,6 +283,27 @@
     "type": "Cameo"
   },
   {
+    "id": "leaf-bail",
+    "label": "Leaf Bail",
+    "sheet_match": [],
+    "filename_match": ["leaf bail"],
+    "vendor": "Margola",
+    "collection": "Findings",
+    "title_prefix": "Zinc Glue-On",
+    "title_suffix": "",
+    "subcategory": "Leaf Bail",
+    "bead_shape": "Leaf Bail",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Jewelry Findings",
+    "sync": [
+      {"title": "Findings", "handle": "findings"}
+    ],
+    "type": "Leaf Bail"
+  },
+  {
     "id": "pearls-on-eye-pins",
     "label": "Pearls on Eye Pins",
     "sheet_match": [],
