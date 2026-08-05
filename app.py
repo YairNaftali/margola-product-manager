@@ -1276,7 +1276,14 @@ def shopify_apply_collection_sort(collection_id, ordered_product_ids):
     if d1.get("userErrors"): raise RuntimeError(json.dumps(d1["userErrors"]))
 
     reorder_m = """mutation Reorder($id: ID!, $moves: [MoveInput!]!) { collectionReorderProducts(id: $id, moves: $moves) { job { id done } userErrors { field message } } }"""
-    moves = [{"id": pid, "newPosition": i} for i, pid in enumerate(ordered_product_ids)]
+    # newPosition is UnsignedInt64! -- Shopify's custom scalars are wire-encoded as
+    # strings even though they're numeric; a bare int gets rejected with
+    # INVALID_VARIABLE ("must be encoded as a string"). Confirmed live 2026-08-04
+    # on Lochrosens -- this had silently broken every sort attempt since the
+    # feature was added (5f4d2c3), including ones an earlier session believed were
+    # fixed via a one-off live GraphQL call that never made it back into this
+    # function.
+    moves = [{"id": pid, "newPosition": str(i)} for i, pid in enumerate(ordered_product_ids)]
     d2 = shopify_graphql(reorder_m, {"id": collection_id, "moves": moves})["collectionReorderProducts"]
     if d2.get("userErrors"): raise RuntimeError(json.dumps(d2["userErrors"]))
 
