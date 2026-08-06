@@ -439,5 +439,31 @@
       }
     ],
     "type": "Acrylic Rhinestone"
+  },
+  {
+    "id": "clearance",
+    "label": "Clearance",
+    "sheet_match": [],
+    "filename_match": [
+      "clearance"
+    ],
+    "vendor": "Preciosa Ornela",
+    "collection": "Sales & Clearance",
+    "title_prefix": "CLEARANCE SEED HANK",
+    "title_suffix": "PRECIOSA ORNELA BEADS",
+    "subcategory": "Seed Bead Hank",
+    "bead_shape": "Seed Beads",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {
+        "title": "Sales & Clearance",
+        "handle": "sales-clearance"
+      }
+    ],
+    "type": "Seed"
   }
 ]

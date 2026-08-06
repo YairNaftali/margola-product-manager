@@ -362,8 +362,8 @@ def parse_xlsx(path, forced_type_id=None):
                 if not clean(text): return None, False
                 nums = re.findall(r"[\d.]+", clean(text))
                 return (tuple(float(x) for x in nums), False) if len(nums) == 3 else (None, True)
-            factory_dimensions = get_first(row, ["FACTORY PACK DIM LXWXH","FACTORY PACK DIMENSIONS","FACTORY PACK DIMENSIONS L X W X H"])
-            mini_dimensions = get_first(row, ["MINI PACK DIM LXWXH","MINI PACK DIMENSIONS","MINI PACK DIMENSIONS L X W X H"])
+            factory_dimensions = get_first(row, ["FACTORY PACK DIM LXWXH","FACTORY PACK DIM L X W X H","FACTORY PACK DIMENSIONS","FACTORY PACK DIMENSIONS L X W X H"])
+            mini_dimensions = get_first(row, ["MINI PACK DIM LXWXH","MINI PACK DIM L X W X H","MINI PACK DIMENSIONS","MINI PACK DIMENSIONS L X W X H"])
             factory_dims_in, factory_dims_bad = _parse_dims(factory_dimensions)
             mini_dims_in, mini_dims_bad = _parse_dims(mini_dimensions)
             dims_in, dims_unparsable = None, False
@@ -716,6 +716,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "buttons_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "10-0-seed-beads_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "acrylic-rhinestones_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "clearance_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -936,7 +937,7 @@ def _pick_best_candidate(paths):
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic = {}, {}, {}, {}, {}, {}, {}, {}
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, generic = {}, {}, {}, {}, {}, {}, {}, {}, {}
     found_any = False
     for list_path in DRIVE_FILELISTS:
         if not os.path.exists(list_path): continue
@@ -956,10 +957,11 @@ def load_drive_index():
             elif "/2 cuts/" in fl: two_cut.setdefault(base, []).append(full)
             elif "/bugle beads/" in fl: bugle.setdefault(base, []).append(full)
             elif "/acrylic rhinestones/" in fl: acrylic_rhinestones.setdefault(base, []).append(full)
+            elif "/clearance/" in fl: clearance.setdefault(base, []).append(full)
     roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic = (
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
-        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic)
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, generic)
     )
     # Built from the raw (pre-picked) path lists, not the already-resolved
     # per-size dicts above -- otherwise a basename shared by both sizes
@@ -973,7 +975,7 @@ def load_drive_index():
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
             "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "bugle": bugle,
-            "acrylic_rhinestones": acrylic_rhinestones, "generic": generic}
+            "acrylic_rhinestones": acrylic_rhinestones, "clearance": clearance, "generic": generic}
 
 def _roller_candidates(color_number):
     cn = clean(color_number)
@@ -1194,6 +1196,22 @@ def _find_acrylic_rhinestone_photo(pool, color_name):
         if core in fname: return path
     return None
 
+# Explicit color_number -> filename map, not a general matcher: each color has
+# TWO real photos on the drive (a "Bag" shot and a "Hank"/"Beads" shot of the
+# strung beads themselves), and Yair confirmed 2026-08-05 he uploads the Bag
+# photos manually -- this tool should only ever pick the Hank/Beads one. A
+# word-matching rule (like Acrylic Rhinestones' _find_acrylic_rhinestone_photo)
+# isn't safe here since "Bag" vs "Hank" isn't part of the color name at all, and
+# the naming isn't even consistent ("RedBeads.jpg", not "RedHank.jpg").
+CLEARANCE_PHOTO_MAP = {
+    "30100": "bluehank.jpg",   # Cobalt Transparent
+    "83110": "yellowhank.jpg", # Yellow Opaque
+    "93170": "redbeads.jpg",   # Red Opaque
+}
+def _find_clearance_photo(pool, color_number):
+    fname = CLEARANCE_PHOTO_MAP.get(clean(color_number))
+    return pool.get(fname) if fname else None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1261,6 +1279,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "acrylic-rhinestones":
         found = _find_acrylic_rhinestone_photo(index["acrylic_rhinestones"], product.get("color_name"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "clearance":
+        found = _find_clearance_photo(index["clearance"], product.get("color_number"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
