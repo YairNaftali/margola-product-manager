@@ -239,31 +239,35 @@ def image_for(factory_style, color_name, subcategory, size):
     return f"{slugify(base)}.jpg" if base else ""
 
 
-def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty):
+def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty, dims_in=None):
     variants = []
 
     # No assumptions:
     # A pack variant only exists if it has its own SKU AND at least some real pack data.
     # Do not copy Mini into Factory or Factory into Mini.
     if clean(mini_style) and (clean(mini_price) or clean(mini_weight) or clean(mini_qty)):
-        variants.append({
+        v = {
             "name": "Mini Pack",
             "option_value": "mini-pack",
             "sku": clean(mini_style),
             "price": money(mini_price),
             "weight_oz": weight_oz(mini_weight),
             "quantity": clean(mini_qty),
-        })
+        }
+        if dims_in: v["length_in"], v["width_in"], v["height_in"] = dims_in
+        variants.append(v)
 
     if clean(factory_style) and (clean(factory_price) or clean(factory_weight) or clean(factory_qty_desc)):
-        variants.append({
+        v = {
             "name": "Factory Pack",
             "option_value": "factory-pack",
             "sku": clean(factory_style),
             "price": money(factory_price),
             "weight_oz": weight_oz(factory_weight),
             "quantity": clean(factory_qty_desc),
-        })
+        }
+        if dims_in: v["length_in"], v["width_in"], v["height_in"] = dims_in
+        variants.append(v)
 
     return variants
 
@@ -343,14 +347,24 @@ def parse_xlsx(path, forced_type_id=None):
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
             mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
             mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
-            # Neil's package-dimensions column, added 2026-08-04: a single free-text
-            # cell like "10 x 5 x 3 in" rather than 3 separate Length/Width/Height
-            # columns (unlike the earlier one-off Calcurates dimensions spreadsheet).
-            # Kept as raw text, not split into numeric fields -- no assumptions about
-            # which pack (Factory vs Mini) this describes until confirmed against a
-            # real sheet; candidate list here is a starting guess, adjust once the
-            # actual header text is seen.
+            # Neil's package-dimensions column: a single free-text cell like
+            # "10 x 5 x 3 in" rather than 3 separate Length/Width/Height columns.
+            # Real Calcurates data (2026-08-05) confirmed Factory and Mini Pack
+            # dimensions are usually genuinely different -- a single sheet cell
+            # can't tell us which pack it describes, so it's applied to both packs
+            # with a validation warning rather than guessed silently. Pushed to
+            # Shopify as variant-level custom.length/width/height metafields
+            # (dimension type, inches) via shopify_push_dimensions(), matching what
+            # Calcurates actually reads -- not the old product-level custom.dimensions
+            # text field, which is unused dead weight and no longer written.
             dimensions = get_first(row, ["DIMENSIONS","DIMENSIONS (L X W X H)","DIMENSIONS L X W X H","PACKAGE DIMENSIONS","BOX DIMENSIONS","PRODUCT DIMENSIONS"])
+            dims_in, dims_unparsable = None, False
+            if clean(dimensions):
+                dim_nums = re.findall(r"[\d.]+", clean(dimensions))
+                if len(dim_nums) == 3:
+                    dims_in = tuple(float(x) for x in dim_nums)
+                else:
+                    dims_unparsable = True
             inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -373,6 +387,8 @@ def parse_xlsx(path, forced_type_id=None):
             if "missing phot" in row_text or "mising phot" in row_text: notes.append("Source note: missing photo")
             if clean(factory_price) and not money(factory_price): notes.append(f"Invalid factory price in source: {clean(factory_price)!r}")
             if clean(mini_price) and not money(mini_price): notes.append(f"Invalid mini price in source: {clean(mini_price)!r}")
+            if dims_unparsable: notes.append(f"Could not parse dimensions as L x W x H: {clean(dimensions)!r}")
+            if dims_in: notes.append("Dimensions applied to both Mini and Factory pack from a single sheet cell -- confirm with Neil whether they actually differ per pack before relying on this for shipping")
             # Compare only the size's leading token (e.g. "#2" out of "#2 (4.5mm)") against the
             # SKU -- some categories' SKUs only embed the short size class, not the full
             # parenthetical detail, so checking the whole string produced false positives.
@@ -393,7 +409,6 @@ def parse_xlsx(path, forced_type_id=None):
                 "factory_price":money(factory_price), "factory_weight_oz":weight_oz(factory_weight),
                 "mini_style":clean(mini_style), "mini_quantity":clean(mini_qty) or inf["mini_qty_standard"],
                 "mini_price":money(mini_price), "mini_weight_oz":weight_oz(mini_weight),
-                "dimensions":clean(dimensions),
 
                 "variants": build_variants(
                     factory_style=factory_style,
@@ -404,6 +419,7 @@ def parse_xlsx(path, forced_type_id=None):
                     mini_price=mini_price,
                     mini_weight=mini_weight,
                     mini_qty=clean(mini_qty) or inf["mini_qty_standard"],
+                    dims_in=dims_in,
                 ),
 
                 "source_description":clean(source_description), "generated_description":"", "description_approved":False,
@@ -462,7 +478,7 @@ def detected_categories(products):
     return [{"collection":k[0],"subcategory":k[1],"count":v} for k,v in sorted(counts.items())]
 
 def review_csv(products):
-    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","type","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","dimensions","source_sheet","source_row"]
+    fields = ["status","approved","skipped","validation_score","warnings","title","handle","collection","subcategory","color_type","bead_shape","type","size","color_number","color_name","image_filename","image_src","factory_style","factory_price","factory_weight_oz","mini_style","mini_price","mini_weight_oz","source_sheet","source_row"]
     out = io.StringIO(); w = csv.DictWriter(out, fieldnames=fields); w.writeheader()
     for p in products:
         v = p.get("validation",{})
@@ -542,7 +558,6 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size")) if idx == 0 else "",
                 "Bead Shape (product.metafields.custom.bead_shape)": resolver.bead_shape_label(p.get("bead_shape")) if idx == 0 else "",
                 "Type (product.metafields.custom.type)": resolver.type_label(p.get("type")) if idx == 0 else "",
-                "Dimensions (product.metafields.custom.dimensions)": clean(p.get("dimensions","")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
                 "Variant Price": variant.get("price", ""),
                 "Variant Grams": oz_to_grams(variant.get("weight_oz", "")),
@@ -1462,6 +1477,46 @@ def classify_color_family(color_number, color_name, description=""):
         return COLOR_FAMILY_DIGIT_MAP[code[0]], "leading digit"
     return None, "no recognizable color number"
 
+def shopify_push_dimensions(products=None):
+    # Pushes each variant's length_in/width_in/height_in (set by parse_xlsx() from
+    # Neil's dimensions cell) to Shopify as custom.length/width/height variant
+    # metafields (type "dimension", unit INCHES) -- the mechanism Calcurates
+    # actually reads, confirmed live with their support 2026-08-05. Looks up each
+    # variant's live id by SKU since the review queue doesn't store Shopify ids.
+    products = products if products is not None else load_products()
+    pairs, skipped = [], []
+    for p in products:
+        if p.get("skipped"): continue
+        for v in p.get("variants", []):
+            if not all(v.get(k) is not None for k in ("length_in","width_in","height_in")):
+                continue
+            sku = v.get("sku")
+            if not sku:
+                skipped.append({"handle":p.get("handle"),"sku":sku,"error":"No SKU"}); continue
+            q = """query($q:String!){ productVariants(first:1, query:$q){ nodes{ id sku } } }"""
+            nodes = shopify_graphql(q, {"q": f'sku:"{sku}"'})["productVariants"]["nodes"]
+            if not nodes:
+                skipped.append({"handle":p.get("handle"),"sku":sku,"error":"SKU not found on Shopify -- import this product first"}); continue
+            pairs.append((nodes[0]["id"], sku, (v["length_in"], v["width_in"], v["height_in"])))
+
+    mutation = """mutation SetDims($metafields: [MetafieldsSetInput!]!) {
+      metafieldsSet(metafields: $metafields) { metafields { id key } userErrors { field message code } }
+    }"""
+    pushed, errors = [], []
+    BATCH = 8
+    for i in range(0, len(pairs), BATCH):
+        chunk = pairs[i:i+BATCH]
+        metafields = []
+        for vid, sku, (l, w, h) in chunk:
+            for key, val in [("length", l), ("width", w), ("height", h)]:
+                metafields.append({"ownerId":vid,"namespace":"custom","key":key,"type":"dimension","value":json.dumps({"value":val,"unit":"INCHES"})})
+        d = shopify_graphql(mutation, {"metafields": metafields})["metafieldsSet"]
+        if d.get("userErrors"):
+            errors.append({"skus":[sku for _,sku,_ in chunk],"error":json.dumps(d["userErrors"])})
+        else:
+            pushed.extend(sku for _,sku,_ in chunk)
+    return {"pushed":pushed, "skipped":skipped, "errors":errors}
+
 def shopify_apply_color_family(items):
     # items: [{"handle":..., "family":...}, ...] -- confirmed by the user in the
     # review table, not computed fresh here, so an inline override in the UI is
@@ -1720,6 +1775,9 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/shopify/sync-collections":
             try: return self.send_json({"ok":True, **shopify_sync_collections()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/push-dimensions":
+            try: return self.send_json({"ok":True, **shopify_push_dimensions()})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/apply-color-family":
             data = json.loads(self.read_body().decode("utf-8")); items = data.get("items",[])

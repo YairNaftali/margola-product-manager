@@ -113,8 +113,10 @@ SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
           <button id="shopifyConfigBtn" class="btn">Check Local Config</button>
           <button id="shopifyTestBtn" class="btn primary">Test Shopify Connection</button>
           <button id="shopifySyncCollectionsBtn" class="btn primary">Sync Collections (Approved Products)</button>
+          <button id="shopifyPushDimensionsBtn" class="btn">Push Dimensions to Shopify</button>
         </div>
         <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
+        <p class="hint">Push Dimensions sends each variant's Length/Width/Height (from a sheet's dimensions column, if present) to Shopify as <code>custom.length</code>/<code>width</code>/<code>height</code> metafields -- what Calcurates reads for shipping. Only pushes products already imported into Shopify.</p>
       </section>
 
       <section class="tool-panel" data-tool-panel="images">
