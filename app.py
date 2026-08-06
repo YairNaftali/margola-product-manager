@@ -729,6 +729,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "leaf-bail_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "buttons_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "10-0-seed-beads_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "seed-beads_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "acrylic-rhinestones_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "clearance_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "filigree_filelist.txt"),
@@ -952,7 +953,7 @@ def _pick_best_candidate(paths):
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, generic = {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, seed_beads_6_0, generic = {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
     found_any = False
     for list_path in DRIVE_FILELISTS:
         if not os.path.exists(list_path): continue
@@ -960,6 +961,12 @@ def load_drive_index():
         for line in open(list_path, encoding="utf-8", errors="replace").read().splitlines():
             parts = line.split("\t")
             if len(parts) < 3: continue
+            # A 0-byte file is never a usable photo (caught live: a broken
+            # "18600.png" alongside a real "18600.jpg" for the same color) --
+            # skip it globally rather than letting it win a pick by accident.
+            try:
+                if int(parts[0]) == 0: continue
+            except ValueError: pass
             full = parts[2]
             if any(m in full for m in JUNK_PATH_MARKERS): continue
             base = full.rsplit("/", 1)[-1].lower()
@@ -974,10 +981,11 @@ def load_drive_index():
             elif "/acrylic rhinestones/" in fl: acrylic_rhinestones.setdefault(base, []).append(full)
             elif "/clearance/" in fl: clearance.setdefault(base, []).append(full)
             elif "/metal beads/" in fl: filigree_beads.setdefault(base, []).append(full)
+            elif "/6:0 jpegs/" in fl: seed_beads_6_0.setdefault(base, []).append(full)
     roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, generic = (
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, seed_beads_6_0, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
-        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, generic)
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, clearance, filigree_beads, seed_beads_6_0, generic)
     )
     # Built from the raw (pre-picked) path lists, not the already-resolved
     # per-size dicts above -- otherwise a basename shared by both sizes
@@ -992,7 +1000,7 @@ def load_drive_index():
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
             "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "bugle": bugle,
             "acrylic_rhinestones": acrylic_rhinestones, "clearance": clearance,
-            "filigree_beads": filigree_beads, "generic": generic}
+            "filigree_beads": filigree_beads, "seed_beads_6_0": seed_beads_6_0, "generic": generic}
 
 def _roller_candidates(color_number):
     cn = clean(color_number)
@@ -1179,16 +1187,34 @@ def _find_metal_button_mix_photo(pool):
     return pool.get("img_4929.jpg")
 
 def _find_seed_bead_photo(pool, color_number):
-    # Photos are named "{color number}-10-0.jpg" -- Yair confirmed 2026-08-05 these
-    # get reused across size variations (a future 11/0, 12/0, etc. sheet will point
-    # back to these same "-10-0" files rather than getting its own per-size photos),
-    # so this matcher only keys off color_number, not the product's actual size.
-    # One filename has a trailing-dash quirk ("38173-10-0-.jpg").
+    # 10/0's photos live in shared multi-size "finish" folders (Opaque, Ceylon
+    # Colors, etc., alongside 11/0 and others), named "{color number}-10-0.jpg" --
+    # exact-suffix lookup against the whole merged pool is safe here since that
+    # suffix reliably disambiguates the size within the shared folder. One
+    # filename has a trailing-dash quirk ("38173-10-0-.jpg").
     code = clean(color_number).lower()
     if not code: return None
     for suffix in ("-10-0.jpg", "-10-0-.jpg"):
         v = pool.get(f"{code}{suffix}")
         if v: return v
+    return None
+
+def _find_seed_bead_6_0_photo(pool, color_number):
+    # `pool` must be index["seed_beads_6_0"] (scoped to the "/6:0 JPEGS/" drive
+    # folder). Unlike 10/0's shared finish-folders, 6/0 has its own dedicated
+    # folder -- but with genuinely inconsistent naming (some files end "_6-0.jpg",
+    # others have no size marker at all, e.g. "33070_Dk.-Blue_03082.jpg"), so an
+    # exact-suffix lookup like 10/0's doesn't work. Every filename does start
+    # with the plain numeric color code, sometimes zero-padded ("053250_..." for
+    # code 53250) -- match on that leading digit run instead. Confirmed 2026-08-05
+    # against all 36 real 6/0 products: 35/36 matched this way; 58210 (Lt. Green
+    # Opaque Luster) has no photo in this folder at all, left unmatched rather
+    # than guessed.
+    code = re.sub(r"\D", "", clean(color_number))
+    if not code: return None
+    for fname, path in pool.items():
+        if re.match(r"0*" + re.escape(code) + r"(\D|$)", fname):
+            return path
     return None
 
 def _find_acrylic_rhinestone_photo(pool, color_name):
@@ -1297,7 +1323,10 @@ def resolve_photo_from_drive(product, index):
         found = _find_metal_button_mix_photo(index["generic"])
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "seed-beads":
-        found = _find_seed_bead_photo(index["generic"], product.get("color_number"))
+        if clean(product.get("size")).replace(" ", "") == "6/0":
+            found = _find_seed_bead_6_0_photo(index["seed_beads_6_0"], product.get("color_number"))
+        else:
+            found = _find_seed_bead_photo(index["generic"], product.get("color_number"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "acrylic-rhinestones":
         found = _find_acrylic_rhinestone_photo(index["acrylic_rhinestones"], product.get("color_name"))
