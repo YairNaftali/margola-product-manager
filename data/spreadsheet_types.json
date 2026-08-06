@@ -465,5 +465,31 @@
       }
     ],
     "type": "Seed"
+  },
+  {
+    "id": "filigree-beads",
+    "label": "Filigree Beads",
+    "sheet_match": [],
+    "filename_match": [
+      "filigree"
+    ],
+    "vendor": "Margola",
+    "collection": "Metal Beads",
+    "title_prefix": "Aluminum Filigree",
+    "title_suffix": "",
+    "subcategory": "Filigree Beads",
+    "bead_shape": "",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": true,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {
+        "title": "Metal Beads",
+        "handle": "metal-beads"
+      }
+    ],
+    "type": "Filigree"
   }
 ]
