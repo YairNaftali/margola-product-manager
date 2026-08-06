@@ -1182,14 +1182,13 @@ def _find_acrylic_rhinestone_photo(pool, color_name):
     # Photos are named after the color word only, sometimes with a "Dark-" prefix
     # the sheet's own color name doesn't repeat (sheet says just "AMETHYST" for
     # SKU "...DK. AMETHYST", but the photo is "Dark-Amethyst.jpg") -- match on the
-    # last word of the color name rather than requiring an exact match. Confirmed
-    # against acrylic-rhinestones_filelist.txt 2026-08-05: 7 photos for 7 colors,
-    # but "RUBY" has no matching photo -- the 7th image is "Light-Siam.jpg", a
-    # differently-named color with no obvious tie to Ruby. Left unmatched rather
-    # than guessed; ask Yair/Neil whether Light Siam is actually Ruby's photo
-    # under a different name before assuming so.
+    # last word of the color name rather than requiring an exact match.
+    # "RUBY" is a real exception, confirmed by Yair 2026-08-05: the drive photo is
+    # named "Light-Siam.jpg" (an old/alternate name for the same color), not
+    # "Ruby" anything -- no word-matching rule would ever find this on its own.
     key = clean(color_name).lower().replace(".", "").replace(" ", "-")
     core = key.split("-")[-1] if key else ""
+    if core == "ruby": return pool.get("light-siam.jpg")
     if not core: return None
     for fname, path in pool.items():
         if core in fname: return path
