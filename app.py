@@ -1381,6 +1381,7 @@ def shopify_add_product_to_collection(product_id, collection_id):
 # 10/0 + 11/0). Explicit map, not inferred -- extend per category as needed.
 COLLECTION_SIZE_ORDER = {
     "2-cut-beads": {"10/0": 0, "11/0": 1},
+    "seed-beads": {"6/0": 0, "10/0": 1},
 }
 
 def sort_key(sku, size_order=None, color_name_fallback="", group_by_size=True):
