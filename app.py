@@ -239,7 +239,7 @@ def image_for(factory_style, color_name, subcategory, size):
     return f"{slugify(base)}.jpg" if base else ""
 
 
-def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty, dims_in=None, factory_dims_in=None, mini_dims_in=None):
+def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty, dims_in=None, factory_dims_in=None, mini_dims_in=None, factory_inventory_qty=None):
     variants = []
 
     # No assumptions:
@@ -269,6 +269,7 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
         }
         dims = factory_dims_in or dims_in
         if dims: v["length_in"], v["width_in"], v["height_in"] = dims
+        if factory_inventory_qty is not None: v["inventory_qty"] = factory_inventory_qty
         variants.append(v)
 
     return variants
@@ -370,6 +371,17 @@ def parse_xlsx(path, forced_type_id=None):
             if not factory_dims_in and not mini_dims_in:
                 dimensions = get_first(row, ["DIMENSIONS","DIMENSIONS (L X W X H)","DIMENSIONS L X W X H","PACKAGE DIMENSIONS","BOX DIMENSIONS","PRODUCT DIMENSIONS"])
                 dims_in, dims_unparsable = _parse_dims(dimensions)
+            # Real, finite stock counts (Clearance items only, 2026-08-05, per
+            # Yair: "the qty is based on the sheet") -- everything else gets the
+            # flat placeholder 15 in shopify_rows() since real counts are
+            # paper-only (see margola_inventory_sync_system memory), but
+            # clearance stock won't be restocked once sold out, so the real
+            # number matters at import time, not just as a later manual fix.
+            factory_available_qty = get_first(row, ["AVAILABLE FACTORY PACKS IN CLEARANCE","AVAILABLE FACTORY PACKS"])
+            factory_inventory_qty = None
+            if clean(factory_available_qty):
+                try: factory_inventory_qty = int(float(clean(factory_available_qty)))
+                except ValueError: pass
             inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -429,6 +441,7 @@ def parse_xlsx(path, forced_type_id=None):
                     dims_in=dims_in,
                     factory_dims_in=factory_dims_in,
                     mini_dims_in=mini_dims_in,
+                    factory_inventory_qty=factory_inventory_qty,
                 ),
 
                 "source_description":clean(source_description), "generated_description":"", "description_approved":False,
@@ -555,6 +568,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
         for idx, variant in enumerate(variants):
             row = dict(common)
             row.update({
+                "Variant Inventory Qty": variant.get("inventory_qty", 15),
                 "Title": p["title"] if idx == 0 else "",
                 "Body (HTML)": body if idx == 0 else "",
                 "Option1 Name": "Bundle Pack Options" if idx == 0 else "",
