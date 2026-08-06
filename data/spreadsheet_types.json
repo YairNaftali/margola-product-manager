@@ -413,5 +413,31 @@
       }
     ],
     "type": "Metal Set"
+  },
+  {
+    "id": "acrylic-rhinestones",
+    "label": "Acrylic Rhinestones",
+    "sheet_match": [],
+    "filename_match": [
+      "acrylic rhinestone"
+    ],
+    "vendor": "Margola",
+    "collection": "Acrylic Rhinestones & Jewels",
+    "title_prefix": "Margola Flat Back Prime",
+    "title_suffix": "",
+    "subcategory": "Acrylic Rhinestone",
+    "bead_shape": "Acrylic Rhinestone",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks",
+    "sync": [
+      {
+        "title": "Acrylic Rhinestones & Jewels",
+        "handle": "acrylic-rhinestones-jewels"
+      }
+    ],
+    "type": "Acrylic Rhinestone"
   }
 ]

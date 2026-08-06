@@ -239,7 +239,7 @@ def image_for(factory_style, color_name, subcategory, size):
     return f"{slugify(base)}.jpg" if base else ""
 
 
-def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty, dims_in=None):
+def build_variants(factory_style, factory_price, factory_weight, factory_qty_desc, mini_style, mini_price, mini_weight, mini_qty, dims_in=None, factory_dims_in=None, mini_dims_in=None):
     variants = []
 
     # No assumptions:
@@ -254,7 +254,8 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
             "weight_oz": weight_oz(mini_weight),
             "quantity": clean(mini_qty),
         }
-        if dims_in: v["length_in"], v["width_in"], v["height_in"] = dims_in
+        dims = mini_dims_in or dims_in
+        if dims: v["length_in"], v["width_in"], v["height_in"] = dims
         variants.append(v)
 
     if clean(factory_style) and (clean(factory_price) or clean(factory_weight) or clean(factory_qty_desc)):
@@ -266,7 +267,8 @@ def build_variants(factory_style, factory_price, factory_weight, factory_qty_des
             "weight_oz": weight_oz(factory_weight),
             "quantity": clean(factory_qty_desc),
         }
-        if dims_in: v["length_in"], v["width_in"], v["height_in"] = dims_in
+        dims = factory_dims_in or dims_in
+        if dims: v["length_in"], v["width_in"], v["height_in"] = dims
         variants.append(v)
 
     return variants
@@ -347,24 +349,27 @@ def parse_xlsx(path, forced_type_id=None):
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
             mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
             mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
-            # Neil's package-dimensions column: a single free-text cell like
-            # "10 x 5 x 3 in" rather than 3 separate Length/Width/Height columns.
-            # Real Calcurates data (2026-08-05) confirmed Factory and Mini Pack
-            # dimensions are usually genuinely different -- a single sheet cell
-            # can't tell us which pack it describes, so it's applied to both packs
-            # with a validation warning rather than guessed silently. Pushed to
-            # Shopify as variant-level custom.length/width/height metafields
-            # (dimension type, inches) via shopify_push_dimensions(), matching what
-            # Calcurates actually reads -- not the old product-level custom.dimensions
-            # text field, which is unused dead weight and no longer written.
-            dimensions = get_first(row, ["DIMENSIONS","DIMENSIONS (L X W X H)","DIMENSIONS L X W X H","PACKAGE DIMENSIONS","BOX DIMENSIONS","PRODUCT DIMENSIONS"])
+            # Package dimensions, pushed to Shopify as variant-level
+            # custom.length/width/height metafields (dimension type, inches) via
+            # shopify_push_dimensions() -- the mechanism Calcurates actually reads.
+            # Real sheets have appeared in two shapes: Acrylic Rhinestones
+            # (2026-08-05) gave separate "Factory Pack DIM LxWxH" / "Mini Pack DIM
+            # LxWxH" columns -- the clean case, real per-pack values, no ambiguity.
+            # Prefer that; fall back to a single combined "Dimensions" cell (applied
+            # to both packs with a warning, since one cell can't say if they
+            # actually differ) for sheets that only give one.
+            def _parse_dims(text):
+                if not clean(text): return None, False
+                nums = re.findall(r"[\d.]+", clean(text))
+                return (tuple(float(x) for x in nums), False) if len(nums) == 3 else (None, True)
+            factory_dimensions = get_first(row, ["FACTORY PACK DIM LXWXH","FACTORY PACK DIMENSIONS","FACTORY PACK DIMENSIONS L X W X H"])
+            mini_dimensions = get_first(row, ["MINI PACK DIM LXWXH","MINI PACK DIMENSIONS","MINI PACK DIMENSIONS L X W X H"])
+            factory_dims_in, factory_dims_bad = _parse_dims(factory_dimensions)
+            mini_dims_in, mini_dims_bad = _parse_dims(mini_dimensions)
             dims_in, dims_unparsable = None, False
-            if clean(dimensions):
-                dim_nums = re.findall(r"[\d.]+", clean(dimensions))
-                if len(dim_nums) == 3:
-                    dims_in = tuple(float(x) for x in dim_nums)
-                else:
-                    dims_unparsable = True
+            if not factory_dims_in and not mini_dims_in:
+                dimensions = get_first(row, ["DIMENSIONS","DIMENSIONS (L X W X H)","DIMENSIONS L X W X H","PACKAGE DIMENSIONS","BOX DIMENSIONS","PRODUCT DIMENSIONS"])
+                dims_in, dims_unparsable = _parse_dims(dimensions)
             inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -387,6 +392,8 @@ def parse_xlsx(path, forced_type_id=None):
             if "missing phot" in row_text or "mising phot" in row_text: notes.append("Source note: missing photo")
             if clean(factory_price) and not money(factory_price): notes.append(f"Invalid factory price in source: {clean(factory_price)!r}")
             if clean(mini_price) and not money(mini_price): notes.append(f"Invalid mini price in source: {clean(mini_price)!r}")
+            if factory_dims_bad: notes.append(f"Could not parse Factory Pack dimensions as L x W x H: {clean(factory_dimensions)!r}")
+            if mini_dims_bad: notes.append(f"Could not parse Mini Pack dimensions as L x W x H: {clean(mini_dimensions)!r}")
             if dims_unparsable: notes.append(f"Could not parse dimensions as L x W x H: {clean(dimensions)!r}")
             if dims_in: notes.append("Dimensions applied to both Mini and Factory pack from a single sheet cell -- confirm with Neil whether they actually differ per pack before relying on this for shipping")
             # Compare only the size's leading token (e.g. "#2" out of "#2 (4.5mm)") against the
@@ -420,6 +427,8 @@ def parse_xlsx(path, forced_type_id=None):
                     mini_weight=mini_weight,
                     mini_qty=clean(mini_qty) or inf["mini_qty_standard"],
                     dims_in=dims_in,
+                    factory_dims_in=factory_dims_in,
+                    mini_dims_in=mini_dims_in,
                 ),
 
                 "source_description":clean(source_description), "generated_description":"", "description_approved":False,
@@ -706,6 +715,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "leaf-bail_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "buttons_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "10-0-seed-beads_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "acrylic-rhinestones_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
@@ -926,7 +936,7 @@ def _pick_best_candidate(paths):
 def load_drive_index():
     # Reads the pre-generated drive filelist dumps (tab-separated: size, mtime, path)
     # rather than scanning the drives live, since they aren't always plugged in.
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic = {}, {}, {}, {}, {}, {}, {}
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic = {}, {}, {}, {}, {}, {}, {}, {}
     found_any = False
     for list_path in DRIVE_FILELISTS:
         if not os.path.exists(list_path): continue
@@ -945,10 +955,11 @@ def load_drive_index():
             elif "/leather cord/" in fl: leather_cord.setdefault(base, []).append(full)
             elif "/2 cuts/" in fl: two_cut.setdefault(base, []).append(full)
             elif "/bugle beads/" in fl: bugle.setdefault(base, []).append(full)
+            elif "/acrylic rhinestones/" in fl: acrylic_rhinestones.setdefault(base, []).append(full)
     roller_9mm_raw, roller_6mm_raw = roller_9mm, roller_6mm
-    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic = (
+    roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic = (
         {base: _pick_best_candidate(paths) for base, paths in pool.items()}
-        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, generic)
+        for pool in (roller_9mm, roller_6mm, crow, leather_cord, two_cut, bugle, acrylic_rhinestones, generic)
     )
     # Built from the raw (pre-picked) path lists, not the already-resolved
     # per-size dicts above -- otherwise a basename shared by both sizes
@@ -961,7 +972,8 @@ def load_drive_index():
     }
     return {"found_any": found_any, "filelists": DRIVE_FILELISTS,
             "roller_9mm": roller_9mm, "roller_6mm": roller_6mm, "roller_union": roller_union,
-            "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "bugle": bugle, "generic": generic}
+            "crow": crow, "leather_cord": leather_cord, "two_cut": two_cut, "bugle": bugle,
+            "acrylic_rhinestones": acrylic_rhinestones, "generic": generic}
 
 def _roller_candidates(color_number):
     cn = clean(color_number)
@@ -1160,6 +1172,29 @@ def _find_seed_bead_photo(pool, color_number):
         if v: return v
     return None
 
+def _find_acrylic_rhinestone_photo(pool, color_name):
+    # `pool` must be index["acrylic_rhinestones"] (scoped to the "/Acrylic
+    # Rhinestones/" drive folder), NOT index["generic"] -- a substring match on a
+    # common color word like "ruby" or "crystal" against the whole merged photo
+    # index picks up unrelated products from other categories (caught live: an
+    # unscoped first version matched "RUBY" to a Cameos product photo just because
+    # it happened to contain "Ruby" in its filename).
+    # Photos are named after the color word only, sometimes with a "Dark-" prefix
+    # the sheet's own color name doesn't repeat (sheet says just "AMETHYST" for
+    # SKU "...DK. AMETHYST", but the photo is "Dark-Amethyst.jpg") -- match on the
+    # last word of the color name rather than requiring an exact match. Confirmed
+    # against acrylic-rhinestones_filelist.txt 2026-08-05: 7 photos for 7 colors,
+    # but "RUBY" has no matching photo -- the 7th image is "Light-Siam.jpg", a
+    # differently-named color with no obvious tie to Ruby. Left unmatched rather
+    # than guessed; ask Yair/Neil whether Light Siam is actually Ruby's photo
+    # under a different name before assuming so.
+    key = clean(color_name).lower().replace(".", "").replace(" ", "-")
+    core = key.split("-")[-1] if key else ""
+    if not core: return None
+    for fname, path in pool.items():
+        if core in fname: return path
+    return None
+
 def resolve_photo_from_drive(product, index):
     # Read-only lookup: finds a real file on the indexed drives for a product
     # missing image_src. Does not touch Shopify or the filesystem.
@@ -1224,6 +1259,9 @@ def resolve_photo_from_drive(product, index):
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     elif product.get("spreadsheet_type_id") == "seed-beads":
         found = _find_seed_bead_photo(index["generic"], product.get("color_number"))
+        if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
+    elif product.get("spreadsheet_type_id") == "acrylic-rhinestones":
+        found = _find_acrylic_rhinestone_photo(index["acrylic_rhinestones"], product.get("color_name"))
         if found: return {"source_path": found, "target_filename": target, "reused_other_size": False}
     return None
 
