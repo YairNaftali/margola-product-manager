@@ -125,6 +125,14 @@
     "22x6mm": {
       "label": "22x6mm",
       "base_gid": "gid://shopify/TaxonomyValue/2879"
+    },
+    "seed-beads:6/0": {
+      "label": "6/0 - 4.0mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2878"
+    },
+    "seed-beads:10/0": {
+      "label": "10/0 - 2.3mm",
+      "base_gid": "gid://shopify/TaxonomyValue/2878"
     }
   },
   "color": {

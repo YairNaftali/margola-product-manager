@@ -578,7 +578,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
                 "Color (product.metafields.shopify.color-pattern)": resolver.color_handle(p.get("color_name")) if idx == 0 else "",
                 "Color Type (product.metafields.custom.color_type)": clean(p.get("color_type")) if idx == 0 else "",
                 "Bead Size (product.metafields.custom.bead_size_mm)": (clean(p.get("size_mm")) or clean(p.get("size"))) if idx == 0 else "",
-                "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size")) if idx == 0 else "",
+                "Size (product.metafields.shopify.size)": resolver.size_handle(p.get("size"), p.get("spreadsheet_type_id")) if idx == 0 else "",
                 "Bead Shape (product.metafields.custom.bead_shape)": resolver.bead_shape_label(p.get("bead_shape")) if idx == 0 else "",
                 "Type (product.metafields.custom.type)": resolver.type_label(p.get("type")) if idx == 0 else "",
                 "Variant SKU": variant.get("sku", ""),
@@ -1778,8 +1778,16 @@ class MetaobjectResolver:
         # cell text into a list itself for a list.single_line_text_field.
         return clean(type_value)
 
-    def size_handle(self, size):
-        spec=self.taxonomy_map.get("size",{}).get(clean(size))
+    def size_handle(self, size, type_id=None):
+        # Raw size text like "10/0" isn't unique across categories -- 2 Cut Beads'
+        # 10/0 is really 2.1mm, Seed Beads' 10/0 is really 2.3mm, and the plain
+        # unqualified key was first claimed by 2 Cut Beads, silently mislabeling
+        # Seed Beads 10/0 with the wrong mm for months (caught + fixed live
+        # 2026-08-06). Category-qualified keys ("seed-beads:10/0") take priority
+        # when present; unqualified categories keep working exactly as before via
+        # the plain-key fallback, so this is additive, not a forced migration.
+        sizes = self.taxonomy_map.get("size",{})
+        spec = (sizes.get(f"{type_id}:{clean(size)}") if type_id else None) or sizes.get(clean(size))
         if not spec:
             if clean(size): self.unmapped_sizes.append(size)
             return ""
