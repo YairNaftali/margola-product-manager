@@ -491,5 +491,34 @@
       }
     ],
     "type": "Filigree"
+  },
+  {
+    "id": "screw-cut-fire-polished",
+    "label": "Screw Cut Fire Polished Beads",
+    "sheet_match": [
+      "screwcut"
+    ],
+    "filename_match": [
+      "screw cut",
+      "screwcut"
+    ],
+    "vendor": "Margola Traditional Czech Glass Beads",
+    "collection": "Fire Polished Beads",
+    "title_prefix": "SCREW CUT FACETED CZECH GLASS",
+    "title_suffix": "",
+    "subcategory": "FIRE POLISHED BEADS",
+    "bead_shape": "Round",
+    "color_type": "",
+    "factory_qty_standard": "",
+    "mini_qty_standard": "",
+    "populate_bead_shape_from_shape": false,
+    "shopify_category": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+    "sync": [
+      {
+        "title": "Fire Polished Round Beads - Czech Glass",
+        "handle": "fire-polished-beads"
+      }
+    ],
+    "type": "Screw Cut"
   }
 ]

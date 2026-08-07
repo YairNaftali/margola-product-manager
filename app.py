@@ -328,15 +328,15 @@ def parse_xlsx(path, forced_type_id=None):
             row = row_dict(headers, vals)
             factory_style = get_first(row, ["FACTORY PACK STYLE #","FACTORY PACK       STYLE #","FACTORY PACK STYLE","FACTORY PACK STYLE NUMBER"])
             if not clean(factory_style): continue
-            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","STONE SIZE","BEAD SIZE DIAMETER  MM","STONE SIZE DIAMETER MM","BEAD SIZE","SIZE","Milimeter size"])
+            size = get_first(row, ["BEAD SIZE (FILTER)","BEAD SIZE FILTER","STONE SIZE","BEAD SIZE DIAMETER  MM","STONE SIZE DIAMETER MM","BEAD SIZE","SIZE","SIZE MM","Milimeter size"])
             size_mm = get_first(row, ["BEAD SIZE DIAMETER  MM","BEAD SIZE DIAMETER MM","STONE SIZE DIAMETER MM"])
-            color_number = get_first(row, ["COLOR NUMBER"])
+            color_number = get_first(row, ["COLOR NUMBER","COLOR #"])
             color_name = get_first(row, ["COLOR NAME"])
             color_type_explicit = get_first(row, ["COLOR TYPE (IS A FILTER ON THE WEBITE)","COLOR TYPE (IS A FILTER ON THE WEBSITE)","COLOR TYPE"])
             shape = get_first(row, ["SHAPE"])
             source_description = get_first(row, ["DESCRIPTION"])
             factory_qty = get_first(row, ["FACTORY PACK UNIT QUANTITY"])
-            factory_qty_desc = get_first(row, ["UNIT QUANTITY DESCRIPTION","UNIT QUANTITY DESCRIPTION FACTORY PACK"])
+            factory_qty_desc = get_first(row, ["UNIT QUANTITY DESCRIPTION","UNIT QUANTITY DESCRIPTION FACTORY PACK","FACTORY PACK"])
             factory_price = get_first(row, ["UNIT PRICE PER FACTORY PACK","UNIT PRICE PER BAG","FACTORY PACK PRICE","FACTORY PACK PRICE / FACTORY YARD PRICE"])
             # Rhinestone Banding's price column is a combined text cell, e.g.
             # "$80.88 = $6.74/YARD" -- the actual variant price is just the first
@@ -348,7 +348,7 @@ def parse_xlsx(path, forced_type_id=None):
             factory_weight = get_first(row, ["WEIGHT PER FACTORY PACK","FACTORY PACK WEIGHT OZ"])
             mini_style = get_first(row, ["MINI PACK STYLE #","MINI PACK       STYLE #","MINI PACK STYLE NUMBER"])
             mini_qty = get_first(row, ["MINI PACK QUANTITY","MINI PACK QUANTITY DESCRIPTION","APPROXIMATE MINI PACK UNIT QUANTITY","MINI PACK UNIT QUANTITY"])
-            mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE"])
+            mini_price = get_first(row, ["UNIT PRICE PER MINI PACK","MINI PACK PRICE","MINI PACK UNIT PRICE"])
             mini_weight = get_first(row, ["WEIGHT PER MINI PACK","MINI PACK WEIGHT OZ"])
             # Package dimensions, pushed to Shopify as variant-level
             # custom.length/width/height metafields (dimension type, inches) via
@@ -362,7 +362,9 @@ def parse_xlsx(path, forced_type_id=None):
             def _parse_dims(text):
                 if not clean(text): return None, False
                 nums = re.findall(r"[\d.]+", clean(text))
-                return (tuple(float(x) for x in nums), False) if len(nums) == 3 else (None, True)
+                if len(nums) != 3: return None, True
+                try: return tuple(float(x) for x in nums), False
+                except ValueError: return None, True
             factory_dimensions = get_first(row, ["FACTORY PACK DIM LXWXH","FACTORY PACK DIM L X W X H","FACTORY PACK DIMENSIONS","FACTORY PACK DIMENSIONS L X W X H"])
             mini_dimensions = get_first(row, ["MINI PACK DIM LXWXH","MINI PACK DIM L X W X H","MINI PACK DIMENSIONS","MINI PACK DIMENSIONS L X W X H"])
             factory_dims_in, factory_dims_bad = _parse_dims(factory_dimensions)
@@ -382,6 +384,12 @@ def parse_xlsx(path, forced_type_id=None):
             if clean(factory_available_qty):
                 try: factory_inventory_qty = int(float(clean(factory_available_qty)))
                 except ValueError: pass
+            # Some sheets flag their own rows as new arrivals in a "CATEGORY 2"-style
+            # column (e.g. Screw Cut Fire Polished, 2026-08-07: "NEW ARRVALS") --
+            # read that generically instead of hardcoding per-batch, so any future
+            # sheet using the same convention gets the tag automatically.
+            category_2 = get_first(row, ["CATEGORY 2","CATEGORY  2"])
+            new_arrival = bool(re.search(r"new\s*arr", clean(category_2), re.I))
             inf = infer(ws.title, color_name, os.path.basename(path), forced_type_id=forced_type_id)
             if not inf["collection"]:
                 raise ValueError(f"Could not detect a known product category for {os.path.basename(path)!r} (sheet {ws.title!r}, row {row_num}). Add a matching rule to infer() before importing this file.")
@@ -420,7 +428,7 @@ def parse_xlsx(path, forced_type_id=None):
                 "approved":False, "skipped":False, "status":"Needs Review",
                 "title":title, "handle":slugify(title), "brand":"", "vendor":inf.get("vendor") or "Margola",
                 "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value, "type":type_value,
-                "shopify_category":inf["shopify_category"],
+                "shopify_category":inf["shopify_category"], "new_arrival":new_arrival,
                 "size":clean(size), "size_mm":clean(size_mm), "color_number":clean(color_number), "color_name":clean(color_name),
                 "image_filename":image_for(factory_style,color_name,title_descriptor,size), "image_src":"", "image_alt":title,
                 "factory_style":clean(factory_style), "factory_quantity":clean(factory_qty),
@@ -553,7 +561,7 @@ def shopify_rows(products, approved_only=True, limit=None, resolver=None):
             "Vendor": p.get("vendor") or "Margola",
             "Product Category": p.get("shopify_category", ""),
             "Type": p["subcategory"] or p.get("collection", ""),
-            "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"]] if x),
+            "Tags": ", ".join(x for x in [p["collection"], p["subcategory"], p["color_type"], p["bead_shape"], p["size"], "New Arrival" if p.get("new_arrival") else ""] if x),
             "Published": "TRUE",
             "Variant Inventory Tracker": "shopify",
             "Variant Inventory Qty": 15,
@@ -733,6 +741,7 @@ DRIVE_FILELISTS = [
     os.path.join(os.path.expanduser("~"), "Downloads", "acrylic-rhinestones_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "clearance_filelist.txt"),
     os.path.join(os.path.expanduser("~"), "Downloads", "filigree_filelist.txt"),
+    os.path.join(os.path.expanduser("~"), "Downloads", "screwcut_beads_filelist.txt"),
 ]
 
 # Hand-verified factory_style -> filename mapping for the one folder that
