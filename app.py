@@ -1391,6 +1391,10 @@ def shopify_add_product_to_collection(product_id, collection_id):
 COLLECTION_SIZE_ORDER = {
     "2-cut-beads": {"10/0": 0, "11/0": 1},
     "seed-beads": {"6/0": 0, "10/0": 1},
+    # Case-sensitive: these are the literal SKU tokens (sort_key() splits the raw
+    # SKU on "-" with no normalization), not display sizes -- the Screw Cut batch's
+    # SKUs use "8MM" (uppercase) while the original Fire Polished line uses "3mm"/"4mm".
+    "fire-polished-beads": {"3mm": 0, "4mm": 1, "8MM": 2},
 }
 
 def sort_key(sku, size_order=None, color_name_fallback="", group_by_size=True):
