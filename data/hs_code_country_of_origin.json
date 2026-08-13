@@ -1,7 +1,11 @@
 {
-  "_comment": "Category -> HS Code + Country of Origin lookup, transcribed from Neil's 'HS Code and Country of Origin .xlsx' (2026-08-12). Neil's rule: the HS Code is always constant per category; Country of Origin can vary within a category for the 3 categories he flagged. Three distinct handling mechanisms for that variance, per category: 'needs_manual_review' (true = never auto-fill country, no rule exists yet -- Lampwork Beads), 'sku_prefix_rules' (a real per-SKU rule exists -- Seed Beads), or a plain 'note' (the variance is about a DIFFERENT sub-item than what's actually onboarded today, so the default is safe to auto-apply as-is -- Tools & Stringing Materials, where only Leather Cord is onboarded and its country is confirmed). Keys are Neil's own category label text (cleaned), used as the match target from spreadsheet_type_id/collection -- see HS_COI_CATEGORY_MAP in app.py for that cross-reference. country_code is the Shopify CountryCode enum value (ISO 3166-1 alpha-2), verified live against the real Shopify schema.",
+  "_comment": "Category -> HS Code + Country of Origin lookup, transcribed from Neil's 'HS Code and Country of Origin .xlsx' (2026-08-12). Neil's rule: the HS Code is always constant per category; Country of Origin can vary within a category for the categories he flagged. Two distinct handling mechanisms for that variance, per category: 'sku_prefix_rules' (a real per-SKU rule exists -- Lampwork Beads' P120x/I0x split, confirmed 2026-08-12), or a plain 'note' (the variance is about a DIFFERENT sub-item than what's actually onboarded today, so the default is safe to auto-apply as-is -- Tools & Stringing Materials, where only Leather Cord is onboarded and its country is confirmed). Keys are Neil's own category label text (cleaned), used as the match target from spreadsheet_type_id/collection -- see HS_COI_CATEGORY_MAP in app.py for that cross-reference. country_code is the Shopify CountryCode enum value (ISO 3166-1 alpha-2), verified live against the real Shopify schema. 'covers_live_collections' (when present) lists real Shopify collection handles this category's values were actually pushed to live, for categories that don't have a 1:1 spreadsheet_type_id match.",
   "categories": {
-    "Glass Rhinestones": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
+    "Glass Rhinestones": {
+      "hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ",
+      "note": "Confirmed by Neil 2026-08-13: 'their own Product Category'. Pushed live to the 3 collections grouped under the storefront's 'Machine Cut & Glass Rhinestones' card: preciosa-jablonex-czech-glass-extra-2-cut, silver-foiled-flatback, hot-fix-flatback (~32 products total). Note: an earlier session flagged a separate ~160-product legacy 'Rhinestones' catch-all group (example SKU 11110-8ss-00030) that doesn't obviously match this 32-product figure -- unclear if that's the same thing as this category or something else entirely; not resolved, just proceeding with the confirmed 3 collections since Neil confirmed the category itself, not product scope.",
+      "covers_live_collections": ["preciosa-jablonex-czech-glass-extra-2-cut", "silver-foiled-flatback", "hot-fix-flatback"]
+    },
     "Acrylic Rhinestones & Jewels": {"hs_code": "3926-90-4000", "country": "Taiwan ROC", "country_code": "TW"},
     "Glass Jewels & Cabochons": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
     "MC Crystal Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
@@ -26,7 +30,11 @@
     "Bugle Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
     "Rhinestone Rondelles & Squaredelles": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
     "Rhinestone Balls": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
-    "Rosemontees & Stones in Settings": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
+    "Rosemontees & Stones in Settings": {
+      "hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ",
+      "note": "Confirmed by Neil 2026-08-13: ChatonMontees (the live rim-chatonmontee collection, 5 products) is a subcategory of this, same HS code and country -- 'any items we put in this category are the same HS code and country origin'.",
+      "covers_live_collections": ["rosemontees-stones-settings", "rim-chatonmontee"]
+    },
     "Sew On Glass Jewels": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
     "Cameos & Intaglios": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
     "Rhinestone Banding": {"hs_code": "7018-10-2000", "country": "Czech Republic", "country_code": "CZ"},
