@@ -40,7 +40,10 @@
       "hs_code": "8308-90-3000", "country": "PROC", "country_code": "CN",
       "note": "Neil's sheet note just labels this row 'Aluminum Filigree Beads' -- the Metal Beads collection currently = Filigree Beads (the only type onboarded there so far), not a stated COI exception."
     },
-    "Metal Buttons": {"hs_code": "9606-22-0000", "country": "USA", "country_code": "US"},
+    "Metal Buttons": {
+      "hs_code": "9606-22-0000", "country": "USA", "country_code": "US",
+      "note": "Neil, 2026-08-12: Buttons will get more sub-categories later -- Rhinestone Buttons (Czech Republic) coming to the site, possibly Czech Glass Buttons in stock too. Neither has its own HS code yet (buttons are a different HS category than loose rhinestones/beads, don't assume 7018-10-2000). Get the real HS code from Neil when either is actually onboarded -- not needed yet, only Metal Buttons is live."
+    },
     "Findings": {"hs_code": "8308-90-9000", "country": "USA", "country_code": "US"},
     "Tools & Stringing Materials": {
       "hs_code": "4205-00-8000", "country": "India", "country_code": "IN",
