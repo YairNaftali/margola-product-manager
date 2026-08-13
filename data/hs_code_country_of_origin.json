@@ -23,7 +23,8 @@
     },
     "Seed Beads": {
       "hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ",
-      "note": "CORRECTED 2026-08-12: no per-SKU exception here after all -- the P120xx/I0xxx rule previously listed here actually belongs to Lampwork Beads (see above), moved per Neil's direct correction. Seed Beads is a plain Czech Republic default, no exception."
+      "note": "CORRECTED 2026-08-12: no per-SKU exception here after all -- the P120xx/I0xxx rule previously listed here actually belongs to Lampwork Beads (see above), moved per Neil's direct correction. Seed Beads is a plain Czech Republic default, no exception. Confirmed by Neil 2026-08-13: the Sales & Clearance collection's 3 products are Preciosa Ornela Seed Beads (\"CLEARANCE SEED HANK 7/0 ... PRECIOSA ORNELA BEADS\") -- covered under this category's values too, not left blank.",
+      "covers_live_collections": ["seed-beads", "sales-clearance"]
     },
     "3 Cut Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
     "2 Cut Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
