@@ -11,17 +11,15 @@
     "Other Glass Beads": {"hs_code": "7018-10-5000", "country": "PROC", "country_code": "CN"},
     "Lampwork Beads": {
       "hs_code": "7018-10-5000", "country": "PROC", "country_code": "CN",
-      "needs_manual_review": true,
-      "note": "Some lampwork beads are also from India (Yair's note on the sheet) -- no per-SKU rule given, unlike Seed Beads below. Do NOT bulk-apply PROC to this category without checking with Yair/Neil which specific products are India-origin first. Sheet also notes a SKU range for this category: P12050 - P12091.",
-      "sku_range_note": "P12050 - P12091 (per Neil's category label text itself)"
-    },
-    "Seed Beads": {
-      "hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ",
       "sku_prefix_rules": [
         {"prefix": "P120", "country": "PROC", "country_code": "CN"},
         {"prefix": "I0", "country": "India", "country_code": "IN"}
       ],
-      "note": "P120xx-prefixed color/style numbers are PROC (China); I0xxx-prefixed numbers are India, checked against color_number/factory_style by app.py before falling back to the Czech Republic default. Every Seed Beads batch onboarded so far (6/0 and 10/0) uses plain numeric color codes matching neither prefix, so Czech Republic has applied cleanly to all of them to date."
+      "note": "CORRECTED 2026-08-12 by Neil (via Yair): the P120xx/I0xxx split belongs to Lampwork Beads, NOT Seed Beads -- it was originally misread because the note sat in the Seed Beads row of Neil's sheet, but Neil confirmed directly 'The P120xx numbers are the lampwork from China. Nothing to do with seed beads.' Matches the sheet's own SKU range for this category (P12050 - P12091, i.e. the P120xx pattern) and the earlier 'some lampwork beads are also from India' note -- both now resolved by the same rule: P120x-prefixed = PROC, I0xxx-prefixed = India, anything else defaults to PROC. Nothing onboarded under this category yet, so untested against real data."
+    },
+    "Seed Beads": {
+      "hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ",
+      "note": "CORRECTED 2026-08-12: no per-SKU exception here after all -- the P120xx/I0xxx rule previously listed here actually belongs to Lampwork Beads (see above), moved per Neil's direct correction. Seed Beads is a plain Czech Republic default, no exception."
     },
     "3 Cut Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
     "2 Cut Beads": {"hs_code": "7018-10-5000", "country": "Czech Republic", "country_code": "CZ"},
