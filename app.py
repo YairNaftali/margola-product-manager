@@ -333,6 +333,12 @@ def parse_xlsx(path, forced_type_id=None):
             color_number = get_first(row, ["COLOR NUMBER","COLOR #"])
             color_name = get_first(row, ["COLOR NAME"])
             color_type_explicit = get_first(row, ["COLOR TYPE (IS A FILTER ON THE WEBITE)","COLOR TYPE (IS A FILTER ON THE WEBSITE)","COLOR TYPE"])
+            # Read by header name, not column position -- Neil's own instruction
+            # (2026-08-12), since he's adding these two columns at fixed positions
+            # D/E on new sheets going forward but existing/other columns will shift
+            # right to make room, so position-based reading would silently break.
+            hs_code_explicit = get_first(row, ["HS CODE"])
+            country_of_origin_explicit = get_first(row, ["COUNTRY OF ORIGIN"])
             shape = get_first(row, ["SHAPE"])
             source_description = get_first(row, ["DESCRIPTION"])
             factory_qty = get_first(row, ["FACTORY PACK UNIT QUANTITY"])
@@ -422,6 +428,38 @@ def parse_xlsx(path, forced_type_id=None):
             size_token = clean(size).split("(")[0].strip()
             if clean(mini_style) and size_token and size_token.lower() not in clean(mini_style).lower():
                 notes.append(f"Mini pack style # may not match this row's size ({clean(size)!r}): {clean(mini_style)!r}")
+            # HS Code / Country of Origin: prefer explicit per-row sheet values
+            # (the only source once Neil starts adding these columns to every
+            # sheet, per his 2026-08-12 note), falling back to the category-level
+            # default in hs_code_country_of_origin.json for sheets that don't have
+            # them yet. Three category-level overrides checked in order: a real
+            # per-SKU rule (sku_prefix_rules, e.g. Seed Beads' P120x/I0x split),
+            # then the flat default, unless needs_manual_review blocks it entirely
+            # (e.g. Lampwork Beads, which has no per-SKU rule to apply yet).
+            hs_code_value, country_of_origin_value, country_code_value = clean(hs_code_explicit), clean(country_of_origin_explicit), ""
+            hs_cat = HS_COI_CATEGORY_MAP.get(inf.get("type_id",""))
+            hs_entry = load_hs_coi().get(hs_cat) if hs_cat else None
+            if hs_entry:
+                if not hs_code_value: hs_code_value = hs_entry.get("hs_code","")
+                if not country_of_origin_value:
+                    sku_text = f"{clean(color_number)} {clean(factory_style)}".upper()
+                    prefix_match = next((r for r in hs_entry.get("sku_prefix_rules",[]) if sku_text.startswith(r["prefix"].upper()) or f" {r['prefix'].upper()}" in sku_text), None)
+                    if prefix_match:
+                        country_of_origin_value = prefix_match["country"]
+                        country_code_value = prefix_match["country_code"]
+                    elif hs_entry.get("needs_manual_review"):
+                        notes.append(f"Country of Origin not auto-filled: {hs_cat!r} needs manual review, no per-item rule exists yet -- {hs_entry.get('note','')}")
+                    else:
+                        country_of_origin_value = hs_entry.get("country","")
+                        country_code_value = hs_entry.get("country_code","")
+            elif not hs_code_value and not country_of_origin_value and hs_cat is None and inf.get("type_id"):
+                notes.append("No HS Code / Country of Origin category mapping found for this spreadsheet type -- add one to HS_COI_CATEGORY_MAP if this category should have customs info.")
+            if country_of_origin_value and not country_code_value:
+                # Explicit sheet value given as a display name, not an ISO code --
+                # look it up from any known category entry sharing that country name.
+                for entry in load_hs_coi().values():
+                    if entry.get("country","").strip().lower() == country_of_origin_value.strip().lower():
+                        country_code_value = entry.get("country_code",""); break
             p = {
                 "id":str(uuid.uuid4()), "source_file":os.path.basename(path), "source_sheet":ws.title, "source_row":row_num,
                 "spreadsheet_type_id":inf.get("type_id",""),
@@ -429,6 +467,7 @@ def parse_xlsx(path, forced_type_id=None):
                 "title":title, "handle":slugify(title), "brand":"", "vendor":inf.get("vendor") or "Margola",
                 "collection":inf["collection"], "subcategory":inf["subcategory"], "color_type":clean(color_type_explicit) or inf["color_type"], "bead_shape":bead_shape_value, "type":type_value,
                 "shopify_category":inf["shopify_category"], "new_arrival":new_arrival,
+                "hs_code":hs_code_value, "country_of_origin":country_of_origin_value, "country_code_of_origin":country_code_value,
                 "size":clean(size), "size_mm":clean(size_mm), "color_number":clean(color_number), "color_name":clean(color_name),
                 "image_filename":image_for(factory_style,color_name,title_descriptor,size), "image_src":"", "image_alt":title,
                 "factory_style":clean(factory_style), "factory_quantity":clean(factory_qty),
@@ -1643,6 +1682,46 @@ def shopify_push_dimensions(products=None):
             pushed.extend(sku for _,sku,_ in chunk)
     return {"pushed":pushed, "skipped":skipped, "errors":errors}
 
+def shopify_push_customs_info(products=None):
+    # Pushes each variant's hs_code/country_code_of_origin (set by parse_xlsx()
+    # from Neil's sheet columns, or backfilled from HS_COI_CATEGORY_MAP) to
+    # Shopify's NATIVE InventoryItem.harmonizedSystemCode/countryCodeOfOrigin
+    # fields -- confirmed live via schema introspection 2026-08-12 that these are
+    # real Shopify customs fields (not custom metafields, despite that being how
+    # Calcurates support described it on the call). This is a DIFFERENT owner
+    # (inventory item, not variant) and a DIFFERENT mutation (inventoryItemUpdate,
+    # not metafieldsSet) than shopify_push_dimensions() above -- don't merge them.
+    products = products if products is not None else load_products()
+    pairs, skipped = [], []
+    for p in products:
+        if p.get("skipped"): continue
+        hs_code, country_code = clean(p.get("hs_code")), clean(p.get("country_code_of_origin"))
+        if not hs_code and not country_code: continue
+        for v in p.get("variants", []):
+            sku = v.get("sku")
+            if not sku:
+                skipped.append({"handle":p.get("handle"),"sku":sku,"error":"No SKU"}); continue
+            q = """query($q:String!){ productVariants(first:1, query:$q){ nodes{ sku inventoryItem{ id } } } }"""
+            nodes = shopify_graphql(q, {"q": f'sku:"{sku}"'})["productVariants"]["nodes"]
+            if not nodes:
+                skipped.append({"handle":p.get("handle"),"sku":sku,"error":"SKU not found on Shopify -- import this product first"}); continue
+            pairs.append((nodes[0]["inventoryItem"]["id"], sku, hs_code, country_code))
+
+    mutation = """mutation SetCustoms($id: ID!, $input: InventoryItemInput!) {
+      inventoryItemUpdate(id: $id, input: $input) { inventoryItem { id } userErrors { field message } }
+    }"""
+    pushed, errors = [], []
+    for inv_id, sku, hs_code, country_code in pairs:
+        input_fields = {}
+        if hs_code: input_fields["harmonizedSystemCode"] = hs_code
+        if country_code: input_fields["countryCodeOfOrigin"] = country_code
+        d = shopify_graphql(mutation, {"id": inv_id, "input": input_fields})["inventoryItemUpdate"]
+        if d.get("userErrors"):
+            errors.append({"sku":sku,"error":json.dumps(d["userErrors"])})
+        else:
+            pushed.append(sku)
+    return {"pushed":pushed, "skipped":skipped, "errors":errors}
+
 def shopify_apply_color_family(items):
     # items: [{"handle":..., "family":...}, ...] -- confirmed by the user in the
     # review table, not computed fresh here, so an inline override in the UI is
@@ -1677,6 +1756,46 @@ def shopify_apply_color_family(items):
 def taxonomy_map_path(): return os.path.join(DATA_DIR,"shopify_taxonomy_map.json")
 def load_taxonomy_map():
     return json.load(open(taxonomy_map_path(),encoding="utf-8")) if os.path.exists(taxonomy_map_path()) else {"bead_shape":{},"color":{}}
+
+def hs_coi_path(): return os.path.join(DATA_DIR,"hs_code_country_of_origin.json")
+_HS_COI_CACHE=None
+def load_hs_coi(force=False):
+    global _HS_COI_CACHE
+    if force or _HS_COI_CACHE is None:
+        _HS_COI_CACHE = json.load(open(hs_coi_path(),encoding="utf-8")).get("categories",{}) if os.path.exists(hs_coi_path()) else {}
+    return _HS_COI_CACHE
+
+# spreadsheet_type_id -> Neil's category label in hs_code_country_of_origin.json.
+# Deliberately explicit rather than reusing spreadsheet_types.json's "collection"
+# field, since that field serves Tags/Product Type and doesn't always line up
+# 1:1 with Neil's HS/COI category names (e.g. 2cut-beads/bugle-beads both say
+# collection "Czech Glass Beads" internally, but Neil's table has more specific
+# "2 Cut Beads"/"Bugle Beads" rows -- same HS/COI values today, but matched to
+# the more specific row on purpose in case they ever diverge).
+HS_COI_CATEGORY_MAP = {
+    "seed-beads": "Seed Beads",
+    "2cut-beads": "2 Cut Beads",
+    "bugle-beads": "Bugle Beads",
+    "crow-beads": "Czech Glass Beads",
+    "roller-beads": "Czech Glass Beads",
+    "leather-cord": "Tools & Stringing Materials",
+    "plexi-lalique": "Plexi Lalique Flowers & Leaves",
+    "sew-on-glass-jewels": "Sew On Glass Jewels",
+    "glass-jewels": "Glass Jewels & Cabochons",
+    "rhinestone-balls": "Rhinestone Balls",
+    "lochrosens": "Lochrosens",
+    "cameos-intaglios": "Cameos & Intaglios",
+    "metal-button-mix": "Metal Buttons",
+    "leaf-bail": "Findings",
+    "pearls-on-eye-pins": "Pearls",
+    "metal-set-rhinestone-banding": "Rhinestone Banding",
+    "acrylic-rhinestones": "Acrylic Rhinestones & Jewels",
+    "filigree-beads": "Metal Beads",
+    "screw-cut-fire-polished": "Fire Polished Beads",
+    # "clearance" deliberately omitted -- Neil's table has no Clearance row;
+    # clearance items should inherit their original category's HS/COI, not a
+    # blanket default, and that mapping isn't known here.
+}
 
 COLOR_BASE_SWATCH_GIDS={
     "Beige":"gid://shopify/TaxonomyValue/6","Black":"gid://shopify/TaxonomyValue/1","Blue":"gid://shopify/TaxonomyValue/2",
@@ -1912,6 +2031,9 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/push-dimensions":
             try: return self.send_json({"ok":True, **shopify_push_dimensions()})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/shopify/push-customs-info":
+            try: return self.send_json({"ok":True, **shopify_push_customs_info()})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/apply-color-family":
             data = json.loads(self.read_body().decode("utf-8")); items = data.get("items",[])

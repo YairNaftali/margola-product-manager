@@ -114,9 +114,11 @@ SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
           <button id="shopifyTestBtn" class="btn primary">Test Shopify Connection</button>
           <button id="shopifySyncCollectionsBtn" class="btn primary">Sync Collections (Approved Products)</button>
           <button id="shopifyPushDimensionsBtn" class="btn">Push Dimensions to Shopify</button>
+          <button id="shopifyPushCustomsInfoBtn" class="btn">Push HS Code / Country of Origin to Shopify</button>
         </div>
         <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
         <p class="hint">Push Dimensions sends each variant's Length/Width/Height (from a sheet's dimensions column, if present) to Shopify as <code>custom.length</code>/<code>width</code>/<code>height</code> metafields -- what Calcurates reads for shipping. Only pushes products already imported into Shopify.</p>
+        <p class="hint">Push HS Code / Country of Origin sends each variant's Harmonized System code and Country of Origin (from a sheet's own columns if present, otherwise Neil's category-level defaults in <code>data/hs_code_country_of_origin.json</code>) to Shopify's native customs fields -- what Calcurates reads for Duties &amp; Taxes. Only pushes products already imported into Shopify.</p>
       </section>
 
       <section class="tool-panel" data-tool-panel="images">
