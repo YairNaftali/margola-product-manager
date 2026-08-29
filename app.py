@@ -1,4 +1,4 @@
-import csv, html, io, json, os, re, uuid, time, mimetypes, urllib.parse, urllib.request, ssl, certifi
+import csv, html, io, json, os, re, sys, threading, uuid, time, mimetypes, urllib.parse, urllib.request, ssl, certifi
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
@@ -1722,6 +1722,36 @@ def shopify_push_customs_info(products=None):
             pushed.append(sku)
     return {"pushed":pushed, "skipped":skipped, "errors":errors}
 
+WATERMARK_STATUS = {"state": "idle", "scanned": 0, "total": 0, "touched": 0, "message": "", "started_at": None, "finished_at": None}
+WATERMARK_LOCK = threading.Lock()
+
+def watermark_run_background():
+    # Fired automatically from the "Sync Collections" click (see do_POST) so
+    # nobody has to run watermark/run_watermark_batch.py by hand -- that's the
+    # first thing done back on localhost after a Shopify CSV import, i.e. the
+    # earliest point new product photos actually exist live to watermark.
+    # Runs in a background thread so the triggering click still returns
+    # immediately; reuses run_watermark_batch.py's run_incremental() so the
+    # scan/swap logic lives in exactly one place. Only ever touches media IDs
+    # it's never seen before, so a full-catalog scan is cheap once most
+    # products are already done.
+    with WATERMARK_LOCK:
+        if WATERMARK_STATUS["state"] == "running": return
+        WATERMARK_STATUS.update(state="running", scanned=0, total=0, touched=0,
+                                 message="Starting...", started_at=time.time(), finished_at=None)
+    try:
+        wm_dir = os.path.join(APP_DIR, "watermark")
+        if wm_dir not in sys.path: sys.path.insert(0, wm_dir)
+        import run_watermark_batch as wb
+        def on_progress(scanned, total, touched, product_title):
+            WATERMARK_STATUS.update(scanned=scanned, total=total, touched=touched,
+                                     message=f"Checked {scanned}/{total} products...")
+        result = wb.run_incremental(on_progress=on_progress)
+        WATERMARK_STATUS.update(state="done", finished_at=time.time(), message=(
+            f"Watermarked {result['touched']} new photo(s)." if result["touched"] else "No new photos to watermark."))
+    except Exception as e:
+        WATERMARK_STATUS.update(state="error", finished_at=time.time(), message=str(e))
+
 def shopify_apply_color_family(items):
     # items: [{"handle":..., "family":...}, ...] -- confirmed by the user in the
     # review table, not computed fresh here, so an inline override in the UI is
@@ -1965,6 +1995,21 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/shopify/test":
             try: return self.send_json({"ok":True,"shop":shopify_test_connection()})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
+        if path == "/api/watermark/status":
+            return self.send_json({"ok":True, **WATERMARK_STATUS})
+        if path == "/api/dashboard-stats":
+            try:
+                q = """{ active: productsCount(query: "status:active") { count }
+                          draft: productsCount(query: "status:draft") { count }
+                          collectionsCount { count } }"""
+                d = shopify_graphql(q)
+                log_path = os.path.join(APP_DIR, "watermark", "watermarked_media_ids.json")
+                watermarked = len(json.load(open(log_path, encoding="utf-8"))) if os.path.exists(log_path) else 0
+                return self.send_json({"ok":True, "products_active":d["active"]["count"],
+                                        "products_draft":d["draft"]["count"],
+                                        "collections":d["collectionsCount"]["count"],
+                                        "photos_watermarked":watermarked})
+            except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/files":
             try:
                 files=shopify_list_files(); save_file_map(files); matched,total=apply_file_matches_to_products(); return self.send_json({"ok":True,"files":files,"matched":matched,"total_products":total})
@@ -2027,7 +2072,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         path = urlparse(self.path).path
         if path == "/api/shopify/sync-collections":
-            try: return self.send_json({"ok":True, **shopify_sync_collections()})
+            try:
+                result = shopify_sync_collections()
+                threading.Thread(target=watermark_run_background, daemon=True).start()
+                return self.send_json({"ok":True, **result})
             except Exception as e: return self.send_json({"ok":False,"error":str(e)},500)
         if path == "/api/shopify/push-dimensions":
             try: return self.send_json({"ok":True, **shopify_push_dimensions()})

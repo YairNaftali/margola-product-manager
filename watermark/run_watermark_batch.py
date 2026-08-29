@@ -219,6 +219,55 @@ def swap_product(product, needs_processing_ids, cache, dry_run=False):
     return {"status": "processed", "count": len(new_ids), "product": product["title"], "new_media_ids": new_ids}
 
 
+def run_incremental(collection=None, product_ids=None, limit=None, dry_run=False, on_progress=None):
+    """Core incremental scan+watermark loop -- shared by the CLI (main(), below)
+    and the Product Manager app's automatic background trigger (app.py's
+    watermark_run_background(), fired on every "Sync Collections" click so
+    nobody has to run this script by hand). Only ever touches media IDs never
+    seen before (see module docstring), so scanning the whole catalog on every
+    call is cheap once most products are already done.
+
+    on_progress(scanned, total, touched, product_title), if given, is called
+    after every product (whether or not it needed anything) so a caller can
+    surface live status.
+    """
+    products = fetch_products(collection_handle=collection, product_ids=product_ids)
+    watermarked_ids = load_watermarked_ids()
+
+    cache = {}
+    progress = open(PROGRESS_PATH, "a", encoding="utf-8")
+    touched = 0
+    limit_hits = 0  # counts "processed" OR "would_process", so --limit also stops a --dry-run early
+    total = len(products)
+
+    for i, product in enumerate(products, start=1):
+        media_nodes = [e["node"] for e in product["media"]["edges"]]
+        needs = {m["id"] for m in media_nodes if m["id"] not in watermarked_ids}
+        if needs:
+            result = swap_product(product, needs, cache, dry_run=dry_run)
+            result["product_id"] = product["id"]
+            progress.write(json.dumps(result) + "\n")
+            progress.flush()
+            print(result)
+
+            if result["status"] == "processed":
+                watermarked_ids.update(result["new_media_ids"])
+                save_watermarked_ids(watermarked_ids)  # save after every product so a crash loses nothing
+                touched += 1
+            if result["status"] in ("processed", "would_process"):
+                limit_hits += 1
+
+        if on_progress:
+            on_progress(i, total, touched, product.get("title", ""))
+        if limit and limit_hits >= limit:
+            break
+        if touched and touched % BATCH_PAUSE_EVERY == 0:
+            time.sleep(BATCH_PAUSE_SECONDS)
+
+    progress.close()
+    return {"scanned": total, "touched": touched}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--collection", help="collection handle to scope to, e.g. rhinestone-banding")
@@ -228,39 +277,8 @@ def main():
     args = ap.parse_args()
 
     product_ids = args.product_ids.split(",") if args.product_ids else None
-    products = fetch_products(collection_handle=args.collection, product_ids=product_ids)
-    watermarked_ids = load_watermarked_ids()
-
-    cache = {}
-    progress = open(PROGRESS_PATH, "a", encoding="utf-8")
-    processed_count = 0
-    touched = 0
-
-    for product in products:
-        media_nodes = [e["node"] for e in product["media"]["edges"]]
-        needs = {m["id"] for m in media_nodes if m["id"] not in watermarked_ids}
-        if not needs:
-            continue
-
-        result = swap_product(product, needs, cache, dry_run=args.dry_run)
-        result["product_id"] = product["id"]
-        progress.write(json.dumps(result) + "\n")
-        progress.flush()
-        print(result)
-
-        if result["status"] == "processed":
-            watermarked_ids.update(result["new_media_ids"])
-            save_watermarked_ids(watermarked_ids)  # save after every product so a crash loses nothing
-            touched += 1
-
-        processed_count += 1
-        if args.limit and touched >= args.limit:
-            break
-        if touched and touched % BATCH_PAUSE_EVERY == 0:
-            time.sleep(BATCH_PAUSE_SECONDS)
-
-    progress.close()
-    print(f"\nScanned {len(products)} products, {touched} updated.")
+    result = run_incremental(collection=args.collection, product_ids=product_ids, limit=args.limit, dry_run=args.dry_run)
+    print(f"\nScanned {result['scanned']} products, {result['touched']} updated.")
 
 
 if __name__ == "__main__":

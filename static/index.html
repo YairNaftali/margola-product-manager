@@ -9,15 +9,24 @@
 <body>
 
 <header>
-  <div>
-    <p class="eyebrow">Catalog Review Tool</p>
-    <h1>Margola Product Manager</h1>
-    <p>Import a spreadsheet, review each product, then export a Shopify-ready CSV.</p>
+  <div class="header-top">
+    <div>
+      <p class="eyebrow">Catalog Review Tool</p>
+      <h1>Margola Product Manager</h1>
+      <p>Import a spreadsheet, review each product, then export a Shopify-ready CSV.</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="/api/export/review.csv">Export Review Report</a>
+      <a class="btn" href="/api/export/shopify-test.csv">Export Shopify Test CSV</a>
+      <a class="btn primary" href="/api/export/shopify-preview.csv">Export Shopify Preview</a>
+    </div>
   </div>
-  <div class="actions">
-    <a class="btn" href="/api/export/review.csv">Export Review Report</a>
-    <a class="btn" href="/api/export/shopify-test.csv">Export Shopify Test CSV</a>
-    <a class="btn primary" href="/api/export/shopify-preview.csv">Export Shopify Preview</a>
+  <div class="live-stats" id="liveStats">
+    <span class="live-dot" id="liveDot"></span>
+    <span class="live-stats-label">Live on Shopify</span>
+    <div class="live-stats-row" id="liveStatsRow">
+      <span class="live-stats-msg">Checking the live site…</span>
+    </div>
   </div>
 </header>
 
@@ -117,8 +126,10 @@ SHOPIFY_CLIENT_SECRET=your_client_secret</pre>
           <button id="shopifyPushCustomsInfoBtn" class="btn">Push HS Code / Country of Origin to Shopify</button>
         </div>
         <p class="hint" id="syncCollectionsHint">Load products to see which collection(s) this batch will sync to.</p>
+        <p class="hint" id="watermarkStatus"></p>
         <p class="hint">Push Dimensions sends each variant's Length/Width/Height (from a sheet's dimensions column, if present) to Shopify as <code>custom.length</code>/<code>width</code>/<code>height</code> metafields -- what Calcurates reads for shipping. Only pushes products already imported into Shopify.</p>
         <p class="hint">Push HS Code / Country of Origin sends each variant's Harmonized System code and Country of Origin (from a sheet's own columns if present, otherwise Neil's category-level defaults in <code>data/hs_code_country_of_origin.json</code>) to Shopify's native customs fields -- what Calcurates reads for Duties &amp; Taxes. Only pushes products already imported into Shopify.</p>
+        <p class="hint">Sync Collections also kicks off watermarking of any new product photos in the background -- see status above. No separate step needed.</p>
       </section>
 
       <section class="tool-panel" data-tool-panel="images">
